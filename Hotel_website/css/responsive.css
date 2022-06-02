@@ -1,0 +1,31 @@
+#navbar h1{
+    float: none;
+    text-align: center;
+}
+
+#navbar ul{
+    float: none;
+    font-weight: 500;
+}
+
+#navbar ul li{
+    float: none;
+    border-bottom: 1px gray solid;
+}
+
+.hotel-info__info-img{
+    display: none;
+}
+
+.hotel-info__info-contant{
+    float: right;
+    width: 100%;
+    padding: 150px 30px;
+}
+
+.febox{
+    text-align: center;
+    float: none;
+    width: 100%;
+    padding: 30px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        body{
+            height: 3000px;
+            max-width: 1900;
+            box-sizing: border-box;
+        }
+        .div{
+            width: 150px;
+            height: 150px;
+        }
+        #div1{
+            position: static;
+            left: 100px;
+            background-color: lightgray;
+        }
+        #div2{
+            position: relative;
+            left: 500px;
+            background-color: rgb(150, 150, 150);
+        }
+        #div3{
+            position: absolute;
+            left: 500px;
+            background: rgb(80, 80, 80);
+        }
+        #div4{
+            z-index: 2;
+            position: fixed;
+            background-color: black;
+            color: white;
+            left: 200px;
+        }
+        #div4 p{
+            padding: 50px 30px;
+        }
+        #div5{
+            position: sticky;
+            top: 100px;
+            z-index: 1;
+            background-color: black;
+            color: white
+        }
+        #div5 p{
+            padding: 50px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="div"></div>
+    <div id="div2" class="div"></div>
+    <div id="div3" class="div"></div>
+    <div id="div4" class="div">
+        <p>This is fixed box</p>
+    </div>
+    <div id="div5" class="div">
+        <p>This will stick from 50px top</p>
+    </div>
+
+</body>
+</html>
