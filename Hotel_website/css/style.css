@@ -193,6 +193,12 @@ p{
     padding-bottom: 20px;
 }
 
+.info-sec__right-info{
+    float: right;
+    width: 50%;
+    min-height: 100%;
+}
+
 .info-sec__right-info img{
     display: block;
     margin: auto;
@@ -200,15 +206,10 @@ p{
     width: 50%;
 }
 
-.info-sec__right-info{
-    float: right;
-    width: 50%;
-}
-
 /* Testimonial */
 #testimonials{
     background: url('../img/test-bg.jpg') center center/cover no-repeat;
-    height: 600px;
+    height: 100%;
     padding: 30px;
 }
 

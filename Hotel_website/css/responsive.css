@@ -23,9 +23,23 @@
     padding: 150px 30px;
 }
 
+
 .febox{
     text-align: center;
     float: none;
     width: 100%;
     padding: 30px;
+}
+
+.info-sec__left-info,
+.info-sec__right-info{
+    width: 100%;
+}
+
+.info-sec__right-info{
+    margin-bottom: 20px;
+}
+
+#contact-info .febox{
+    border-bottom: 1px black solid;
 }
