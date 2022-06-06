@@ -1,3 +1,4 @@
+/* Text Color */
 .text-primary{
     color: #28a745;
 }
@@ -6,18 +7,93 @@
     color: #0284d0;
 }
 
+
+/* Button */
 .btn{
     cursor: pointer;
     color: white;
     display: inline-block;
+    border: none;
     background-color: #28a745;
-    align-self: center;
     padding: 10px 30px;
     width: 155px;
-    border: none;
     border-radius: 5px;
 }
 
 .btn:hover{
     opacity: 0.9;
 }
+
+.btn-primary, .bg-primary{
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary, .bg-secondary{
+    background-color: #0284d0;
+    color: white;
+}
+
+.btn-dark, .bg-dark{
+    background-color: #333;
+    color: white;
+}
+
+.btn-light, .bg-light{
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.btn-outline{
+    background: transparent;
+    border: 1px white solid;
+}
+
+/* Flex style */
+.flex-items{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    height: 100%;
+}
+
+.flex-items > div{
+    margin: 20px;
+}
+
+/* flex-column */
+.flex-columns .row{
+    display: flex;
+}
+
+.flex-columns .column{
+    flex: 1; 
+}
+
+.flex-columns .column .column1,
+.flex-columns .column .column2{
+    height: 100%;
+    width: 100%;
+}
+
+/* cases */
+.section-header{    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.section-header h4{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.section-header h2{
+    font-size: 40px;
+}
+
+
+

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="home">
+    <!-- Navbar -->
     <header id="hero" class="hero">
         <div class="hero__navbar" id="navbar">
             <h1 class="hero__logo"><span class="text-primary"><i class="fas fa-book-open"></i>Edge</span> Ledger</h1>
@@ -22,11 +23,179 @@
             </ul>
         </div>
 
-        <div class="content">
+        <div class="hero__content">
             <h1>The Sky Is The Limit</h1>
             <p>We provide world class financial assistance</p>
             <a  class="btn" href="#about"><i class="fas fa-chevron-right"></i>Read More</a>
         </div>
     </header>
+
+    <main>
+        <!-- Icons -->
+        <section id="about" class="icons bg-light">
+            <div class="flex-items">
+                <div>
+                    <i class="fas fa-university fa-2x"></i>
+                    <div>
+                        <h3>Investment Banking</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis!</p>
+
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-book-reader fa-2x"></i>
+                    <div>
+                        <h3>Portfolio Manager</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis!</p>
+                        
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-pencil-alt fa-2x"></i>
+                    <div>
+                        <h3>Tax & Custodial</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis!</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section class="solution flex-columns">
+            <div class="row">
+                <div class="column">
+                    <div class="column1">
+                        <img src="./images/home/people.jpg" alt="people">
+                    </div>
+                </div>
+                <div class="column bg-primary">
+                    <div class="column2">
+                        <h4>What are you looking for</h4>
+                        <h2>We provide bespoke soluiton</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequuntur fuga rerum culpa recusandae minima obcaecati nemo. Eaque facilis facere laborum velit omnis reprehenderit recusandae deleniti temporibus eos, incidunt repellat?</p>
+                        <a class="btn btn-outline" href="#cases"><i class="fas fa-chevron"></i>
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases -->
+        <section id="cases" class="cases flex-grid section-padding">
+            <header class="section-header">
+                <h4>This is what we do</h4>
+                <h2>Business Cases</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, alias!</p>
+            </header>
+            <div class="cases__row">
+                <div class="cases__column">
+                    <img src="./images/cases/cases1.jpg" alt="cases">
+                    <img src="./images/cases/cases2.jpg" alt="cases">
+                </div>
+                <div class="cases__column">
+                    <img src="./images/cases/cases3.jpg" alt="cases">
+                    <img src="./images/cases/cases4.jpg" alt="cases">
+                </div>
+                <div class="cases__column">
+                    <img src="./images/cases/cases5.jpg" alt="cases">
+                    <img src="./images/cases/cases6.jpg" alt="cases">
+                </div>
+                <div class="cases__column">
+                    <img src="./images/cases/cases7.jpg" alt="cases">
+                    <img src="./images/cases/cases8.jpg" alt="cases">
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog -->
+        <section id="blog" class="blog flex-columns">
+            <div class="row flex-reverse">
+                <div class="column">
+                    <div class="column1">
+                        <img src="./images/home/blog.jpg" alt="people">
+                    </div>
+                </div>
+                <div class="column bg-secondary">
+                    <div class="column2">
+                        <h4>Jun 6 2022</h4>
+                        <h2>Blog Post One</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequuntur fuga rerum culpa recusandae minima obcaecati nemo. Eaque facilis facere laborum velit omnis reprehenderit recusandae deleniti temporibus eos, incidunt repellat?</p>
+                        <a class="btn btn-outline" href="blog.html"><i class="fas fa-chevron"></i>
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Team -->
+        <section id="team" class="team section-padding">
+            <header class="section-header">
+                <h4>Who we are</h4>
+                <h2>Our Professional Team</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, alias!</p>
+            </header>
+            <div class="flex-items">
+                <div >
+                    <img src="./images/team/person3.jpg" alt="">
+                    <h4>Sahil Kanjariya</h4>
+                    <p>President</p>
+                </div>
+                <div>
+                    <img src="./images/team/person2.jpg" alt="">
+                    <h4>Jane Doe</h4>
+                    <p>Vice President</p>
+                </div>
+                <div>
+                    <img src="./images/team/person1.jpg" alt="">
+                    <h4>John Doe</h4>
+                    <p>Marketing Head</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Contact -->
+         <section class="contact flex-columns">
+            <div class="row">
+                <div class="column">
+                    <div class="column1">
+                        <img src="./images/home/contact.jpg" alt="people">
+                    </div>
+                </div>
+                <div class="column bg-light">
+                    <form action="" id="contact" class="callback-form">
+                        <h2>Request Callback</h2>
+                        <div class="form-control">
+                            <label for="na">Name</label>
+                            <input type="text" name="na" id="na">
+                        </div>
+                        <div class="form-control">
+                            <label for="em">E-mail</label>
+                            <input type="text" name="em" id="em">
+                        </div>
+                        <div class="form-control">
+                            <label for="pn">Phone-number</label>
+                            <input type="text" name="pn" id="pn">
+                        </div>
+                        <input type="button" value="Submit" class="btn">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark">
+        <div class="footer__social">
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Copy right &copy; 2022 - sahil kanjariya</p>
+    </footer>
 </body>
 </html>
+
