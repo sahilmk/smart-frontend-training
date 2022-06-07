@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body id="home">
+    <!-- Navbar -->
+    <header id="hero" class="hero blog">
+        <div class="hero__navbar top" id="navbar">
+            <h1 class="hero__logo"><span class="text-primary"><i class="fas fa-book-open"></i>Edge</span> Ledger</h1>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#cases">Cases</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="hero__content">
+            <h1>Post</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="post" class="post flex-columns">
+            <h2>Blog Post One</h2>
+            <p class="meta">
+                <i class="fa fa-user"></i><span>Posted by Sahil Kanjariya</span> | Jun 06 2022
+            </p>
+            <img src="./images/home/blog.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequuntur fuga rerum culpa recusandae
+                minima obcaecati nemo. Eaque facilis facere laborum velit omnis reprehenderit recusandae deleniti
+                temporibus eos, incidunt repellat?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem nostrum non tempore molestias. Laborum
+                corporis eum, aperiam earum sunt in quod. Qui deserunt, assumenda cum eaque atque suscipit voluptatem
+                illo neque dolor aspernatur odit modi iusto alias magnam eligendi error commodi aut harum vel quas at
+                amet deleniti perferendis enim. Expedita reiciendis tenetur eveniet ipsum quis. Maiores ipsa inventore
+                reiciendis.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci nostrum ducimus unde possimus eaque
+                qui quae dolor doloremque ab minus perspiciatis ullam dolore obcaecati officiis, repellendus dicta
+                laborum vel labore corrupti quasi atque non? Sit dolores a alias earum iure necessitatibus molestiae
+                dolor ullam consequuntur, atque quasi tempore qui totam?</p>
+            
+        </section>
+    </main>
+
+    <footer class="footer bg-dark">
+        <div class="footer__social">
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Copy right &copy; 2022 - sahil kanjariya</p>
+    </footer>
+
+    
+
+    <script>
+        const name = document.getElementById('navbar');
+        let scrolled = false;
+
+        window.onscroll = function () {
+            if (window.pageYOffset > 100) {
+                name.classList.remove('top');
+                if (!scrolled) {
+                    name.style.transform = 'translateY(-70px)';
+                }
+                setTimeout(function () {
+                    name.style.transform = 'translateY(0px)';
+                    scrolled = true;
+                }, 200)
+            }
+            else {
+                name.classList.add('top');
+                scrolled = false;
+            }
+        };
+    </script>
+</body>
+
+</html>

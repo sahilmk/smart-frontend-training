@@ -60,6 +60,11 @@ ul{
     padding: 10px;
     top: 0px;
     width: 100%;
+    transition: 0.5s ease-in;
+}
+
+.top{
+    background: transparent;
 }
 
 .hero__navbar h1{
@@ -125,7 +130,6 @@ ul{
 }
 
 /* Solution */
-
 .column2{
     display: flex;
     flex-direction: column;
@@ -160,6 +164,8 @@ ul{
 /* Cases */
 .cases img{
     padding: 5px;
+    max-width: 100%;
+
 }
 .cases img:hover{
     opacity: 0.9;
@@ -174,7 +180,7 @@ ul{
     display: flex;
     flex-direction: column;
     flex: 25%;
-    max-width: 25%;
+    /* max-width: 25%; */
 }
 
 /* blog */
@@ -217,6 +223,29 @@ ul{
 
 .callback-form .btn{
     padding: 0px 10px;
+}
+
+/* Post */
+.post{
+    padding: 50px 30px;
+}
+
+.post h2{
+    font-size: 40px;
+    margin-bottom: 30px;
+    border-bottom: #333 solid 1px;
+}
+
+.post .meta{
+    margin-bottom: 30px;
+}
+
+.post img{
+    width: 300px;
+    display: block;
+    border-radius: 50%;
+    margin: auto;
+    
 }
 
 /* Footer */
