@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'contant contant aside'
+                'box1 box2 box3'
+                'footer footer footer';
+            grid-gap: 10px;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        .container__contant {
+            grid-area: contant;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        .container__box1 {
+            grid-area: box1;
+        }
+
+        .container__box2 {
+            grid-area: box2;
+        }
+
+        .container__box3 {
+            grid-area: box3;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        header,
+        .container__contant,
+        aside,
+        .container__box1,
+        .container__box2,
+        .container__box3,
+        footer {
+            background-color: lightgray;
+            border: 1px black solid;
+            padding: 10px;
+        }
+
+        @media (max-width:700px) {
+            .container {
+                grid-template-areas:
+                    'header''contant''aside''box1''box2''box3''footer';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Grid Layout</h1>
+        </header>
+        <div class="container__contant">
+            <h2>Contant header</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio esse ratione vel quos, minus laboriosam
+                asperiores accusamus culpa totam! Magnam modi iure facere exercitationem alias optio illum veniam labore
+                atque.</p>
+        </div>
+        <aside>
+            <h2>No of items</h2>
+            <ul>
+                <li>list 1</li>
+                <li>list 2</li>
+                <li>list 3</li>
+                <li>list 4</li>
+                <li>list 5</li>
+            </ul>
+        </aside>
+        <div class="container__box1">
+            <h2>Box 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam esse sapiente similique illum
+                nobis perspiciatis ducimus dicta aspernatur a.</p>
+        </div>
+        <div class="container__box2">
+            <h2>Box 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam esse sapiente similique illum
+                nobis perspiciatis ducimus dicta aspernatur a.</p>
+        </div>
+        <div class="container__box3">
+            <h2>Box 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam esse sapiente similique illum
+                nobis perspiciatis ducimus dicta aspernatur a.</p>
+        </div>
+        <footer>
+            <h2>copayright &copy; 2022 Sahil Kanjariya</h2>
+        </footer>
+    </div>
+</body>
+
+</html>

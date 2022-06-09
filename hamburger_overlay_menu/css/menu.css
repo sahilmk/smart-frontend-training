@@ -5,7 +5,7 @@
     z-index: 1;
 }
 
-.menu-wrap .toggler {
+.menu-wrap__toggler {
     position: fixed;
     cursor: pointer;
     top: 0;
@@ -16,7 +16,7 @@
     z-index: 2;
 }
 
-.menu-wrap .hamburger {
+.menu-wrap__hamburger {
     position: fixed;
     /* position: absolute; */
     display: flex;
@@ -34,7 +34,7 @@
 
 
 /* Three Lines */
-.menu-wrap .hamburger>div {
+.menu-wrap__hamburger>div {
     position: relative;
     background-color: #fff;
     top: 0px;
@@ -44,8 +44,8 @@
     transition: all 1s ease;
 }
 
-.menu-wrap .hamburger>div::before,
-.menu-wrap .hamburger>div::after {
+.menu-wrap__hamburger>div::before,
+.menu-wrap__hamburger>div::after {
     content: '';
     position: absolute;
     background-color: #fff;
@@ -55,41 +55,43 @@
     height: 2px;
 }
 
-.menu-wrap .hamburger>div::after {
+.menu-wrap__hamburger>div::after {
+    content: '';
     top: 10px;
 }
 
 /* Create the cross */
-.menu-wrap .toggler:checked+.hamburger>div {
+.menu-wrap__toggler:checked+.menu-wrap__hamburger>div {
     transform: rotate(135deg);
 }
 
-.menu-wrap .toggler:checked+.hamburger>div::before,
-.menu-wrap .toggler:checked+.hamburger>div::after {
+.menu-wrap__toggler:checked+.menu-wrap__hamburger>div::before,
+.menu-wrap__toggler:checked+.menu-wrap__hamburger>div::after {
     top: 0;
     transform: rotate(90deg);
 }
 
-.menu-wrap .toggler:checked+.hamburger>div:hover {
+.menu-wrap__toggler:checked:hover+.menu-wrap__hamburger>div {
     transform: rotate(225deg);
 }
 
 
-.menu-wrap .toggler:checked~.menu {
+.menu-wrap__toggler:checked~.menu-wrap__menu {
     visibility: visible;
 }
 
-.menu-wrap .toggler:checked~.menu>div {
+.menu-wrap__toggler:checked~.menu-wrap__menu>div {
     transform: scale(1);
     transition-duration: 1s;
 }
 
-.menu-wrap .toggler:checked~.menu>div>div {
+.menu-wrap__toggler:checked~.menu-wrap__menu>div>div {
     opacity: 1;
+    transition: all 2s ease 1s;
 }
 
 
-.menu-wrap .menu {
+.menu-wrap__menu {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -103,7 +105,7 @@
     top: 0;
 }
 
-.menu-wrap .menu>div {
+.menu-wrap__menu>div {
     background-color: var(--overlaycolor);
     display: flex;
     justify-content: center;
@@ -116,27 +118,26 @@
 
 }
 
-.menu-wrap .menu>div>div {
+.menu-wrap__menu>div>div {
     max-width: 90vh;
     max-height: 100vh;
     text-align: center;
     opacity: 0;
-    transition: opacity 1s ease 1s;
 }
 
-.menu-wrap .menu>div>div>ul>li {
+.menu-wrap__menu>div>div>ul>li {
     padding: 2rem;
     font-size: 1.5rem;
     font-weight: bold;
     list-style: none;
 }
 
-.menu-wrap .menu>div>div>ul>li>a {
+.menu-wrap__menu>div>div>ul>li>a {
     color: #fff;
     text-decoration: none;
     transition: color 1s ease;
 }
 
-.menu-wrap .menu>div>div>ul>li>a:hover {
+.menu-wrap__menu>div>div>ul>li>a:hover {
     color: var(--secondarycolor);
 }

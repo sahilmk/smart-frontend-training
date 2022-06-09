@@ -1,0 +1,56 @@
+:root {
+    --primarycolor: #c72722;
+    --secondarycolor: #f99500;
+    --lightcolor: #f3f3f3;
+    --darkcolor: #333;
+}
+
+.category {
+    --sportcolor: #f99500;
+    --entcolor: #a66bbe;
+    --techcolor: #009cff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    background: var(--lightcolor);
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Staatliches', cursive;
+    margin-bottom: 0.55rem;
+    line-height: 1.3;
+}
+
+/* Utility */
+.container {
+    max-width: 1900px;
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
