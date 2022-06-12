@@ -1,0 +1,16 @@
+$webstie-width: 1280px;
+$mainc: #ffbc00;
+$lightc: #f4f4f4;
+$mediumc: #ccc;
+$darkc: #333;
+$bgimage: url('../img/showcase.jpg');
+
+@function stc($color) {
+    @if (lightness($color) > 50) {
+        @return #000;
+    }
+
+    @else {
+        @return #fff;
+    }
+}
