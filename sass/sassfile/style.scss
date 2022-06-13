@@ -1,0 +1,36 @@
+@import 'v1';
+
+body {
+    background-color: $var;
+}
+
+.b {
+    @extend %box;
+}
+
+.c {
+    @include mname(hotpink);
+}
+
+$logo-element: logo-bg;
+
+.logo {
+    background: element(#{$logo-element});
+}
+
+$rounded-corners: true;
+
+.button {
+    border: 1px solid black;
+    border-radius: if($rounded-corners, 5px, null);
+}
+
+$primary: #81899b;
+$accent: #302e24;
+$warn: #dfa612;
+
+:root {
+    --primary: $primary;
+    --accent: $accent;
+    --warn: $warmn;
+}
