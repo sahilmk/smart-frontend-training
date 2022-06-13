@@ -1,0 +1,134 @@
+@media(max-width:800px) {
+    #header {
+        height: 30rem;
+
+        &__hcontant {
+            padding-top: 10%;
+        }
+    }
+}
+
+@media(max-width:600px) {
+    #header {
+        border-bottom: 2px $mainc solid;
+        height: 10rem;
+
+        &__hcontant {
+            display: none;
+        }
+
+        &__nav {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 10rem;
+        }
+    }
+
+    #a .parts,
+    #b .stats,
+    #c .process,
+    .aboutd__testimonials,
+    .worka__items {
+        grid-template-columns: 1fr;
+    }
+
+    .parts div {
+        border-bottom: 1px solid $mainc;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .abouta {
+        &__info {
+            grid-template-areas:
+                'bimage'
+                'bio'
+                'bio'
+                'award-1'
+                'award-2'
+                'award-3';
+        }
+    }
+
+    .contacta {
+        &__textfields {
+            grid-template-areas:
+                'namei'
+                'subjecti'
+                'emaili'
+                'pnumberi'
+                'messi';
+        }
+    }
+
+    .contactb {
+        &__contacti {
+            grid-template-columns: 1fr;
+
+            div {
+                padding: 1rem;
+            }
+        }
+
+    }
+
+    .contactc {
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 1rem 0;
+    }
+
+    .mfooter {
+        height: 7rem;
+
+        &__contant {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
+        }
+
+        &__social {
+            margin-top: 1rem;
+        }
+    }
+
+}
+
+@media(max-height:860px) {
+    #header {
+
+        &__hcontant {
+            padding-top: 10%;
+        }
+    }
+
+    .contactc {
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 1rem 0;
+    }
+}
+
+@media(max-height:300px) {
+    #header {
+        height: 100vh;
+
+        &__hcontant {
+            h1 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .contactc {
+        font-size: 0.75rem;
+    }
+}

@@ -402,3 +402,70 @@ img {
 .contactc {
   text-align: center;
   padding: 1rem 0; }
+
+@media (max-width: 800px) {
+  #header {
+    height: 30rem; }
+    #header__hcontant {
+      padding-top: 10%; } }
+
+@media (max-width: 600px) {
+  #header {
+    border-bottom: 2px #ffbc00 solid;
+    height: 10rem; }
+    #header__hcontant {
+      display: none; }
+    #header__nav {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 10rem; }
+  #a .parts,
+  #b .stats,
+  #c .process,
+  .aboutd__testimonials,
+  .worka__items {
+    grid-template-columns: 1fr; }
+  .parts div {
+    border-bottom: 1px solid #ffbc00; }
+    .parts div:last-child {
+      border-bottom: none; }
+  .abouta__info {
+    grid-template-areas: 'bimage' 'bio' 'bio' 'award-1' 'award-2' 'award-3'; }
+  .contacta__textfields {
+    grid-template-areas: 'namei' 'subjecti' 'emaili' 'pnumberi' 'messi'; }
+  .contactb__contacti {
+    grid-template-columns: 1fr; }
+    .contactb__contacti div {
+      padding: 1rem; }
+  .contactc {
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 1rem 0; }
+  .mfooter {
+    height: 7rem; }
+    .mfooter__contant {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1rem; }
+    .mfooter__social {
+      margin-top: 1rem; } }
+
+@media (max-height: 860px) {
+  #header__hcontant {
+    padding-top: 10%; }
+  .contactc {
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 1rem 0; } }
+
+@media (max-height: 300px) {
+  #header {
+    height: 100vh; }
+    #header__hcontant h1 {
+      font-size: 1rem; }
+    #header__hcontant p {
+      font-size: 1rem; }
+  .contactc {
+    font-size: 0.75rem; } }
