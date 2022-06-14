@@ -1,36 +1,34 @@
 @import 'v1';
 
-body {
-    background-color: $var;
+$bc: #555;
+
+@function cal() {
+    // $a: horizontal;
+    @return horizontal;
 }
 
 .b {
-    @extend %box;
+    height: 300px;
+    width: 300px;
+    $bc: black;
+    background-color: $bc;
+    resize: vertical;
+    overflow: auto;
 }
 
 .c {
-    @include mname(hotpink);
-}
+    @extend .b;
+    background-color: $bc;
+    resize: cal();
+    overflow: auto;
 
-$logo-element: logo-bg;
+    a {
+        color: #fff;
+        text-decoration: none;
+        pointer-events: auto;
 
-.logo {
-    background: element(#{$logo-element});
-}
-
-$rounded-corners: true;
-
-.button {
-    border: 1px solid black;
-    border-radius: if($rounded-corners, 5px, null);
-}
-
-$primary: #81899b;
-$accent: #302e24;
-$warn: #dfa612;
-
-:root {
-    --primary: $primary;
-    --accent: $accent;
-    --warn: $warmn;
+        span {
+            vertical-align: text-bottom;
+        }
+    }
 }

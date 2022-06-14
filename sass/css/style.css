@@ -1,28 +1,17 @@
-.b {
-  background-color: #fff;
-  height: 50px;
-  width: 50px;
-  border-radius: 10px;
-  margin-top: 10px; }
-
-body {
-  background-color: blue; }
-
-.c {
+.b, .c {
   height: 300px;
   width: 300px;
-  background-color: hotpink;
-  border-radius: 5px;
-  margin-top: 200px; }
+  background-color: black;
+  resize: vertical;
+  overflow: auto; }
 
-.logo {
-  background: element(logo-bg); }
-
-.button {
-  border: 1px solid black;
-  border-radius: 5px; }
-
-:root {
-  --primary: $primary;
-  --accent: $accent;
-  --warn: $warmn; }
+.c {
+  background-color: #555;
+  resize: horizontal;
+  overflow: auto; }
+  .c a {
+    color: #fff;
+    text-decoration: none;
+    pointer-events: auto; }
+    .c a span {
+      vertical-align: text-bottom; }
