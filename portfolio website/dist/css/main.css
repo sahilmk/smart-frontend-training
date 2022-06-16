@@ -11,7 +11,7 @@
   margin-top: 1rem; }
 
 .btn-main {
-  background-color: #ffbc00;
+  background-color: red;
   color: black; }
 
 .btn-light {
@@ -23,7 +23,7 @@
   color: #f4f4f4; }
 
 .bg-main {
-  background: #ffbc00;
+  background: red;
   color: #fff; }
 
 .bg-dark {
@@ -49,11 +49,11 @@
 button[class^='btn-']:hover,
 a[class^='btn-']:hover,
 input[class^='btn-']:hover {
-  background-color: #ffbc00;
+  background-color: red;
   color: #333; }
 
 .line {
-  background-color: #ffbc00;
+  background-color: red;
   display: block;
   margin: 0 auto 1rem auto;
   height: 2px;
@@ -69,18 +69,22 @@ input[class^='btn-']:hover {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px; }
   .worka__item {
-    background-color: #ffbc00;
+    background-color: red;
     position: relative;
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: initial;
     overflow: hidden; }
     .worka__item::after {
       content: '';
       position: absolute;
-      display: block;
-      background: inherit;
       top: 0;
       left: 0;
-      width: 100%;
+      display: block;
+      background: inherit;
       height: 100%;
+      width: 100%;
       opacity: 0.9;
       transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
       transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1); }
@@ -103,19 +107,19 @@ input[class^='btn-']:hover {
     padding-top: 75%; }
   .worka__image img {
     position: absolute;
-    height: auto;
     top: 0;
     left: 0;
+    height: auto;
     width: 100%;
     line-height: 0; }
   .worka__text {
     position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     text-align: center;
     color: #fff;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     opacity: 0;
     z-index: 1;
     transform: translateY(-20%);
@@ -123,8 +127,11 @@ input[class^='btn-']:hover {
     transition-delay: 300ms; }
   .worka__textwrap {
     position: absolute;
-    width: 100%;
     top: 50%;
+    right: initial;
+    bottom: initial;
+    left: initial;
+    width: 100%;
     transform: translateY(-50%); }
   .worka__texttitle {
     font-size: 2rem;
@@ -174,9 +181,13 @@ img {
     padding-top: 20%; }
   #header__nav {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: initial; }
     #header__nav ul {
-      display: flex; }
+      display: flex;
+      flex-direction: row;
+      justify-content: initial;
+      align-items: initial; }
       #header__nav ul li {
         padding: 1rem; }
         #header__nav ul li a {
@@ -186,7 +197,7 @@ img {
           #header__nav ul li a:hover {
             border-bottom: #f4f4f4 3px solid; }
           #header__nav ul li a.current {
-            border-bottom: #ffbc00 3px solid; }
+            border-bottom: red 3px solid; }
 
 #a {
   text-align: center;
@@ -198,7 +209,7 @@ img {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem; }
     #a .parts i {
-      color: #ffbc00;
+      color: red;
       margin-bottom: 1rem; }
 
 #b {
@@ -206,7 +217,8 @@ img {
   margin: 2rem; }
   #b .stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); }
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0; }
     #b .stats__title {
       font-size: 1.5rem; }
     #b .stats__number {
@@ -233,32 +245,38 @@ img {
       color: #fff;
       background-color: #333;
       position: relative;
+      top: initial;
+      right: initial;
+      bottom: initial;
+      left: initial;
       transition: all 1s;
-      height: 70px;
       border-radius: 50%;
       padding: 2rem;
+      height: 70px;
       width: 70px;
       line-height: 70px; }
       #c .process__icon:hover {
-        background-color: #ffbc00;
-        width: 90px;
+        background-color: red;
         height: 90px;
+        width: 90px;
         line-height: 90px; }
         #c .process__icon:hover .process__step {
           background-color: #333;
           color: #fff; }
     #c .process__step {
       text-align: center;
-      background-color: #ffbc00;
+      background-color: red;
       color: #fff;
       position: absolute;
+      top: 0;
+      right: 0;
+      bottom: initial;
+      left: initial;
       transition: all 1s;
       height: 15px;
       width: 15px;
       line-height: 15px;
       font-size: 1.2rem;
-      top: 0;
-      right: 0;
       border-radius: 50%;
       padding: 1rem; }
 
@@ -275,7 +293,7 @@ img {
     width: 30px;
     line-height: 30px; }
     .mfooter__social .fab:hover {
-      background-color: #ffbc00; }
+      background-color: red; }
   .mfooter__contant {
     display: flex;
     justify-content: space-between;
@@ -287,7 +305,7 @@ img {
   background: url("../img/showcase.jpg") center center/cover no-repeat;
   color: #f4f4f4;
   height: 20%;
-  border-bottom: 2px #ffbc00 solid; }
+  border-bottom: 2px red solid; }
 
 .abouta {
   text-align: center; }
@@ -303,7 +321,7 @@ img {
   .abouta__bio {
     grid-area: bio;
     padding: 1rem;
-    border-left: 2px #ffbc00 solid; }
+    border-left: 2px red solid; }
   .abouta__award-1 {
     grid-area: award-1; }
   .abouta__award-2 {
@@ -313,7 +331,7 @@ img {
   .abouta__award-1 .fas,
   .abouta__award-2 .fas,
   .abouta__award-3 .fas {
-    color: #ffbc00;
+    color: red;
     margin-top: 1rem; }
 
 .aboutb h2 {
@@ -327,7 +345,7 @@ img {
   height: 20px; }
   .aboutb__progress div {
     text-align: center;
-    background-color: #ffbc00;
+    background-color: red;
     color: #fff;
     height: 100%;
     border-radius: 6px; }
@@ -362,8 +380,8 @@ img {
         .aboutd__testimonials div ul li {
           padding-right: 0.5rem; }
           .aboutd__testimonials div ul li img {
-            width: 50px;
             height: 50px;
+            width: 50px;
             border-radius: 50%; }
 
 .contacta {
@@ -396,8 +414,9 @@ img {
   padding: 1rem 0; }
   .contactb__contacti {
     display: grid;
-    text-align: center;
-    grid-template-columns: repeat(3, 1fr); }
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+    text-align: center; }
 
 .contactc {
   text-align: center;
@@ -411,7 +430,7 @@ img {
 
 @media (max-width: 600px) {
   #header {
-    border-bottom: 2px #ffbc00 solid;
+    border-bottom: 2px red solid;
     height: 10rem; }
     #header__hcontant {
       display: none; }
@@ -427,7 +446,7 @@ img {
   .worka__items {
     grid-template-columns: 1fr; }
   .parts div {
-    border-bottom: 1px solid #ffbc00; }
+    border-bottom: 1px solid red; }
     .parts div:last-child {
       border-bottom: none; }
   .abouta__info {

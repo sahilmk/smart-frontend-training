@@ -7,26 +7,21 @@
     }
 
     &__items {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5px;
+        @include gridre(columns, 3, 5px);
     }
 
     &__item {
         background-color: $mainc;
-        position: relative;
+        @include position(relative);
         overflow: hidden;
 
         //overlay at hover 
         &::after {
             content: '';
-            position: absolute;
+            @include position(absolute, 0, null, null, 0);
             display: block;
             background: inherit;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            @include hw(100%, 100%);
             opacity: 0.9;
             transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
             transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
@@ -64,22 +59,16 @@
     }
 
     &__image img {
-        position: absolute;
+        @include position(absolute, 0, null, null, 0);
         height: auto;
-        top: 0;
-        left: 0;
         width: 100%;
         line-height: 0;
     }
 
     &__text {
-        position: absolute;
+        @include position(absolute, 0, 0, 0, 0);
         text-align: center;
         color: #fff;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
         opacity: 0;
         z-index: 1;
         transform: translateY(-20%);
@@ -89,9 +78,8 @@
     }
 
     &__textwrap {
-        position: absolute;
+        @include position(absolute, 50%);
         width: 100%;
-        top: 50%;
         transform: translateY(-50%);
     }
 

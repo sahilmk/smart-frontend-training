@@ -36,8 +36,7 @@ img {
 
 // Header part
 #logo {
-    height: 50px;
-    width: 50px;
+    @include hw(50px, 50px);
 }
 
 #header {
@@ -51,11 +50,10 @@ img {
     }
 
     &__nav {
-        display: flex;
-        justify-content: space-between;
+        @include flex(null, space-between);
 
         ul {
-            display: flex;
+            @include flex(row);
 
             li {
                 padding: 1rem;
@@ -91,9 +89,7 @@ img {
     }
 
     .parts {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 1rem;
+        @include gridre(columns, 4, 1rem);
 
         i {
             color: $mainc;
@@ -107,8 +103,7 @@ img {
     margin: 2rem;
 
     .stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        @include gridre(columns, 4);
 
         &__title {
             font-size: 1.5rem;
@@ -145,26 +140,22 @@ img {
     }
 
     .process {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 1rem;
+        @include gridre(columns, 4, 1rem);
 
         &__icon {
             text-align: center;
             color: stc($darkc);
             background-color: $darkc;
-            position: relative;
+            @include position(relative);
             transition: all 1s;
-            height: 70px;
             border-radius: 50%;
             padding: 2rem;
-            width: 70px;
+            @include hw(70px, 70px);
             line-height: 70px;
 
             &:hover {
                 background-color: $mainc;
-                width: 90px;
-                height: 90px;
+                @include hw(90px, 90px);
                 line-height: 90px;
 
                 .process__step {
@@ -178,14 +169,11 @@ img {
             text-align: center;
             background-color: $mainc;
             color: stc($mainc);
-            position: absolute;
+            @include position(absolute, 0, 0);
             transition: all 1s;
-            height: 15px;
-            width: 15px;
+            @include hw(15px, 15px);
             line-height: 15px;
             font-size: 1.2rem;
-            top: 0;
-            right: 0;
             border-radius: 50%;
             padding: 1rem;
         }
@@ -205,8 +193,7 @@ img {
         border: 1px solid #fff;
         margin-right: 1rem;
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        @include hw(30px, 30px);
         line-height: 30px;
 
         &:hover {
@@ -215,9 +202,7 @@ img {
     }
 
     &__contant {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(null, space-between, center);
         text-align: center;
         height: 5rem;
     }
@@ -301,9 +286,7 @@ img {
 
 .aboutc {
     .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 1rem;
+        @include gridre(columns, 4, 1rem);
         padding: 3rem;
 
         img {
@@ -321,9 +304,7 @@ img {
     }
 
     &__testimonials {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 5px;
+        @include gridre(columns, 4, 5px);
 
         div {
             margin-bottom: 1rem 0;
@@ -335,16 +316,13 @@ img {
             }
 
             ul {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex(null, center, center);
 
                 li {
                     padding-right: 0.5rem;
 
                     img {
-                        width: 50px;
-                        height: 50px;
+                        @include hw(50px, 50px);
                         border-radius: 50%;
                     }
                 }
@@ -406,9 +384,8 @@ img {
     padding: 1rem 0;
 
     &__contacti {
-        display: grid;
+        @include gridre(columns, 3);
         text-align: center;
-        grid-template-columns: repeat(3, 1fr);
     }
 
 }

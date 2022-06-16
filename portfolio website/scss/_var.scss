@@ -1,5 +1,5 @@
 $webstie-width: 1280px;
-$mainc: #ffbc00;
+$mainc: red;
 $lightc: #f4f4f4;
 $mediumc: #ccc;
 $darkc: #333;
@@ -13,4 +13,34 @@ $bgimage: url('../img/showcase.jpg');
     @else {
         @return #fff;
     }
+}
+
+//Mixin for flex
+@mixin flex($dir: column, $jusc: initial, $alii: initial) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jusc;
+    align-items: $alii;
+}
+
+//Mixin for Position
+@mixin position($pos: initial, $top: initial, $right: initial, $bot: initial, $left: initial) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bot;
+    left: $left;
+}
+
+//Mixin for grid with repeat
+@mixin gridre($dir: columns, $part: 1, $gap: 0) {
+    display: grid;
+    grid-template-#{$dir}: repeat($part, 1fr);
+    grid-gap: $gap;
+}
+
+//Mixin for height and width
+@mixin hw($h: 0, $w: 0) {
+    height: $h;
+    width: $w;
 }
