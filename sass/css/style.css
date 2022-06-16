@@ -1,17 +1,32 @@
+div {
+  break-after: page; }
+
+p {
+  font-size: 50px;
+  widows: 5; }
+
 .b, .c {
   height: 300px;
   width: 300px;
   background-color: black;
   resize: vertical;
-  overflow: auto; }
+  overflow: auto;
+  color: #fff; }
 
 .c {
   background-color: #555;
   resize: horizontal;
-  overflow: auto; }
+  overflow: auto;
+  color: #fff; }
   .c a {
     color: #fff;
     text-decoration: none;
     pointer-events: auto; }
     .c a span {
       vertical-align: text-bottom; }
+
+.error {
+  border: 1px #f00;
+  background-color: #fdd; }
+  .error--serious {
+    border-width: 3px; }
