@@ -1,0 +1,31 @@
+$btnclass: (
+    'primary',
+    'secondary',
+    'warn',
+    'success'
+);
+
+$col: (
+    coral,
+    steelblue,
+    yellow,
+    darkseagreen
+);
+
+@for $i from 0 to length($btnclass) {
+    .#{nth($btnclass, $i+1)}-btn {
+        padding: 15px;
+        line-height: 20px;
+        text-decoration: none;
+        background-color: #{nth($col, $i+1)};
+        color: #fff;
+
+        @if nth($btnclass, $i+1)==warn {
+            color: black;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

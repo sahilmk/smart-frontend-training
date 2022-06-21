@@ -1,3 +1,16 @@
+$desktop: (
+    "hheight": 150px,
+    "swidth": 250px
+);
+$tablet: (
+    "hheight": 150px,
+    "swidth": 50%
+);
+$mobile: (
+    "hheight": 150px,
+    "swidth": 100%
+);
+
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +21,9 @@ header {
     background-color: teal;
     text-align: center;
     color: #fff;
-    height: 150px;
-    margin-left: 250px;
-    width: 100%;
+    height: map-get($desktop, "hheight");
+    width: calc(100% - #{map-get($desktop, "hheight")});
+    margin-left: map-get($desktop, "swidth");
     position: absolute;
     top: 0;
 
@@ -23,56 +36,31 @@ header {
     background-color: blue;
     text-align: center;
     color: #fff;
-
-    & ul {
-        padding-top: 50px;
-
-        & li {
-            width: 250px;
-            height: 50px;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #333;
-        }
-    }
 }
 
 
 
-@media (max-width:1500px) {
+@media (max-width:768px) {
     header {
-        height: 130px;
-        margin-left: 220px;
+        width: map-get($tablet, "swidth");
+        margin-left: map-get($tablet, "swidth");
     }
 
     .sidebar {
-        width: 220px;
-
-        & ul {
-            & li {
-                width: 220px;
-            }
-        }
+        width: map-get($tablet, "swidth");
     }
-
-
 }
 
-@media (min-width:1200px and max-width:1499px) {
+@media (max-width:599px) {
     header {
-        height: 130px;
-        margin-left: 220px;
+        top: map-get($mobile, "hheight");
+        margin-left: 0;
+        width: map-get($mobile, "swidth");
+
     }
 
     .sidebar {
-        width: 220px;
-
-        & ul {
-            & li {
-                width: 220px;
-            }
-        }
+        width: map-get($mobile, "swidth");
+        height: map-get($mobile, "hheight");
     }
-
-
 }

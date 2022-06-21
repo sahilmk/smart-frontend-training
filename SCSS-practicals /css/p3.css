@@ -1,0 +1,36 @@
+.primary-btn {
+  padding: 15px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: coral;
+  color: #fff; }
+  .primary-btn:hover {
+    opacity: 0.8; }
+
+.secondary-btn {
+  padding: 15px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: steelblue;
+  color: #fff; }
+  .secondary-btn:hover {
+    opacity: 0.8; }
+
+.warn-btn {
+  padding: 15px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: yellow;
+  color: #fff;
+  color: black; }
+  .warn-btn:hover {
+    opacity: 0.8; }
+
+.success-btn {
+  padding: 15px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: darkseagreen;
+  color: #fff; }
+  .success-btn:hover {
+    opacity: 0.8; }
