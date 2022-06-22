@@ -1,11 +1,5 @@
 @import 'common-flex-base';
 
-$screenwidth: 1140px;
-$primary: #f6f3ea;
-$secondary: #fb4f31;
-$thirdcolor: #0c2461;
-$fourthcolor: #3c6382;
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,87 +10,7 @@ ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
 .container {
-    width: $screenwidth;
+    width: 1140px;
     margin: auto;
-    padding: 3rem;
-}
-
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 300;
-}
-
-body>:nth-child(2n+0) {
-    background-color: $primary;
-}
-
-body>:nth-child(2) {
-    background-color: #fbd7b5;
-}
-
-//Global or utility classes
-.top-left {
-
-    & h5 {
-        color: $secondary;
-        margin-bottom: 1rem;
-    }
-
-    & h1,
-    & h2 {
-        color: $thirdcolor;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        font-size: 3.125rem;
-    }
-
-    & h1 {
-        font-size: 3.75rem;
-    }
-
-    & p {
-        color: $fourthcolor;
-        margin-bottom: 1rem;
-    }
-
-    &--m {
-        text-align: center;
-
-        & h5 {
-            color: $secondary;
-            margin-bottom: 1rem;
-        }
-
-        & h1,
-        & h2 {
-            color: $thirdcolor;
-            margin-bottom: 1rem;
-        }
-
-        & p {
-            color: $fourthcolor;
-            margin-bottom: 1rem;
-        }
-    }
-}
-
-.button {
-    background-color: #ff6348;
-    padding: 1rem 2rem;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 0.3rem;
-
-    &-btn {
-        @extend .button;
-        border: none;
-        cursor: pointer;
-    }
 }
