@@ -866,6 +866,63 @@
 ul {
   list-style: none; }
 
+a {
+  text-decoration: none; }
+
 .container {
   width: 1140px;
-  margin: auto; }
+  margin: auto;
+  padding: 3rem; }
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300; }
+
+body > :nth-child(2n+0) {
+  background-color: #f6f3ea; }
+
+body > :nth-child(2) {
+  background-color: #fbd7b5; }
+
+.top-left h5 {
+  color: #fb4f31;
+  margin-bottom: 1rem; }
+
+.top-left h1,
+.top-left h2 {
+  color: #0c2461;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 3.125rem; }
+
+.top-left h1 {
+  font-size: 3.75rem; }
+
+.top-left p {
+  color: #3c6382;
+  margin-bottom: 1rem; }
+
+.top-left--m {
+  text-align: center; }
+  .top-left--m h5 {
+    color: #fb4f31;
+    margin-bottom: 1rem; }
+  .top-left--m h1,
+  .top-left--m h2 {
+    color: #0c2461;
+    margin-bottom: 1rem; }
+  .top-left--m p {
+    color: #3c6382;
+    margin-bottom: 1rem; }
+
+.button, .button-btn {
+  background-color: #ff6348;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.3rem; }
+  .button-btn {
+    border: none;
+    cursor: pointer; }
