@@ -20,12 +20,21 @@ $col: (
         background-color: #{nth($col, $i+1)};
         color: #fff;
 
-        @if nth($btnclass, $i+1)==warn {
-            color: black;
+        @if lightness(nth($col, $i+1))>50% {
+            color: #fff;
+        }
+
+        @else {
+            color: #000;
         }
 
         &:hover {
             opacity: 0.8;
         }
+
+        //By using if else
+        // @if nth($btnclass, $i+1)==warn {
+        //     color: black;
+        // }
     }
 }

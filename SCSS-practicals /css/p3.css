@@ -3,6 +3,7 @@
   line-height: 20px;
   text-decoration: none;
   background-color: coral;
+  color: #fff;
   color: #fff; }
   .primary-btn:hover {
     opacity: 0.8; }
@@ -12,7 +13,8 @@
   line-height: 20px;
   text-decoration: none;
   background-color: steelblue;
-  color: #fff; }
+  color: #fff;
+  color: #000; }
   .secondary-btn:hover {
     opacity: 0.8; }
 
@@ -22,7 +24,7 @@
   text-decoration: none;
   background-color: yellow;
   color: #fff;
-  color: black; }
+  color: #000; }
   .warn-btn:hover {
     opacity: 0.8; }
 
@@ -31,6 +33,7 @@
   line-height: 20px;
   text-decoration: none;
   background-color: darkseagreen;
+  color: #fff;
   color: #fff; }
   .success-btn:hover {
     opacity: 0.8; }

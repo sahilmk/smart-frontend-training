@@ -4,7 +4,7 @@ $desktop: (
 );
 $tablet: (
     "hheight": 150px,
-    "swidth": 50%
+    "swidth": 200px
 );
 $mobile: (
     "hheight": 150px,
@@ -38,16 +38,76 @@ header {
     color: #fff;
 }
 
+//z-index
+.div {
+    height: 300px;
+    width: 300px;
+    opacity: 0.8;
+}
 
+@mixin col($bc) {
+    background-color: $bc;
+}
 
-@media (max-width:768px) {
+.div1 {
+    @include col(red);
+    position: absolute;
+    top: 200px;
+    left: 500px;
+
+}
+
+.div2 {
+    @include col(blue);
+    position: absolute;
+    top: 250px;
+    left: 550px;
+}
+
+.div3 {
+    @include col(green);
+    position: absolute;
+    top: 300px;
+    left: 600px;
+}
+
+$index: (
+    'div1',
+    'div2',
+    'div3'
+);
+
+@for $i from 0 to length($index) {
+    .#{nth($index, $i+1)}:hover {
+        z-index: length($index)-$i;
+        opacity: 1;
+    }
+}
+
+@media (max-width:920px) {
     header {
-        width: map-get($tablet, "swidth");
+        width: map-get($mobile, 'swidth');
         margin-left: map-get($tablet, "swidth");
     }
 
     .sidebar {
         width: map-get($tablet, "swidth");
+    }
+
+    .div1 {
+        top: 200px;
+        left: 250px;
+
+    }
+
+    .div2 {
+        top: 250px;
+        left: 300px;
+    }
+
+    .div3 {
+        top: 300px;
+        left: 350px;
     }
 }
 
@@ -62,5 +122,51 @@ header {
     .sidebar {
         width: map-get($mobile, "swidth");
         height: map-get($mobile, "hheight");
+    }
+
+    .div1 {
+        top: 400px;
+        left: 50px;
+
+    }
+
+    .div2 {
+        top: 450px;
+        left: 100px;
+    }
+
+    .div3 {
+        top: 550px;
+        left: 150px;
+    }
+}
+
+@media (max-width:450px) {
+    header {
+        top: map-get($mobile, "hheight");
+        margin-left: 0;
+        width: map-get($mobile, "swidth");
+
+    }
+
+    .sidebar {
+        width: map-get($mobile, "swidth");
+        height: map-get($mobile, "hheight");
+    }
+
+    .div1 {
+        top: 400px;
+        left: 50px;
+
+    }
+
+    .div2 {
+        top: 450px;
+        left: 50px;
+    }
+
+    .div3 {
+        top: 550px;
+        left: 50px;
     }
 }
