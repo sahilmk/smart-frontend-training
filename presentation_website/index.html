@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5a8e6d9177.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>My Presentation</title>
+</head>
+
+<body>
+    <section id="page1" class="page">
+        <h2>Welcome to my presentation</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto itaque deserunt nobis eum nulla error
+            distinctio mollitia asperiores facilis illo exercitationem consequatur explicabo odit necessitatibus
+            repellat id magni cumque nihil reprehenderit possimus, qui laborum ullam. Laborum facilis iste architecto
+            ratione!</p>
+        <div>
+            <a href="#page2" class="btn">
+                <i class="fas fa-arrow-circle-down"></i> Next Page
+            </a>
+        </div>
+    </section>
+    <section id="page2" class="page">
+        <h2>Page 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto itaque deserunt nobis eum nulla error
+            distinctio mollitia asperiores facilis illo exercitationem consequatur explicabo odit necessitatibus
+            repellat id magni cumque nihil reprehenderit possimus, qui laborum ullam. Laborum facilis iste architecto
+            ratione!</p>
+        <div>
+            <a href="#page3" class="btn">
+                <i class="fas fa-arrow-circle-down"></i> Next Page
+            </a>
+            <a href="#page1" class="btn btn-dark">
+                <i class="fas fa-arrow-circle-up"></i> Prev Page
+            </a>
+        </div>
+    </section>
+    <section id="page3" class="page">
+        <h2>Page 3</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto itaque deserunt nobis eum nulla error
+            distinctio mollitia asperiores facilis illo exercitationem consequatur explicabo odit necessitatibus
+            repellat id magni cumque nihil reprehenderit possimus, qui laborum ullam. Laborum facilis iste architecto
+            ratione!</p>
+        <div>
+            <a href="#page4" class="btn">
+                <i class="fas fa-arrow-circle-down"></i> Next Page
+            </a>
+            <a href="#page2" class="btn btn-dark">
+                <i class="fas fa-arrow-circle-up"></i> Prev Page
+            </a>
+        </div>
+    </section>
+    <section id="page4" class="page">
+        <h2>Page 4</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto itaque deserunt nobis eum nulla error
+            distinctio mollitia asperiores facilis illo exercitationem consequatur explicabo odit necessitatibus
+            repellat id magni cumque nihil reprehenderit possimus, qui laborum ullam. Laborum facilis iste architecto
+            ratione!</p>
+        <div>
+            <a href="#page3" class="btn btn-dark">
+                <i class="fas fa-arrow-circle-up"></i> Prev Page
+            </a>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('.btn').on('click', function (event) {
+            if (this.hash !== '') {
+                event.preventDefault();
+                const hash = this.hash;
+                $('html, body').animate(
+                    {
+                        scrollTop: $(hash).offset().top
+                    },
+                    800
+                );
+            }
+        });
+    </script>
+
+</body>
+
+</html>

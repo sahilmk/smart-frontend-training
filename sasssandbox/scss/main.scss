@@ -1,0 +1,86 @@
+@import '_variable.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    line-height: 2rem;
+}
+
+header {
+    h1 {
+        font-size: $fontsize;
+        color: steelblue;
+        margin-bottom: 2rem;
+    }
+}
+
+.b {
+    background-color: $bc;
+    color: $fc;
+    padding: 1rem;
+    margin: 1rem;
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    &1 {
+        @include co(aqua);
+    }
+
+    &2 {
+        color: brighness(black);
+    }
+
+    p {
+        margin-bottom: 0rem;
+    }
+}
+
+%ebtn {
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.btn {
+    @extend %ebtn;
+
+    &-red {
+        background-color: red;
+        color: white;
+    }
+
+    &-white {
+        background-color: white;
+        color: black;
+    }
+}
+
+@function brighness($color) {
+    @if (lightness($color) > 50) {
+        @return #000;
+    }
+
+    @else {
+        @return #fff;
+    }
+}
+
+@mixin co($color) {
+    color: $color;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline & Block</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .div{
+            background-color: lightgrey;
+            border: 5px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+           
+        }
+
+        div h2{
+            text-align: center;
+        }
+
+        div p{
+            text-align: justify;
+        }
+
+        #div1{
+            float:left;
+            width: 49%;
+        }
+        #div2{
+            float:right;
+            width: 49%;
+        }
+
+        #div3{
+            float: left;
+            width: 49%;
+        }
+        #div4{
+            float: right;
+            width: 49%;
+        }
+        .div1{
+            background-color: lightgrey;
+            border: 5px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+            width: 33.1%;
+        }
+        
+
+        .clr{
+            clear: both;
+        }
+
+        ul li{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div id="div1" class="div">
+            <h2>Bolck 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div id="div2" class="div">
+            <h2>Bolck 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div id="div3" class="div">
+            <h2>Bolck 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div id="div4" class="div">
+            <h2>Bolck 4</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div class="clr"></div>
+
+        <div id="div5" class="div">
+            <h2>Bolck 5</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div class="div1">
+            <h2>Bolck 6</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div class="div1">
+            <h2>Bolck 7</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <div class="div1">
+            <h2>Bolck 8</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque nemo, ullam impedit corrupti incidunt officiis maiores aliquid reprehenderit iure!</p>
+        </div>
+
+        <ul>
+            <li>Iteam 1</li>
+            <li>Iteam 2</li>
+            <li>Iteam 3</li>
+        </ul>
+
+    </div>
+</body>
+</html>

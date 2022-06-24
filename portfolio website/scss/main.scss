@@ -1,0 +1,398 @@
+@import 'var';
+@import 'utilities';
+@import 'item_grid';
+
+//General Styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background: #fff;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: $darkc;
+}
+
+ul {
+    list-style: none;
+}
+
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+img {
+    width: 100%;
+}
+
+// Header part
+#logo {
+    @include hw(50px, 50px);
+}
+
+#header {
+    background: $bgimage center center/cover no-repeat;
+    color: $lightc;
+    height: 100vh;
+
+    &__hcontant {
+        text-align: center;
+        padding-top: 20%;
+    }
+
+    &__nav {
+        @include flex(null, space-between);
+
+        ul {
+            @include flex(row);
+
+            li {
+                padding: 1rem;
+
+                a {
+                    color: $lightc;
+                    transition: border-color 0.5;
+                    padding-bottom: 0.5rem;
+
+                    &:hover {
+                        border-bottom: $lightc 3px solid;
+                    }
+
+                    &.current {
+                        border-bottom: $mainc 3px solid;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+#a {
+    text-align: center;
+    margin: 2rem 0;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    .parts {
+        @include gridre(columns, 4, 1rem);
+
+        i {
+            color: $mainc;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+#b {
+    text-align: center;
+    margin: 2rem;
+
+    .stats {
+        @include gridre(columns, 4);
+
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__number {
+            font-size: 1.5rem;
+        }
+
+
+        li {
+            line-height: 2;
+        }
+
+        div {
+            padding: 2rem;
+
+            &:nth-child(odd) {
+                background-color: $lightc;
+            }
+
+            &:nth-child(even) {
+                background-color: $mediumc;
+            }
+        }
+    }
+}
+
+#c {
+    text-align: center;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    .process {
+        @include gridre(columns, 4, 1rem);
+
+        &__icon {
+            text-align: center;
+            color: stc($darkc);
+            background-color: $darkc;
+            @include position(relative);
+            transition: all 1s;
+            border-radius: 50%;
+            padding: 2rem;
+            @include hw(70px, 70px);
+            line-height: 70px;
+
+            &:hover {
+                background-color: $mainc;
+                @include hw(90px, 90px);
+                line-height: 90px;
+
+                .process__step {
+                    background-color: $darkc;
+                    color: stc($darkc);
+                }
+            }
+        }
+
+        &__step {
+            text-align: center;
+            background-color: $mainc;
+            color: stc($mainc);
+            @include position(absolute, 0, 0);
+            transition: all 1s;
+            @include hw(15px, 15px);
+            line-height: 15px;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            padding: 1rem;
+        }
+    }
+
+}
+
+
+.mfooter {
+    background-color: $darkc;
+    color: $lightc;
+    height: 5rem;
+
+
+    &__social .fab {
+        text-align: center;
+        border: 1px solid #fff;
+        margin-right: 1rem;
+        border-radius: 50%;
+        @include hw(30px, 30px);
+        line-height: 30px;
+
+        &:hover {
+            background-color: $mainc;
+        }
+    }
+
+    &__contant {
+        @include flex(null, space-between, center);
+        text-align: center;
+        height: 5rem;
+    }
+}
+
+// About Page
+#aheader {
+    background: $bgimage center center/cover no-repeat;
+    color: $lightc;
+    height: 20%;
+    border-bottom: 2px $mainc solid;
+}
+
+.abouta {
+    text-align: center;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    &__info {
+        display: grid;
+        grid-template-areas:
+            'bimage bio bio'
+            'award-1 award-2 award-3';
+        grid-gap: 1rem;
+        padding: 1rem;
+    }
+
+    &__image {
+        grid-area: bimage;
+    }
+
+    &__bio {
+        grid-area: bio;
+        padding: 1rem;
+        border-left: 2px $mainc solid;
+    }
+
+    &__award-1 {
+        grid-area: award-1;
+    }
+
+    &__award-2 {
+        grid-area: award-2;
+    }
+
+    &__award-3 {
+        grid-area: award-3;
+    }
+
+    &__award-1 .fas,
+    &__award-2 .fas,
+    &__award-3 .fas {
+        color: $mainc;
+        margin-top: 1rem;
+    }
+}
+
+.aboutb {
+    h2 {
+        text-align: center;
+    }
+
+    &__progress {
+        background-color: $lightc;
+        overflow: hidden;
+        margin: 0.6rem 0;
+        border-radius: 6px;
+        height: 20px;
+
+        div {
+            text-align: center;
+            background-color: $mainc;
+            color: #fff;
+            height: 100%;
+            border-radius: 6px;
+        }
+    }
+}
+
+.aboutc {
+    .container {
+        @include gridre(columns, 4, 1rem);
+        padding: 3rem;
+
+        img {
+            width: 70%;
+        }
+    }
+}
+
+.aboutd {
+    text-align: center;
+    margin: 1rem 0;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    &__testimonials {
+        @include gridre(columns, 4, 5px);
+
+        div {
+            margin-bottom: 1rem 0;
+
+            p {
+                border: $darkc 1px solid;
+                padding: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                @include flex(null, center, center);
+
+                li {
+                    padding-right: 0.5rem;
+
+                    img {
+                        @include hw(50px, 50px);
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.contacta {
+    text-align: center;
+    margin: 1rem 0;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    &__textfields {
+        display: grid;
+        grid-template-areas:
+            'namei subjecti'
+            'emaili pnumberi'
+            'messi messi';
+        grid-gap: 1rem;
+    }
+
+    &__nameinput {
+        grid-area: namei;
+    }
+
+    &__subjectinput {
+        grid-area: subjecti;
+    }
+
+    &__emailinput {
+        grid-area: emaili;
+    }
+
+    &__phoneinput {
+        grid-area: pnumberi;
+    }
+
+    &__messageinput {
+        grid-area: messi;
+        height: 100px;
+    }
+
+    &__textinput {
+        padding: 1rem 1rem;
+    }
+
+    button[type="submit"] {
+        width: 50%;
+    }
+}
+
+.contactb {
+    text-align: center;
+    padding: 1rem 0;
+
+    &__contacti {
+        @include gridre(columns, 3);
+        text-align: center;
+    }
+
+}
+
+.contactc {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@import 'media';

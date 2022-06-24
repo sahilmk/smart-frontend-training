@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+head{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    line-height: 1.7em;
+}
+
+.primary-color{
+    color: red;
+}
+
+p{
+    padding-bottom: 10px;
+}
+
+.btn{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    font-size: 15px;
+    /* cursor:pointer; */
+}
+
+.btn:hover{
+    background-color: red;
+    color: white;
+}
+
+.btn-light{
+    background: white;
+    color: black;
+}
+
+.btn-light:hover{
+    background: red;
+    color: white;
+}
+
+.primary-bgc{
+    background-color: black;
+}
+
+.primary-bg{
+    color: white;
+    background-color: #f7c08a;
+}
+
+.dark-bg{
+    background-color: white;
+    color: #f7c08a;
+}
+
+.l-heading{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Styling for navbar */
+#navbar {
+    background-color: black;
+    overflow: auto;
+}
+
+#navbar h1{
+    float: left;
+}
+
+#navbar h1 a{
+    color: white;
+    display: block;
+    padding: 10px;
+}
+
+#navbar ul{
+    float: right;
+    font-weight: 500;
+}
+
+#navbar ul li{
+    float: left;
+    list-style: none;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 15px;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.current
+{
+    background-color: red;
+}
+
+/* Styling for showcase */
+#showcase{
+    background: url('../img/showcase.jpg') center center/cover no-repeat;
+    height: 600px;
+    /* background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+} 
+
+.showcase__showcase-content{
+    color: white;
+    text-align: center;
+    padding: 150px 100px;
+}
+
+.showcase__showcase-content h1{
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.showcase__showcase-content p{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hotel-info{
+    color: white;
+    height: 500px;
+}
+
+.hotel-info__info-img{
+    background: url('../img/photo-1.jpg');
+    float: left;
+    background-size: cover;
+    background-position: center center;
+    width: 50%;
+    min-height: 100%;
+}
+
+.hotel-info__info-contant{
+    float: right;
+    overflow: hidden;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    padding: 50px 30px;
+}
+
+.hotel-info__info-contant h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.hotel-info__info-contant p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Features */
+.febox{
+    text-align: center;
+    float: left;
+    width: 33.33%;
+    padding: 30px;
+}
+
+.febox h1{
+    margin-bottom: 10px;
+}
+
+.clear{
+    clear: both;
+}
+
+.info-sec{
+    overflow: auto;
+    background-color: rgb(240, 240, 240);
+}
+
+.info-sec__left-info{
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.info-sec__left-info h1{
+    padding-bottom: 20px;
+}
+
+.info-sec__right-info{
+    float: right;
+    width: 50%;
+    min-height: 100%;
+}
+
+.info-sec__right-info img{
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    width: 50%;
+}
+
+/* Testimonial */
+#testimonials{
+    background: url('../img/test-bg.jpg') center center/cover no-repeat;
+    height: 100%;
+    padding: 30px;
+}
+
+#testimonials h1{
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+#testimonials .testimonials__testimonial{
+    color: black;
+    overflow: auto;
+    padding: 30px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    opacity: 0.8;   
+}
+
+#testimonials .testimonials__testimonial img{
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Contact Us */
+#contact{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.contact__formgroup{
+    margin-bottom: 20px;
+}
+
+.contact__formgroup label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact__formgroup input,
+.contact__formgroup textarea{
+    width: 100%;
+    padding: 10px;
+}
+
+.contact__formgroup input:focus,
+.contact__formgroup textarea:focus{
+    outline: none;
+    border-color: red;
+    border-width: 1px;
+}
+
+.contact__formgroup textarea{
+    height: 200px;
+}
+
+/* Contact-info */
+#contact-info{
+    color: black;
+    overflow: auto;
+    background-color: rgb(200, 200, 200);
+}
+
+
+/* Fotter */
+#mf{
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+

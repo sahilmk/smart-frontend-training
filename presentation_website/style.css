@@ -1,0 +1,96 @@
+:root {
+    --page1-color: lightblue;
+    --page2-color: antiquewhite;
+    --page3-color: coral;
+    --page4-color: cadetblue;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+#page1 {
+    background-color: var(--page1-color);
+}
+
+#page2 {
+    background-color: var(--page2-color);
+}
+
+#page3 {
+    background-color: var(--page3-color);
+}
+
+#page4 {
+    background-color: var(--page4-color);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 0px 20px;
+
+}
+
+.page h2 {
+    font-size: 3rem;
+}
+
+.page p {
+    font-size: 1.3rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 2s;
+    color: #333;
+    margin-top: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+.btn:hover,
+.btn-dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Animation */
+#page1 h2 {
+    /* name duratino fill-mode */
+    transform: translateY(-1200px);
+    animation: ani1 2s forwards;
+}
+
+#page1 p {
+    /* name duratino fill-mode */
+    transform: translateX(-2000px);
+    animation: ani2 2s forwards 1s;
+}
+
+@keyframes ani1 {
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes ani2 {
+    to {
+        transform: translateX(0px);
+    }
+}
