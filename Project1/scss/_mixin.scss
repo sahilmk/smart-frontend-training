@@ -1,0 +1,13 @@
+@mixin focus {
+    &:focus {
+        border: 3px $bordercolor solid;
+        box-shadow: 2px 2px 2px lightblue, -2px -2px 2px lightblue;
+    }
+}
+
+@mixin contentcenter {
+    .top-left--m {
+        margin: auto;
+        width: 760px;
+    }
+}
