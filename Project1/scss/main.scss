@@ -5,8 +5,8 @@
 
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 ul {
@@ -25,8 +25,7 @@ a {
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 1.125rem;
 }
 
 body>:nth-child(2n+1) {
@@ -47,15 +46,16 @@ body>:nth-child(3) {
 
     h5 {
         color: $secondary;
-        font-weight: bold;
         margin-bottom: 1rem;
+        font-size: 1rem;
     }
 
     h1,
     h2 {
         color: $cool-black;
         margin-bottom: 1.25rem;
-        font-size: 3.25rem;
+        line-height: 4rem;
+        font-size: 3.125rem;
     }
 
     p {
@@ -70,7 +70,7 @@ body>:nth-child(3) {
         h5 {
             color: $secondary;
             margin-bottom: 1rem;
-            font-weight: 900;
+            font-size: 1rem;
         }
 
         h1,
@@ -78,6 +78,7 @@ body>:nth-child(3) {
             color: $cool-black;
             font-weight: bold;
             margin-bottom: 1.25rem;
+            line-height: 4rem;
             font-size: 3.125rem;
         }
 
@@ -93,11 +94,11 @@ body>:nth-child(3) {
 .button {
     @include border(0, none, 0.3rem);
     font-family: $secondary-font-family;
-    background-color: $secondary;
     color: $white;
+    background-color: $secondary;
     display: inline-block;
     padding: 1rem 2rem;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     font-weight: 800;
 
     //
@@ -118,7 +119,7 @@ body>:nth-child(3) {
 .contentcenter {
     .top-left--m {
         margin: auto;
-        width: 760px;
+        width: 47.5rem;
     }
 }
 
@@ -128,19 +129,18 @@ body>:nth-child(3) {
         border-bottom: 1px solid $lavender;
         justify-content: space-between;
         align-items: center;
-        font-size: 1rem;
         padding: 1rem;
+        font-size: 1rem;
     }
 
     &__contact {
         i {
-            color: $secondary;
             padding-right: 0.5rem;
+            color: $secondary;
         }
 
         span {
             color: $cool-black;
-            font-weight: 900;
         }
 
         &-social {
@@ -151,17 +151,17 @@ body>:nth-child(3) {
             i {
                 @include border(1px, $secondary, 0.5rem);
                 color: $secondary;
-                transition: all 0.5s;
                 text-align: center;
-                line-height: 2.3rem;
+                transition: all 0.5s;
                 margin-left: 0.7rem;
                 height: 2.3rem;
                 width: 2.3rem;
+                line-height: 2.3rem;
 
                 &:hover {
                     //
-                    background-color: $secondary;
                     color: $white;
+                    background-color: $secondary;
                 }
             }
         }
@@ -174,8 +174,8 @@ body>:nth-child(3) {
     background-color: $white;
     position: sticky;
     // box-shadow: 0px 2px 10px 1px rgb(230, 230, 230);
-    z-index: 10;
     top: 0;
+    z-index: 10;
 
     &__sticky {
         padding: 1.5rem;
@@ -206,7 +206,7 @@ body>:nth-child(3) {
             font-family: $secondary-font-family;
             font-weight: bold;
             padding-right: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1.125rem;
         }
     }
 
@@ -215,8 +215,8 @@ body>:nth-child(3) {
 
         &:hover {
             @include border(1px, $secondary, 0.3rem);
-            background-color: $white;
             color: $secondary;
+            background-color: $white;
         }
     }
 }
@@ -237,17 +237,22 @@ body>:nth-child(3) {
 
         span {
             color: $cool-black;
-            font-weight: 800;
             font-size: 1.5rem;
+            font-weight: 600;
         }
 
         .top-left {
             h1 {
-                font-size: 4.5rem;
+                line-height: 4.5rem;
+                font-size: 4.375rem;
             }
 
             p {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
+            }
+
+            h5 {
+                font-size: 1.125rem;
             }
         }
     }
@@ -266,8 +271,8 @@ body>:nth-child(3) {
     }
 
     img {
-        width: 33.75rem;
         height: 25rem;
+        width: 33.75rem;
     }
 
     &__list {
@@ -279,9 +284,9 @@ body>:nth-child(3) {
 
         li {
             color: $cool-black;
-            font-weight: bold;
             padding: 0.5rem 0;
-
+            font-size: 1.25rem;
+            font-weight: 500;
         }
 
         i {
@@ -304,10 +309,11 @@ body>:nth-child(3) {
 
         div {
             align-items: center;
-            padding: 1rem 0 2rem 0;
+            padding: 1rem 0 1rem 0;
         }
 
         h4 {
+            font-size: 1.75rem;
             color: $cool-black;
         }
 
@@ -340,8 +346,8 @@ body>:nth-child(3) {
 
         i {
             @include border(0, none, 50%);
-            background-color: $secondary;
             color: $white;
+            background-color: $secondary;
             padding: 1.75rem 1.8rem 1.75rem 2rem;
         }
     }
@@ -387,13 +393,14 @@ body>:nth-child(3) {
             p {
                 font-family: $secondary-font-family;
                 color: $ming;
-                line-height: 1.5rem;
                 margin-bottom: 1rem;
+                line-height: 1.5rem;
             }
 
             :nth-child(3) {
                 color: $carrot-orange;
-                margin-bottom: 3rem;
+                margin-bottom: 1.75rem;
+                font-size: 1rem;
             }
 
             h4,
@@ -402,12 +409,13 @@ body>:nth-child(3) {
             }
 
             h4 {
-                font-size: 1.5rem;
                 padding: 1rem 0;
+                font-size: 1.75rem;
             }
 
             h6 {
                 margin-bottom: 0.5rem;
+                font-size: 1rem;
             }
         }
     }
@@ -439,19 +447,20 @@ body>:nth-child(3) {
             padding: 3.75rem 0 2.5rem;
 
             img {
-                margin-bottom: 3rem;
                 height: 19.375rem;
                 width: 14.375rem;
+                margin-bottom: 3rem;
             }
 
             h4 {
-                color: $cool-black;
                 margin-bottom: 1rem;
+                color: $cool-black;
                 font-size: 1.75rem;
             }
 
             div {
                 color: $carrot-orange;
+                font-size: 1rem;
             }
 
             h5 {
@@ -466,8 +475,8 @@ body>:nth-child(3) {
         >a {
             i {
                 @include border(0, none, 0.25rem);
-                background-color: $white;
                 color: $secondary;
+                background-color: $white;
                 margin: 2rem 1rem 0 0;
                 padding: 1rem;
             }
@@ -485,6 +494,7 @@ body>:nth-child(3) {
         h3 {
             color: $cool-black;
             margin-bottom: 1rem;
+            font-size: 1.5625rem;
         }
 
         p {
@@ -501,27 +511,30 @@ body>:nth-child(3) {
     padding: 6rem 0 6.25rem;
 
     >div {
+        width: 47.5rem;
+        margin: auto;
+
         >div:last-child {
+            position: relative;
             justify-content: center;
             align-items: center;
-            position: relative;
 
             input {
                 @extend .focus;
                 @include border(1px, $lavender, 0);
                 outline: none;
-                padding: 1rem;
-                height: 4rem;
                 width: 100%;
+                height: 4rem;
+                padding: 1rem;
             }
 
             a {
                 @include border(0, none, 0);
                 position: absolute;
-                line-height: 2rem;
-                height: 3.8rem;
                 top: 0.1rem;
-                right: 0;
+                right: 0.1rem;
+                height: 3.8rem;
+                line-height: 2rem;
             }
         }
     }
@@ -531,8 +544,8 @@ body>:nth-child(3) {
     padding: 6.25rem 0 3.75rem;
 
     img {
-        width: 33.75rem;
         height: 38.8rem;
+        width: 33.75rem;
     }
 
     &__services {
@@ -540,6 +553,7 @@ body>:nth-child(3) {
         li {
             padding-bottom: 2rem;
             line-height: 2rem;
+            font-size: 1.75rem;
 
             >div {
                 padding: 0;
@@ -555,7 +569,7 @@ body>:nth-child(3) {
 
         span {
             color: $cool-black;
-            font-size: 1.4rem;
+            font-size: 1.375rem;
             font-weight: 500;
         }
     }
@@ -573,7 +587,7 @@ body>:nth-child(3) {
 
             h3 {
                 color: $cool-black;
-                font-size: 1.7rem;
+                font-size: 1.75rem;
             }
 
             span {
@@ -584,12 +598,12 @@ body>:nth-child(3) {
     }
 
     i {
-        background-color: $white;
         color: $secondary;
+        background-color: $white;
         text-align: center;
-        line-height: 5.5rem;
         height: 5.5rem;
         width: 5.5rem;
+        line-height: 5.5rem;
     }
 }
 
@@ -599,6 +613,7 @@ body>:nth-child(3) {
 
     label {
         color: $cool-black;
+        font-size: 1rem;
     }
 
     input {
@@ -606,16 +621,16 @@ body>:nth-child(3) {
         @include border(1px, $lavender, 0.25rem);
         display: block;
         outline: none;
-        margin-bottom: 1.5rem;
         height: 3.125rem;
-        padding: 1rem;
         width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
     }
 
     textarea {
         @extend input;
-        margin-bottom: 1rem;
         height: 12.5rem;
+        margin-bottom: 1rem;
     }
 
 
@@ -633,7 +648,7 @@ body>:nth-child(3) {
 
             i {
                 color: $secondary;
-                margin-bottom: 1rem;
+                margin-bottom: 1.25rem;
             }
 
             ul {
@@ -646,9 +661,10 @@ body>:nth-child(3) {
 .footer {
     span {
         font-family: $secondary-font-family;
-        text-align: center;
         display: block;
+        text-align: center;
         padding: 1.5rem 0;
+        font-size: 1rem;
 
         a {
             color: $secondary;
@@ -703,9 +719,9 @@ body>:nth-child(3) {
             input {
                 @include border(1px, $lavender, 3rem);
                 outline: none;
-                padding-left: 2rem;
                 height: 3.75rem;
                 width: 100%;
+                padding-left: 2rem;
 
                 &:focus {
                     border: 1px $lavender solid;
@@ -716,13 +732,14 @@ body>:nth-child(3) {
             .button {
                 @include border(0, none, 3rem);
                 position: absolute;
-                font-size: 1rem;
                 right: 1.2rem;
                 top: 0.2rem;
+                font-size: 1rem;
             }
 
             h3 {
                 margin-top: 2rem;
+                font-size: 1.25rem;
             }
 
             i {
@@ -735,6 +752,12 @@ body>:nth-child(3) {
             li {
                 a {
                     color: $cool-black;
+                }
+
+                &:first-child {
+                    i {
+                        padding: 1rem 1.25rem;
+                    }
                 }
             }
         }

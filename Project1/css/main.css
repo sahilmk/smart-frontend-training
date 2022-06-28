@@ -860,8 +860,8 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
 
 ul {
   list-style: none; }
@@ -876,8 +876,7 @@ a {
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 300; }
+  font-size: 1.125rem; }
 
 body > :nth-child(2n+1) {
   background-color: #f6f3ea; }
@@ -892,13 +891,14 @@ body > :nth-child(3) {
   margin-bottom: 4rem; }
   .top-left h5 {
     color: #fb4f31;
-    font-weight: bold;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    font-size: 1rem; }
   .top-left h1,
   .top-left h2 {
     color: #0c2461;
     margin-bottom: 1.25rem;
-    font-size: 3.25rem; }
+    line-height: 4rem;
+    font-size: 3.125rem; }
   .top-left p {
     font-family: "Barlow", sans-serif;
     color: #3c6382;
@@ -908,12 +908,13 @@ body > :nth-child(3) {
     .top-left--m h5 {
       color: #fb4f31;
       margin-bottom: 1rem;
-      font-weight: 900; }
+      font-size: 1rem; }
     .top-left--m h1,
     .top-left--m h2 {
       color: #0c2461;
       font-weight: bold;
       margin-bottom: 1.25rem;
+      line-height: 4rem;
       font-size: 3.125rem; }
     .top-left--m p {
       font-family: "Barlow", sans-serif;
@@ -925,11 +926,11 @@ body > :nth-child(3) {
   border: 0 none solid;
   border-radius: 0.3rem;
   font-family: "Barlow", sans-serif;
-  background-color: #fb4f31;
   color: #fff;
+  background-color: #fb4f31;
   display: inline-block;
   padding: 1rem 2rem;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   font-weight: 800; }
   .button-btn {
     cursor: pointer;
@@ -942,22 +943,21 @@ body > :nth-child(3) {
 
 .contentcenter .top-left--m, .testimonials .top-left--m, .product .top-left--m, .faq .top-left--m, .newsletter .top-left--m {
   margin: auto;
-  width: 760px; }
+  width: 47.5rem; }
 
 .header__top {
   border-bottom: 1px solid #e4f1fb;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
-  padding: 1rem; }
+  padding: 1rem;
+  font-size: 1rem; }
 
 .header__contact i {
-  color: #fb4f31;
-  padding-right: 0.5rem; }
+  padding-right: 0.5rem;
+  color: #fb4f31; }
 
 .header__contact span {
-  color: #0c2461;
-  font-weight: 900; }
+  color: #0c2461; }
 
 .header__contact-social ul {
   justify-content: flex-end; }
@@ -966,21 +966,21 @@ body > :nth-child(3) {
   border: 1px #fb4f31 solid;
   border-radius: 0.5rem;
   color: #fb4f31;
-  transition: all 0.5s;
   text-align: center;
-  line-height: 2.3rem;
+  transition: all 0.5s;
   margin-left: 0.7rem;
   height: 2.3rem;
-  width: 2.3rem; }
+  width: 2.3rem;
+  line-height: 2.3rem; }
   .header__contact-social i:hover {
-    background-color: #fb4f31;
-    color: #fff; }
+    color: #fff;
+    background-color: #fb4f31; }
 
 .nav {
   background-color: #fff;
   position: sticky;
-  z-index: 10;
-  top: 0; }
+  top: 0;
+  z-index: 10; }
   .nav__sticky {
     padding: 1.5rem; }
     .nav__sticky > div {
@@ -997,14 +997,14 @@ body > :nth-child(3) {
     font-family: "Barlow", sans-serif;
     font-weight: bold;
     padding-right: 1.5rem;
-    font-size: 1.1rem; }
+    font-size: 1.125rem; }
   .nav .button, .nav .button-btn {
     transition: all 0.5s; }
     .nav .button:hover, .nav .button-btn:hover {
       border: 1px #fb4f31 solid;
       border-radius: 0.3rem;
-      background-color: #fff;
-      color: #fb4f31; }
+      color: #fb4f31;
+      background-color: #fff; }
 
 .home {
   padding: 9.65rem 0; }
@@ -1016,12 +1016,15 @@ body > :nth-child(3) {
       margin-right: 1rem; }
     .home__content span {
       color: #0c2461;
-      font-weight: 800;
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      font-weight: 600; }
     .home__content .top-left h1 {
-      font-size: 4.5rem; }
+      line-height: 4.5rem;
+      font-size: 4.375rem; }
     .home__content .top-left p {
-      font-size: 1.5rem; }
+      font-size: 1.25rem; }
+    .home__content .top-left h5 {
+      font-size: 1.125rem; }
   .home img {
     height: 28.125rem;
     width: 28.125rem; }
@@ -1031,16 +1034,17 @@ body > :nth-child(3) {
   .about > div {
     align-items: center; }
   .about img {
-    width: 33.75rem;
-    height: 25rem; }
+    height: 25rem;
+    width: 33.75rem; }
   .about__list {
     margin-bottom: 2rem; }
     .about__list ul {
       padding: 0; }
     .about__list li {
       color: #0c2461;
-      font-weight: bold;
-      padding: 0.5rem 0; }
+      padding: 0.5rem 0;
+      font-size: 1.25rem;
+      font-weight: 500; }
     .about__list i {
       color: #fb4f31;
       margin-right: 0.5rem; }
@@ -1054,8 +1058,9 @@ body > :nth-child(3) {
     padding: 0 0 2rem 2rem; }
     .features > div > div:last-child div div {
       align-items: center;
-      padding: 1rem 0 2rem 0; }
+      padding: 1rem 0 1rem 0; }
     .features > div > div:last-child div h4 {
+      font-size: 1.75rem;
       color: #0c2461; }
     .features > div > div:last-child div p {
       font-family: "Barlow", sans-serif;
@@ -1079,8 +1084,8 @@ body > :nth-child(3) {
     .product-demo__image i {
       border: 0 none solid;
       border-radius: 50%;
-      background-color: #fb4f31;
       color: #fff;
+      background-color: #fb4f31;
       padding: 1.75rem 1.8rem 1.75rem 2rem; }
 
 .offer {
@@ -1111,19 +1116,21 @@ body > :nth-child(3) {
       .testimonials > div > div:nth-child(2) > div > div p {
         font-family: "Barlow", sans-serif;
         color: #3c6382;
-        line-height: 1.5rem;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        line-height: 1.5rem; }
       .testimonials > div > div:nth-child(2) > div > div :nth-child(3) {
-        color: #f0932b;
-        margin-bottom: 3rem; }
+        color: #ffb400;
+        margin-bottom: 1.75rem;
+        font-size: 1rem; }
       .testimonials > div > div:nth-child(2) > div > div h4,
       .testimonials > div > div:nth-child(2) > div > div h6 {
         color: #0c2461; }
       .testimonials > div > div:nth-child(2) > div > div h4 {
-        font-size: 1.5rem;
-        padding: 1rem 0; }
+        padding: 1rem 0;
+        font-size: 1.75rem; }
       .testimonials > div > div:nth-child(2) > div > div h6 {
-        margin-bottom: 0.5rem; }
+        margin-bottom: 0.5rem;
+        font-size: 1rem; }
   .testimonials > div > div:last-child {
     justify-content: center;
     margin-top: 2rem; }
@@ -1142,15 +1149,16 @@ body > :nth-child(3) {
       background-color: #fff;
       padding: 3.75rem 0 2.5rem; }
       .product > div > div:nth-child(2) > div > div img {
-        margin-bottom: 3rem;
         height: 19.375rem;
-        width: 14.375rem; }
+        width: 14.375rem;
+        margin-bottom: 3rem; }
       .product > div > div:nth-child(2) > div > div h4 {
-        color: #0c2461;
         margin-bottom: 1rem;
+        color: #0c2461;
         font-size: 1.75rem; }
       .product > div > div:nth-child(2) > div > div div {
-        color: #f0932b; }
+        color: #ffb400;
+        font-size: 1rem; }
       .product > div > div:nth-child(2) > div > div h5 {
         color: #3b04db;
         margin: 1rem 0 2rem;
@@ -1158,8 +1166,8 @@ body > :nth-child(3) {
   .product > div > a i {
     border: 0 none solid;
     border-radius: 0.25rem;
-    background-color: #fff;
     color: #fb4f31;
+    background-color: #fff;
     margin: 2rem 1rem 0 0;
     padding: 1rem; }
 
@@ -1169,7 +1177,8 @@ body > :nth-child(3) {
     padding: 1rem 1rem; }
     .faq > div > div:last-child > div h3 {
       color: #0c2461;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-size: 1.5625rem; }
     .faq > div > div:last-child > div p {
       font-family: "Barlow", sans-serif;
       color: #3c6382;
@@ -1178,34 +1187,38 @@ body > :nth-child(3) {
 
 .newsletter {
   padding: 6rem 0 6.25rem; }
-  .newsletter > div > div:last-child {
-    justify-content: center;
-    align-items: center;
-    position: relative; }
-    .newsletter > div > div:last-child input, .newsletter > div > div:last-child .contact textarea, .contact .newsletter > div > div:last-child textarea {
-      border: 1px #e4f1fb solid;
-      border-radius: 0;
-      outline: none;
-      padding: 1rem;
-      height: 4rem;
-      width: 100%; }
-    .newsletter > div > div:last-child a {
-      border: 0 none solid;
-      border-radius: 0;
-      position: absolute;
-      line-height: 2rem;
-      height: 3.8rem;
-      top: 0.1rem;
-      right: 0; }
+  .newsletter > div {
+    width: 47.5rem;
+    margin: auto; }
+    .newsletter > div > div:last-child {
+      position: relative;
+      justify-content: center;
+      align-items: center; }
+      .newsletter > div > div:last-child input, .newsletter > div > div:last-child .contact textarea, .contact .newsletter > div > div:last-child textarea {
+        border: 1px #e4f1fb solid;
+        border-radius: 0;
+        outline: none;
+        width: 100%;
+        height: 4rem;
+        padding: 1rem; }
+      .newsletter > div > div:last-child a {
+        border: 0 none solid;
+        border-radius: 0;
+        position: absolute;
+        top: 0.1rem;
+        right: 0.1rem;
+        height: 3.8rem;
+        line-height: 2rem; }
 
 .ourproduct {
   padding: 6.25rem 0 3.75rem; }
   .ourproduct img {
-    width: 33.75rem;
-    height: 38.8rem; }
+    height: 38.8rem;
+    width: 33.75rem; }
   .ourproduct__services li {
     padding-bottom: 2rem;
-    line-height: 2rem; }
+    line-height: 2rem;
+    font-size: 1.75rem; }
     .ourproduct__services li > div {
       padding: 0; }
   .ourproduct__services i {
@@ -1214,7 +1227,7 @@ body > :nth-child(3) {
     margin-right: 1rem; }
   .ourproduct__services span {
     color: #0c2461;
-    font-size: 1.4rem;
+    font-size: 1.375rem;
     font-weight: 500; }
 
 .icon {
@@ -1226,34 +1239,35 @@ body > :nth-child(3) {
       line-height: 2rem; }
       .icon > div > div > div > div > div h3 {
         color: #0c2461;
-        font-size: 1.7rem; }
+        font-size: 1.75rem; }
       .icon > div > div > div > div > div span {
         font-family: "Barlow", sans-serif;
         color: #3c6382; }
   .icon i {
-    background-color: #fff;
     color: #fb4f31;
+    background-color: #fff;
     text-align: center;
-    line-height: 5.5rem;
     height: 5.5rem;
-    width: 5.5rem; }
+    width: 5.5rem;
+    line-height: 5.5rem; }
 
 .contact {
   padding: 6rem 0 5rem; }
   .contact label {
-    color: #0c2461; }
+    color: #0c2461;
+    font-size: 1rem; }
   .contact input, .contact textarea {
     border: 1px #e4f1fb solid;
     border-radius: 0.25rem;
     display: block;
     outline: none;
-    margin-bottom: 1.5rem;
     height: 3.125rem;
-    padding: 1rem;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 1rem; }
   .contact textarea {
-    margin-bottom: 1rem;
-    height: 12.5rem; }
+    height: 12.5rem;
+    margin-bottom: 1rem; }
   .contact__flex > div > div:last-child > div {
     padding-bottom: 3rem; }
     .contact__flex > div > div:last-child > div li {
@@ -1261,15 +1275,16 @@ body > :nth-child(3) {
       padding-bottom: 0.5rem; }
   .contact__flex > div > div:last-child i {
     color: #fb4f31;
-    margin-bottom: 1rem; }
+    margin-bottom: 1.25rem; }
   .contact__flex > div > div:last-child ul {
     color: #3c6382; }
 
 .footer span {
   font-family: "Barlow", sans-serif;
-  text-align: center;
   display: block;
-  padding: 1.5rem 0; }
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1rem; }
   .footer span a {
     color: #fb4f31; }
 
@@ -1302,9 +1317,9 @@ body > :nth-child(3) {
       border: 1px #e4f1fb solid;
       border-radius: 3rem;
       outline: none;
-      padding-left: 2rem;
       height: 3.75rem;
-      width: 100%; }
+      width: 100%;
+      padding-left: 2rem; }
       .footer__container div:last-child input:focus, .footer__container div:last-child .contact textarea:focus, .contact .footer__container div:last-child textarea:focus {
         border: 1px #e4f1fb solid;
         box-shadow: 2px 2px 2px lightblue, -2px -2px 2px lightblue; }
@@ -1312,11 +1327,12 @@ body > :nth-child(3) {
       border: 0 none solid;
       border-radius: 3rem;
       position: absolute;
-      font-size: 1rem;
       right: 1.2rem;
-      top: 0.2rem; }
+      top: 0.2rem;
+      font-size: 1rem; }
     .footer__container div:last-child h3 {
-      margin-top: 2rem; }
+      margin-top: 2rem;
+      font-size: 1.25rem; }
     .footer__container div:last-child i {
       border: 0 none solid;
       border-radius: 50%;
@@ -1325,3 +1341,5 @@ body > :nth-child(3) {
       padding: 1rem; }
     .footer__container div:last-child li a {
       color: #0c2461; }
+    .footer__container div:last-child li:first-child i {
+      padding: 1rem 1.25rem; }
