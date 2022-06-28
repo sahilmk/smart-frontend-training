@@ -20,7 +20,7 @@ a {
 .container {
     position: relative;
     margin: auto;
-    width: 1140px;
+    width: 71.25rem;
 }
 
 body {
@@ -34,7 +34,7 @@ body>:nth-child(2n+1) {
 }
 
 body>:nth-child(1) {
-    background-color: #fff;
+    background-color: $white;
 }
 
 body>:nth-child(3) {
@@ -43,6 +43,7 @@ body>:nth-child(3) {
 
 //Global or utility classes
 .top-left {
+    margin-bottom: 4rem;
 
     h5 {
         color: $secondary;
@@ -52,19 +53,18 @@ body>:nth-child(3) {
 
     h1,
     h2 {
-        color: $thirdcolor;
+        color: $cool-black;
         margin-bottom: 1.25rem;
         font-size: 3.25rem;
     }
 
     p {
-        color: $fourthcolor;
-        margin-bottom: 4rem;
+        font-family: $secondary-font-family;
+        color: $ming;
         line-height: 2rem;
     }
 
     &--m {
-        //
         text-align: center;
 
         h5 {
@@ -75,14 +75,15 @@ body>:nth-child(3) {
 
         h1,
         h2 {
-            color: $thirdcolor;
+            color: $cool-black;
             font-weight: bold;
             margin-bottom: 1.25rem;
             font-size: 3.125rem;
         }
 
         p {
-            color: $fourthcolor;
+            font-family: $secondary-font-family;
+            color: $ming;
             margin-bottom: 4rem;
             line-height: 2rem;
         }
@@ -90,11 +91,11 @@ body>:nth-child(3) {
 }
 
 .button {
-    font-family: 'Barlow', sans-serif;
-    background-color: #ff6348;
+    @include border(0, none, 0.3rem);
+    font-family: $secondary-font-family;
+    background-color: $secondary;
+    color: $white;
     display: inline-block;
-    color: #fff;
-    border-radius: 0.3rem;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 800;
@@ -107,12 +108,26 @@ body>:nth-child(3) {
     }
 }
 
+.focus {
+    &:focus {
+        @include border(3px, $lavender, 0);
+        box-shadow: 2px 2px 2px lightblue, -2px -2px 2px lightblue;
+    }
+}
+
+.contentcenter {
+    .top-left--m {
+        margin: auto;
+        width: 760px;
+    }
+}
+
 .header {
 
     &__top {
+        border-bottom: 1px solid $lavender;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid $bordercolor;
         font-size: 1rem;
         padding: 1rem;
     }
@@ -124,21 +139,20 @@ body>:nth-child(3) {
         }
 
         span {
-            color: $thirdcolor;
+            color: $cool-black;
             font-weight: 900;
         }
 
-        &-icon {
+        &-social {
             ul {
-                margin-left: 3.3rem;
+                justify-content: flex-end;
             }
 
             i {
+                @include border(1px, $secondary, 0.5rem);
                 color: $secondary;
-                transition: color, background-color 0.5s;
-                border: 1px solid $secondary;
+                transition: all 0.5s;
                 text-align: center;
-                border-radius: 0.5rem;
                 line-height: 2.3rem;
                 margin-left: 0.7rem;
                 height: 2.3rem;
@@ -147,7 +161,7 @@ body>:nth-child(3) {
                 &:hover {
                     //
                     background-color: $secondary;
-                    color: #fff;
+                    color: $white;
                 }
             }
         }
@@ -157,35 +171,52 @@ body>:nth-child(3) {
 }
 
 .nav {
-    background-color: #fff;
+    background-color: $white;
     position: sticky;
-    box-shadow: 0px 2px 10px 1px rgb(230, 230, 230);
+    // box-shadow: 0px 2px 10px 1px rgb(230, 230, 230);
     z-index: 10;
     top: 0;
 
-    &__navbar {
+    &__sticky {
         padding: 1.5rem;
 
         >div {
-            justify-content: space-between;
             align-items: center;
+        }
+
+        >div>div:last-child {
+            text-align: end;
         }
     }
 
     &__pages {
         a {
-            color: #000;
+            color: #130f40;
 
             &:hover {
-                //
                 color: $secondary;
             }
         }
 
+        ul {
+            justify-content: center;
+        }
+
         li {
+            font-family: $secondary-font-family;
             font-weight: bold;
             padding-right: 1.5rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    .button {
+        transition: all 0.5s;
+
+        &:hover {
+            @include border(1px, $secondary, 0.3rem);
+            background-color: $white;
+            color: $secondary;
         }
     }
 }
@@ -205,7 +236,7 @@ body>:nth-child(3) {
         }
 
         span {
-            color: $thirdcolor;
+            color: $cool-black;
             font-weight: 800;
             font-size: 1.5rem;
         }
@@ -221,9 +252,9 @@ body>:nth-child(3) {
         }
     }
 
-    &__image {
-        height: 450px;
-        width: 450px;
+    img {
+        height: 28.125rem;
+        width: 28.125rem;
     }
 }
 
@@ -235,15 +266,19 @@ body>:nth-child(3) {
     }
 
     img {
-        height: 400px;
-        width: 540px;
+        width: 33.75rem;
+        height: 25rem;
     }
 
     &__list {
         margin-bottom: 2rem;
 
+        ul {
+            padding: 0;
+        }
+
         li {
-            color: $thirdcolor;
+            color: $cool-black;
             font-weight: bold;
             padding: 0.5rem 0;
 
@@ -261,10 +296,10 @@ body>:nth-child(3) {
 
     .top-left--m {
         margin: auto;
-        width: 750px;
+        width: 46.87rem;
     }
 
-    &__description {
+    >div>div:last-child div {
         padding: 0 0 2rem 2rem;
 
         div {
@@ -273,11 +308,12 @@ body>:nth-child(3) {
         }
 
         h4 {
-            color: $thirdcolor;
+            color: $cool-black;
         }
 
         p {
-            color: $fourthcolor;
+            font-family: $secondary-font-family;
+            color: $ming;
             line-height: 2rem;
         }
     }
@@ -294,19 +330,19 @@ body>:nth-child(3) {
 
     .top-left--m {
         margin: auto;
-        width: 750px;
+        width: 46.87rem;
     }
 
     &__image {
+        @include border(0, none, 0.75rem);
         background: url('../img/watch-img-2.jpg') center center/cover no-repeat;
-        border-radius: 0.75rem;
         padding: 12.5rem 0rem;
 
         i {
+            @include border(0, none, 50%);
             background-color: $secondary;
-            color: #fff;
+            color: $white;
             padding: 1.75rem 1.8rem 1.75rem 2rem;
-            border-radius: 50%;
         }
     }
 }
@@ -314,29 +350,31 @@ body>:nth-child(3) {
 .offer {
     padding: 6rem 0;
 
-    &__image {
+    >div {
+        align-items: center;
+    }
+
+    img {
         height: 18.75rem;
         width: 33.75rem;
     }
 }
 
 .testimonials {
+    @extend .contentcenter;
     padding: 6rem 0 9.68rem;
 
-    @include contentcenter;
-
-    &__card {
+    >div>div:nth-child(2)>div {
         text-align: center;
-        padding-right: 0.5rem;
         padding: 0;
+        padding-right: 0.5rem;
 
         >div {
-            border: 2px solid $bordercolor;
-            border-radius: 1rem;
+            @include border(2px, $lavender, 1rem);
             padding: 2rem 1rem;
 
             img {
-                border-radius: 50%;
+                @include border(0, none, 50%);
                 height: 6.25rem;
                 width: 6.25rem;
             }
@@ -347,19 +385,20 @@ body>:nth-child(3) {
             }
 
             p {
-                color: $fourthcolor;
+                font-family: $secondary-font-family;
+                color: $ming;
                 line-height: 1.5rem;
                 margin-bottom: 1rem;
             }
 
             :nth-child(3) {
-                color: $starcolor;
+                color: $carrot-orange;
                 margin-bottom: 3rem;
             }
 
             h4,
             h6 {
-                color: $thirdcolor;
+                color: $cool-black;
             }
 
             h4 {
@@ -386,19 +425,18 @@ body>:nth-child(3) {
 }
 
 .product {
+    @extend .contentcenter;
     text-align: center;
     padding: 6rem 0 6.25rem;
 
-    @include contentcenter;
-
-    &__card {
-        padding-right: 0.5rem;
+    >div>div:nth-child(2)>div {
         padding: 0;
+        padding-right: 0.5rem;
 
         >div {
-            background-color: #fff;
+            @include border(0, none, 1rem);
+            background-color: $white;
             padding: 3.75rem 0 2.5rem;
-            border-radius: 1rem;
 
             img {
                 margin-bottom: 3rem;
@@ -407,17 +445,17 @@ body>:nth-child(3) {
             }
 
             h4 {
-                color: $thirdcolor;
+                color: $cool-black;
                 margin-bottom: 1rem;
                 font-size: 1.75rem;
             }
 
             div {
-                color: $starcolor;
+                color: $carrot-orange;
             }
 
             h5 {
-                color: $pricecolor;
+                color: #3b04db;
                 margin: 1rem 0 2rem;
                 font-size: 1.25rem;
             }
@@ -427,9 +465,9 @@ body>:nth-child(3) {
     >div {
         >a {
             i {
+                @include border(0, none, 0.25rem);
+                background-color: $white;
                 color: $secondary;
-                background-color: #fff;
-                border-radius: 0.25rem;
                 margin: 2rem 1rem 0 0;
                 padding: 1rem;
             }
@@ -438,20 +476,20 @@ body>:nth-child(3) {
 }
 
 .faq {
+    @extend .contentcenter;
     padding: 6rem 0 4.1rem;
 
-    @include contentcenter;
-
-    &__question {
+    >div>div:last-child>div {
         padding: 1rem 1rem;
 
         h3 {
-            color: $thirdcolor;
+            color: $cool-black;
             margin-bottom: 1rem;
         }
 
         p {
-            color: $fourthcolor;
+            font-family: $secondary-font-family;
+            color: $ming;
             margin-bottom: 1rem;
             line-height: 2rem;
         }
@@ -459,9 +497,8 @@ body>:nth-child(3) {
 }
 
 .newsletter {
+    @extend .contentcenter;
     padding: 6rem 0 6.25rem;
-
-    @include contentcenter;
 
     >div {
         >div:last-child {
@@ -470,19 +507,18 @@ body>:nth-child(3) {
             position: relative;
 
             input {
+                @extend .focus;
+                @include border(1px, $lavender, 0);
                 outline: none;
-                border: 1px $bordercolor solid;
                 padding: 1rem;
                 height: 4rem;
                 width: 100%;
-
-                @include focus;
             }
 
             a {
+                @include border(0, none, 0);
                 position: absolute;
                 line-height: 2rem;
-                border-radius: 0;
                 height: 3.8rem;
                 top: 0.1rem;
                 right: 0;
@@ -518,7 +554,7 @@ body>:nth-child(3) {
         }
 
         span {
-            color: $thirdcolor;
+            color: $cool-black;
             font-size: 1.4rem;
             font-weight: 500;
         }
@@ -528,7 +564,7 @@ body>:nth-child(3) {
 .icon {
     padding: 7rem 0;
 
-    &__content {
+    >div>div>div>div {
         align-items: center;
 
         >div {
@@ -536,20 +572,21 @@ body>:nth-child(3) {
             line-height: 2rem;
 
             h3 {
-                color: $thirdcolor;
+                color: $cool-black;
                 font-size: 1.7rem;
             }
 
             span {
-                color: $fourthcolor;
+                font-family: $secondary-font-family;
+                color: $ming;
             }
         }
     }
 
     i {
-        background-color: #fff;
+        background-color: $white;
+        color: $secondary;
         text-align: center;
-        color: #ff6348;
         line-height: 5.5rem;
         height: 5.5rem;
         width: 5.5rem;
@@ -561,36 +598,35 @@ body>:nth-child(3) {
 
 
     label {
-        color: $thirdcolor;
+        color: $cool-black;
     }
 
     input {
+        @extend .focus;
+        @include border(1px, $lavender, 0.25rem);
         display: block;
         outline: none;
-        border: 1px $bordercolor solid;
-        border-radius: 0.25rem;
         margin-bottom: 1.5rem;
         height: 3.125rem;
         padding: 1rem;
         width: 100%;
-
-        @include focus;
     }
 
     textarea {
         @extend input;
-        height: 12.5rem;
         margin-bottom: 1rem;
+        height: 12.5rem;
     }
 
 
 
     &__flex {
-        >div:last-child {
+        >div>div:last-child {
             >div {
                 padding-bottom: 3rem;
 
                 li {
+                    font-family: $secondary-font-family;
                     padding-bottom: 0.5rem;
                 }
             }
@@ -601,7 +637,7 @@ body>:nth-child(3) {
             }
 
             ul {
-                color: $fourthcolor;
+                color: $ming;
             }
         }
     }
@@ -609,6 +645,7 @@ body>:nth-child(3) {
 
 .footer {
     span {
+        font-family: $secondary-font-family;
         text-align: center;
         display: block;
         padding: 1.5rem 0;
@@ -619,11 +656,13 @@ body>:nth-child(3) {
     }
 
     &__container {
-        color: $footertext;
+        color: $cool-black;
         border-bottom: 1px gray solid;
         padding: 5.6rem 0 4rem;
 
         div:first-child {
+            font-family: $secondary-font-family;
+
             p {
                 line-height: 1.5rem;
             }
@@ -634,22 +673,26 @@ body>:nth-child(3) {
         }
 
         div:nth-child(2) {
+            font-family: $secondary-font-family;
+
             li {
                 margin-bottom: 1.5rem;
             }
 
             a {
-                color: $footertext;
+                color: $cool-black;
             }
         }
 
         div:nth-child(3) {
+            font-family: $secondary-font-family;
+
             li {
                 margin-bottom: 1.5rem;
             }
 
             a {
-                color: $footertext;
+                color: $cool-black;
             }
         }
 
@@ -658,19 +701,22 @@ body>:nth-child(3) {
             padding: 0 1rem;
 
             input {
+                @include border(1px, $lavender, 3rem);
                 outline: none;
-                border: 1px $bordercolor solid;
-                border-radius: 3rem;
                 padding-left: 2rem;
                 height: 3.75rem;
                 width: 100%;
 
-                @include focus;
+                &:focus {
+                    border: 1px $lavender solid;
+                    box-shadow: 2px 2px 2px lightblue, -2px -2px 2px lightblue;
+                }
             }
 
             .button {
+                @include border(0, none, 3rem);
                 position: absolute;
-                border-radius: 3rem;
+                font-size: 1rem;
                 right: 1.2rem;
                 top: 0.2rem;
             }
@@ -680,15 +726,15 @@ body>:nth-child(3) {
             }
 
             i {
-                background-color: #fff;
+                @include border(0, none, 50%);
+                background-color: $white;
                 margin: 1rem 1rem 0 0;
-                border-radius: 50%;
                 padding: 1rem;
             }
 
             li {
                 a {
-                    color: $footertext;
+                    color: $cool-black;
                 }
             }
         }
