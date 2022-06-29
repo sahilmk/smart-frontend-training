@@ -473,6 +473,8 @@ body>:nth-child(3) {
 
     >div {
         >a {
+            display: inline-block;
+
             i {
                 @include border(0, none, 0.25rem);
                 color: $secondary;
