@@ -1,4 +1,7 @@
 @import 'common-flex-base';
+@import 'variable';
+@import 'mixin';
+
 
 * {
     box-sizing: border-box;
@@ -10,7 +13,755 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
-    width: 1140px;
+    position: relative;
     margin: auto;
+    width: 71.25rem;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.125rem;
+}
+
+body>:nth-child(2n+1) {
+    background-color: $primary;
+}
+
+body>:nth-child(1) {
+    background-color: $white;
+}
+
+body>:nth-child(3) {
+    background-color: #fbd7b5;
+}
+
+//Global or utility classes
+.top-left {
+    margin-bottom: 4rem;
+
+    h5 {
+        color: $secondary;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    h1,
+    h2 {
+        color: $cool-black;
+        margin-bottom: 1.25rem;
+        line-height: 4rem;
+        font-size: 3.125rem;
+    }
+
+    p {
+        font-family: $secondary-font-family;
+        color: $ming;
+        line-height: 2rem;
+    }
+
+    &--m {
+        text-align: center;
+
+        h5 {
+            color: $secondary;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        h1,
+        h2 {
+            color: $cool-black;
+            font-weight: bold;
+            margin-bottom: 1.25rem;
+            line-height: 4rem;
+            font-size: 3.125rem;
+        }
+
+        p {
+            font-family: $secondary-font-family;
+            color: $ming;
+            margin-bottom: 4rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.button {
+    @include border(0, none, 0.3rem);
+    font-family: $secondary-font-family;
+    color: $white;
+    background-color: $secondary;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 800;
+
+    //
+    &-btn {
+        @extend .button;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+.focus {
+    &:focus {
+        @include border(3px, $lavender, 0);
+        box-shadow: 2px 2px 2px lightblue, -2px -2px 2px lightblue;
+    }
+}
+
+.contentcenter {
+    .top-left--m {
+        margin: auto;
+        width: 47.5rem;
+    }
+}
+
+.header {
+
+    &__top {
+        border-bottom: 1px solid $lavender;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    &__contact {
+        i {
+            padding-right: 0.5rem;
+            color: $secondary;
+        }
+
+        span {
+            color: $cool-black;
+        }
+
+        &-social {
+            ul {
+                justify-content: flex-end;
+            }
+
+            i {
+                @include border(1px, $secondary, 0.5rem);
+                color: $secondary;
+                text-align: center;
+                transition: all 0.5s;
+                margin-left: 0.7rem;
+                height: 2.3rem;
+                width: 2.3rem;
+                line-height: 2.3rem;
+
+                &:hover {
+                    //
+                    color: $white;
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+
+
+}
+
+.nav {
+    background-color: $white;
+    position: sticky;
+    // box-shadow: 0px 2px 10px 1px rgb(230, 230, 230);
+    top: 0;
+    z-index: 10;
+
+    &__sticky {
+        padding: 1.5rem;
+
+        >div {
+            align-items: center;
+        }
+
+        >div>div:last-child {
+            text-align: end;
+        }
+    }
+
+    &__pages {
+        a {
+            color: #130f40;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        ul {
+            justify-content: center;
+        }
+
+        li {
+            font-family: $secondary-font-family;
+            font-weight: bold;
+            padding-right: 1.5rem;
+            font-size: 1.125rem;
+        }
+    }
+
+    .button {
+        transition: all 0.5s;
+
+        &:hover {
+            @include border(1px, $secondary, 0.3rem);
+            color: $secondary;
+            background-color: $white;
+        }
+    }
+}
+
+.home {
+    padding: 9.65rem 0;
+
+    >div {
+        align-items: center;
+    }
+
+    &__content {
+        padding-right: 5rem;
+
+        a {
+            margin-right: 1rem;
+        }
+
+        span {
+            color: $cool-black;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .top-left {
+            h1 {
+                line-height: 4.5rem;
+                font-size: 4.375rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+
+            h5 {
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    img {
+        height: 28.125rem;
+        width: 28.125rem;
+    }
+}
+
+.about {
+    padding: 6rem 0;
+
+    >div {
+        align-items: center;
+    }
+
+    img {
+        height: 25rem;
+        width: 33.75rem;
+    }
+
+    &__list {
+        margin-bottom: 2rem;
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            color: $cool-black;
+            padding: 0.5rem 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        i {
+            color: $secondary;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.features {
+    padding: 6rem 0 3rem;
+
+    .top-left--m {
+        margin: auto;
+        width: 46.87rem;
+    }
+
+    >div>div:last-child div {
+        padding: 0 0 2rem 2rem;
+
+        div {
+            align-items: center;
+            padding: 1rem 0 1rem 0;
+        }
+
+        h4 {
+            font-size: 1.75rem;
+            color: $cool-black;
+        }
+
+        p {
+            font-family: $secondary-font-family;
+            color: $ming;
+            line-height: 2rem;
+        }
+    }
+
+    i {
+        color: $secondary;
+        margin-right: 1rem;
+    }
+}
+
+.product-demo {
+    text-align: center;
+    padding: 6rem 0 6.25rem;
+
+    .top-left--m {
+        margin: auto;
+        width: 46.87rem;
+    }
+
+    &__image {
+        @include border(0, none, 0.75rem);
+        background: url('../img/watch-img-2.jpg') center center/cover no-repeat;
+        padding: 12.5rem 0rem;
+
+        i {
+            @include border(0, none, 50%);
+            color: $white;
+            background-color: $secondary;
+            padding: 1.75rem 1.8rem 1.75rem 2rem;
+        }
+    }
+}
+
+.offer {
+    padding: 6rem 0;
+
+    >div {
+        align-items: center;
+    }
+
+    img {
+        height: 18.75rem;
+        width: 33.75rem;
+    }
+}
+
+.testimonials {
+    @extend .contentcenter;
+    padding: 6rem 0 9.68rem;
+
+    >div>div:nth-child(2)>div {
+        text-align: center;
+        padding: 0;
+        padding-right: 0.5rem;
+
+        >div {
+            @include border(2px, $lavender, 1rem);
+            padding: 2rem 1rem;
+
+            img {
+                @include border(0, none, 50%);
+                height: 6.25rem;
+                width: 6.25rem;
+            }
+
+            //
+            >:first-child {
+                color: $secondary;
+            }
+
+            p {
+                font-family: $secondary-font-family;
+                color: $ming;
+                margin-bottom: 1rem;
+                line-height: 1.5rem;
+            }
+
+            :nth-child(3) {
+                color: $carrot-orange;
+                margin-bottom: 1.75rem;
+                font-size: 1rem;
+            }
+
+            h4,
+            h6 {
+                color: $cool-black;
+            }
+
+            h4 {
+                padding: 1rem 0;
+                font-size: 1.75rem;
+            }
+
+            h6 {
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    >div {
+        >div:last-child {
+            justify-content: center;
+            margin-top: 2rem;
+
+            i {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
+
+.product {
+    @extend .contentcenter;
+    text-align: center;
+    padding: 6rem 0 6.25rem;
+
+    >div>div:nth-child(2)>div {
+        padding: 0;
+        padding-right: 0.5rem;
+
+        >div {
+            @include border(0, none, 1rem);
+            background-color: $white;
+            padding: 3.75rem 0 2.5rem;
+
+            img {
+                height: 19.375rem;
+                width: 14.375rem;
+                margin-bottom: 3rem;
+            }
+
+            h4 {
+                margin-bottom: 1rem;
+                color: $cool-black;
+                font-size: 1.75rem;
+            }
+
+            div {
+                color: $carrot-orange;
+                font-size: 1rem;
+            }
+
+            h5 {
+                color: #3b04db;
+                margin: 1rem 0 2rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    >div {
+        >a {
+            display: inline-block;
+
+            i {
+                @include border(0, none, 0.25rem);
+                color: $secondary;
+                background-color: $white;
+                margin: 2rem 1rem 0 0;
+                padding: 1rem;
+            }
+        }
+    }
+}
+
+.faq {
+    @extend .contentcenter;
+    padding: 6rem 0 4.1rem;
+
+    >div>div:last-child>div {
+        padding: 1rem 1rem;
+
+        h3 {
+            color: $cool-black;
+            margin-bottom: 1rem;
+            font-size: 1.5625rem;
+        }
+
+        p {
+            font-family: $secondary-font-family;
+            color: $ming;
+            margin-bottom: 1rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.newsletter {
+    @extend .contentcenter;
+    padding: 6rem 0 6.25rem;
+
+    >div {
+        width: 47.5rem;
+        margin: auto;
+
+        >div:last-child {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                @extend .focus;
+                @include border(1px, $lavender, 0);
+                outline: none;
+                width: 100%;
+                height: 4rem;
+                padding: 1rem;
+            }
+
+            a {
+                @include border(0, none, 0);
+                position: absolute;
+                top: 0.1rem;
+                right: 0.1rem;
+                height: 3.8rem;
+                line-height: 2rem;
+            }
+        }
+    }
+}
+
+.ourproduct {
+    padding: 6.25rem 0 3.75rem;
+
+    img {
+        height: 38.8rem;
+        width: 33.75rem;
+    }
+
+    &__services {
+
+        li {
+            padding-bottom: 2rem;
+            line-height: 2rem;
+            font-size: 1.75rem;
+
+            >div {
+                padding: 0;
+            }
+
+        }
+
+        i {
+            color: $secondary;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        span {
+            color: $cool-black;
+            font-size: 1.375rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.icon {
+    padding: 7rem 0;
+
+    >div>div>div>div {
+        align-items: center;
+
+        >div {
+            margin-left: 1.9rem;
+            line-height: 2rem;
+
+            h3 {
+                color: $cool-black;
+                font-size: 1.75rem;
+            }
+
+            span {
+                font-family: $secondary-font-family;
+                color: $ming;
+            }
+        }
+    }
+
+    i {
+        color: $secondary;
+        background-color: $white;
+        text-align: center;
+        height: 5.5rem;
+        width: 5.5rem;
+        line-height: 5.5rem;
+    }
+}
+
+.contact {
+    padding: 6rem 0 5rem;
+
+
+    label {
+        color: $cool-black;
+        font-size: 1rem;
+    }
+
+    input {
+        @extend .focus;
+        @include border(1px, $lavender, 0.25rem);
+        display: block;
+        outline: none;
+        height: 3.125rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+    }
+
+    textarea {
+        @extend input;
+        height: 12.5rem;
+        margin-bottom: 1rem;
+    }
+
+
+
+    &__flex {
+        >div>div:last-child {
+            >div {
+                padding-bottom: 3rem;
+
+                li {
+                    font-family: $secondary-font-family;
+                    padding-bottom: 0.5rem;
+                }
+            }
+
+            i {
+                color: $secondary;
+                margin-bottom: 1.25rem;
+            }
+
+            ul {
+                color: $ming;
+            }
+        }
+    }
+}
+
+.footer {
+    span {
+        font-family: $secondary-font-family;
+        display: block;
+        text-align: center;
+        padding: 1.5rem 0;
+        font-size: 1rem;
+
+        a {
+            color: $secondary;
+        }
+    }
+
+    &__container {
+        color: $cool-black;
+        border-bottom: 1px gray solid;
+        padding: 5.6rem 0 4rem;
+
+        div:first-child {
+            font-family: $secondary-font-family;
+
+            p {
+                line-height: 1.5rem;
+            }
+
+            img {
+                margin-bottom: 1rem;
+            }
+        }
+
+        div:nth-child(2) {
+            font-family: $secondary-font-family;
+
+            li {
+                margin-bottom: 1.5rem;
+            }
+
+            a {
+                color: $cool-black;
+            }
+        }
+
+        div:nth-child(3) {
+            font-family: $secondary-font-family;
+
+            li {
+                margin-bottom: 1.5rem;
+            }
+
+            a {
+                color: $cool-black;
+            }
+        }
+
+        div:last-child {
+            position: relative;
+            padding: 0 1rem;
+
+            input {
+                @include border(1px, $lavender, 3rem);
+                outline: none;
+                height: 3.75rem;
+                width: 100%;
+                padding-left: 2rem;
+
+                &:focus {
+                    border: 1px $lavender solid;
+                    box-shadow: 2px 2px 2px lightblue, -2px -2px 2px lightblue;
+                }
+            }
+
+            .button {
+                @include border(0, none, 3rem);
+                position: absolute;
+                right: 1.2rem;
+                top: 0.2rem;
+                font-size: 1rem;
+            }
+
+            h3 {
+                margin-top: 2rem;
+                font-size: 1.25rem;
+            }
+
+            i {
+                @include border(0, none, 50%);
+                background-color: $white;
+                margin: 1rem 1rem 0 0;
+                padding: 1rem;
+            }
+
+            li {
+                a {
+                    color: $cool-black;
+                }
+
+                &:first-child {
+                    i {
+                        padding: 1rem 1.25rem;
+                    }
+                }
+            }
+        }
+    }
 }
