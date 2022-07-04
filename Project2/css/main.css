@@ -863,6 +863,13 @@
   margin: 0;
   padding: 0; }
 
+.col-md-11,
+.col-md-9,
+.col-md-4,
+.col-md-3,
+.col-md-1 {
+  padding: 0; }
+
 ul {
   list-style: none; }
 
@@ -895,6 +902,18 @@ body {
     margin-right: 10px;
     padding: 2px 7px;
     border-radius: 10px; }
+  .notification--active {
+    background-color: #16d39a;
+    padding: 5px;
+    border-radius: 5px; }
+  .notification--reported {
+    background-color: #ffa87d;
+    padding: 5px;
+    border-radius: 5px; }
+  .notification--block {
+    background-color: #ff7588;
+    padding: 5px;
+    border-radius: 5px; }
 
 .nav {
   width: 100%; }
@@ -921,9 +940,12 @@ body {
     align-items: center;
     height: 55px; }
     .nav__mainside > div:first-child {
-      padding: 0; }
+      padding: 0;
+      height: 100%; }
       .nav__mainside > div:first-child > div {
-        color: #404e67; }
+        color: #404e67;
+        align-items: center;
+        height: 100%; }
         .nav__mainside > div:first-child > div a {
           color: #404e67;
           padding: 10px;
@@ -934,6 +956,7 @@ body {
         .nav__mainside > div:first-child > div > i {
           padding: 10px; }
     .nav__mainside > div:last-child {
+      height: 100%;
       padding: 0; }
       .nav__mainside > div:last-child i {
         color: #404e67;
@@ -942,7 +965,8 @@ body {
         padding: 0; }
       .nav__mainside > div:last-child ul {
         align-items: center;
-        position: relative; }
+        justify-content: flex-end;
+        height: 100%; }
         .nav__mainside > div:last-child ul > li:first-child a {
           align-items: center; }
         .nav__mainside > div:last-child ul > li:first-child img {
@@ -951,73 +975,89 @@ body {
           margin-right: 10px; }
         .nav__mainside > div:last-child ul > li:first-child i {
           font-size: 10px; }
-        .nav__mainside > div:last-child ul > li:nth-child(2) {
-          margin: 0 10px; }
-          .nav__mainside > div:last-child ul > li:nth-child(2) i::after {
+        .nav__mainside > div:last-child ul > li:nth-child(2) div {
+          margin: 0 10px;
+          position: relative; }
+          .nav__mainside > div:last-child ul > li:nth-child(2) div i::after {
             background-color: #ff7588;
             color: #fff;
             position: absolute;
-            right: 3px;
+            left: 9px;
             bottom: 13px;
             padding: 3px 5px;
             font-size: 10px;
             border-radius: 50%;
             content: '5'; }
-        .nav__mainside > div:last-child ul > li:nth-child(3) {
-          margin: 0 10px; }
-          .nav__mainside > div:last-child ul > li:nth-child(3) i::after {
+        .nav__mainside > div:last-child ul > li:nth-child(3) div {
+          margin: 0 10px;
+          position: relative; }
+          .nav__mainside > div:last-child ul > li:nth-child(3) div i::after {
             color: #fff;
             background-color: #ffa87d;
             position: absolute;
-            right: 0px;
+            left: 10px;
             bottom: 13px;
             padding: 3px 5px;
             font-size: 10px;
             border-radius: 50%;
             content: '3'; }
-        .nav__mainside > div:last-child ul > li:last-child .testing {
-          position: relative; }
-          .nav__mainside > div:last-child ul > li:last-child .testing img {
-            height: 32px;
-            width: 32px;
-            padding: 0;
-            border-radius: 50%; }
-          .nav__mainside > div:last-child ul > li:last-child .testing::after {
-            content: '';
-            background-color: #16d39a;
-            position: absolute;
-            height: 10px;
-            width: 10px;
-            right: 5px;
-            bottom: 5px;
-            border-radius: 50%; }
-        .nav__mainside > div:last-child ul > li:last-child span {
-          padding: 0 5px;
-          font-size: 14px; }
-          .nav__mainside > div:last-child ul > li:last-child span + i {
-            font-size: 10px; }
-        .nav__mainside > div:last-child ul > li:last-child a {
-          color: #404e67; }
-          .nav__mainside > div:last-child ul > li:last-child a div {
-            align-items: center;
-            padding: 0; }
+        .nav__mainside > div:last-child ul > li:last-child {
+          text-align: center; }
+          .nav__mainside > div:last-child ul > li:last-child .testing {
+            position: relative; }
+            .nav__mainside > div:last-child ul > li:last-child .testing img {
+              height: 32px;
+              width: 32px;
+              padding: 0;
+              border-radius: 50%; }
+            .nav__mainside > div:last-child ul > li:last-child .testing::after {
+              content: '';
+              background-color: #16d39a;
+              position: absolute;
+              height: 10px;
+              width: 10px;
+              right: 5px;
+              bottom: 5px;
+              border-radius: 50%; }
+          .nav__mainside > div:last-child ul > li:last-child span {
+            padding: 0 5px;
+            font-size: 14px; }
+            .nav__mainside > div:last-child ul > li:last-child span + i {
+              font-size: 10px; }
+          .nav__mainside > div:last-child ul > li:last-child a {
+            color: #404e67;
+            display: inline-block; }
+            .nav__mainside > div:last-child ul > li:last-child a div {
+              align-items: center;
+              padding: 0; }
 
 .sidebar {
   background-color: #404e67;
   color: #fff;
   position: fixed;
-  overflow: hidden;
+  overflow: scroll;
+  top: 0;
   height: 100vh;
-  width: 240px; }
-  .sidebar:hover {
-    overflow-y: scroll; }
-  .sidebar h5 {
+  width: 240px;
+  padding-top: 54px; }
+  .sidebar::-webkit-scrollbar {
+    width: 7px; }
+  .sidebar::-webkit-scrollbar-track {
+    background: #404e67; }
+  .sidebar::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 20px;
+    visibility: hidden; }
+  .sidebar:hover::-webkit-scrollbar-thumb {
+    visibility: visible; }
+  .sidebar h5, .sidebar .maincontent__users table tr > td:nth-child(2), .maincontent__users table .sidebar tr > td:nth-child(2), .sidebar .maincontent__users table tr > td:nth-child(3), .maincontent__users table .sidebar tr > td:nth-child(3), .sidebar .maincontent__users table tr > td:nth-child(4), .maincontent__users table .sidebar tr > td:nth-child(4) {
+    color: #dcdcdc;
+    font-weight: bold;
     text-transform: uppercase;
     padding: 20px 20px 10px;
-    font-size: 14px;
-    font-weight: 100; }
+    font-size: 14px; }
   .sidebar li {
-    padding: 10px 10px 10px 20px;
+    padding: 10px 10px 10px 10px;
     justify-content: space-between; }
     .sidebar li h6 {
       font-size: 14px;
@@ -1039,8 +1079,7 @@ body {
 .maincontent {
   position: absolute;
   top: 55px;
-  margin-left: 240px;
-  padding: 25px; }
+  margin-left: 240px; }
   .maincontent__button {
     position: fixed;
     display: inline-block;
@@ -1069,28 +1108,379 @@ body {
   .maincontent__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px; }
+    grid-gap: 20px;
+    padding: 25px; }
     .maincontent__grid > div {
       background-color: #fff; }
   .maincontent__statistics {
+    align-items: center;
     grid-column: 1 / 5;
-    height: 115px;
-    align-items: center; }
-    .maincontent__statistics > div > div h2 {
-      color: #404e67;
-      font-size: 26px; }
-    .maincontent__statistics > div > div h5 {
-      color: #babfc7;
-      font-size: 14px; }
-    .maincontent__statistics > div > div > :first-child {
-      color: #00b5b8;
-      background-color: #f5f7fa;
-      padding: 20px; }
-    .maincontent__statistics > div > div:nth-child(2) h6 {
+    height: 115px; }
+    .maincontent__statistics > div > div {
+      justify-content: space-around;
+      border-right: 1px solid #ECEFF1; }
+      .maincontent__statistics > div > div h2 {
+        color: #404e67;
+        font-size: 26.5px; }
+      .maincontent__statistics > div > div h5, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(2), .maincontent__users table .maincontent__statistics > div > div tr > td:nth-child(2), .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(3), .maincontent__users table .maincontent__statistics > div > div tr > td:nth-child(3), .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__statistics > div > div tr > td:nth-child(4) {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #babfc7;
+        font-size: 14px;
+        font-weight: 100; }
+      .maincontent__statistics > div > div i {
+        font-size: 32px; }
+      .maincontent__statistics > div > div > div {
+        font-size: 14px; }
+        .maincontent__statistics > div > div > div i {
+          font-size: 14px; }
+      .maincontent__statistics > div > div > :first-child {
+        color: #00b5b8;
+        background-color: #f5f7fa;
+        padding: 20px; }
+    .maincontent__statistics > div:nth-child(odd) > div > div:last-child {
+      color: #00b5b8; }
+    .maincontent__statistics > div:nth-child(even) > div > div:last-child {
+      color: #ff7588; }
+    .maincontent__statistics > div:nth-child(2) > div > i {
+      color: #ff7588; }
+    .maincontent__statistics > div:nth-child(3) > div > i {
       color: #16d39a; }
+    .maincontent__statistics > div:last-child > div {
+      border: none; }
+      .maincontent__statistics > div:last-child > div > i {
+        color: #ffa87d; }
   .maincontent__power {
-    grid-column: 1 / 3; }
+    grid-column: 1 / 3;
+    height: 440px; }
+    .maincontent__power img {
+      height: 370px; }
+    .maincontent__power > div {
+      justify-content: space-between;
+      padding: 15px; }
+      .maincontent__power > div > h5 {
+        color: #404e67;
+        font-size: 18px;
+        font-weight: 500; }
+        .maincontent__power > div > h5 span {
+          font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          font-size: 14px; }
+      .maincontent__power > div > div > div {
+        justify-content: flex-end; }
+      .maincontent__power > div > div h5, .maincontent__power > div > div .maincontent__users table tr > td:nth-child(2), .maincontent__users table .maincontent__power > div > div tr > td:nth-child(2), .maincontent__power > div > div .maincontent__users table tr > td:nth-child(3), .maincontent__users table .maincontent__power > div > div tr > td:nth-child(3), .maincontent__power > div > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div tr > td:nth-child(4) {
+        color: #404e67;
+        padding-right: 15px;
+        font-size: 16px;
+        font-weight: 500; }
+        .maincontent__power > div > div h5:last-child, .maincontent__power > div > div .maincontent__users table tr > td:last-child:nth-child(2), .maincontent__users table .maincontent__power > div > div tr > td:last-child:nth-child(2), .maincontent__power > div > div .maincontent__users table tr > td:last-child:nth-child(3), .maincontent__users table .maincontent__power > div > div tr > td:last-child:nth-child(3), .maincontent__power > div > div .maincontent__users table tr > td:last-child:nth-child(4), .maincontent__users table .maincontent__power > div > div tr > td:last-child:nth-child(4) {
+          font-weight: 100;
+          color: #646464; }
+  .maincontent__sales {
+    height: 443px; }
+    .maincontent__sales h4 {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #babfc7;
+      font-size: 14px;
+      padding-left: 15px; }
+    .maincontent__sales > div:first-child {
+      border-bottom: 1px #ECEFF1 solid;
+      padding-left: 15px; }
+      .maincontent__sales > div:first-child h5, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(2), .maincontent__users table .maincontent__sales > div:first-child tr > td:nth-child(2), .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(3), .maincontent__users table .maincontent__sales > div:first-child tr > td:nth-child(3), .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__sales > div:first-child tr > td:nth-child(4) {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #00b5b8;
+        margin-right: 10px;
+        padding: 15px 0;
+        font-size: 14px;
+        font-weight: 100; }
+        .maincontent__sales > div:first-child h5:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:first-child:nth-child(2), .maincontent__users table .maincontent__sales > div:first-child tr > td:first-child:nth-child(2), .maincontent__sales > div:first-child .maincontent__users table tr > td:first-child:nth-child(3), .maincontent__users table .maincontent__sales > div:first-child tr > td:first-child:nth-child(3), .maincontent__sales > div:first-child .maincontent__users table tr > td:first-child:nth-child(4), .maincontent__users table .maincontent__sales > div:first-child tr > td:first-child:nth-child(4) {
+          border-bottom: 2px #404e67 solid; }
+    .maincontent__sales > div:nth-child(2) {
+      padding: 20px 0 0 15px; }
+      .maincontent__sales > div:nth-child(2) h3 {
+        color: #404e67;
+        padding-right: 20px;
+        font-size: 21px; }
+      .maincontent__sales > div:nth-child(2) h6 {
+        color: #00b5b8;
+        font-size: 11px; }
+        .maincontent__sales > div:nth-child(2) h6 i {
+          padding-right: 5px; }
+  .maincontent__bar {
+    justify-content: space-around;
+    padding-top: 20px; }
+    .maincontent__bar h6 {
+      color: #404e67;
+      padding-top: 10px;
+      font-size: 12px; }
+    .maincontent__bar > div:first-child > div > div {
+      height: 40%; }
+    .maincontent__bar > div:nth-child(2) > div > div {
+      height: 60%; }
+    .maincontent__bar > div:nth-child(3) > div > div {
+      background-color: #ff7588;
+      height: 65%; }
+    .maincontent__bar > div:nth-child(4) > div > div {
+      height: 55%; }
+    .maincontent__bar > div:nth-child(5) > div > div {
+      background-color: #ffa87d;
+      height: 90%; }
+    .maincontent__bar > div:last-child > div > div {
+      height: 57%; }
+    .maincontent__bar > div > div {
+      background-color: #e6e6e6;
+      transform: rotate(180deg);
+      height: 240px;
+      width: 12px;
+      margin: 0 7px; }
+      .maincontent__bar > div > div > div {
+        background-color: #00b5b8;
+        height: 50%; }
+  .maincontent__region > h6 {
+    color: #00b5b8;
+    border-bottom: 1px #ECEFF1 solid;
+    margin-right: 10px;
+    padding: 25px 0 15px 25px;
+    font-size: 14px;
+    font-weight: 100; }
+  .maincontent__region > :nth-child(2) {
+    height: 240px;
+    width: 240px;
+    margin: auto; }
+  .maincontent__region > :nth-child(3) {
+    justify-content: center; }
+    .maincontent__region > :nth-child(3) h5, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(2), .maincontent__users table .maincontent__region > :nth-child(3) tr > td:nth-child(2), .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(3), .maincontent__users table .maincontent__region > :nth-child(3) tr > td:nth-child(3), .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__region > :nth-child(3) tr > td:nth-child(4) {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #404e67;
+      font-size: 14px; }
+    .maincontent__region > :nth-child(3) > div {
+      align-items: center;
+      padding-right: 10px; }
+      .maincontent__region > :nth-child(3) > div > div {
+        height: 10px;
+        width: 10px;
+        margin-right: 3px;
+        padding: 0; }
+  .maincontent__region > :last-child {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #404e67;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px #ECEFF1 solid; }
+    .maincontent__region > :last-child h4 {
+      font-weight: lighter;
+      font-size: 28px; }
+    .maincontent__region > :last-child h6 {
+      font-weight: lighter;
+      font-size: 14px; }
+    .maincontent__region > :last-child > div {
+      border-right: 1px #ECEFF1 solid;
+      padding: 10px 0; }
+  .maincontent__update {
+    height: 235px;
+    overflow: scroll; }
+    .maincontent__update::-webkit-scrollbar {
+      width: 7px; }
+    .maincontent__update::-webkit-scrollbar-track {
+      background: #fff; }
+    .maincontent__update::-webkit-scrollbar-thumb {
+      background: #999;
+      border-radius: 20px;
+      visibility: hidden; }
+    .maincontent__update:hover::-webkit-scrollbar-thumb {
+      visibility: visible; }
+    .maincontent__update > div:first-child {
+      justify-content: space-between;
+      padding: 15px; }
+      .maincontent__update > div:first-child h4 {
+        color: #404e67;
+        padding: 0;
+        font-size: 18.5px; }
+      .maincontent__update > div:first-child h6 {
+        padding: 0;
+        font-size: 14px; }
+      .maincontent__update > div:first-child a {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #009c9f;
+        font-weight: 100; }
+    .maincontent__update > div:last-child {
+      padding: 0 15px 15px; }
+    .maincontent__update li {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .maincontent__update li h5, .maincontent__update li .maincontent__users table tr > td:nth-child(2), .maincontent__users table .maincontent__update li tr > td:nth-child(2), .maincontent__update li .maincontent__users table tr > td:nth-child(3), .maincontent__users table .maincontent__update li tr > td:nth-child(3), .maincontent__update li .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__update li tr > td:nth-child(4) {
+        color: #626E82;
+        font-size: 14px;
+        font-weight: 400; }
+      .maincontent__update li h6 {
+        color: #404e67;
+        font-size: 12.5px;
+        font-weight: 100; }
+      .maincontent__update li:first-child {
+        padding-bottom: 18px; }
+        .maincontent__update li:first-child i {
+          color: #00b5b8;
+          background-color: rgba(0, 181, 184, 0.1);
+          text-align: center;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(2) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(2) i {
+          color: #2dcee3;
+          background-color: rgba(45, 206, 227, 0.1);
+          text-align: center;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(3) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(3) i {
+          color: #ff7588;
+          background-color: rgba(255, 117, 136, 0.1);
+          text-align: center;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(4) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(4) i {
+          color: #00b5b8;
+          background-color: rgba(0, 181, 184, 0.1);
+          text-align: center;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(5) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(5) i {
+          color: #2dcee3;
+          background-color: rgba(45, 206, 227, 0.1);
+          text-align: center;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 50%; }
+      .maincontent__update li:last-child {
+        padding-top: 18px; }
+        .maincontent__update li:last-child i {
+          color: #ff7588;
+          background-color: rgba(255, 117, 136, 0.1);
+          text-align: center;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 50%; }
   .maincontent__information {
     grid-column: 2 / 5; }
+    .maincontent__information > div:first-child {
+      color: #404e67;
+      padding: 20px 15px;
+      font-size: 18px; }
+      .maincontent__information > div:first-child h4 {
+        font-weight: 500; }
+    .maincontent__information > div:last-child {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      border-top: 1px solid #ECEFF1; }
+      .maincontent__information > div:last-child > div > div {
+        padding: 30px;
+        border-right: 1px solid #ECEFF1; }
+      .maincontent__information > div:last-child img {
+        height: 100px;
+        width: 100px; }
+      .maincontent__information > div:last-child h5, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(2), .maincontent__users table .maincontent__information > div:last-child tr > td:nth-child(2), .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(3), .maincontent__users table .maincontent__information > div:last-child tr > td:nth-child(3), .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__information > div:last-child tr > td:nth-child(4) {
+        color: #404e67;
+        font-size: 16px;
+        margin-bottom: 5px; }
+      .maincontent__information > div:last-child p {
+        color: #98a4b8;
+        font-size: 14px;
+        font-weight: 100;
+        margin-bottom: 10px; }
   .maincontent__users {
-    grid-column: 1 / 4; }
+    grid-column: 1 / 4;
+    height: 470px;
+    width: 100%; }
+    .maincontent__users > div {
+      color: #404e67;
+      padding: 20px;
+      font-size: 16px; }
+      .maincontent__users > div a {
+        color: #404e67; }
+    .maincontent__users table,
+    .maincontent__users th,
+    .maincontent__users td {
+      border-bottom: 1px solid #ECEFF1; }
+    .maincontent__users table {
+      border-top: 1px solid #ECEFF1;
+      border-bottom: 0px;
+      padding: 0; }
+      .maincontent__users table img {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        border-radius: 50%; }
+      .maincontent__users table tr {
+        border: 1px solid #404e67; }
+      .maincontent__users table th {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #404e67;
+        text-align: start;
+        padding: 10.5px 28px;
+        font-size: 14px;
+        font-weight: bolder; }
+      .maincontent__users table tr h5, .maincontent__users table tr > td:nth-child(2), .maincontent__users table tr > td:nth-child(3), .maincontent__users table tr > td:nth-child(4) {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #404e67;
+        font-size: 14px;
+        font-weight: 100; }
+      .maincontent__users table tr > td:first-child {
+        align-items: center;
+        padding: 10.5px 28px; }
+      .maincontent__users table tr > td:nth-child(2) {
+        padding: 10.5px 28px; }
+      .maincontent__users table tr > td:nth-child(3) {
+        padding: 10.5px 28px; }
+      .maincontent__users table tr > td:nth-child(4) {
+        padding: 10.5px 28px; }
+        .maincontent__users table tr > td:nth-child(4) > div {
+          background-color: #eee;
+          height: 14px;
+          width: 78.5px;
+          border-radius: 3px; }
+          .maincontent__users table tr > td:nth-child(4) > div > div {
+            color: #fff;
+            text-align: center;
+            background-color: #16d39a;
+            height: 100%;
+            width: 55%;
+            font-size: 10px;
+            border-radius: 3px; }
+      .maincontent__users table tr > td:nth-child(5) {
+        padding: 10.5px 28px; }
+      .maincontent__users table tr > td:last-child {
+        padding: 10.5px 28px; }
+        .maincontent__users table tr > td:last-child a {
+          color: #404e67; }
+          .maincontent__users table tr > td:last-child a div i {
+            padding-right: 15px; }
+      .maincontent__users table tr:nth-child(2) > td:nth-child(4) > div > div {
+        background-color: #ffa87d; }
+      .maincontent__users table tr:nth-child(3) > td:nth-child(4) > div > div {
+        background-color: #ff7588;
+        width: 65%; }
+      .maincontent__users table tr:nth-child(4) > td:nth-child(4) > div > div {
+        width: 78%; }
+      .maincontent__users table tr:nth-child(5) > td:nth-child(4) > div > div {
+        background-color: #ffa87d;
+        width: 51%; }
+      .maincontent__users table tr:last-child > td:nth-child(4) > div > div {
+        background-color: #ff7588;
+        width: 47%; }
+  .maincontent__tasks > div {
+    color: #404e67;
+    padding: 21px;
+    font-size: 16px; }
