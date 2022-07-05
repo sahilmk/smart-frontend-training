@@ -1,5 +1,7 @@
 @import 'common-flex-base';
 @import 'variable';
+@import 'utility';
+@import 'mixin';
 
 * {
     box-sizing: border-box;
@@ -8,91 +10,14 @@
     // border: 1px solid black;
 }
 
-.col-md-11,
-.col-md-9,
-.col-md-4,
-.col-md-3,
-.col-md-1 {
-    padding: 0;
-}
-
-
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-body {
-    font-family: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
-    background-color: $cultured;
-}
-
-
-.notification {
-    color: $white;
-    font-size: 12px;
-
-
-    &--number {
-        background-color: $secondary-color;
-        margin-right: 10px;
-        padding: 1px 6px;
-        border-radius: 50%;
-
-        &--2 {
-            padding: 1px 5px;
-            background-color: #ffa87d;
-            border-radius: 10px;
-        }
-    }
-
-    &--new {
-        background-color: $ultra-red;
-        margin-right: 10px;
-        padding: 2px 5px;
-        border-radius: 10px;
-    }
-
-    &--hot {
-        background-color: #16d39a;
-        margin-right: 10px;
-        padding: 2px 7px;
-        border-radius: 10px;
-    }
-
-    &--active {
-        background-color: $caribbean-green;
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    &--reported {
-        background-color: $light-salmon;
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    &--block {
-        background-color: $ultra-red;
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-}
-
 .nav {
     width: 100%;
 
     &__sticky {
+        @include position(fixed, 0, 0);
         background-color: $white;
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
+        box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
         z-index: 10;
 
         >div {
@@ -103,11 +28,10 @@ body {
     }
 
     &__sidebar {
+        @include box(55px, 240px);
         background-color: $primary-color;
         color: $white;
         align-items: center;
-        height: 55px;
-        width: 240px;
         padding: 0;
         font-size: 24px;
 
@@ -121,7 +45,7 @@ body {
         height: 55px;
 
         >div:first-child {
-            padding: 0; //for removing 15px padding from the left and right side.
+            padding: 0;
             height: 100%;
 
             >div {
@@ -160,71 +84,67 @@ body {
             }
 
             ul {
-                align-items: center;
                 justify-content: flex-end;
+                align-items: center;
                 height: 100%;
 
-                >li:first-child {
-                    a {
-                        align-items: center;
-                        // justify-content: center;
-                    }
+                li {
+                    &:first-child {
+                        a {
+                            align-items: center;
+                        }
 
-                    img {
-                        height: 18px;
-                        width: 18px;
-                        margin-right: 10px;
-                    }
+                        img {
+                            @include box(18px, 18px);
+                            margin-right: 10px;
+                        }
 
-                    i {
-                        font-size: 10px;
-                    }
-                }
-
-                >li:nth-child(2) {
-                    div {
-                        margin: 0 10px;
-                        position: relative;
-
-                        i::after {
-                            background-color: $ultra-red;
-                            color: $white;
-                            position: absolute;
-                            left: 9px;
-                            bottom: 13px;
-                            padding: 3px 5px;
+                        i {
                             font-size: 10px;
-                            border-radius: 50%;
-                            content: '5';
                         }
                     }
 
-                }
+                    &:nth-child(2) {
+                        div {
+                            @include position(relative);
+                            margin: 0 10px;
 
-                >li:nth-child(3) {
-                    div {
-                        margin: 0 10px;
-                        position: relative;
+                            i::after {
+                                @include position(absolute, initial, initial, 13px, 9px);
+                                background-color: $ultra-red;
+                                color: $white;
+                                padding: 3px 5px;
+                                font-size: 10px;
+                                border-radius: 50%;
+                                content: '5';
+                            }
+                        }
 
-                        i::after {
-                            color: $white;
-                            background-color: $light-salmon;
-                            position: absolute;
-                            left: 10px;
-                            bottom: 13px;
-                            padding: 3px 5px;
-                            font-size: 10px;
-                            border-radius: 50%;
-                            content: '3';
+                    }
+
+                    &:nth-child(3) {
+                        div {
+                            @include position(relative);
+                            margin: 0 10px;
+
+                            i::after {
+                                @include position(absolute, initial, initial, 13px, 10px);
+                                color: $white;
+                                background-color: $light-salmon;
+                                padding: 3px 5px;
+                                font-size: 10px;
+                                border-radius: 50%;
+                                content: '3';
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        a {
+                            display: inline-block;
                         }
                     }
                 }
-
-                // >li:last-child {
-
-
-
-                //     }
 
                 span {
                     padding: 0 5px;
@@ -237,7 +157,6 @@ body {
 
                 a {
                     color: $primary-color;
-                    display: inline-block;
 
                     div {
                         align-items: center;
@@ -250,23 +169,19 @@ body {
     }
 
     &__user {
-        position: relative;
+        @include position(relative);
 
         img {
-            height: 32px;
-            width: 32px;
+            @include box(32px, 32px);
             padding: 0;
             border-radius: 50%;
         }
 
         &::after {
-            content: '';
+            @include position(absolute, initial, 0px, 3px, initial);
+            @include box(10px, 10px);
             background-color: $caribbean-green;
-            position: absolute;
-            height: 10px;
-            width: 10px;
-            right: 0px;
-            bottom: 3px;
+            content: '';
             border-radius: 50%;
         }
     }
@@ -275,30 +190,13 @@ body {
 
 
 .sidebar {
+    @include position(fixed, 0px, initial, initial 0px);
+    @include box(100vh, 240px);
+    @include scroll-bar($primary-color);
     background-color: $primary-color;
     color: $white;
-    position: fixed;
-    overflow: scroll;
-    top: 0;
-    height: 100vh;
-    width: 240px;
+    overflow-y: scroll;
     padding-top: 54px;
-
-
-    &::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: $primary-color;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #999;
-        border-radius: 20px;
-        visibility: hidden;
-    }
-
 
     &:hover {
         &::-webkit-scrollbar-thumb {
@@ -307,25 +205,23 @@ body {
     }
 
     h5 {
+        @include size-weight(14px, bold);
         color: #dcdcdc;
-        font-weight: bold;
         text-transform: uppercase;
-        padding: 20px 20px 10px;
-        font-size: 14px;
+        padding: 20px 20px 10px 10px;
     }
 
     li {
-        padding: 10px 10px 10px 10px;
         justify-content: space-between;
+        padding: 10px 10px 10px 10px;
 
         h6 {
-            font-size: 14px;
-            font-weight: lighter;
+            @include size-weight(14px, lighter);
         }
 
         i {
-            font-size: 15px;
             padding-right: 10px;
+            font-size: 15px;
         }
     }
 
@@ -362,17 +258,17 @@ body {
 }
 
 .maincontent {
-    position: absolute;
-    top: 55px;
-    margin-left: 240px;
-    height: 100%;
+    padding-top: 55px;
+    padding-left: 240px;
+
+    >div {
+        box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
+    }
 
     &__button {
-        position: fixed;
+        @include position(fixed, initial, 30px, 40px, initial);
         display: inline-block;
         background-color: #9C27B0;
-        right: 30px;
-        bottom: 40px;
         padding: 10px 20px;
         font-size: 14px;
         border-radius: 5px;
@@ -384,11 +280,9 @@ body {
     }
 
     &__setting {
-        position: fixed;
+        @include position(fixed, initial, 0px, 60%, initial);
         display: inline-block;
         background-color: $ultra-red;
-        right: 0;
-        bottom: 60%;
         padding: 15px 15px;
         font-size: 14px;
         z-index: 5;
@@ -399,9 +293,6 @@ body {
 
         i {
             -webkit-animation: fa-spin 5s infinite;
-            // transition: all 2s;
-            // transition-timing-function: infinite;
-            // transform: rotate(360deg);
         }
     }
 
@@ -414,7 +305,6 @@ body {
 
         >div {
             background-color: $white;
-
         }
     }
 
@@ -425,8 +315,8 @@ body {
 
         >div {
             >div {
-                justify-content: space-around;
                 border-right: 1px solid $bright-gray;
+                justify-content: space-around;
 
                 h2 {
                     color: $primary-color;
@@ -434,10 +324,9 @@ body {
                 }
 
                 h5 {
+                    @include size-weight(14px, 100);
                     font-family: $opensans;
                     color: $silver-sand;
-                    font-size: 14px;
-                    font-weight: 100;
                 }
 
                 i {
@@ -518,9 +407,8 @@ body {
             padding: 15px;
 
             >h5 {
+                @include size-weight(18px, 500);
                 color: $primary-color;
-                font-size: 18px;
-                font-weight: 500;
 
                 span {
                     font-family: $opensans;
@@ -535,10 +423,9 @@ body {
                 }
 
                 h5 {
+                    @include size-weight(16px, 500);
                     color: $primary-color;
                     padding-right: 15px;
-                    font-size: 16px;
-                    font-weight: 500;
 
                     &:last-child {
                         font-weight: 100;
@@ -565,12 +452,11 @@ body {
             padding-left: 15px;
 
             h5 {
+                @include size-weight(14px, 100);
                 font-family: $opensans;
                 color: $secondary-color;
                 margin-right: 10px;
                 padding: 15px 0;
-                font-size: 14px;
-                font-weight: 100;
 
                 &:first-child {
                     border-bottom: 2px $primary-color solid;
@@ -600,7 +486,6 @@ body {
 
     &__bar {
         justify-content: space-around;
-        // align-items: center;
         padding-top: 20px;
 
         h6 {
@@ -661,10 +546,9 @@ body {
             }
 
             >div {
+                @include box(240px, 12px);
                 background-color: rgb(230, 230, 230);
                 transform: rotate(180deg);
-                height: 240px;
-                width: 12px;
                 margin: 0 7px;
 
                 >div {
@@ -678,17 +562,15 @@ body {
 
     &__region {
         >h6 {
+            @include size-weight(14px, 100);
             color: $secondary-color;
             border-bottom: 1px $bright-gray solid;
             margin-right: 10px;
             padding: 25px 0 15px 25px;
-            font-size: 14px;
-            font-weight: 100;
         }
 
         >:nth-child(2) {
-            height: 240px;
-            width: 240px;
+            @include box(240px, 240px);
             margin: auto;
         }
 
@@ -706,8 +588,7 @@ body {
                 padding-right: 10px;
 
                 >div {
-                    height: 10px;
-                    width: 10px;
+                    @include box(10px, 10px);
                     margin-right: 3px;
                     padding: 0;
                 }
@@ -726,45 +607,27 @@ body {
 
 
             h4 {
-                font-weight: lighter;
-                font-size: 28px;
+                @include size-weight(28px, lighter);
             }
 
             h6 {
-                font-weight: lighter;
-                font-size: 14px;
+                @include size-weight(14px, lighter);
             }
 
             >div {
                 border-right: 1px $bright-gray solid;
                 padding: 10px 0;
             }
+
+            >div:last-child {
+                border-right: 0px;
+
+            }
         }
     }
 
     &__update {
         height: 235px;
-        overflow: scroll;
-
-        &::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: $white;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #999;
-            border-radius: 20px;
-            visibility: hidden;
-        }
-
-        &:hover {
-            &::-webkit-scrollbar-thumb {
-                visibility: visible;
-            }
-        }
 
         >div:first-child {
             justify-content: space-between;
@@ -789,36 +652,37 @@ body {
         }
 
         >div:last-child {
+            @include scroll-bar($white);
+            overflow: scroll;
+            height: 182px;
             padding: 0 15px 15px;
+
+            &:hover {
+                &::-webkit-scrollbar-thumb {
+                    visibility: visible;
+                }
+            }
+
         }
 
         li {
             font-family: $opensans;
 
             h5 {
+                @include size-weight(14px, 400);
                 color: #626E82;
-                font-size: 14px;
-                font-weight: 400;
             }
 
             h6 {
+                @include size-weight(12.5px, 100);
                 color: $primary-color;
-                font-size: 12.5px;
-                font-weight: 100;
-
             }
 
             &:first-child {
                 padding-bottom: 18px;
 
                 i {
-                    color: $secondary-color;
-                    background-color: rgba(0, 181, 184, 0.1);
-                    text-align: center;
-                    height: 30px;
-                    width: 30px;
-                    line-height: 30px;
-                    border-radius: 50%;
+                    @include update-logo($secondary-color);
                 }
             }
 
@@ -826,13 +690,7 @@ body {
                 padding: 18px 0;
 
                 i {
-                    color: $turquoise;
-                    background-color: rgba(45, 206, 227, 0.1);
-                    text-align: center;
-                    height: 30px;
-                    width: 30px;
-                    line-height: 30px;
-                    border-radius: 50%;
+                    @include update-logo($turquoise);
                 }
             }
 
@@ -840,13 +698,7 @@ body {
                 padding: 18px 0;
 
                 i {
-                    color: $ultra-red;
-                    background-color: rgba(255, 117, 136, 0.1);
-                    text-align: center;
-                    height: 30px;
-                    width: 30px;
-                    line-height: 30px;
-                    border-radius: 50%;
+                    @include update-logo($ultra-red);
                 }
             }
 
@@ -854,13 +706,7 @@ body {
                 padding: 18px 0;
 
                 i {
-                    color: $secondary-color;
-                    background-color: rgba(0, 181, 184, 0.1);
-                    text-align: center;
-                    height: 30px;
-                    width: 30px;
-                    line-height: 30px;
-                    border-radius: 50%;
+                    @include update-logo($secondary-color);
                 }
             }
 
@@ -868,13 +714,7 @@ body {
                 padding: 18px 0;
 
                 i {
-                    color: $turquoise;
-                    background-color: rgba(45, 206, 227, 0.1);
-                    text-align: center;
-                    height: 30px;
-                    width: 30px;
-                    line-height: 30px;
-                    border-radius: 50%;
+                    @include update-logo($turquoise);
                 }
             }
 
@@ -882,13 +722,7 @@ body {
                 padding-top: 18px;
 
                 i {
-                    color: $ultra-red;
-                    background-color: rgba(255, 117, 136, 0.1);
-                    text-align: center;
-                    height: 30px;
-                    width: 30px;
-                    line-height: 30px;
-                    border-radius: 50%;
+                    @include update-logo($ultra-red);
                 }
             }
         }
@@ -914,15 +748,14 @@ body {
             >div {
 
                 >div {
-                    padding: 30px;
                     border-right: 1px solid $bright-gray;
-
+                    align-items: center;
+                    padding: 30px;
                 }
             }
 
             img {
-                height: 100px;
-                width: 100px;
+                @include box(110px, 110px);
             }
 
             h5 {
@@ -932,18 +765,22 @@ body {
             }
 
             p {
+                @include size-weight(14px, 100);
                 color: #98a4b8;
-                font-size: 14px;
-                font-weight: 100;
                 margin-bottom: 10px;
+            }
+
+            &>div:last-child {
+                >div {
+                    border-right: 0px;
+                }
             }
         }
     }
 
     &__users {
+        @include box(470px, 100%);
         grid-column: 1 / 4;
-        height: 470px;
-        width: 100%;
 
         >div {
             color: $primary-color;
@@ -955,20 +792,20 @@ body {
             }
         }
 
-        table,
         th,
         td {
             border-bottom: 1px solid $bright-gray;
+            border-collapse: collapse;
         }
 
         table {
             border-top: 1px solid $bright-gray;
             border-bottom: 0px;
             padding: 0;
+            height: calc(100%-59px);
 
             img {
-                height: 30px;
-                width: 30px;
+                @include box(30px, 30px);
                 margin-right: 10px;
                 border-radius: 50%;
             }
@@ -978,20 +815,18 @@ body {
             }
 
             th {
+                @include size-weight(14px, bolder);
                 font-family: $opensans;
                 color: $primary-color;
                 text-align: start;
                 padding: 10.5px 28px;
-                font-size: 14px;
-                font-weight: bolder;
             }
 
             tr {
                 h5 {
+                    @include size-weight(14px, 100);
                     font-family: $opensans;
                     color: $primary-color;
-                    font-size: 14px;
-                    font-weight: 100;
                 }
 
                 >td:first-child {
@@ -1000,13 +835,17 @@ body {
                 }
 
                 >td:nth-child(2) {
-                    @extend h5;
-                    padding: 10.5px 28px;
+                    span {
+                        @extend h5;
+                        padding: 10.5px 28px;
+                    }
                 }
 
                 >td:nth-child(3) {
-                    @extend h5;
-                    padding: 10.5px 28px;
+                    span {
+                        @extend h5;
+                        padding: 10.5px 28px;
+                    }
                 }
 
                 >td:nth-child(4) {
@@ -1014,17 +853,15 @@ body {
                     padding: 10.5px 28px;
 
                     >div {
+                        @include box(14px, 78.5px);
                         background-color: #eee;
-                        height: 14px;
-                        width: 78.5px;
                         border-radius: 3px;
 
                         >div {
+                            @include box(100%, 55%);
                             color: $white;
                             text-align: center;
                             background-color: #16d39a;
-                            height: 100%;
-                            width: 55%;
                             font-size: 10px;
                             border-radius: 3px;
                         }
@@ -1147,151 +984,104 @@ body {
             }
 
             &:first-child {
-                position: relative;
+                @include position(relative);
 
                 &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 15px;
-                    width: 15px;
-                    border-radius: 50%;
+                    @extend .task-before;
                     background-color: $secondary-color;
                 }
 
                 &::after {
-                    content: '';
-                    position: absolute;
-                    top: 15px;
-                    left: 7px;
-                    height: 100%;
-                    width: 1px;
-                    background-color: #dfe3e7;
+                    @extend .task-after;
                 }
 
                 img {
-                    height: 20px;
-                    width: 20px;
+                    @include box(20px, 20px);
                     margin-top: 10px;
                     border-radius: 50%;
                 }
             }
 
             &:nth-child(2) {
-                position: relative;
+                @include position(relative);
 
                 &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 15px;
-                    width: 15px;
-                    border-radius: 50%;
+                    @extend .task-before;
                     background-color: $ultra-red;
                 }
 
                 &::after {
-                    content: '';
-                    position: absolute;
-                    top: 15px;
-                    left: 7px;
-                    height: 100%;
-                    width: 1px;
-                    background-color: #dfe3e7;
+                    @extend .task-after;
                 }
             }
 
             &:nth-child(3) {
-                position: relative;
+                @include position(relative);
 
                 &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 15px;
-                    width: 15px;
-                    border-radius: 50%;
+                    @extend .task-before;
                     background-color: $light-salmon;
                 }
 
                 &::after {
-                    content: '';
-                    position: absolute;
-                    top: 15px;
-                    left: 7px;
-                    height: 100%;
-                    width: 1px;
-                    background-color: #dfe3e7;
+                    @extend .task-after;
                 }
             }
 
             &:last-child {
-                position: relative;
+                @include position(relative);
 
                 &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 15px;
-                    width: 15px;
-                    border-radius: 50%;
+                    @extend .task-before;
                     background-color: $turquoise;
                 }
 
                 a {
+                    @include position(relative);
                     display: inline-block;
-                    position: relative;
                 }
 
                 img {
-                    height: 20px;
-                    width: 20px;
+                    @include box(20px, 20px);
+                    border: 2px solid $white;
                     margin-top: 10px;
                     border-radius: 50%;
-                    border: 2px solid $white;
 
                     &:first-child {
-                        position: absolute;
-                        left: 0;
+                        @include position(absolute, initial, initial, initial, 0);
                     }
 
                     &:nth-child(2) {
-                        position: absolute;
-                        left: 12px;
+                        @include position(absolute, initial, initial, initial, 12px);
                     }
 
                     &:last-child {
-                        position: absolute;
-                        left: 25px;
+                        @include position(absolute, initial, initial, initial, 25px);
                     }
 
                 }
             }
         }
     }
+}
 
-    &__footer {
-        background-color: $white;
-        height: 32px;
-        padding: 5px;
+.footer {
+    background-color: $white;
+    height: 32px;
+    margin-left: 240px;
+    padding: 5px;
 
-        h6 {
-            font-family: $opensans;
-            color: $cadet-grey;
-            font-size: 14px;
-            font-weight: 100;
+    h6 {
+        @include size-weight(14px, 100);
+        font-family: $opensans;
+        color: $cadet-grey;
+    }
 
-            a {
-                color: $viridian-green;
-            }
-        }
+    a {
+        color: $viridian-green;
+    }
 
-        i {
-            color: #E91E63;
-        }
+    i {
+        color: #E91E63;
     }
 }
