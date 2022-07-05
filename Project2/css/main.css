@@ -950,8 +950,8 @@ body {
     bottom: initial;
     left: initial;
     background-color: #fff;
-    width: 100%;
     box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
     z-index: 10; }
     .nav__sticky > div > div {
       padding: 0; }
@@ -1107,7 +1107,10 @@ body {
     padding: 20px 20px 10px 10px; }
   .sidebar li {
     justify-content: space-between;
+    cursor: pointer;
     padding: 10px 10px 10px 10px; }
+    .sidebar li:hover {
+      background-color: #38445a; }
     .sidebar li h6 {
       font-size: 14px;
       font-weight: lighter; }
@@ -1477,8 +1480,7 @@ body {
     .maincontent__users table {
       border-top: 1px solid #ECEFF1;
       border-bottom: 0px;
-      padding: 0;
-      height: calc(100%-59px); }
+      padding: 0; }
       .maincontent__users table img {
         height: 30px;
         width: 30px;

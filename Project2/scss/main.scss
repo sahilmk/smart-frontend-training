@@ -7,7 +7,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    // border: 1px solid black;
 }
 
 .nav {
@@ -16,8 +15,8 @@
     &__sticky {
         @include position(fixed, 0, 0);
         background-color: $white;
-        width: 100%;
         box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
+        width: 100%;
         z-index: 10;
 
         >div {
@@ -213,7 +212,12 @@
 
     li {
         justify-content: space-between;
+        cursor: pointer;
         padding: 10px 10px 10px 10px;
+
+        &:hover {
+            background-color: $charcol;
+        }
 
         h6 {
             @include size-weight(14px, lighter);
@@ -223,6 +227,8 @@
             padding-right: 10px;
             font-size: 15px;
         }
+
+
     }
 
     &__apps {
@@ -802,7 +808,7 @@
             border-top: 1px solid $bright-gray;
             border-bottom: 0px;
             padding: 0;
-            height: calc(100%-59px);
+            // height: calc(100%-59px);
 
             img {
                 @include box(30px, 30px);
