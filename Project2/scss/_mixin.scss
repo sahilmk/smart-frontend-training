@@ -30,9 +30,9 @@
 @mixin update-logo($color) {
     @include box(30px, 30px);
     color: $color;
-    background-color: rgba(0, 181, 184, 0.1);
     text-align: center;
     line-height: 30px;
+    background-color: rgba(0, 181, 184, 0.1);
     border-radius: 50%;
 }
 
