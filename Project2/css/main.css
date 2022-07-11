@@ -858,13 +858,6 @@
   .offset-xs-11 {
     margin-left: 91.666667%; } }
 
-.col-md-11,
-.col-md-9,
-.col-md-4,
-.col-md-3,
-.col-md-1 {
-  padding: 0; }
-
 ul {
   list-style: none; }
 
@@ -884,8 +877,8 @@ body {
     padding: 1px 6px;
     border-radius: 50%; }
     .notification--number--2 {
-      padding: 1px 5px;
       background-color: #ffa87d;
+      padding: 1px 5px;
       border-radius: 10px; }
   .notification--new {
     background-color: #ff7588;
@@ -928,8 +921,8 @@ body {
   padding: 1px 6px;
   border-radius: 50%; }
   .share--number--2 {
-    padding: 1px 5px;
     background-color: #ffa87d;
+    padding: 1px 5px;
     border-radius: 10px; }
 
 .share--new {
@@ -958,8 +951,8 @@ body {
   left: 7px;
   height: 100%;
   width: 1px;
-  content: '';
-  background-color: #dfe3e7; }
+  background-color: #dfe3e7;
+  content: ''; }
 
 .nav-notification, .nav__mainside > div:last-child ul li:nth-child(2) i::after, .nav__mainside > div:last-child ul li:nth-child(3) i::after {
   color: #fff;
@@ -985,8 +978,9 @@ body {
     width: 100%;
     box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
     z-index: 10; }
-    .nav__sticky > div > div {
-      padding: 0; }
+    .nav__sticky > div > div:last-child {
+      justify-content: space-between;
+      width: calc(100% - 240px); }
   .nav__sidebar {
     height: 55px;
     width: 240px;
@@ -996,89 +990,86 @@ body {
     padding: 0;
     font-size: 24px; }
     .nav__sidebar h2 {
-      font-size: 24px; }
+      font-size: 24px;
+      font-weight: 500; }
   .nav__mainside {
     align-items: center;
     height: 55px; }
     .nav__mainside > div:first-child {
-      height: 100%;
-      padding: 0; }
-      .nav__mainside > div:first-child > div {
+      color: #404e67;
+      align-items: center;
+      height: 100%; }
+      .nav__mainside > div:first-child a {
         color: #404e67;
-        align-items: center;
-        height: 100%; }
-        .nav__mainside > div:first-child > div a {
-          color: #404e67;
-          padding: 10px;
-          font-size: 14px; }
-          .nav__mainside > div:first-child > div a i {
-            padding-left: 5px;
-            font-size: 10px; }
-        .nav__mainside > div:first-child > div > i {
-          padding: 10px; }
-    .nav__mainside > div:last-child {
-      height: 100%;
+        margin-left: 15px;
+        padding: 10px;
+        font-size: 14px; }
+        .nav__mainside > div:first-child a i {
+          padding-left: 5px;
+          font-size: 10px; }
+      .nav__mainside > div:first-child > i {
+        cursor: pointer;
+        padding: 10px; }
+    .nav__mainside > div:last-child i {
+      color: #404e67;
+      font-size: 16px; }
+    .nav__mainside > div:last-child li {
       padding: 0; }
-      .nav__mainside > div:last-child i {
-        color: #404e67;
-        font-size: 16px; }
-      .nav__mainside > div:last-child li {
-        padding: 0; }
-      .nav__mainside > div:last-child ul {
-        justify-content: flex-end;
-        align-items: center;
-        height: 100%; }
-        .nav__mainside > div:last-child ul li {
-          padding-right: 23px; }
-          .nav__mainside > div:last-child ul li:first-child a {
-            align-items: center; }
-          .nav__mainside > div:last-child ul li:first-child img {
-            height: 18px;
-            width: 18px;
-            margin-right: 10px; }
-          .nav__mainside > div:last-child ul li:first-child i {
-            font-size: 10px; }
-          .nav__mainside > div:last-child ul li:nth-child(2) {
-            position: relative;
+    .nav__mainside > div:last-child ul {
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%; }
+      .nav__mainside > div:last-child ul li {
+        padding-right: 23px; }
+        .nav__mainside > div:last-child ul li:first-child a {
+          align-items: center; }
+        .nav__mainside > div:last-child ul li:first-child img {
+          height: 18px;
+          width: 18px;
+          margin-right: 10px; }
+        .nav__mainside > div:last-child ul li:first-child i {
+          font-size: 10px; }
+        .nav__mainside > div:last-child ul li:nth-child(2) {
+          position: relative;
+          top: initial;
+          right: initial;
+          bottom: initial;
+          left: initial;
+          margin: 0 10px; }
+          .nav__mainside > div:last-child ul li:nth-child(2) i::after {
+            position: absolute;
             top: initial;
             right: initial;
-            bottom: initial;
-            left: initial;
-            margin: 0 10px; }
-            .nav__mainside > div:last-child ul li:nth-child(2) i::after {
-              position: absolute;
-              top: initial;
-              right: initial;
-              bottom: 13px;
-              left: 9px;
-              content: '5'; }
-          .nav__mainside > div:last-child ul li:nth-child(3) {
-            position: relative;
+            bottom: 13px;
+            left: 9px;
+            content: '5'; }
+        .nav__mainside > div:last-child ul li:nth-child(3) {
+          position: relative;
+          top: initial;
+          right: initial;
+          bottom: initial;
+          left: initial;
+          margin: 0 10px; }
+          .nav__mainside > div:last-child ul li:nth-child(3) i::after {
+            position: absolute;
             top: initial;
             right: initial;
-            bottom: initial;
-            left: initial;
-            margin: 0 10px; }
-            .nav__mainside > div:last-child ul li:nth-child(3) i::after {
-              position: absolute;
-              top: initial;
-              right: initial;
-              bottom: 13px;
-              left: 10px;
-              background-color: #ffa87d;
-              content: '3'; }
-          .nav__mainside > div:last-child ul li:last-child a {
-            display: inline-block; }
-        .nav__mainside > div:last-child ul span {
-          padding: 0 5px;
-          font-size: 14px; }
-          .nav__mainside > div:last-child ul span + i {
-            font-size: 10px; }
-        .nav__mainside > div:last-child ul a {
-          color: #404e67; }
-          .nav__mainside > div:last-child ul a div {
-            align-items: center;
-            padding: 0; }
+            bottom: 13px;
+            left: 10px;
+            background-color: #ffa87d;
+            content: '3'; }
+        .nav__mainside > div:last-child ul li:last-child a {
+          display: inline-block; }
+      .nav__mainside > div:last-child ul span {
+        margin: 0 8px;
+        font-size: 14px; }
+        .nav__mainside > div:last-child ul span + i {
+          font-size: 10px; }
+      .nav__mainside > div:last-child ul a {
+        color: #404e67; }
+        .nav__mainside > div:last-child ul a div {
+          align-items: center;
+          padding: 0; }
   .nav__user {
     position: relative;
     top: initial;
@@ -1120,8 +1111,8 @@ body {
     background: #404e67; }
   .sidebar::-webkit-scrollbar-thumb {
     background: #999;
-    border-radius: 20px;
-    visibility: hidden; }
+    visibility: hidden;
+    border-radius: 20px; }
   .sidebar:hover::-webkit-scrollbar-thumb {
     visibility: visible; }
   .sidebar h5, .sidebar .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .sidebar span, .sidebar .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .sidebar span, .sidebar .maincontent__users table tr > td:nth-child(4), .maincontent__users table .sidebar tr > td:nth-child(4) {
@@ -1199,8 +1190,7 @@ body {
     grid-column: 1 / 5;
     height: 115px; }
     .maincontent__statistics > div > div {
-      border-right: 1px solid #ECEFF1;
-      justify-content: space-around; }
+      border-right: 1px solid #ECEFF1; }
       .maincontent__statistics > div > div h2 {
         color: #404e67;
         font-size: 26.5px; }
@@ -1218,7 +1208,12 @@ body {
       .maincontent__statistics > div > div > :first-child {
         color: #00b5b8;
         background-color: #f5f7fa;
+        margin-right: 48px;
         padding: 20px; }
+      .maincontent__statistics > div > div > :nth-child(2) {
+        margin-right: 48px; }
+      .maincontent__statistics > div > div > :last-child {
+        margin-right: 48px; }
     .maincontent__statistics > div:nth-child(odd) > div > div:last-child {
       color: #00b5b8; }
     .maincontent__statistics > div:nth-child(even) > div > div:last-child {
@@ -1369,6 +1364,7 @@ body {
         padding: 0;
         font-size: 18.5px; }
       .maincontent__update > div:first-child h6 {
+        text-align: end;
         padding: 0;
         font-size: 14px; }
       .maincontent__update > div:first-child a {
@@ -1377,16 +1373,15 @@ body {
         font-weight: 100; }
     .maincontent__update > div:last-child {
       overflow: scroll;
-      height: 182px;
-      padding: 0 15px 15px; }
+      height: 182px; }
       .maincontent__update > div:last-child::-webkit-scrollbar {
         width: 7px; }
       .maincontent__update > div:last-child::-webkit-scrollbar-track {
         background: #fff; }
       .maincontent__update > div:last-child::-webkit-scrollbar-thumb {
         background: #999;
-        border-radius: 20px;
-        visibility: hidden; }
+        visibility: hidden;
+        border-radius: 20px; }
       .maincontent__update > div:last-child:hover::-webkit-scrollbar-thumb {
         visibility: visible; }
     .maincontent__update li {
@@ -1394,11 +1389,12 @@ body {
       .maincontent__update li h5, .maincontent__update li .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__update li span, .maincontent__update li .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__update li span, .maincontent__update li .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__update li tr > td:nth-child(4) {
         font-size: 14px;
         font-weight: 400;
-        color: #626E82; }
+        color: #626e82;
+        text-align: end; }
       .maincontent__update li h6 {
-        color: #404e67;
         font-size: 12.5px;
-        font-weight: 100; }
+        font-weight: 100;
+        color: #404e67; }
       .maincontent__update li:first-child {
         padding-bottom: 18px; }
         .maincontent__update li:first-child i {
@@ -1465,6 +1461,8 @@ body {
       color: #404e67;
       padding: 20px 15px;
       font-size: 18px; }
+      .maincontent__information > div:first-child > div {
+        text-align: end; }
       .maincontent__information > div:first-child h4 {
         font-weight: 500; }
     .maincontent__information > div:last-child {
@@ -1484,8 +1482,8 @@ body {
       .maincontent__information > div:last-child p {
         font-size: 14px;
         font-weight: 100;
-        margin-bottom: 10px;
-        color: #90a4ae; }
+        color: #90a4ae;
+        margin-bottom: 10px; }
       .maincontent__information > div:last-child > div:last-child > div {
         border-right: 0px; }
   .maincontent__users {
@@ -1497,13 +1495,15 @@ body {
       padding: 20px;
       font-size: 16px; }
       .maincontent__users > div a {
-        color: #404e67; }
+        color: #404e67;
+        text-align: end; }
     .maincontent__users th,
     .maincontent__users td {
       border-bottom: 1px solid #ECEFF1;
       border-collapse: collapse; }
     .maincontent__users table {
       border-top: 1px solid #ECEFF1;
+      overflow-x: scroll;
       padding: 0;
       border-bottom: 0px; }
       .maincontent__users table img {
@@ -1543,8 +1543,8 @@ body {
             height: 100%;
             width: 55%;
             color: #fff;
-            text-align: center;
             background-color: #16d39a;
+            text-align: center;
             font-size: 10px;
             border-radius: 3px; }
       .maincontent__users table tr > td:nth-child(5) {
@@ -1573,7 +1573,8 @@ body {
     padding: 21px;
     font-size: 16px; }
     .maincontent__tasks > div a {
-      color: #404e67; }
+      color: #404e67;
+      text-align: end; }
   .maincontent__tasks ul {
     padding: 20px; }
   .maincontent__tasks li {
@@ -1672,6 +1673,8 @@ body {
     font-weight: 100;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #90a4ae; }
+    .footer span:last-child {
+      text-align: end; }
   .footer a {
     color: #009c9f; }
   .footer i {

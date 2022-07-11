@@ -21,9 +21,13 @@
 
         >div {
             >div {
-                padding: 0;
+                &:last-child {
+                    justify-content: space-between;
+                    width: calc(100% - 240px);
+                }
             }
         }
+
     }
 
     &__sidebar {
@@ -36,6 +40,7 @@
 
         h2 {
             font-size: 24px;
+            font-weight: 500;
         }
     }
 
@@ -45,37 +50,29 @@
 
         >div {
             &:first-child {
+                color: $primary-color;
+                align-items: center;
                 height: 100%;
-                padding: 0;
 
-                >div {
+                a {
                     color: $primary-color;
-                    align-items: center;
-                    height: 100%;
+                    margin-left: 15px;
+                    padding: 10px;
+                    font-size: 14px;
 
-                    a {
-                        color: $primary-color;
-                        padding: 10px;
-                        font-size: 14px;
-
-                        i {
-                            padding-left: 5px;
-                            font-size: 10px;
-                        }
-                    }
-
-                    >i {
-                        padding: 10px;
+                    i {
+                        padding-left: 5px;
+                        font-size: 10px;
                     }
                 }
+
+                >i {
+                    cursor: pointer;
+                    padding: 10px;
+                }
             }
-        }
 
-        >div {
             &:last-child {
-                height: 100%;
-                padding: 0;
-
                 i {
                     color: $primary-color;
                     font-size: 16px;
@@ -143,7 +140,7 @@
                     }
 
                     span {
-                        padding: 0 5px;
+                        margin: 0 8px;
                         font-size: 14px;
 
                         +i {
@@ -163,6 +160,10 @@
                 }
             }
         }
+
+
+
+
     }
 
     &__user {
@@ -324,7 +325,6 @@
         >div {
             >div {
                 border-right: 1px solid $bright-gray-color;
-                justify-content: space-around;
 
                 h2 {
                     color: $primary-color;
@@ -349,11 +349,19 @@
                     }
                 }
 
-
                 >:first-child {
                     color: $secondary-color;
                     background-color: $cultured-color;
+                    margin-right: 48px;
                     padding: 20px;
+                }
+
+                >:nth-child(2) {
+                    margin-right: 48px;
+                }
+
+                >:last-child {
+                    margin-right: 48px;
                 }
             }
 
@@ -657,6 +665,7 @@
                 }
 
                 h6 {
+                    text-align: end;
                     padding: 0;
                     font-size: 14px;
                 }
@@ -674,7 +683,6 @@
                 @include scroll-bar($white-color);
                 overflow: scroll;
                 height: 182px;
-                padding: 0 15px 15px;
 
                 &:hover {
                     &::-webkit-scrollbar-thumb {
@@ -691,12 +699,15 @@
             h5 {
                 @include size-weight(14px, 400);
                 color: $dark-electric-blue-color;
+                text-align: end
             }
 
             h6 {
                 @include size-weight(12.5px, 100);
                 color: $primary-color;
             }
+
+
 
             &:first-child {
                 padding-bottom: 18px;
@@ -757,6 +768,10 @@
                 padding: 20px 15px;
                 font-size: 18px;
 
+                >div {
+                    text-align: end;
+                }
+
                 h4 {
                     font-weight: 500;
                 }
@@ -815,6 +830,7 @@
 
             a {
                 color: $primary-color;
+                text-align: end;
             }
         }
 
@@ -826,6 +842,7 @@
 
         table {
             border-top: 1px solid $bright-gray-color;
+            overflow-x: scroll;
             padding: 0;
             border-bottom: 0px;
 
@@ -975,6 +992,7 @@
 
             a {
                 color: $primary-color;
+                text-align: end;
             }
         }
 
@@ -1100,6 +1118,10 @@
         @include size-weight(14px, 100);
         font-family: $opensans-font-family;
         color: $cadet-grey-color;
+
+        &:last-child {
+            text-align: end;
+        }
     }
 
     a {
