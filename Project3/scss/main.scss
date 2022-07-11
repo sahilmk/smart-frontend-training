@@ -1,12 +1,40 @@
 @import 'common-flex-base';
+@import 'utility';
+@import 'variable';
+@import 'mixin';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    // border: 1px solid red;
+.sidebar {
+    @include position(absolute, 0, initial, initial, 0);
+    background-color: $chinese-blue;
+    width: 249px;
 }
 
-ul {
-    list-style: none;
+.main-content {
+    @include position(absolute, 0, initial, initial, 0);
+    margin-left: 249px;
+    width: 100%;
+
+    &__background {
+        background: url('../img/profile-bg.jpg') no-repeat center center/cover;
+        position: relative;
+        height: 260px;
+
+        &::before {
+            content: '';
+            background-color: $chinese-blue;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        i {}
+
+        h6 {}
+    }
+
+    &__setting {
+        position: absolute;
+        top: 415px;
+    }
 }
