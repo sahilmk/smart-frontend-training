@@ -112,10 +112,12 @@
                             @include position(relative);
                             margin: 0 10px;
 
-                            i::after {
-                                @include position(absolute, initial, initial, 13px, 9px);
-                                @extend .nav-notification;
-                                content: '5';
+                            i {
+                                &::after {
+                                    @include position(absolute, initial, initial, 13px, 9px);
+                                    @extend .nav-notification;
+                                    content: '5';
+                                }
                             }
                         }
 
@@ -123,11 +125,13 @@
                             @include position(relative);
                             margin: 0 10px;
 
-                            i::after {
-                                @include position(absolute, initial, initial, 13px, 10px);
-                                @extend .nav-notification;
-                                background-color: $light-salmon-color;
-                                content: '3';
+                            i {
+                                &::after {
+                                    @include position(absolute, initial, initial, 13px, 10px);
+                                    @extend .nav-notification;
+                                    background-color: $light-salmon-color;
+                                    content: '3';
+                                }
                             }
                         }
 
@@ -207,7 +211,7 @@
     li {
         justify-content: space-between;
         cursor: pointer;
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
 
         &:hover {
             background-color: $charcol-color;
@@ -786,7 +790,7 @@
                 p {
                     @include size-weight(14px, 100);
                     margin-bottom: 10px;
-                    color: #98a4b8;
+                    color: $cadet-grey-color;
                 }
 
                 >div {
@@ -875,14 +879,14 @@
 
                     >div {
                         @include box(14px, 78.5px);
-                        background-color: #eee;
+                        background-color: $bright-gray-color;
                         border-radius: 3px;
 
                         >div {
                             @include box(100%, 55%);
                             color: $white-color;
                             text-align: center;
-                            background-color: #16d39a;
+                            background-color: $caribbean-green-color;
                             font-size: 10px;
                             border-radius: 3px;
                         }

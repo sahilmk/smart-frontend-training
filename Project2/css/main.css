@@ -872,7 +872,7 @@ a {
   text-decoration: none; }
 
 body {
-  font-family: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+  font-family: "Montserrat", Georgia, "Times New Roman", Times, serif;
   background-color: #f5f7fa; }
 
 .notification {
@@ -897,22 +897,46 @@ body {
     margin-right: 10px;
     padding: 2px 7px;
     border-radius: 10px; }
-  .notification--active {
-    background-color: #16d39a;
-    padding: 5px;
-    border-radius: 5px; }
-  .notification--reported {
-    background-color: #ffa87d;
-    padding: 5px;
-    border-radius: 5px; }
-  .notification--block {
-    background-color: #ff7588;
-    padding: 5px;
-    border-radius: 5px; }
   .notification--completed {
     background-color: #16d39a;
     padding: 5px;
     border-radius: 50px; }
+
+.status {
+  color: #fff;
+  font-size: 12px; }
+  .status--active {
+    background-color: #16d39a;
+    padding: 5px;
+    border-radius: 5px; }
+  .status--reported {
+    background-color: #ffa87d;
+    padding: 5px;
+    border-radius: 5px; }
+  .status--block {
+    background-color: #ff7588;
+    padding: 5px;
+    border-radius: 5px; }
+  .status--completed {
+    background-color: #16d39a;
+    padding: 5px;
+    border-radius: 50px; }
+
+.share--number {
+  background-color: #00b5b8;
+  margin-right: 10px;
+  padding: 1px 6px;
+  border-radius: 50%; }
+  .share--number--2 {
+    padding: 1px 5px;
+    background-color: #ffa87d;
+    border-radius: 10px; }
+
+.share--new {
+  background-color: #ff7588;
+  margin-right: 10px;
+  padding: 2px 5px;
+  border-radius: 10px; }
 
 .task-before, .maincontent__tasks li:first-child::before, .maincontent__tasks li:nth-child(2)::before, .maincontent__tasks li:nth-child(3)::before, .maincontent__tasks li:last-child::before {
   position: absolute;
@@ -1109,7 +1133,7 @@ body {
   .sidebar li {
     justify-content: space-between;
     cursor: pointer;
-    padding: 10px 10px 10px 10px; }
+    padding: 10px; }
     .sidebar li:hover {
       background-color: #38445a; }
     .sidebar li h6 {
@@ -1461,7 +1485,7 @@ body {
         font-size: 14px;
         font-weight: 100;
         margin-bottom: 10px;
-        color: #98a4b8; }
+        color: #90a4ae; }
       .maincontent__information > div:last-child > div:last-child > div {
         border-right: 0px; }
   .maincontent__users {
@@ -1513,7 +1537,7 @@ body {
         .maincontent__users table tr > td:nth-child(4) > div {
           height: 14px;
           width: 78.5px;
-          background-color: #eee;
+          background-color: #ECEFF1;
           border-radius: 3px; }
           .maincontent__users table tr > td:nth-child(4) > div > div {
             height: 100%;

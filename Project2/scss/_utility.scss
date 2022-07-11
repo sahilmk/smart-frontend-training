@@ -19,7 +19,7 @@ a {
 }
 
 body {
-    font-family: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+    font-family: $montserrat;
     background-color: $cultured-color;
 }
 
@@ -36,8 +36,8 @@ body {
         border-radius: 50%;
 
         &--2 {
+            background-color: $light-salmon-color;
             padding: 1px 5px;
-            background-color: #ffa87d;
             border-radius: 10px;
         }
     }
@@ -50,11 +50,23 @@ body {
     }
 
     &--hot {
-        background-color: #16d39a;
+        background-color: $caribbean-green-color;
         margin-right: 10px;
         padding: 2px 7px;
         border-radius: 10px;
     }
+
+    &--completed {
+        background-color: $caribbean-green-color;
+        padding: 5px;
+        border-radius: 50px;
+    }
+
+}
+
+.status {
+    color: $white-color;
+    font-size: 12px;
 
     &--active {
         background-color: $caribbean-green-color;
@@ -79,7 +91,28 @@ body {
         padding: 5px;
         border-radius: 50px;
     }
+}
 
+.share {
+    &--number {
+        background-color: $secondary-color;
+        margin-right: 10px;
+        padding: 1px 6px;
+        border-radius: 50%;
+
+        &--2 {
+            background-color: $light-salmon-color;
+            padding: 1px 5px;
+            border-radius: 10px;
+        }
+    }
+
+    &--new {
+        background-color: $ultra-red-color;
+        margin-right: 10px;
+        padding: 2px 5px;
+        border-radius: 10px;
+    }
 }
 
 .task-before {
@@ -93,8 +126,8 @@ body {
 .task-after {
     @include position(absolute, 15px, initial, initial, 7px);
     @include box(100%, 1px);
+    background-color: $platinum;
     content: '';
-    background-color: #dfe3e7;
 }
 
 .nav-notification {
