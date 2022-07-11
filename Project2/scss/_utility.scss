@@ -20,12 +20,12 @@ a {
 
 body {
     font-family: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
-    background-color: $cultured;
+    background-color: $cultured-color;
 }
 
 
 .notification {
-    color: $white;
+    color: $white-color;
     font-size: 12px;
 
 
@@ -43,7 +43,7 @@ body {
     }
 
     &--new {
-        background-color: $ultra-red;
+        background-color: $ultra-red-color;
         margin-right: 10px;
         padding: 2px 5px;
         border-radius: 10px;
@@ -57,25 +57,25 @@ body {
     }
 
     &--active {
-        background-color: $caribbean-green;
+        background-color: $caribbean-green-color;
         padding: 5px;
         border-radius: 5px;
     }
 
     &--reported {
-        background-color: $light-salmon;
+        background-color: $light-salmon-color;
         padding: 5px;
         border-radius: 5px;
     }
 
     &--block {
-        background-color: $ultra-red;
+        background-color: $ultra-red-color;
         padding: 5px;
         border-radius: 5px;
     }
 
     &--completed {
-        background-color: $caribbean-green;
+        background-color: $caribbean-green-color;
         padding: 5px;
         border-radius: 50px;
     }
@@ -98,8 +98,8 @@ body {
 }
 
 .nav-notification {
-    color: $white;
-    background-color: $ultra-red;
+    color: $white-color;
+    background-color: $ultra-red-color;
     padding: 5px 7px;
     font-size: 10px;
     border-radius: 50%;

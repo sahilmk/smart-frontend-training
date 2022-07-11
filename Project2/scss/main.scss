@@ -14,7 +14,7 @@
 
     &__sticky {
         @include position(fixed, 0, 0);
-        background-color: $white;
+        background-color: $white-color;
         width: 100%;
         box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
         z-index: 10;
@@ -28,7 +28,7 @@
 
     &__sidebar {
         @include box(55px, 240px);
-        color: $white;
+        color: $white-color;
         background-color: $primary-color;
         align-items: center;
         padding: 0;
@@ -43,68 +43,72 @@
         align-items: center;
         height: 55px;
 
-        >div:first-child {
-            height: 100%;
-            padding: 0;
-
-            >div {
-                color: $primary-color;
-                align-items: center;
+        >div {
+            &:first-child {
                 height: 100%;
-
-                a {
-                    color: $primary-color;
-                    padding: 10px;
-                    font-size: 14px;
-
-                    i {
-                        padding-left: 5px;
-                        font-size: 10px;
-                    }
-                }
-
-                >i {
-                    padding: 10px;
-                }
-            }
-        }
-
-        >div:last-child {
-            height: 100%;
-            padding: 0;
-
-            i {
-                color: $primary-color;
-                font-size: 16px;
-            }
-
-            li {
                 padding: 0;
-            }
 
-            ul {
-                justify-content: flex-end;
-                align-items: center;
-                height: 100%;
+                >div {
+                    color: $primary-color;
+                    align-items: center;
+                    height: 100%;
 
-                li {
-                    &:first-child {
-                        a {
-                            align-items: center;
-                        }
-
-                        img {
-                            @include box(18px, 18px);
-                            margin-right: 10px;
-                        }
+                    a {
+                        color: $primary-color;
+                        padding: 10px;
+                        font-size: 14px;
 
                         i {
+                            padding-left: 5px;
                             font-size: 10px;
                         }
                     }
 
-                    &:nth-child(2) {
-                        div {
+                    >i {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+
+        >div {
+            &:last-child {
+                height: 100%;
+                padding: 0;
+
+                i {
+                    color: $primary-color;
+                    font-size: 16px;
+                }
+
+                li {
+                    padding: 0;
+                }
+
+                ul {
+                    justify-content: flex-end;
+                    align-items: center;
+                    height: 100%;
+
+                    li {
+                        padding-right: 23px;
+
+                        &:first-child {
+                            a {
+                                align-items: center;
+                            }
+
+                            img {
+                                @include box(18px, 18px);
+                                margin-right: 10px;
+                            }
+
+                            i {
+                                font-size: 10px;
+                            }
+                        }
+
+                        &:nth-child(2) {
                             @include position(relative);
                             margin: 0 10px;
 
@@ -115,46 +119,44 @@
                             }
                         }
 
-                    }
-
-                    &:nth-child(3) {
-                        div {
+                        &:nth-child(3) {
                             @include position(relative);
                             margin: 0 10px;
 
                             i::after {
                                 @include position(absolute, initial, initial, 13px, 10px);
                                 @extend .nav-notification;
+                                background-color: $light-salmon-color;
                                 content: '3';
+                            }
+                        }
+
+                        &:last-child {
+                            a {
+                                display: inline-block;
                             }
                         }
                     }
 
-                    &:last-child {
-                        a {
-                            display: inline-block;
+                    span {
+                        padding: 0 5px;
+                        font-size: 14px;
+
+                        +i {
+                            font-size: 10px;
                         }
                     }
-                }
 
-                span {
-                    padding: 0 5px;
-                    font-size: 14px;
+                    a {
+                        color: $primary-color;
 
-                    +i {
-                        font-size: 10px;
+                        div {
+                            align-items: center;
+                            padding: 0;
+                        }
                     }
+
                 }
-
-                a {
-                    color: $primary-color;
-
-                    div {
-                        align-items: center;
-                        padding: 0;
-                    }
-                }
-
             }
         }
     }
@@ -171,7 +173,7 @@
         &::after {
             @include position(absolute, initial, 0px, 3px, initial);
             @include box(10px, 10px);
-            background-color: $caribbean-green;
+            background-color: $caribbean-green-color;
             content: '';
             border-radius: 50%;
         }
@@ -184,7 +186,7 @@
     @include position(fixed, 0px, initial, initial 0px);
     @include box(100vh, 240px);
     @include scroll-bar($primary-color);
-    color: $gainsboro;
+    color: $gainsboro-color;
     background-color: $primary-color;
     overflow-y: scroll;
     padding-top: 54px;
@@ -197,7 +199,7 @@
 
     h5 {
         @include size-weight(14px, bold);
-        color: $gainsboro;
+        color: $gainsboro-color;
         text-transform: uppercase;
         padding: 20px 20px 10px 10px;
     }
@@ -208,12 +210,12 @@
         padding: 10px 10px 10px 10px;
 
         &:hover {
-            background-color: $charcol;
+            background-color: $charcol-color;
         }
 
         h6 {
             @include size-weight(14px, lighter);
-            color: $gainsboro;
+            color: $gainsboro-color;
         }
 
         i {
@@ -257,39 +259,40 @@
 }
 
 .maincontent {
-    padding-top: 55px;
-    padding-left: 240px;
+    padding: 55px 0 0 240px;
 
-    >div:nth-child(3) {
-        >div {
-            box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
+    >div {
+        &:nth-child(3) {
+            >div {
+                box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
+            }
         }
     }
 
     &__button {
         @include position(fixed, initial, 30px, 40px, initial);
+        background-color: $dark-orchid-color;
         display: inline-block;
-        background-color: #9C27B0;
         padding: 10px 20px;
         font-size: 14px;
         border-radius: 5px;
         z-index: 5;
 
         a {
-            color: $white;
+            color: $white-color;
         }
     }
 
     &__setting {
         @include position(fixed, initial, 0px, 60%, initial);
+        background-color: $ultra-red-color;
         display: inline-block;
-        background-color: $ultra-red;
         padding: 15px 15px;
         font-size: 14px;
         z-index: 5;
 
         a {
-            color: $white;
+            color: $white-color;
         }
 
         i {
@@ -305,7 +308,7 @@
 
 
         >div {
-            background-color: $white;
+            background-color: $white-color;
         }
     }
 
@@ -316,7 +319,7 @@
 
         >div {
             >div {
-                border-right: 1px solid $bright-gray;
+                border-right: 1px solid $bright-gray-color;
                 justify-content: space-around;
 
                 h2 {
@@ -326,8 +329,8 @@
 
                 h5 {
                     @include size-weight(14px, 100);
-                    font-family: $opensans;
-                    color: $silver-sand;
+                    font-family: $opensans-font-family;
+                    color: $silver-sand-color;
                 }
 
                 i {
@@ -345,23 +348,27 @@
 
                 >:first-child {
                     color: $secondary-color;
-                    background-color: $cultured;
+                    background-color: $cultured-color;
                     padding: 20px;
                 }
             }
 
             &:nth-child(odd) {
                 >div {
-                    >div:last-child {
-                        color: $secondary-color;
+                    >div {
+                        &:last-child {
+                            color: $secondary-color;
+                        }
                     }
                 }
             }
 
             &:nth-child(even) {
                 >div {
-                    >div:last-child {
-                        color: $ultra-red;
+                    >div {
+                        &:last-child {
+                            color: $ultra-red-color;
+                        }
                     }
                 }
             }
@@ -369,7 +376,7 @@
             &:nth-child(2) {
                 >div {
                     >i {
-                        color: $ultra-red;
+                        color: $ultra-red-color;
                     }
                 }
             }
@@ -377,7 +384,7 @@
             &:nth-child(3) {
                 >div {
                     >i {
-                        color: $caribbean-green;
+                        color: $caribbean-green-color;
                     }
                 }
             }
@@ -385,7 +392,7 @@
             &:last-child {
                 >div {
                     >i {
-                        color: $light-salmon;
+                        color: $light-salmon-color;
                     }
 
                     border: none;
@@ -412,7 +419,7 @@
                 color: $primary-color;
 
                 span {
-                    font-family: $opensans;
+                    font-family: $opensans-font-family;
                     font-size: 14px;
                 }
             }
@@ -441,45 +448,49 @@
         height: 443px;
 
         h4 {
-            font-family: $opensans;
-            color: $silver-sand;
+            font-family: $opensans-font-family;
+            color: $silver-sand-color;
             padding-left: 15px;
             font-size: 14px;
 
         }
 
-        >div:first-child {
-            border-bottom: 1px $bright-gray solid;
-            padding-left: 15px;
+        >div {
+            &:first-child {
+                border-bottom: 1px $bright-gray-color solid;
+                padding-left: 15px;
 
-            h5 {
-                @include size-weight(14px, 100);
-                font-family: $opensans;
-                color: $secondary-color;
-                margin-right: 10px;
-                padding: 15px 0;
+                h5 {
+                    @include size-weight(14px, 100);
+                    font-family: $opensans-font-family;
+                    color: $secondary-color;
+                    margin-right: 10px;
+                    padding: 15px 0;
 
-                &:first-child {
-                    border-bottom: 2px $primary-color solid;
+                    &:first-child {
+                        border-bottom: 2px $primary-color solid;
+                    }
                 }
             }
         }
 
-        >div:nth-child(2) {
-            padding: 20px 0 0 15px;
+        >div {
+            &:nth-child(2) {
+                padding: 20px 0 0 15px;
 
-            h3 {
-                color: $primary-color;
-                padding-right: 20px;
-                font-size: 21px;
-            }
+                h3 {
+                    color: $primary-color;
+                    padding-right: 20px;
+                    font-size: 21px;
+                }
 
-            h6 {
-                color: $secondary-color;
-                font-size: 11px;
+                h6 {
+                    color: $secondary-color;
+                    font-size: 11px;
 
-                i {
-                    padding-right: 5px;
+                    i {
+                        padding-right: 5px;
+                    }
                 }
             }
         }
@@ -515,8 +526,8 @@
             &:nth-child(3) {
                 >div {
                     >div {
+                        background-color: $ultra-red-color;
                         height: 65%;
-                        background-color: $ultra-red;
                     }
                 }
             }
@@ -532,8 +543,8 @@
             &:nth-child(5) {
                 >div {
                     >div {
+                        background-color: $light-salmon-color;
                         height: 90%;
-                        background-color: $light-salmon;
                     }
                 }
             }
@@ -565,7 +576,7 @@
         >h6 {
             @include size-weight(14px, 100);
             color: $secondary-color;
-            border-bottom: 1px $bright-gray solid;
+            border-bottom: 1px $bright-gray-color solid;
             margin-right: 10px;
             padding: 25px 0 15px 25px;
         }
@@ -579,7 +590,7 @@
             justify-content: center;
 
             h5 {
-                font-family: $opensans;
+                font-family: $opensans-font-family;
                 color: $primary-color;
                 font-size: 14px;
             }
@@ -598,9 +609,9 @@
         }
 
         >:last-child {
-            font-family: $opensans;
+            font-family: $opensans-font-family;
             color: $primary-color;
-            border-top: 1px $bright-gray solid;
+            border-top: 1px $bright-gray-color solid;
             justify-content: space-evenly;
             text-align: center;
             margin-top: 40px;
@@ -616,7 +627,7 @@
             }
 
             >div {
-                border-right: 1px $bright-gray solid;
+                border-right: 1px $bright-gray-color solid;
                 padding: 10px 0;
             }
 
@@ -630,44 +641,48 @@
     &__update {
         height: 235px;
 
-        >div:first-child {
-            justify-content: space-between;
-            padding: 15px;
+        >div {
+            &:first-child {
+                justify-content: space-between;
+                padding: 15px;
 
-            h4 {
-                color: $primary-color;
-                padding: 0;
-                font-size: 18.5px;
-            }
+                h4 {
+                    color: $primary-color;
+                    padding: 0;
+                    font-size: 18.5px;
+                }
 
-            h6 {
-                padding: 0;
-                font-size: 14px;
-            }
+                h6 {
+                    padding: 0;
+                    font-size: 14px;
+                }
 
-            a {
-                font-family: $opensans;
-                color: $viridian-green;
-                font-weight: 100;
+                a {
+                    font-family: $opensans-font-family;
+                    color: $viridian-green-color;
+                    font-weight: 100;
+                }
             }
         }
 
-        >div:last-child {
-            @include scroll-bar($white);
-            overflow: scroll;
-            height: 182px;
-            padding: 0 15px 15px;
+        >div {
+            &:last-child {
+                @include scroll-bar($white-color);
+                overflow: scroll;
+                height: 182px;
+                padding: 0 15px 15px;
 
-            &:hover {
-                &::-webkit-scrollbar-thumb {
-                    visibility: visible;
+                &:hover {
+                    &::-webkit-scrollbar-thumb {
+                        visibility: visible;
+                    }
                 }
-            }
 
+            }
         }
 
         li {
-            font-family: $opensans;
+            font-family: $opensans-font-family;
 
             h5 {
                 @include size-weight(14px, 400);
@@ -691,7 +706,7 @@
                 padding: 18px 0;
 
                 i {
-                    @include update-logo($turquoise);
+                    @include update-logo($turquoise-color);
                 }
             }
 
@@ -699,7 +714,7 @@
                 padding: 18px 0;
 
                 i {
-                    @include update-logo($ultra-red);
+                    @include update-logo($ultra-red-color);
                 }
             }
 
@@ -715,7 +730,7 @@
                 padding: 18px 0;
 
                 i {
-                    @include update-logo($turquoise);
+                    @include update-logo($turquoise-color);
                 }
             }
 
@@ -723,7 +738,7 @@
                 padding-top: 18px;
 
                 i {
-                    @include update-logo($ultra-red);
+                    @include update-logo($ultra-red-color);
                 }
             }
         }
@@ -732,48 +747,54 @@
     &__information {
         grid-column: 2 / 5;
 
-        >div:first-child {
-            color: $primary-color;
-            padding: 20px 15px;
-            font-size: 18px;
+        >div {
+            &:first-child {
+                color: $primary-color;
+                padding: 20px 15px;
+                font-size: 18px;
 
-            h4 {
-                font-weight: 500;
+                h4 {
+                    font-weight: 500;
+                }
             }
         }
 
-        >div:last-child {
-            font-family: $opensans;
-            border-top: 1px solid $bright-gray;
-
-            >div {
+        >div {
+            &:last-child {
+                font-family: $opensans-font-family;
+                border-top: 1px solid $bright-gray-color;
 
                 >div {
-                    border-right: 1px solid $bright-gray;
-                    align-items: center;
-                    padding: 30px;
+
+                    >div {
+                        border-right: 1px solid $bright-gray-color;
+                        align-items: center;
+                        padding: 30px;
+                    }
                 }
-            }
 
-            img {
-                @include box(110px, 110px);
-            }
+                img {
+                    @include box(110px, 110px);
+                }
 
-            h5 {
-                color: $primary-color;
-                margin-bottom: 5px;
-                font-size: 16px;
-            }
+                h5 {
+                    color: $primary-color;
+                    margin-bottom: 5px;
+                    font-size: 16px;
+                }
 
-            p {
-                @include size-weight(14px, 100);
-                margin-bottom: 10px;
-                color: #98a4b8;
-            }
+                p {
+                    @include size-weight(14px, 100);
+                    margin-bottom: 10px;
+                    color: #98a4b8;
+                }
 
-            &>div:last-child {
                 >div {
-                    border-right: 0px;
+                    &:last-child {
+                        >div {
+                            border-right: 0px;
+                        }
+                    }
                 }
             }
         }
@@ -795,12 +816,12 @@
 
         th,
         td {
-            border-bottom: 1px solid $bright-gray;
+            border-bottom: 1px solid $bright-gray-color;
             border-collapse: collapse;
         }
 
         table {
-            border-top: 1px solid $bright-gray;
+            border-top: 1px solid $bright-gray-color;
             padding: 0;
             border-bottom: 0px;
 
@@ -816,7 +837,7 @@
 
             th {
                 @include size-weight(14px, bolder);
-                font-family: $opensans;
+                font-family: $opensans-font-family;
                 color: $primary-color;
                 text-align: start;
                 padding: 10.5px 28px;
@@ -825,7 +846,7 @@
             tr {
                 h5 {
                     @include size-weight(14px, 100);
-                    font-family: $opensans;
+                    font-family: $opensans-font-family;
                     color: $primary-color;
                 }
 
@@ -859,7 +880,7 @@
 
                         >div {
                             @include box(100%, 55%);
-                            color: $white;
+                            color: $white-color;
                             text-align: center;
                             background-color: #16d39a;
                             font-size: 10px;
@@ -890,7 +911,7 @@
                     >td:nth-child(4) {
                         >div {
                             >div {
-                                background-color: $light-salmon;
+                                background-color: $light-salmon-color;
                             }
                         }
                     }
@@ -900,8 +921,8 @@
                     >td:nth-child(4) {
                         >div {
                             >div {
+                                background-color: $ultra-red-color;
                                 width: 65%;
-                                background-color: $ultra-red;
                             }
                         }
                     }
@@ -921,8 +942,8 @@
                     >td:nth-child(4) {
                         >div {
                             >div {
+                                background-color: $light-salmon-color;
                                 width: 51%;
-                                background-color: $light-salmon;
                             }
                         }
                     }
@@ -932,8 +953,8 @@
                     >td:nth-child(4) {
                         >div {
                             >div {
+                                background-color: $ultra-red-color;
                                 width: 47%;
-                                background-color: $ultra-red;
                             }
                         }
                     }
@@ -971,15 +992,15 @@
                 }
 
                 h6 {
-                    font-family: $opensans;
-                    color: $silver-sand;
+                    font-family: $opensans-font-family;
+                    color: $silver-sand-color;
                     font-size: 12.5px;
                 }
             }
 
             >h6 {
-                font-family: $opensans;
-                color: $silver-sand;
+                font-family: $opensans-font-family;
+                color: $silver-sand-color;
                 font-size: 13px;
             }
 
@@ -1007,7 +1028,7 @@
 
                 &::before {
                     @extend .task-before;
-                    background-color: $ultra-red;
+                    background-color: $ultra-red-color;
                 }
 
                 &::after {
@@ -1020,7 +1041,7 @@
 
                 &::before {
                     @extend .task-before;
-                    background-color: $light-salmon;
+                    background-color: $light-salmon-color;
                 }
 
                 &::after {
@@ -1033,7 +1054,7 @@
 
                 &::before {
                     @extend .task-before;
-                    background-color: $turquoise;
+                    background-color: $turquoise-color;
                 }
 
                 a {
@@ -1043,7 +1064,7 @@
 
                 img {
                     @include box(20px, 20px);
-                    border: 2px solid $white;
+                    border: 2px solid $white-color;
                     margin-top: 10px;
                     border-radius: 50%;
 
@@ -1066,19 +1087,19 @@
 }
 
 .footer {
-    background-color: $white;
+    background-color: $white-color;
     height: 32px;
     margin-left: 240px;
     padding: 5px;
 
-    h6 {
+    span {
         @include size-weight(14px, 100);
-        font-family: $opensans;
-        color: $cadet-grey;
+        font-family: $opensans-font-family;
+        color: $cadet-grey-color;
     }
 
     a {
-        color: $viridian-green;
+        color: $viridian-green-color;
     }
 
     i {
