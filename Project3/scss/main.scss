@@ -5,8 +5,107 @@
 
 .sidebar {
     @include position(absolute, 0, initial, initial, 0);
-    background-color: $chinese-blue;
+    background-color: $chinese-blue-color;
     width: 249px;
+
+    h5 {
+        color: $coll-gray-color;
+        padding: 12px 20px;
+        font-size: 11px;
+    }
+
+    h6 {
+        color: $maximum-blue-purple-color;
+        font-size: 15px
+    }
+
+    i {
+        color: $maximum-blue-purple-color;
+        font-size: 18px;
+    }
+
+    li {
+        justify-content: space-between;
+        padding: 10px 24px;
+
+        >div {
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__inner-list {
+        padding-left: 24px;
+
+        >li {
+            padding: 8.8px 24px;
+
+            ::before {
+                content: '-';
+                margin-right: 15px;
+            }
+
+            h6 {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &__inner-list2 {
+        padding-left: 15px;
+
+        li {
+            justify-content: initial;
+            align-items: center;
+
+            i {
+                padding-right: 15px;
+                font-size: 5px;
+            }
+        }
+    }
+
+    &__pages {
+        >ul {
+            li {
+                &:nth-child(2) {
+                    h6 {
+                        color: $white-color;
+                    }
+
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__scroll {
+        overflow-y: scroll;
+        height: 100vh;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $chinese-blue-color;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 20px;
+            visibility: hidden;
+        }
+
+        &:hover {
+            &::-webkit-scrollbar-thumb {
+                visibility: visible;
+            }
+        }
+    }
 }
 
 .main-content {
@@ -21,7 +120,7 @@
 
         &::before {
             content: '';
-            background-color: $chinese-blue;
+            background-color: $chinese-blue-color;
             position: absolute;
             height: 100%;
             width: 100%;
