@@ -891,16 +891,22 @@ ul {
     justify-content: space-between;
     padding: 10px 24px; }
     .sidebar li > div i {
-      margin-right: 10px; }
+      margin-right: 10px;
+      font-size: 16px; }
   .sidebar__inner-list {
     padding-left: 24px; }
     .sidebar__inner-list > li {
       padding: 8.8px 24px; }
-      .sidebar__inner-list > li ::before {
-        content: '-';
-        margin-right: 15px; }
+      .sidebar__inner-list > li:nth-child(2) {
+        padding: 8.8px 35px 8.8px 24px; }
       .sidebar__inner-list > li h6 {
         font-size: 13px; }
+        .sidebar__inner-list > li h6::before {
+          content: '-';
+          margin-right: 15px;
+          color: #fff; }
+      .sidebar__inner-list > li i {
+        font-size: 16px; }
   .sidebar__inner-list2 {
     padding-left: 15px; }
     .sidebar__inner-list2 li {
@@ -913,6 +919,18 @@ ul {
     color: #fff; }
   .sidebar__pages > ul li:nth-child(2) i {
     color: #fff; }
+  .sidebar__components ul li:nth-child(3) {
+    justify-content: initial; }
+    .sidebar__components ul li:nth-child(3) i {
+      margin-right: 8px; }
+  .sidebar > div:first-child {
+    text-align: center;
+    height: 70px;
+    width: 250px; }
+    .sidebar > div:first-child img {
+      height: 19px;
+      width: 100px;
+      margin-top: 50px; }
   .sidebar__scroll {
     overflow-y: scroll;
     height: 100vh; }

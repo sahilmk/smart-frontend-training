@@ -31,6 +31,7 @@
         >div {
             i {
                 margin-right: 10px;
+                font-size: 16px;
             }
         }
     }
@@ -41,13 +42,22 @@
         >li {
             padding: 8.8px 24px;
 
-            ::before {
-                content: '-';
-                margin-right: 15px;
+            &:nth-child(2) {
+                padding: 8.8px 35px 8.8px 24px;
             }
 
             h6 {
                 font-size: 13px;
+
+                &::before {
+                    content: '-';
+                    margin-right: 15px;
+                    color: $white-color;
+                }
+            }
+
+            i {
+                font-size: 16px;
             }
         }
     }
@@ -78,6 +88,34 @@
                         color: $white-color;
                     }
                 }
+            }
+        }
+    }
+
+    &__components {
+        ul {
+            li {
+                &:nth-child(3) {
+                    justify-content: initial;
+
+                    i {
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    >div {
+        &:first-child {
+            text-align: center;
+            height: 70px;
+            width: 250px;
+
+            img {
+                height: 19px;
+                width: 100px;
+                margin-top: 50px;
             }
         }
     }
