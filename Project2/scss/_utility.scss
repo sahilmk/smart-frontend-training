@@ -126,7 +126,7 @@ body {
 .task-after {
     @include position(absolute, 15px, initial, initial, 7px);
     @include box(100%, 1px);
-    background-color: $platinum;
+    background-color: $platinum-color;
     content: '';
 }
 
