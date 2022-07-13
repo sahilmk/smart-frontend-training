@@ -869,8 +869,9 @@ body {
   background-color: #f5f7fa; }
 
 .notification {
-  color: #fff;
-  font-size: 12px; }
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff; }
   .notification--number {
     background-color: #00b5b8;
     margin-right: 10px;
@@ -985,7 +986,7 @@ body {
     height: 55px;
     width: 240px;
     color: #fff;
-    background-color: #404e67;
+    background-color: #404E67;
     align-items: center;
     padding: 0;
     font-size: 24px; }
@@ -996,11 +997,11 @@ body {
     align-items: center;
     height: 55px; }
     .nav__mainside > div:first-child {
-      color: #404e67;
+      color: #404E67;
       align-items: center;
       height: 100%; }
       .nav__mainside > div:first-child a {
-        color: #404e67;
+        color: #404E67;
         margin-left: 15px;
         padding: 10px;
         font-size: 14px; }
@@ -1011,7 +1012,7 @@ body {
         cursor: pointer;
         padding: 10px; }
     .nav__mainside > div:last-child i {
-      color: #404e67;
+      color: #404E67;
       font-size: 16px; }
     .nav__mainside > div:last-child li {
       padding: 0; }
@@ -1066,7 +1067,7 @@ body {
         .nav__mainside > div:last-child ul span + i {
           font-size: 10px; }
       .nav__mainside > div:last-child ul a {
-        color: #404e67; }
+        color: #404E67; }
         .nav__mainside > div:last-child ul a div {
           align-items: center;
           padding: 0; }
@@ -1102,13 +1103,13 @@ body {
   height: 100vh;
   width: 240px;
   color: #dcdcdc;
-  background-color: #404e67;
+  background-color: #404E67;
   overflow-y: scroll;
   padding-top: 54px; }
   .sidebar::-webkit-scrollbar {
     width: 7px; }
   .sidebar::-webkit-scrollbar-track {
-    background: #404e67; }
+    background: #404E67; }
   .sidebar::-webkit-scrollbar-thumb {
     background: #999;
     visibility: hidden;
@@ -1134,6 +1135,10 @@ body {
     .sidebar li i {
       padding-right: 10px;
       font-size: 15px; }
+    .sidebar li span {
+      font-size: 12px;
+      font-weight: 400;
+      column-rule-color: #fff; }
   .sidebar__apps li {
     justify-content: flex-start; }
     .sidebar__apps li:nth-child(7), .sidebar__apps li:last-child {
@@ -1180,25 +1185,29 @@ body {
       -webkit-animation: fa-spin 5s infinite; }
   .maincontent__grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
     padding: 25px; }
     .maincontent__grid > div {
       background-color: #fff; }
   .maincontent__statistics {
     align-items: center;
-    grid-column: 1 / 9;
+    grid-column: 1 / 13;
     height: 115px; }
     .maincontent__statistics > div > div {
       border-right: 1px solid #ECEFF1; }
-      .maincontent__statistics > div > div h2 {
-        color: #404e67;
-        font-size: 26.5px; }
+      .maincontent__statistics > div > div h3 {
+        color: #404E67;
+        margin-bottom: 5px;
+        font-size: 26.6px;
+        font-weight: 600;
+        letter-spacing: 2px; }
       .maincontent__statistics > div > div h5, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__statistics > div > div span, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__statistics > div > div span, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__statistics > div > div tr > td:nth-child(4) {
         font-size: 14px;
         font-weight: 100;
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #babfc7; }
+        color: #babfc7;
+        line-height: 1.45; }
       .maincontent__statistics > div > div i {
         font-size: 32px; }
       .maincontent__statistics > div > div > div {
@@ -1227,38 +1236,44 @@ body {
       .maincontent__statistics > div:last-child > div > i {
         color: #ffa87d; }
   .maincontent__power {
-    grid-column: 1 / 5;
-    height: 440px; }
+    grid-column: 1 / 7;
+    height: 440px;
+    padding: 21px 14px 0; }
     .maincontent__power img {
-      height: 370px; }
+      height: 370px;
+      padding: 0; }
     .maincontent__power > div {
-      justify-content: space-between;
-      padding: 15px; }
-      .maincontent__power > div > h5, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > span {
-        font-size: 18px;
-        font-weight: 500;
-        color: #404e67; }
-        .maincontent__power > div > h5 span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > span span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > span span {
-          font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-size: 14px; }
-      .maincontent__power > div > div > div {
+      justify-content: space-between; }
+      .maincontent__power > div > div:first-child {
+        color: #404E67; }
+        .maincontent__power > div > div:first-child h5, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:first-child span, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:first-child span, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div:first-child tr > td:nth-child(4) {
+          font-size: 18.48px;
+          font-weight: 600;
+          padding-right: 5px;
+          line-height: 1.2; }
+        .maincontent__power > div > div:first-child span {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .maincontent__power > div > div:last-child > div {
         justify-content: flex-end; }
-      .maincontent__power > div > div h5, .maincontent__power > div > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div span, .maincontent__power > div > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div span, .maincontent__power > div > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div tr > td:nth-child(4) {
-        font-size: 16px;
-        font-weight: 500;
-        color: #404e67;
-        padding-right: 15px; }
-        .maincontent__power > div > div h5:last-child, .maincontent__power > div > div .maincontent__users table tr > td:nth-child(2) span:last-child, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div span:last-child, .maincontent__power > div > div .maincontent__users table tr > td:nth-child(3) span:last-child, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div span:last-child, .maincontent__power > div > div .maincontent__users table tr > td:last-child:nth-child(4), .maincontent__users table .maincontent__power > div > div tr > td:last-child:nth-child(4) {
-          font-weight: 100;
-          color: #646464; }
+        .maincontent__power > div > div:last-child > div h5, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:last-child > div span, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:last-child > div span, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div:last-child > div tr > td:nth-child(4) {
+          font-size: 16px;
+          font-weight: 500;
+          color: #404E67;
+          padding-right: 15px; }
+          .maincontent__power > div > div:last-child > div h5:last-child, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(2) span:last-child, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:last-child > div span:last-child, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(3) span:last-child, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:last-child > div span:last-child, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:last-child:nth-child(4), .maincontent__users table .maincontent__power > div > div:last-child > div tr > td:last-child:nth-child(4) {
+            font-weight: 100;
+            color: #646464; }
   .maincontent__sales {
-    grid-column: 5 / 7;
+    grid-column: 7 / 10;
     height: 443px; }
     .maincontent__sales h4 {
+      font-size: 14px;
+      font-weight: 400;
       font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #babfc7;
-      padding-left: 15px;
-      font-size: 14px; }
+      padding-left: 15px; }
     .maincontent__sales > div:first-child {
       border-bottom: 1px #ECEFF1 solid;
       padding-left: 15px; }
@@ -1270,13 +1285,16 @@ body {
         margin-right: 10px;
         padding: 15px 0; }
         .maincontent__sales > div:first-child h5:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(2) span:first-child, .maincontent__users table tr > td:nth-child(2) .maincontent__sales > div:first-child span:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(3) span:first-child, .maincontent__users table tr > td:nth-child(3) .maincontent__sales > div:first-child span:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:first-child:nth-child(4), .maincontent__users table .maincontent__sales > div:first-child tr > td:first-child:nth-child(4) {
-          border-bottom: 2px #404e67 solid; }
+          border-bottom: 2px #404E67 solid; }
     .maincontent__sales > div:nth-child(2) {
       padding: 20px 0 0 15px; }
       .maincontent__sales > div:nth-child(2) h3 {
-        color: #404e67;
+        font-size: 21.14px;
+        font-weight: 600;
+        color: #404E67;
         padding-right: 20px;
-        font-size: 21px; }
+        letter-spacing: 2px;
+        line-height: 1.2; }
       .maincontent__sales > div:nth-child(2) h6 {
         color: #00b5b8;
         font-size: 11px; }
@@ -1286,7 +1304,7 @@ body {
     justify-content: space-around;
     padding-top: 20px; }
     .maincontent__bar h6 {
-      color: #404e67;
+      color: #404E67;
       padding-top: 10px;
       font-size: 12px; }
     .maincontent__bar > div:first-child > div > div {
@@ -1313,7 +1331,7 @@ body {
         background-color: #00b5b8;
         height: 50%; }
   .maincontent__region {
-    grid-column: 7 / 9; }
+    grid-column: 10 / 13; }
     .maincontent__region > h6 {
       font-size: 14px;
       font-weight: 100;
@@ -1329,7 +1347,7 @@ body {
       justify-content: center; }
       .maincontent__region > :nth-child(3) h5, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__region > :nth-child(3) span, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__region > :nth-child(3) span, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__region > :nth-child(3) tr > td:nth-child(4) {
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #404e67;
+        color: #404E67;
         font-size: 14px; }
       .maincontent__region > :nth-child(3) > div {
         align-items: center;
@@ -1341,30 +1359,31 @@ body {
           padding: 0; }
     .maincontent__region > :last-child {
       font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #404e67;
+      color: #404E67;
       border-top: 1px #ECEFF1 solid;
       justify-content: space-evenly;
       text-align: center;
       margin-top: 40px; }
       .maincontent__region > :last-child h4 {
         font-size: 28px;
-        font-weight: lighter; }
+        font-weight: 400;
+        line-height: 1.45; }
       .maincontent__region > :last-child h6 {
         font-size: 14px;
-        font-weight: lighter; }
+        font-weight: 400; }
       .maincontent__region > :last-child > div {
         border-right: 1px #ECEFF1 solid;
         padding: 10px 0; }
       .maincontent__region > :last-child > div:last-child {
         border-right: 0px; }
   .maincontent__update {
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
     height: 235px; }
     .maincontent__update > div:first-child {
       justify-content: space-between;
       padding: 15px; }
       .maincontent__update > div:first-child h4 {
-        color: #404e67;
+        color: #404E67;
         padding: 0;
         font-size: 18.5px; }
       .maincontent__update > div:first-child h6 {
@@ -1388,22 +1407,26 @@ body {
         border-radius: 20px; }
       .maincontent__update > div:last-child:hover::-webkit-scrollbar-thumb {
         visibility: visible; }
+    .maincontent__update i {
+      margin-right: 10px; }
     .maincontent__update li {
       font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
       .maincontent__update li h5, .maincontent__update li .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__update li span, .maincontent__update li .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__update li span, .maincontent__update li .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__update li tr > td:nth-child(4) {
         font-size: 14px;
-        font-weight: 400;
-        color: #626e82;
+        font-weight: 600;
+        color: #626E82;
+        margin-bottom: 3.5px; }
+      .maincontent__update li > h5, .maincontent__update .maincontent__users table tr > td:nth-child(2) li > span, .maincontent__users table tr > td:nth-child(2) .maincontent__update li > span, .maincontent__update .maincontent__users table tr > td:nth-child(3) li > span, .maincontent__users table tr > td:nth-child(3) .maincontent__update li > span {
         text-align: end; }
       .maincontent__update li h6 {
-        font-size: 12.5px;
+        font-size: 12.6px;
         font-weight: 100;
-        color: #404e67; }
+        color: #404E67; }
       .maincontent__update li:first-child {
         padding-bottom: 18px; }
         .maincontent__update li:first-child i {
-          height: 30px;
-          width: 30px;
+          height: 32px;
+          width: 32px;
           color: #00b5b8;
           text-align: center;
           line-height: 30px;
@@ -1412,8 +1435,8 @@ body {
       .maincontent__update li:nth-child(2) {
         padding: 18px 0; }
         .maincontent__update li:nth-child(2) i {
-          height: 30px;
-          width: 30px;
+          height: 32px;
+          width: 32px;
           color: #2dcee3;
           text-align: center;
           line-height: 30px;
@@ -1422,8 +1445,8 @@ body {
       .maincontent__update li:nth-child(3) {
         padding: 18px 0; }
         .maincontent__update li:nth-child(3) i {
-          height: 30px;
-          width: 30px;
+          height: 32px;
+          width: 32px;
           color: #ff7588;
           text-align: center;
           line-height: 30px;
@@ -1432,8 +1455,8 @@ body {
       .maincontent__update li:nth-child(4) {
         padding: 18px 0; }
         .maincontent__update li:nth-child(4) i {
-          height: 30px;
-          width: 30px;
+          height: 32px;
+          width: 32px;
           color: #00b5b8;
           text-align: center;
           line-height: 30px;
@@ -1442,8 +1465,8 @@ body {
       .maincontent__update li:nth-child(5) {
         padding: 18px 0; }
         .maincontent__update li:nth-child(5) i {
-          height: 30px;
-          width: 30px;
+          height: 32px;
+          width: 32px;
           color: #2dcee3;
           text-align: center;
           line-height: 30px;
@@ -1452,23 +1475,23 @@ body {
       .maincontent__update li:last-child {
         padding-top: 18px; }
         .maincontent__update li:last-child i {
-          height: 30px;
-          width: 30px;
+          height: 32px;
+          width: 32px;
           color: #ff7588;
           text-align: center;
           line-height: 30px;
           background-color: rgba(0, 181, 184, 0.1);
           border-radius: 50%; }
   .maincontent__information {
-    grid-column: 4 / 9; }
+    grid-column: 5 / 13; }
     .maincontent__information > div:first-child {
-      color: #404e67;
+      color: #404E67;
       padding: 20px 15px;
-      font-size: 18px; }
+      font-size: 18.48px; }
       .maincontent__information > div:first-child > div {
         text-align: end; }
       .maincontent__information > div:first-child h4 {
-        font-weight: 500; }
+        font-weight: 600; }
     .maincontent__information > div:last-child {
       font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       border-top: 1px solid #ECEFF1; }
@@ -1480,27 +1503,30 @@ body {
         height: 110px;
         width: 110px; }
       .maincontent__information > div:last-child h5, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__information > div:last-child span, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__information > div:last-child span, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__information > div:last-child tr > td:nth-child(4) {
-        color: #404e67;
-        margin-bottom: 5px;
-        font-size: 16px; }
+        font-size: 15.96px;
+        font-weight: 700;
+        font-family: "Montserrat", Georgia, "Times New Roman", Times, serif;
+        color: #404E67;
+        margin-bottom: 5px; }
       .maincontent__information > div:last-child p {
         font-size: 14px;
-        font-weight: 100;
+        font-weight: 400;
         color: #90a4ae;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        line-height: 1.45; }
       .maincontent__information > div:last-child > div:last-child > div {
         border-right: 0px; }
   .maincontent__users {
     height: 470px;
     width: 100%;
-    grid-column: 1 / 6;
+    grid-column: 1 / 9;
     overflow: scroll; }
     .maincontent__users > div {
-      color: #404e67;
+      color: #404E67;
       padding: 20px;
       font-size: 16px; }
       .maincontent__users > div a {
-        color: #404e67;
+        color: #404E67;
         text-align: end; }
     .maincontent__users th,
     .maincontent__users td {
@@ -1516,19 +1542,19 @@ body {
         margin-right: 10px;
         border-radius: 50%; }
       .maincontent__users table tr {
-        border: 1px solid #404e67; }
+        border: 1px solid #404E67; }
       .maincontent__users table th {
         font-size: 14px;
         font-weight: bolder;
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #404e67;
+        color: #404E67;
         text-align: start;
         padding: 10.5px 28px; }
       .maincontent__users table tr h5, .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(4) {
         font-size: 14px;
         font-weight: 100;
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #404e67; }
+        color: #404E67; }
       .maincontent__users table tr > td:first-child {
         align-items: center;
         padding: 10.5px 28px; }
@@ -1556,7 +1582,7 @@ body {
       .maincontent__users table tr > td:last-child {
         padding: 10.5px 28px; }
         .maincontent__users table tr > td:last-child a {
-          color: #404e67; }
+          color: #404E67; }
           .maincontent__users table tr > td:last-child a div i {
             padding-right: 15px; }
       .maincontent__users table tr:nth-child(2) > td:nth-child(4) > div > div {
@@ -1573,13 +1599,13 @@ body {
         background-color: #ff7588;
         width: 47%; }
   .maincontent__tasks {
-    grid-column: 6 / 9; }
+    grid-column: 9 / 13; }
     .maincontent__tasks > div {
-      color: #404e67;
+      color: #404E67;
       padding: 21px;
       font-size: 16px; }
       .maincontent__tasks > div a {
-        color: #404e67;
+        color: #404E67;
         text-align: end; }
     .maincontent__tasks ul {
       padding: 20px; }
@@ -1588,7 +1614,7 @@ body {
       .maincontent__tasks li > div {
         justify-content: space-between; }
         .maincontent__tasks li > div h5, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__tasks li > div span, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__tasks li > div span, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__tasks li > div tr > td:nth-child(4) {
-          color: #404e67;
+          color: #404E67;
           margin-bottom: 5px;
           padding: 0;
           font-size: 14px; }

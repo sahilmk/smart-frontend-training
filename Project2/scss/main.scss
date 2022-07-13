@@ -228,7 +228,10 @@
             font-size: 15px;
         }
 
-
+        span {
+            @include size-weight(12px, 400);
+            column-rule-color: $white-color;
+        }
     }
 
     &__apps {
@@ -307,7 +310,7 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-gap: 20px;
         padding: 25px;
 
@@ -319,22 +322,26 @@
 
     &__statistics {
         align-items: center;
-        grid-column: 1 / 9;
+        grid-column: 1 / 13;
         height: 115px;
 
         >div {
             >div {
                 border-right: 1px solid $bright-gray-color;
 
-                h2 {
+                h3 {
                     color: $primary-color;
-                    font-size: 26.5px;
+                    margin-bottom: 5px;
+                    font-size: 26.6px;
+                    font-weight: 600;
+                    letter-spacing: 2px
                 }
 
                 h5 {
                     @include size-weight(14px, 100);
                     font-family: $opensans-font-family;
                     color: $silver-sand-color;
+                    line-height: 1.45;
                 }
 
                 i {
@@ -415,56 +422,66 @@
     }
 
     &__power {
-        grid-column: 1 / 5;
+        grid-column: 1 / 7;
         height: 440px;
+        padding: 21px 14px 0;
 
         img {
             height: 370px;
+            padding: 0;
         }
 
         >div {
             justify-content: space-between;
-            padding: 15px;
 
-            >h5 {
-                @include size-weight(18px, 500);
-                color: $primary-color;
-
-                span {
-                    font-family: $opensans-font-family;
-                    font-size: 14px;
-                }
-            }
 
             >div {
-                >div {
-                    justify-content: flex-end;
+                &:first-child {
+                    color: $primary-color;
 
+                    h5 {
+                        @include size-weight(18.48px, 600);
+                        padding-right: 5px;
+                        line-height: 1.2;
+                    }
+
+                    span {
+                        @include size-weight(14px, 400);
+                        font-family: $opensans-font-family;
+                    }
                 }
 
-                h5 {
-                    @include size-weight(16px, 500);
-                    color: $primary-color;
-                    padding-right: 15px;
+                &:last-child {
+                    >div {
+                        justify-content: flex-end;
 
-                    &:last-child {
-                        font-weight: 100;
-                        color: rgb(100, 100, 100);
+                        h5 {
+                            @include size-weight(16px, 500);
+                            color: $primary-color;
+                            padding-right: 15px;
+
+                            &:last-child {
+                                font-weight: 100;
+                                color: rgb(100, 100, 100);
+                            }
+                        }
                     }
                 }
             }
+
         }
     }
 
     &__sales {
-        grid-column: 5 / 7;
+        grid-column: 7 / 10;
         height: 443px;
 
         h4 {
+            @include size-weight(14px, 400);
             font-family: $opensans-font-family;
             color: $silver-sand-color;
             padding-left: 15px;
-            font-size: 14px;
+
 
         }
 
@@ -492,9 +509,11 @@
                 padding: 20px 0 0 15px;
 
                 h3 {
+                    @include size-weight(21.14px, 600);
                     color: $primary-color;
                     padding-right: 20px;
-                    font-size: 21px;
+                    letter-spacing: 2px;
+                    line-height: 1.2;
                 }
 
                 h6 {
@@ -586,7 +605,7 @@
     }
 
     &__region {
-        grid-column: 7 / 9;
+        grid-column: 10 / 13;
 
         >h6 {
             @include size-weight(14px, 100);
@@ -634,11 +653,12 @@
 
 
             h4 {
-                @include size-weight(28px, lighter);
+                @include size-weight(28px, 400);
+                line-height: 1.45;
             }
 
             h6 {
-                @include size-weight(14px, lighter);
+                @include size-weight(14px, 400);
             }
 
             >div {
@@ -654,7 +674,7 @@
     }
 
     &__update {
-        grid-column: 1 / 4;
+        grid-column: 1 / 5;
         height: 235px;
 
         >div {
@@ -680,9 +700,7 @@
                     font-weight: 100;
                 }
             }
-        }
 
-        >div {
             &:last-child {
                 @include scroll-bar($white-color);
                 overflow: scroll;
@@ -697,17 +715,25 @@
             }
         }
 
+        i {
+            margin-right: 10px;
+        }
+
         li {
             font-family: $opensans-font-family;
 
             h5 {
-                @include size-weight(14px, 400);
+                @include size-weight(14px, 600);
                 color: $dark-electric-blue-color;
+                margin-bottom: 3.5px;
+            }
+
+            >h5 {
                 text-align: end
             }
 
             h6 {
-                @include size-weight(12.5px, 100);
+                @include size-weight(12.6px, 100);
                 color: $primary-color;
             }
 
@@ -764,20 +790,20 @@
     }
 
     &__information {
-        grid-column: 4 / 9;
+        grid-column: 5 / 13;
 
         >div {
             &:first-child {
                 color: $primary-color;
                 padding: 20px 15px;
-                font-size: 18px;
+                font-size: 18.48px;
 
                 >div {
                     text-align: end;
                 }
 
                 h4 {
-                    font-weight: 500;
+                    font-weight: 600;
                 }
             }
         }
@@ -801,15 +827,17 @@
                 }
 
                 h5 {
+                    @include size-weight(15.96px, 700);
+                    font-family: $montserrat;
                     color: $primary-color;
                     margin-bottom: 5px;
-                    font-size: 16px;
                 }
 
                 p {
-                    @include size-weight(14px, 100);
+                    @include size-weight(14px, 400);
                     color: $cadet-grey-color;
                     margin-bottom: 10px;
+                    line-height: 1.45;
                 }
 
                 >div {
@@ -825,7 +853,7 @@
 
     &__users {
         @include box(470px, 100%);
-        grid-column: 1 / 6;
+        grid-column: 1 / 9;
         overflow: scroll;
 
 
@@ -990,7 +1018,7 @@
     }
 
     &__tasks {
-        grid-column: 6 / 9;
+        grid-column: 9 / 13;
 
         >div {
             color: $primary-color;

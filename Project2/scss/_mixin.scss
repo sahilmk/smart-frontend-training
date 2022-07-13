@@ -28,7 +28,7 @@
 }
 
 @mixin update-logo($color) {
-    @include box(30px, 30px);
+    @include box(32px, 32px);
     color: $color;
     text-align: center;
     line-height: 30px;
