@@ -942,7 +942,7 @@ body {
   width: 15px;
   content: '';
   border-radius: 50%;
-  box-shadow: 1px 2px 6px 0 #192a46; }
+  box-shadow: 1px 2px 6px 0 rgba(25, 42, 70, 0.3); }
 
 .task-after, .maincontent__tasks li:first-child::after, .maincontent__tasks li:nth-child(2)::after, .maincontent__tasks li:nth-child(3)::after {
   position: absolute;
@@ -1002,15 +1002,14 @@ body {
       height: 100%; }
       .nav__mainside > div:first-child a {
         color: #404E67;
-        margin-left: 15px;
-        padding: 10px;
+        margin: 0 40px 0 25px;
         font-size: 14px; }
         .nav__mainside > div:first-child a i {
           padding-left: 5px;
           font-size: 10px; }
       .nav__mainside > div:first-child > i {
         cursor: pointer;
-        padding: 10px; }
+        margin-right: 40px; }
     .nav__mainside > div:last-child i {
       color: #404E67;
       font-size: 16px; }
@@ -1062,8 +1061,9 @@ body {
         .nav__mainside > div:last-child ul li:last-child a {
           display: inline-block; }
       .nav__mainside > div:last-child ul span {
-        margin: 0 8px;
-        font-size: 14px; }
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 8px; }
         .nav__mainside > div:last-child ul span + i {
           font-size: 10px; }
       .nav__mainside > div:last-child ul a {
@@ -1118,27 +1118,26 @@ body {
     visibility: visible; }
   .sidebar h5, .sidebar .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .sidebar span, .sidebar .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .sidebar span, .sidebar .maincontent__users table tr > td:nth-child(4), .maincontent__users table .sidebar tr > td:nth-child(4) {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
     color: #dcdcdc;
     text-transform: uppercase;
-    padding: 20px 20px 10px 10px; }
+    padding: 20px 20px 10px; }
   .sidebar li {
     justify-content: space-between;
     cursor: pointer;
-    padding: 10px; }
+    padding: 10px 10px 10px 20px; }
     .sidebar li:hover {
       background-color: #38445a; }
     .sidebar li h6 {
       font-size: 14px;
-      font-weight: lighter;
+      font-weight: 300;
       color: #dcdcdc; }
     .sidebar li i {
       padding-right: 10px;
-      font-size: 15px; }
+      font-size: 16.8; }
     .sidebar li span {
       font-size: 12px;
-      font-weight: 400;
-      column-rule-color: #fff; }
+      font-weight: 400; }
   .sidebar__apps li {
     justify-content: flex-start; }
     .sidebar__apps li:nth-child(7), .sidebar__apps li:last-child {
@@ -1149,6 +1148,11 @@ body {
     justify-content: flex-start; }
     .sidebar__others li:first-child {
       justify-content: space-between; }
+  .sidebar__components li:first-child h6 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 150px; }
 
 .maincontent {
   padding: 55px 0 0 240px; }
@@ -1334,7 +1338,7 @@ body {
     grid-column: 10 / 13; }
     .maincontent__region > h6 {
       font-size: 14px;
-      font-weight: 100;
+      font-weight: 400;
       color: #00b5b8;
       border-bottom: 1px #ECEFF1 solid;
       margin-right: 10px;
@@ -1383,9 +1387,10 @@ body {
       justify-content: space-between;
       padding: 15px; }
       .maincontent__update > div:first-child h4 {
+        font-size: 18.48px;
+        font-weight: 500;
         color: #404E67;
-        padding: 0;
-        font-size: 18.5px; }
+        padding: 0; }
       .maincontent__update > div:first-child h6 {
         text-align: end;
         padding: 0;
@@ -1420,7 +1425,7 @@ body {
         text-align: end; }
       .maincontent__update li h6 {
         font-size: 12.6px;
-        font-weight: 100;
+        font-weight: 400;
         color: #404E67; }
       .maincontent__update li:first-child {
         padding-bottom: 18px; }
@@ -1485,13 +1490,14 @@ body {
   .maincontent__information {
     grid-column: 5 / 13; }
     .maincontent__information > div:first-child {
+      font-size: 18.48px;
+      font-weight: 500;
       color: #404E67;
-      padding: 20px 15px;
-      font-size: 18.48px; }
+      padding: 20px 15px; }
       .maincontent__information > div:first-child > div {
         text-align: end; }
       .maincontent__information > div:first-child h4 {
-        font-weight: 600; }
+        font-weight: 500; }
     .maincontent__information > div:last-child {
       font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       border-top: 1px solid #ECEFF1; }
@@ -1576,7 +1582,8 @@ body {
             background-color: #16d39a;
             text-align: center;
             font-size: 10px;
-            border-radius: 3px; }
+            border-radius: 3px;
+            line-height: 14px; }
       .maincontent__users table tr > td:nth-child(5) {
         padding: 10.5px 28px; }
       .maincontent__users table tr > td:last-child {
@@ -1614,18 +1621,21 @@ body {
       .maincontent__tasks li > div {
         justify-content: space-between; }
         .maincontent__tasks li > div h5, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__tasks li > div span, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__tasks li > div span, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__tasks li > div tr > td:nth-child(4) {
+          font-size: 14px;
+          font-weight: 500;
           color: #404E67;
           margin-bottom: 5px;
-          padding: 0;
-          font-size: 14px; }
+          padding: 0; }
         .maincontent__tasks li > div h6 {
+          font-size: 12.5px;
+          font-weight: 400;
           font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          color: #babfc7;
-          font-size: 12.5px; }
+          color: #babfc7; }
       .maincontent__tasks li > h6 {
+        font-size: 13px;
+        font-weight: 400;
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #babfc7;
-        font-size: 13px; }
+        color: #babfc7; }
       .maincontent__tasks li:first-child {
         position: relative;
         top: initial;
@@ -1635,8 +1645,8 @@ body {
         .maincontent__tasks li:first-child::before {
           background-color: #00b5b8; }
         .maincontent__tasks li:first-child img {
-          height: 20px;
-          width: 20px;
+          height: 25px;
+          width: 25px;
           margin-top: 10px;
           border-radius: 50%; }
       .maincontent__tasks li:nth-child(2) {
@@ -1671,11 +1681,13 @@ body {
           left: initial;
           display: inline-block; }
         .maincontent__tasks li:last-child img {
-          height: 20px;
-          width: 20px;
+          height: 25px;
+          width: 25px;
           border: 2px solid #fff;
           margin-top: 10px;
           border-radius: 50%; }
+          .maincontent__tasks li:last-child img:hover {
+            z-index: 10; }
           .maincontent__tasks li:last-child img:first-child {
             position: absolute;
             top: initial;
