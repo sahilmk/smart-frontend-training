@@ -17,10 +17,9 @@
     }
 
     h6 {
+        @include size-weight(15px, 100);
         color: $maximum-blue-purple-color;
         font-family: $hkgrotesk-font;
-        font-size: 15px;
-        font-weight: 100;
     }
 
     i {
@@ -230,6 +229,7 @@
         input {
             background-color: $cultured-color;
             border: none;
+            outline: none;
             height: 38px;
             width: 321px;
             padding: 8px 30px 8px 40px;
@@ -256,7 +256,6 @@
 
             i {
                 color: $davys-grey-color;
-                font-size: 20px;
                 border-radius: 50%;
                 padding: 13px;
 
@@ -289,13 +288,12 @@
 
                 i {
                     &::after {
+                        @include size-weight(10px, 600);
                         @include position(absolute, initial, 2px, 30px);
                         background-color: $button-blue-color;
                         color: $white-color;
                         content: '5';
                         padding: 2px 6px;
-                        font-size: 10px;
-                        font-weight: 900;
                         line-height: 15px;
                         border-radius: 50%;
                     }
@@ -306,13 +304,12 @@
                 @include position(relative);
 
                 &::after {
+                    @include size-weight(10px, 600);
                     @include position(absolute, initial, 5px, 30px, );
                     background-color: $fire-opal-color;
                     color: $white-color;
                     content: '3';
                     padding: 2px 6px;
-                    font-size: 10px;
-                    font-weight: 900;
                     line-height: 15px;
                     border-radius: 50%;
                 }
@@ -333,13 +330,13 @@
                 }
 
                 h5 {
+                    @include size-weight(13px, 500);
                     color: $davys-grey-color;
-                    font-size: 13px;
                 }
 
                 h6 {
+                    @include size-weight(12px, 400);
                     color: $roman-silver-color;
-                    font-size: 12px;
                 }
             }
         }
@@ -389,17 +386,18 @@
         }
 
         h5 {
+            @include size-weight(16px, 600);
             color: $davys-grey-color;
-            font-size: 16px;
         }
 
         h6 {
+            @include size-weight(13px, 400);
             color: $roman-silver-color;
-            font-size: 13px;
         }
     }
 
     &__profile {
+        @include position(relative);
         background-color: $white-color;
         text-align: center;
         height: 115.5px;
@@ -413,12 +411,11 @@
                 justify-content: space-between;
 
                 >div {
+                    @include size-weight(12px, 600);
                     color: $chinese-blue-color;
                     background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
                     align-items: center;
                     padding: 4.2px 7.8px;
-                    font-size: 12px;
-                    font-weight: 600;
                     border-radius: 5px;
 
                     i {
@@ -426,12 +423,37 @@
                     }
                 }
             }
+
+            &:last-child {
+                @include position(absolute, initial, initial, 16px);
+                background-color: $anti-flash-white-color;
+                height: 15px;
+                width: calc(100% - 32px);
+
+                border-radius: 30px;
+
+                >div {
+                    @include position(absolute, 4px, initial, initial, 4px);
+                    background-color: $fire-opal-color;
+                    height: 7px;
+                    width: 30%;
+                    border-radius: 30px;
+
+                    &::after {
+                        @include position(absolute, 2px, 2px);
+                        background-color: $white-color;
+                        content: '';
+                        height: 3.5px;
+                        width: 3.5px;
+                        border-radius: 50%
+                    }
+                }
+            }
         }
 
         h5 {
+            @include size-weight(16px, 500);
             color: $davys-grey-color;
-            font-size: 16px;
-            // font-weight: 500;
         }
 
         i {
@@ -444,9 +466,127 @@
         text-align: center;
         height: 274.5px;
         width: 384px;
-        margin-bottom: 24px;
-        padding: 24px;
+        padding: 16px;
         border-radius: 5px;
+
+        >div {
+            &:first-child {
+                justify-content: space-between;
+                padding-bottom: 24px;
+
+                >div {
+                    @include size-weight(12px, 600);
+                    color: $chinese-blue-color;
+                    background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
+                    align-items: center;
+                    padding: 4.2px 7.8px;
+                    border-radius: 5px;
+
+                    h6 {
+                        @include size-weight(12px, 600);
+                        color: $davys-grey-color;
+                    }
+
+                    i {
+                        @include size-weight(12px, 600);
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                @extend .social;
+
+                i {
+                    background-color: $balck-color;
+                }
+            }
+
+            &:nth-child(3) {
+                @extend .social;
+
+                i {
+                    background-color: $chinese-blue-color;
+                }
+            }
+
+            &:nth-child(4) {
+                @extend .social;
+
+                i {
+                    background-color: $persian-green-color;
+                }
+            }
+
+            &:last-child {
+                @extend .social;
+                margin-bottom: 0;
+
+                i {
+                    background-color: $fire-opal-color;
+                }
+            }
+        }
+
+        h5 {
+            @include size-weight(16px, 500);
+            color: $davys-grey-color;
+        }
     }
 
+    &__update {
+        background-color: $white-color;
+        height: 752px;
+        width: 1199px;
+        border-radius: 5px;
+
+        >div {
+            border-bottom: 1px solid $bright-gray-color;
+        }
+
+        ul {
+            margin: auto;
+            width: 1183px;
+
+            li {
+                padding: 16px;
+
+                &:first-child {
+                    border-bottom: 1px solid $chinese-blue-color;
+                }
+            }
+
+            a {
+                @include size-weight(13px, 500);
+                color: $chinese-blue-color;
+            }
+        }
+    }
+
+    &__form {
+        padding: 16px;
+
+        >div {
+
+            >div {
+                width: 100%;
+
+
+                input {
+                    width: 100%
+                }
+            }
+        }
+
+        label {
+            @include size-weight(13px, 500);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px 14.4px;
+        }
+    }
 }
