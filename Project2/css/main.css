@@ -1225,8 +1225,6 @@ body {
         padding: 20px; }
       .maincontent__statistics > div > div > :nth-child(2) {
         margin-right: 48px; }
-      .maincontent__statistics > div > div > :last-child {
-        margin-right: 48px; }
     .maincontent__statistics > div:nth-child(odd) > div > div:last-child {
       color: #00b5b8; }
     .maincontent__statistics > div:nth-child(even) > div > div:last-child {
@@ -1252,7 +1250,7 @@ body {
         color: #404E67; }
         .maincontent__power > div > div:first-child h5, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:first-child span, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:first-child span, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div:first-child tr > td:nth-child(4) {
           font-size: 18.48px;
-          font-weight: 600;
+          font-weight: 500;
           padding-right: 5px;
           line-height: 1.2; }
         .maincontent__power > div > div:first-child span {
@@ -1382,7 +1380,7 @@ body {
         border-right: 0px; }
   .maincontent__update {
     grid-column: 1 / 5;
-    height: 235px; }
+    height: 260px; }
     .maincontent__update > div:first-child {
       justify-content: space-between;
       padding: 15px; }
@@ -1401,7 +1399,7 @@ body {
         font-weight: 100; }
     .maincontent__update > div:last-child {
       overflow: scroll;
-      height: 182px; }
+      height: calc(100% - 53px); }
       .maincontent__update > div:last-child::-webkit-scrollbar {
         width: 7px; }
       .maincontent__update > div:last-child::-webkit-scrollbar-track {
@@ -1507,7 +1505,8 @@ body {
         padding: 30px; }
       .maincontent__information > div:last-child img {
         height: 110px;
-        width: 110px; }
+        width: 110px;
+        width: 100%; }
       .maincontent__information > div:last-child h5, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__information > div:last-child span, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__information > div:last-child span, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__information > div:last-child tr > td:nth-child(4) {
         font-size: 15.96px;
         font-weight: 700;
@@ -1525,12 +1524,13 @@ body {
   .maincontent__users {
     height: 470px;
     width: 100%;
-    grid-column: 1 / 9;
-    overflow: scroll; }
+    grid-column: 1 / 9; }
     .maincontent__users > div {
       color: #404E67;
-      padding: 20px;
-      font-size: 16px; }
+      padding: 20px; }
+      .maincontent__users > div h4 {
+        font-size: 16px;
+        font-weight: 500; }
       .maincontent__users > div a {
         color: #404E67;
         text-align: end; }
@@ -1540,11 +1540,17 @@ body {
       border-collapse: collapse; }
     .maincontent__users table {
       border-top: 1px solid #ECEFF1;
+      overflow-x: auto;
+      width: 100%;
+      height: calc(100% - 59px);
+      display: block;
+      height: calc(100% - 59px);
       padding: 0;
       border-bottom: 0px; }
       .maincontent__users table img {
         height: 30px;
         width: 30px;
+        vertical-align: middle;
         margin-right: 10px;
         border-radius: 50%; }
       .maincontent__users table tr {
@@ -1556,13 +1562,14 @@ body {
         color: #404E67;
         text-align: start;
         padding: 10.5px 28px; }
-      .maincontent__users table tr h5, .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(4) {
+      .maincontent__users table tr span {
         font-size: 14px;
         font-weight: 100;
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: #404E67; }
       .maincontent__users table tr > td:first-child {
         align-items: center;
+        white-space: nowrap;
         padding: 10.5px 28px; }
       .maincontent__users table tr > td:nth-child(2) span {
         padding: 10.5px 28px; }
@@ -1583,15 +1590,20 @@ body {
             text-align: center;
             font-size: 10px;
             border-radius: 3px;
-            line-height: 14px; }
+            line-height: 16px; }
       .maincontent__users table tr > td:nth-child(5) {
         padding: 10.5px 28px; }
+        .maincontent__users table tr > td:nth-child(5) span {
+          font-size: 12px;
+          font-weight: 400;
+          color: #fff; }
       .maincontent__users table tr > td:last-child {
         padding: 10.5px 28px; }
         .maincontent__users table tr > td:last-child a {
           color: #404E67; }
-          .maincontent__users table tr > td:last-child a div i {
-            padding-right: 15px; }
+          .maincontent__users table tr > td:last-child a i {
+            padding-right: 14px;
+            font-size: 14px; }
       .maincontent__users table tr:nth-child(2) > td:nth-child(4) > div > div {
         background-color: #ffa87d; }
       .maincontent__users table tr:nth-child(3) > td:nth-child(4) > div > div {
@@ -1609,8 +1621,10 @@ body {
     grid-column: 9 / 13; }
     .maincontent__tasks > div {
       color: #404E67;
-      padding: 21px;
-      font-size: 16px; }
+      padding: 21px; }
+      .maincontent__tasks > div h4 {
+        font-size: 16px;
+        font-weight: 500; }
       .maincontent__tasks > div a {
         color: #404E67;
         text-align: end; }
