@@ -405,7 +405,7 @@
         height: 115.5px;
         width: 384px;
         margin-bottom: 24px;
-        padding: 24px;
+        padding: 16px;
         border-radius: 5px;
 
         >div {
@@ -415,8 +415,10 @@
                 >div {
                     color: $chinese-blue-color;
                     background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
-                    padding: 5px;
-                    font-weight: 900;
+                    align-items: center;
+                    padding: 4.2px 7.8px;
+                    font-size: 12px;
+                    font-weight: 600;
                     border-radius: 5px;
 
                     i {
@@ -429,6 +431,7 @@
         h5 {
             color: $davys-grey-color;
             font-size: 16px;
+            // font-weight: 500;
         }
 
         i {

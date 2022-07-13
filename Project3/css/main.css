@@ -1190,15 +1190,17 @@ a {
     height: 115.5px;
     width: 384px;
     margin-bottom: 24px;
-    padding: 24px;
+    padding: 16px;
     border-radius: 5px; }
     .main-content__profile > div:first-child {
       justify-content: space-between; }
       .main-content__profile > div:first-child > div {
         color: #405189;
         background-color: rgba(64, 81, 137, 0.1);
-        padding: 5px;
-        font-weight: 900;
+        align-items: center;
+        padding: 4.2px 7.8px;
+        font-size: 12px;
+        font-weight: 600;
         border-radius: 5px; }
         .main-content__profile > div:first-child > div i {
           margin-right: 10px; }
