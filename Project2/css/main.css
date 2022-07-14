@@ -990,6 +990,8 @@ body {
     align-items: center;
     padding: 0;
     font-size: 24px; }
+    .nav__sidebar > div:last-child {
+      padding: 0; }
     .nav__sidebar h2 {
       font-size: 24px;
       font-weight: 500; }
@@ -1225,6 +1227,8 @@ body {
         padding: 20px; }
       .maincontent__statistics > div > div > :nth-child(2) {
         margin-right: 48px; }
+      .maincontent__statistics > div > div > :last-child {
+        margin-right: 48px; }
     .maincontent__statistics > div:nth-child(odd) > div > div:last-child {
       color: #00b5b8; }
     .maincontent__statistics > div:nth-child(even) > div > div:last-child {
@@ -1240,7 +1244,7 @@ body {
   .maincontent__power {
     grid-column: 1 / 7;
     height: 440px;
-    padding: 21px 14px 0; }
+    padding: 21px; }
     .maincontent__power img {
       height: 370px;
       padding: 0; }
@@ -1522,9 +1526,9 @@ body {
       .maincontent__information > div:last-child > div:last-child > div {
         border-right: 0px; }
   .maincontent__users {
-    height: 470px;
-    width: 100%;
-    grid-column: 1 / 9; }
+    overflow-x: auto;
+    grid-column: 1 / 9;
+    height: 463px; }
     .maincontent__users > div {
       color: #404E67;
       padding: 20px; }
@@ -1540,16 +1544,13 @@ body {
       border-collapse: collapse; }
     .maincontent__users table {
       border-top: 1px solid #ECEFF1;
-      overflow-x: auto;
       width: 100%;
-      height: calc(100% - 59px);
-      display: block;
       height: calc(100% - 59px);
       padding: 0;
       border-bottom: 0px; }
       .maincontent__users table img {
-        height: 30px;
-        width: 30px;
+        height: 25px;
+        width: 25px;
         vertical-align: middle;
         margin-right: 10px;
         border-radius: 50%; }
@@ -1570,13 +1571,9 @@ body {
       .maincontent__users table tr > td:first-child {
         align-items: center;
         white-space: nowrap;
-        padding: 10.5px 28px; }
-      .maincontent__users table tr > td:nth-child(2) span {
-        padding: 10.5px 28px; }
-      .maincontent__users table tr > td:nth-child(3) span {
-        padding: 10.5px 28px; }
+        padding: 8px 28px; }
       .maincontent__users table tr > td:nth-child(4) {
-        padding: 10.5px 28px; }
+        padding: 8px 28px; }
         .maincontent__users table tr > td:nth-child(4) > div {
           height: 14px;
           width: 78.5px;
@@ -1592,17 +1589,17 @@ body {
             border-radius: 3px;
             line-height: 16px; }
       .maincontent__users table tr > td:nth-child(5) {
-        padding: 10.5px 28px; }
+        padding: 8px 28px; }
         .maincontent__users table tr > td:nth-child(5) span {
           font-size: 12px;
           font-weight: 400;
           color: #fff; }
       .maincontent__users table tr > td:last-child {
-        padding: 10.5px 28px; }
+        padding: 8px 28px; }
         .maincontent__users table tr > td:last-child a {
           color: #404E67; }
-          .maincontent__users table tr > td:last-child a i {
-            padding-right: 14px;
+          .maincontent__users table tr > td:last-child a i:first-child {
+            padding-right: 10px;
             font-size: 14px; }
       .maincontent__users table tr:nth-child(2) > td:nth-child(4) > div > div {
         background-color: #ffa87d; }
@@ -1617,6 +1614,8 @@ body {
       .maincontent__users table tr:last-child > td:nth-child(4) > div > div {
         background-color: #ff7588;
         width: 47%; }
+      .maincontent__users table tr td {
+        padding: 8px 28px; }
   .maincontent__tasks {
     grid-column: 9 / 13; }
     .maincontent__tasks > div {

@@ -38,6 +38,12 @@
         padding: 0;
         font-size: 24px;
 
+        >div {
+            &:last-child {
+                padding: 0;
+            }
+        }
+
         h2 {
             font-size: 24px;
             font-weight: 500;
@@ -187,9 +193,9 @@
 
 
 .sidebar {
+    @include scroll-bar($primary-color);
     @include position(fixed, 0px, initial, initial 0px);
     @include box(100vh, 240px);
-    @include scroll-bar($primary-color);
     color: $gainsboro-color;
     background-color: $primary-color;
     overflow-y: scroll;
@@ -377,6 +383,10 @@
                 >:nth-child(2) {
                     margin-right: 48px;
                 }
+
+                >:last-child {
+                    margin-right: 48px;
+                }
             }
 
             &:nth-child(odd) {
@@ -431,7 +441,7 @@
     &__power {
         grid-column: 1 / 7;
         height: 440px;
-        padding: 21px 14px 0;
+        padding: 21px;
 
         img {
             height: 370px;
@@ -860,8 +870,9 @@
     }
 
     &__users {
-        @include box(470px, 100%);
+        overflow-x: auto;
         grid-column: 1 / 9;
+        height: 463px;
 
         >div {
             color: $primary-color;
@@ -885,16 +896,13 @@
 
         table {
             border-top: 1px solid $bright-gray-color;
-            overflow-x: auto;
             width: 100%;
-            height: calc(100% - 59px);
-            display: block;
             height: calc(100% - 59px);
             padding: 0;
             border-bottom: 0px;
 
             img {
-                @include box(30px, 30px);
+                @include box(25px, 25px);
                 vertical-align: middle;
                 margin-right: 10px;
                 border-radius: 50%;
@@ -922,30 +930,24 @@
                 >td:first-child {
                     align-items: center;
                     white-space: nowrap;
-                    padding: 10.5px 28px;
-
-                    span {
-                        // vertical-align: top;
-                    }
+                    padding: 8px 28px;
                 }
 
                 >td:nth-child(2) {
                     span {
                         @extend h5;
-                        padding: 10.5px 28px;
                     }
                 }
 
                 >td:nth-child(3) {
                     span {
                         @extend h5;
-                        padding: 10.5px 28px;
                     }
                 }
 
                 >td:nth-child(4) {
                     @extend h5;
-                    padding: 10.5px 28px;
+                    padding: 8px 28px;
 
                     >div {
                         @include box(14px, 78.5px);
@@ -965,7 +967,7 @@
                 }
 
                 >td:nth-child(5) {
-                    padding: 10.5px 28px;
+                    padding: 8px 28px;
 
                     span {
                         @include size-weight(12px, 400);
@@ -974,14 +976,16 @@
                 }
 
                 >td:last-child {
-                    padding: 10.5px 28px;
+                    padding: 8px 28px;
 
                     a {
                         color: $primary-color;
 
                         i {
-                            padding-right: 14px;
-                            font-size: 14px;
+                            &:first-child {
+                                padding-right: 10px;
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
@@ -1037,6 +1041,10 @@
                             }
                         }
                     }
+                }
+
+                td {
+                    padding: 8px 28px;
                 }
             }
         }
