@@ -1526,7 +1526,6 @@ body {
       .maincontent__information > div:last-child > div:last-child > div {
         border-right: 0px; }
   .maincontent__users {
-    overflow-x: auto;
     grid-column: 1 / 9;
     height: 463px; }
     .maincontent__users > div {
@@ -1538,6 +1537,8 @@ body {
       .maincontent__users > div a {
         color: #404E67;
         text-align: end; }
+      .maincontent__users > div:nth-child(2) {
+        overflow-x: auto; }
     .maincontent__users th,
     .maincontent__users td {
       border-bottom: 1px solid #ECEFF1;
