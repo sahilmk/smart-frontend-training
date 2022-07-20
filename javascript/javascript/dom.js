@@ -163,12 +163,126 @@ document.querySelector('.clear-tasks').addEventListener('click', response);
 
 function response(e) {
     document.querySelector('.clear-tasks').classList.remove('black');
-    document.querySelector('.clear-tasks').style.display = 'none';
-    // console.log(e.offsetX);
-    console.log(e.clientX);
+    document.querySelector('.clear-tasks').style.background = 'blue';
+    // console.log("OffsetX " + e.offsetX);
+    // console.log("ClientX " + e.clientX);
+}
+
+//Mouse Event
+button = document.querySelector('.clear-tasks');
+upperdiv = document.querySelector('.card-action');
+ulcollection = document.querySelector('.collection');
+
+button.addEventListener('dblclick', remove);
+
+function remove() {
+    document.getElementsByClassName('clear-tasks')[0].style.display = 'none';
+}
+
+button.addEventListener('mouseup', run);
+
+function run(e) {
+    console.log('Buy');
+    // document.querySelector('.clear-tasks').innerText = e.offsetX
+}
+
+button.addEventListener('mousedown', run1);
+
+function run1(e) {
+    console.log('Hello');
+}
+
+upperdiv.addEventListener('mouseenter', run2);
+
+function run2() {
+    document.querySelector('.card-action').style.background = 'red';
+}
+
+upperdiv.addEventListener('mouseleave', run3);
+
+function run3() {
+    document.querySelector('.card-action').style.background = 'white';
+}
+
+upperdiv.addEventListener('mouseover', run4);
+
+function run4() {
+    console.log("over");
+}
+
+upperdiv.addEventListener('mouseout', run5);
+
+function run5() {
+    console.log("out");
+}
+
+ulcollection.addEventListener('mousemove', run6);
+
+function run6(e) {
+    document.querySelector('#task-title').innerText = 'X: ' + e.offsetX + ' Y: ' + e.offsetY;
+}
+
+//Keyboard & Input 
+form = document.querySelector('form');
+iinput = document.getElementById('task');
+
+form.addEventListener('submit', run7);
+iinput.addEventListener('keydown', run8);
+iinput.addEventListener('paste', run9);
+
+function run7(e) {
+    //successful message
+    document.querySelector('#submited').innerText = iinput.value + " task is added successfully";
+    document.querySelector('#submited').style.background = 'green';
+    document.querySelector('#submited').style.marginTop = '10px';
+    document.querySelector('#submited').style.padding = '10px';
+    e.preventDefault();
+
+    let tasks;
+    if ((localStorage.getItem('Name')) == null) {
+        tasks = [];
+    }
+    else {
+        tasks = JSON.parse(localStorage.getItem('Name'));
+        // console.log(typeof tasks);
+    }
+    tasks.push(iinput.value);
+    localStorage.setItem('Name', JSON.stringify(tasks))
+
+}
+
+function run8(e) {
+    document.querySelector('.card-title').innerText = e.target.value;
 }
 
 
+function run9() {
+    document.getElementById('error').innerText = "Don't copy the answer, write it by your self";
+    document.querySelector('#error').style.background = 'red';
+    document.querySelector('#error').style.marginTop = '10px';
+    document.querySelector('#error').style.padding = '10px';
+    e.preventDefault();
+}
+
+document.addEventListener('click', run10);
+
+function run10(e) {
+    console.log("Classes of the this item is: " + e.target.classList);
+
+    if (e.target.classList.contains('fa-remove')) {
+        e.target.parentElement.parentElement.remove();
+    }
+}
+
+
+//we also have below even
+//focus
+//blur
+//keyup
+//cut
+//copy
+//input
+//change for the selector   
 
 
 
