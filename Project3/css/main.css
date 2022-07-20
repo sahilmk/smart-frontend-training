@@ -919,7 +919,7 @@ a {
     font-size: 18px; }
   .sidebar li {
     justify-content: space-between;
-    padding: 10px 24px; }
+    padding: 10px 10px 10px 24px; }
     .sidebar li > div {
       align-items: center; }
       .sidebar li > div i {
@@ -933,38 +933,6 @@ a {
         color: #fff; }
         .sidebar li:hover h6::before {
           color: #fff; }
-  .sidebar__inner-list {
-    padding-left: 24px; }
-    .sidebar__inner-list > li {
-      padding: 8.8px 24px; }
-      .sidebar__inner-list > li:nth-child(2) {
-        padding: 8.8px 35px 8.8px 24px; }
-      .sidebar__inner-list > li h6 {
-        font-size: 13px; }
-        .sidebar__inner-list > li h6::before {
-          color: #838FB9;
-          content: '-';
-          margin-right: 15px; }
-          .sidebar__inner-list > li h6::before:hover {
-            color: #fff; }
-      .sidebar__inner-list > li i {
-        font-size: 16px; }
-  .sidebar__inner-list2 {
-    padding-left: 15px; }
-    .sidebar__inner-list2 li {
-      justify-content: initial;
-      align-items: center; }
-      .sidebar__inner-list2 li i {
-        padding-right: 15px;
-        font-size: 5px; }
-  .sidebar__pages > ul li:nth-child(2) h6 {
-    color: #fff; }
-  .sidebar__pages > ul li:nth-child(2) i {
-    color: #fff; }
-  .sidebar__components ul li:nth-child(3) {
-    justify-content: initial; }
-    .sidebar__components ul li:nth-child(3) i {
-      margin-right: 8px; }
   .sidebar > div:first-child {
     position: fixed;
     top: 0;
@@ -1001,6 +969,41 @@ a {
       border-radius: 20px; }
     .sidebar__scroll:hover::-webkit-scrollbar-thumb {
       visibility: visible; }
+    .sidebar__scroll > div > ul > ul {
+      padding-left: 24px; }
+      .sidebar__scroll > div > ul > ul li:nth-child(2) h6 {
+        color: #fff; }
+      .sidebar__scroll > div > ul > ul li:nth-child(2) i {
+        color: #fff; }
+      .sidebar__scroll > div > ul > ul > li {
+        padding: 8.8px 0px; }
+        .sidebar__scroll > div > ul > ul > li:nth-child(2) {
+          padding: 8.8px 20px 8.8px 0px; }
+        .sidebar__scroll > div > ul > ul > li h6 {
+          font-family: "Poppins", sans-serif;
+          font-size: 13px;
+          font-weight: 400; }
+          .sidebar__scroll > div > ul > ul > li h6::before {
+            color: #838FB9;
+            content: '-';
+            margin-right: 15px; }
+            .sidebar__scroll > div > ul > ul > li h6::before:hover {
+              color: #fff; }
+        .sidebar__scroll > div > ul > ul > li i {
+          font-size: 16px; }
+      .sidebar__scroll > div > ul > ul ul {
+        padding-left: 20px; }
+        .sidebar__scroll > div > ul > ul ul h6 {
+          font-family: "Poppins", sans-serif;
+          font-size: 13px;
+          font-weight: 300; }
+        .sidebar__scroll > div > ul > ul ul li {
+          justify-content: initial;
+          align-items: center;
+          padding: 10px 0px; }
+          .sidebar__scroll > div > ul > ul ul li i {
+            padding-right: 15px;
+            font-size: 5px; }
 
 .upperarrow {
   position: fixed;

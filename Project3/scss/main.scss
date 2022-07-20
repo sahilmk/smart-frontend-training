@@ -29,7 +29,7 @@
 
     li {
         justify-content: space-between;
-        padding: 10px 24px;
+        padding: 10px 10px 10px 24px;
 
         >div {
             align-items: center;
@@ -57,79 +57,13 @@
         }
     }
 
-    &__inner-list {
-        padding-left: 24px;
-
-        >li {
-            padding: 8.8px 24px;
-
-            &:nth-child(2) {
-                padding: 8.8px 35px 8.8px 24px;
-            }
-
-            h6 {
-                font-size: 13px;
-
-                &::before {
-                    color: $coll-gray-color;
-                    content: '-';
-                    margin-right: 15px;
-
-                    &:hover {
-                        color: $white-color;
-                    }
-                }
-            }
-
-            i {
-                font-size: 16px;
-            }
-        }
-    }
-
-    &__inner-list2 {
-        padding-left: 15px;
-
-        li {
-            justify-content: initial;
-            align-items: center;
-
-            i {
-                padding-right: 15px;
-                font-size: 5px;
-            }
-        }
-    }
-
     &__pages {
         >ul {
-            li {
-                &:nth-child(2) {
-                    h6 {
-                        color: $white-color;
-                    }
-
-                    i {
-                        color: $white-color;
-                    }
-                }
-            }
+            li {}
         }
     }
 
-    &__components {
-        ul {
-            li {
-                &:nth-child(3) {
-                    justify-content: initial;
 
-                    i {
-                        margin-right: 8px;
-                    }
-                }
-            }
-        }
-    }
 
     >div {
         &:first-child {
@@ -173,6 +107,76 @@
         &:hover {
             &::-webkit-scrollbar-thumb {
                 visibility: visible;
+            }
+        }
+
+        >div {
+            >ul {
+                >ul {
+                    padding-left: 24px;
+
+                    li {
+                        &:nth-child(2) {
+                            h6 {
+                                color: $white-color;
+                            }
+
+                            i {
+                                color: $white-color;
+                            }
+                        }
+                    }
+
+                    >li {
+                        padding: 8.8px 0px;
+
+                        &:nth-child(2) {
+                            padding: 8.8px 20px 8.8px 0px;
+                        }
+
+                        h6 {
+                            font-family: $poppins-font;
+                            font-size: 13px;
+                            font-weight: 400;
+
+
+                            &::before {
+                                color: $coll-gray-color;
+                                content: '-';
+                                margin-right: 15px;
+
+                                &:hover {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+
+                        i {
+                            font-size: 16px;
+                        }
+                    }
+
+                    ul {
+                        padding-left: 20px;
+
+                        h6 {
+                            font-family: $poppins-font;
+                            font-size: 13px;
+                            font-weight: 300;
+                        }
+
+                        li {
+                            justify-content: initial;
+                            align-items: center;
+                            padding: 10px 0px;
+
+                            i {
+                                padding-right: 15px;
+                                font-size: 5px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
