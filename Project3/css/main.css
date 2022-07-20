@@ -961,10 +961,6 @@ a {
     color: #fff; }
   .sidebar__pages > ul li:nth-child(2) i {
     color: #fff; }
-  .sidebar__components ul li:nth-child(3) {
-    justify-content: initial; }
-    .sidebar__components ul li:nth-child(3) i {
-      margin-right: 8px; }
   .sidebar > div:first-child {
     position: fixed;
     top: 0;

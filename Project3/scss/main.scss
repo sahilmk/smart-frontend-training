@@ -117,20 +117,6 @@
         }
     }
 
-    &__components {
-        ul {
-            li {
-                &:nth-child(3) {
-                    justify-content: initial;
-
-                    i {
-                        margin-right: 8px;
-                    }
-                }
-            }
-        }
-    }
-
     >div {
         &:first-child {
             @include position(fixed, 0, initial, initial, 0);
