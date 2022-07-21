@@ -56,14 +56,3 @@ a {
 .submit {
     margin-right: 10px
 }
-
-.cancel {
-    color: $persian-green-color;
-    transition: color, background-color 0.2s ease-in-out;
-    background-color: rgba(10, 179, 156, 0.1);
-
-    &:hover {
-        background-color: $persian-green-color;
-        color: $white-color
-    }
-}
