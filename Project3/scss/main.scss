@@ -57,29 +57,19 @@
         }
     }
 
-    &__pages {
-        >ul {
-            li {}
-        }
-    }
+    &__logo {
+        @include position(fixed, 0, initial, initial, 0);
+        background-color: $chinese-blue-color;
+        text-align: center;
+        height: 70px;
+        width: 249px;
+        z-index: 5;
 
-
-
-    >div {
-        &:first-child {
-            @include position(fixed, 0, initial, initial, 0);
-            background-color: $chinese-blue-color;
-            text-align: center;
-            height: 70px;
-            width: 249px;
-            z-index: 5;
-
-            img {
-                cursor: pointer;
-                height: 17px;
-                width: 100px;
-                margin-top: 30px;
-            }
+        img {
+            cursor: pointer;
+            height: 17px;
+            width: 100px;
+            margin-top: 30px;
         }
     }
 
@@ -272,7 +262,7 @@
         align-items: center;
         height: 100%;
 
-        >:first-child {
+        >i {
             color: $dark-gunmetal-color;
             cursor: pointer;
             padding: 4px 16px;
@@ -335,38 +325,6 @@
                 }
             }
 
-            &:nth-child(3) {
-                @include position(relative);
-
-                i {
-                    &::after {
-                        @include size-weight(10px, 600);
-                        @include position(absolute, initial, 2px, 30px);
-                        background-color: $button-blue-color;
-                        color: $white-color;
-                        content: '5';
-                        padding: 2px 6px;
-                        line-height: 15px;
-                        border-radius: 50%;
-                    }
-                }
-            }
-
-            &:nth-child(6) {
-                @include position(relative);
-
-                &::after {
-                    @include size-weight(10px, 600);
-                    @include position(absolute, initial, 5px, 30px, );
-                    background-color: $fire-opal-color;
-                    color: $white-color;
-                    content: '3';
-                    padding: 2px 6px;
-                    line-height: 15px;
-                    border-radius: 50%;
-                }
-            }
-
             &:last-child {
                 background-color: $cultured-color;
                 align-items: center;
@@ -392,6 +350,38 @@
                     color: $roman-silver-color;
                 }
             }
+        }
+    }
+
+    &__shopping {
+        @include position(relative);
+
+        i {
+            &::after {
+                @include size-weight(10px, 600);
+                @include position(absolute, initial, 2px, 30px);
+                background-color: $button-blue-color;
+                color: $white-color;
+                content: '5';
+                padding: 2px 6px;
+                line-height: 15px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__notification {
+        @include position(relative);
+
+        &::after {
+            @include size-weight(10px, 600);
+            @include position(absolute, initial, 5px, 30px, );
+            background-color: $fire-opal-color;
+            color: $white-color;
+            content: '3';
+            padding: 2px 6px;
+            line-height: 15px;
+            border-radius: 50%;
         }
     }
 
@@ -463,73 +453,6 @@
         padding: 16px;
         border-radius: 5px;
 
-        >div {
-            &:first-child {
-                justify-content: space-between;
-
-                >div {
-                    @include size-weight(12px, 600);
-                    color: $chinese-blue-color;
-                    background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
-                    align-items: center;
-                    cursor: pointer;
-                    padding: 4.2px 7.8px;
-                    border-radius: 5px;
-
-                    i {
-                        margin-right: 10px;
-                    }
-                }
-            }
-
-            &:last-child {
-                @include position(absolute, initial, initial, 16px);
-                background-color: $anti-flash-white-color;
-                height: 15px;
-                width: calc(100% - 32px);
-                border-radius: 30px;
-
-                >div {
-                    @include position(absolute, 4px, initial, initial, 4px);
-                    background-color: $fire-opal-color;
-                    height: 7px;
-                    width: 30%;
-                    border-radius: 30px;
-
-                    &::after {
-                        @include position(absolute, 2px, 2px);
-                        background-color: $white-color;
-                        content: '';
-                        height: 3.5px;
-                        width: 3.5px;
-                        border-radius: 50%
-                    }
-                }
-
-                span {
-                    @include position(absolute, initial, initial, 25px, 27%);
-                    background-color: $chinese-blue-color;
-                    color: $white-color;
-                    display: inline-block;
-                    animation: label 2s;
-                    padding: 4px 4px;
-                    font-size: 9.75px;
-                    border-radius: 4px;
-
-
-                    &::before {
-                        @include position(absolute, 18px, 40%);
-                        background-color: $chinese-blue-color;
-                        content: '';
-                        height: 7px;
-                        width: 7px;
-                        transform: rotate(45deg);
-                    }
-                }
-
-            }
-        }
-
         h5 {
             @include size-weight(16px, 500);
             color: $davys-grey-color;
@@ -537,6 +460,70 @@
 
         i {
             font-size: 12px;
+        }
+    }
+
+    &__profile-title {
+        justify-content: space-between;
+
+        >div {
+            @include size-weight(12px, 600);
+            color: $chinese-blue-color;
+            background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
+            align-items: center;
+            cursor: pointer;
+            padding: 4.2px 7.8px;
+            border-radius: 5px;
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__progress-bar {
+        @include position(absolute, initial, initial, 16px);
+        background-color: $anti-flash-white-color;
+        height: 15px;
+        width: calc(100% - 32px);
+        border-radius: 30px;
+
+        >div {
+            @include position(absolute, 4px, initial, initial, 4px);
+            background-color: $fire-opal-color;
+            height: 7px;
+            width: 30%;
+            border-radius: 30px;
+
+            &::after {
+                @include position(absolute, 2px, 2px);
+                background-color: $white-color;
+                content: '';
+                height: 3.5px;
+                width: 3.5px;
+                border-radius: 50%
+            }
+        }
+
+        span {
+            @include position(absolute, initial, initial, 25px, 27%);
+            background-color: $chinese-blue-color;
+            color: $white-color;
+            display: inline-block;
+            animation: label 2s;
+            padding: 4px 4px;
+            font-size: 9.75px;
+            border-radius: 4px;
+
+
+            &::before {
+                @include position(absolute, 18px, 40%);
+                background-color: $chinese-blue-color;
+                content: '';
+                height: 7px;
+                width: 7px;
+                transform: rotate(45deg);
+            }
         }
     }
 
@@ -572,39 +559,6 @@
                     }
                 }
             }
-
-            &:nth-child(2) {
-                @extend .social;
-
-                i {
-                    background-color: $balck-color;
-                }
-            }
-
-            &:nth-child(3) {
-                @extend .social;
-
-                i {
-                    background-color: $chinese-blue-color;
-                }
-            }
-
-            &:nth-child(4) {
-                @extend .social;
-
-                i {
-                    background-color: $persian-green-color;
-                }
-            }
-
-            &:last-child {
-                @extend .social;
-                margin-bottom: 0;
-
-                i {
-                    background-color: $fire-opal-color;
-                }
-            }
         }
 
         input {
@@ -615,6 +569,39 @@
         h5 {
             @include size-weight(16px, 500);
             color: $davys-grey-color;
+        }
+    }
+
+    &__github {
+        @extend .social;
+
+        i {
+            background-color: $balck-color;
+        }
+    }
+
+    &__website {
+        @extend .social;
+
+        i {
+            background-color: $chinese-blue-color;
+        }
+    }
+
+    &__dribble {
+        @extend .social;
+
+        i {
+            background-color: $persian-green-color;
+        }
+    }
+
+    &__pinterest {
+        @extend .social;
+        margin-bottom: 0;
+
+        i {
+            background-color: $fire-opal-color;
         }
     }
 
@@ -663,25 +650,6 @@
                 }
             }
 
-            &:first-child,
-            &:nth-child(2),
-            &:nth-child(5),
-            &:nth-child(6) {
-                >div {
-                    &:first-child {
-                        padding-right: 24px;
-                    }
-                }
-            }
-
-            &:nth-child(6) {
-                >div {
-                    &:nth-child(2) {
-                        padding-right: 24px;
-                    }
-                }
-            }
-
             &:last-child {
                 justify-content: flex-end;
 
@@ -695,21 +663,6 @@
                     padding: 8px 14.4px;
                     line-height: 1.5;
                     border-radius: 4px;
-
-                    &:first-child {
-                        margin-right: 10px
-                    }
-
-                    &:last-child {
-                        color: $persian-green-color;
-                        transition: color, background-color 0.2s ease-in-out;
-                        background-color: rgba(10, 179, 156, 0.1);
-
-                        &:hover {
-                            background-color: $persian-green-color;
-                            color: $white-color
-                        }
-                    }
                 }
             }
         }

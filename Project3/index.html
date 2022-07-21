@@ -24,7 +24,7 @@
     </div>
 
     <section class="sidebar">
-        <div>
+        <div class="sidebar__logo">
             <img src="./img/logo-light.png" alt="velzon">
         </div>
         <div class="sidebar__scroll">
@@ -245,7 +245,7 @@
                 <div>
                     <i class="fa-solid fa-border-all"></i>
                 </div>
-                <div>
+                <div class="main-content__shopping">
                     <i class="fa-solid fa-bag-shopping"></i>
                 </div>
                 <div>
@@ -254,9 +254,8 @@
                 <div>
                     <i class="fa-regular fa-moon"></i>
                 </div>
-                <div>
+                <div class="main-content__notification">
                     <i class="fa-regular fa-bell"></i>
-
                 </div>
                 <div class="row">
                     <div>
@@ -289,14 +288,14 @@
                         <h6>Lead Designer/Developer</h6>
                     </div>
                     <div class="main-content__profile">
-                        <div class="row">
+                        <div class="row main-content__profile-title">
                             <h5>Complete Your Profile</h5>
                             <div class="row">
                                 <i class="fa-regular fa-pen-to-square"></i>
                                 <span>Edit</span>
                             </div>
                         </div>
-                        <div>
+                        <div class="main-content__progress-bar">
                             <div></div>
                             <span>30%</span>
                         </div>
@@ -309,19 +308,19 @@
                                 <h6>Add</h6>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row main main-content__github">
                             <i class="fa-brands fa-github"></i>
                             <input type="text" value="@daveadame">
                         </div>
-                        <div class="row">
+                        <div class="row  main-content__website">
                             <i class="fa-solid fa-globe"></i>
                             <input type="text" value="www.velzon.com">
                         </div>
-                        <div class="row">
+                        <div class="row main-content__dribble">
                             <i class="fa-brands fa-dribbble"></i>
                             <input type="text" value="@dave_adame">
                         </div>
-                        <div class="row">
+                        <div class="row main-content__pinterest">
                             <i class="fa-brands fa-pinterest"></i>
                             <input type="text" value="Advance Dave">
                         </div>
@@ -358,69 +357,87 @@
                         <form action="" class="main-content__form">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="fname">First Name</label>
-                                    <input type="text" value="Sahil">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" value="Sahil">
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="fname">Last Name</label>
-                                    <input type="text" value="Kanjariya">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Last Name</label>
+                                        <input type="text" value="Kanjariya">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="fname">Phone Number</label>
-                                    <input type="text" value="+(91) 56784 38713">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">Phone Number</label>
+                                        <input type="text" value="+(91) 56784 38713">
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="fname">Email Address</label>
-                                    <input type="email" value="sahil00@kanjariya.com">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Email Address</label>
+                                        <input type="email" value="sahil00@kanjariya.com">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="main-content__form-control">
                                 <label for="fname">Joining Date</label>
                                 <input type="date" value="2021-05-25">
                             </div>
-                            <div>
+                            <div class="main-content__form-control">
                                 <label for="fname">Skills</label>
                                 <input typ value="Javascript">
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="fname">Designation</label>
-                                    <input type="text" value="Lead Designer / Developer">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">Designation</label>
+                                        <input type="text" value="Lead Designer / Developer">
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="fname">Website</label>
-                                    <input type="email" value="www.velzon.com">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Website</label>
+                                        <input type="email" value="www.velzon.com">
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="fname">City</label>
-                                    <input type="text" value="Rajkot">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">City</label>
+                                        <input type="text" value="Rajkot">
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="fname">Country</label>
-                                    <input type="email" value="India">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">Country</label>
+                                        <input type="email" value="India">
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="fname">Zip Code</label>
-                                    <input type="email" value="234921">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Zip Code</label>
+                                        <input type="email" value="234921">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="main-content__form-control">
                                 <label for="fname">Description</label>
                                 <textarea name="des" rows="3"
                                     id="des">Hi I'm Sahil Kanjariya,It will be as simple as Occidental; in fact, it will be Occidental. To an Indian person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is European languages are members of the same family.</textarea>
                             </div>
 
                             <div class="row">
-                                <button>Updates</button>
-                                <button>Cancel</button>
+                                <button type="submit" class="submit">Updates</button>
+                                <button type="button" class="cancel">Cancel</button>
                             </div>
                         </form>
                     </div>
