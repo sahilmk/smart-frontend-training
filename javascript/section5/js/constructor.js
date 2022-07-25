@@ -64,6 +64,10 @@ function person(fname, lname, bdate) {
     this.bdate = new Date(bdate);
 }
 
+person.prototype.greeting = function () {
+    return "Person, Greetings";
+}
+
 person.prototype.getyear = function () {
     return this.bdate.getFullYear();
 }
@@ -76,14 +80,93 @@ function customer(fname, lname, bdate, email) {
     person.call(this, fname, lname, bdate)
 }
 
+
 customer.prototype = Object.create(person.prototype);
-//To make return type person prototype to customer prototyep
-
-
 const cobj = new customer('Raj', 'Patel', '10-10-2010', 'abc@gmail.com');
-console.log(cobj.email);
+//To make return type person prototype to customer prototype
+// console.log(cobj.greeting());
+let pp = cobj.greeting();
 
-console.log(cobj);
+customer.prototype.greeting = function () {
+    return "Customer, Greetings";
+}
+customer.prototype.constructor = customer;
+
+console.log(pp);
+console.log(cobj.greeting());
+
+
+
+//48 Object create
+const proto = {
+    x: 20,
+    hello: function (uname) {
+        return 'Hello how are you ' + uname;
+    }
+}
+
+let var1 = Object.create(proto);
+let var2 = Object.create(proto);
+var1.x = 30;
+var2.x = 50;
+console.log(var1.x);
+console.log(proto.x);
+console.log(var2.x);
+
+//49 ES6 Classes
+class c1 {
+    constructor(lname) {
+        this.lname = lname;
+    }
+    getname(fname) {
+        this.fname = fname;
+    }
+    setname() {
+        return this.fname + this.lname;
+    }
+
+    static print() {
+        console.log("Hello this is static method");
+    }
+}
+
+let a = new c1(' Kanjariya');
+a.getname('sahil');
+console.log(a.setname());
+console.log(a);
+c1.print();
+
+
+
+//50 Sub Classes
+class app {
+    constructor(fname, lname) {
+        this.fname = fname;
+        this.lname = lname;
+    }
+
+    gm() {
+        return `Hello, ${this.fname} ${this.lname} how are you?`
+    }
+}
+
+class user extends app {
+    constructor(fname, lname, email) {
+        super(fname, lname);
+        this.email = email;
+    }
+
+    gm() {
+        console.log(super.gm());
+        return 'Gretting from the user class';
+    }
+}
+
+let userobj = new user('Sahil', 'Kanjariya', 'abc@gmail.com');
+console.log(userobj.gm());
+console.log(app.prototype.gm.call(userobj));
+
+
 
 
 
