@@ -2,9 +2,6 @@ function funcons(name, bdate) {
     this.uname = name;
     this.date = new Date(bdate)
     today = new Date()
-    // this.age = function () {
-    //     return today.getFullYear() - this.date.getFullYear();
-    // }
 }
 
 funcons.prototype.age = function () {
@@ -47,7 +44,6 @@ obj2 = new Object({
     uname: 'Doe',
     age: 63
 })
-
 const obj3 = new funcons('person1', 'October 10 2010');
 console.log(obj3.date);
 const obj4 = new funcons('person2', '03/10/1979')
@@ -58,20 +54,36 @@ console.log(obj4);
 
 console.log(obj4.hasOwnProperty);
 
-function person(fname, lname) {
+
+
+
+//42 Prototype inheritance
+function person(fname, lname, bdate) {
     this.fname = fname;
     this.lname = lname;
+    this.bdate = new Date(bdate);
 }
 
-const pobj = new person('Ravi', 'Shah');
+person.prototype.getyear = function () {
+    return this.bdate.getFullYear();
+}
+
+const pobj = new person('Ravi', 'Shah', '12-10-2022');
 console.log(`Hello ${pobj.fname} ${pobj.lname} how are you.`);
 
-function customer(fname, lname, email) {
+function customer(fname, lname, bdate, email) {
     this.email = email;
-    person.call(this, fname, lname)
+    person.call(this, fname, lname, bdate)
 }
-const cobj = new customer('Raj', 'Patel', 'abc@gmail.com');
-console.log(cobj.lname);
+
+customer.prototype = Object.create(person.prototype);
+//To make return type person prototype to customer prototyep
+
+
+const cobj = new customer('Raj', 'Patel', '10-10-2010', 'abc@gmail.com');
+console.log(cobj.email);
+
+console.log(cobj);
 
 
 
