@@ -17,15 +17,42 @@ easyHTTP.prototype.get = function (url, callback) {
     this.xhr.send();
 }
 
-easyHTTP.prototype.post = function () {
+easyHTTP.prototype.post = function (url, data, callback) {
+    this.xhr.open('POST', url, true);
+    this.xhr.setRequestHeader('Content-type', 'application/json');
 
+    let self = this;
+    this.xhr.onload = function () {
+        callback(self.xhr.responseText);
+    }
+
+    this.xhr.send(JSON.stringify(data));
 }
 
-easyHTTP.prototype.put = function () {
+easyHTTP.prototype.put = function (url, data, callback) {
+    this.xhr.open('PUT', url, true);
+    this.xhr.setRequestHeader('Content-type', 'application/json');
 
+    let self = this;
+    this.xhr.onload = function () {
+        callback(self.xhr.responseText);
+    }
+
+    this.xhr.send(JSON.stringify(data));
 }
 
-easyHTTP.prototype.delete = function () {
+easyHTTP.prototype.delete = function (url, callback) {
+    this.xhr.open('DELETE', url, true);
 
+    let self = this;
+    this.xhr.onload = function () {
+        if (self.xhr.status === 200) {
+            callback('Data is deleted');
+        } else {
+            callback('Error: ' + self.xhr.status);
+        }
+    }
+
+    this.xhr.send();
 }
 
