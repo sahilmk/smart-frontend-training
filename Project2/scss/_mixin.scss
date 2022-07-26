@@ -1,0 +1,42 @@
+@mixin position($pos, $top: initial, $right: initial, $bottom: initial, $left: initial) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin box($height: 0, $width: 0) {
+    height: $height;
+    width: $width;
+}
+
+@mixin scroll-bar ($bcolor) {
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bcolor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #999;
+        visibility: hidden;
+        border-radius: 20px;
+    }
+}
+
+@mixin update-logo($color) {
+    @include box(32px, 32px);
+    color: $color;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgba(0, 181, 184, 0.1);
+    border-radius: 50%;
+}
+
+@mixin size-weight($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
