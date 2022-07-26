@@ -1,12 +1,458 @@
 @import 'common-flex-base';
+@import 'utility';
+@import 'variable';
+@import 'mixin';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    // border: 1px solid red;
+.sidebar {
+    @include position(absolute, 0, initial, initial, 0);
+    background-color: $chinese-blue-color;
+    width: 249px;
+
+    h5 {
+        color: $coll-gray-color;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    h6 {
+        color: $maximum-blue-purple-color;
+        font-family: $hkgrotesk-font;
+        font-size: 15px;
+        font-weight: 100;
+    }
+
+    i {
+        color: $maximum-blue-purple-color;
+        font-size: 18px;
+    }
+
+    li {
+        justify-content: space-between;
+        padding: 10px 24px;
+
+        >div {
+            align-items: center;
+
+            i {
+                margin-right: 10px;
+                font-size: 16px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            i {
+                color: $white-color;
+            }
+
+            h6 {
+                color: $white-color;
+
+                &::before {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    &__inner-list {
+        padding-left: 24px;
+
+        >li {
+            padding: 8.8px 24px;
+
+            &:nth-child(2) {
+                padding: 8.8px 35px 8.8px 24px;
+            }
+
+            h6 {
+                font-size: 13px;
+
+                &::before {
+                    color: $coll-gray-color;
+                    content: '-';
+                    margin-right: 15px;
+
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+
+            i {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__inner-list2 {
+        padding-left: 15px;
+
+        li {
+            justify-content: initial;
+            align-items: center;
+
+            i {
+                padding-right: 15px;
+                font-size: 5px;
+            }
+        }
+    }
+
+    &__pages {
+        >ul {
+            li {
+                &:nth-child(2) {
+                    h6 {
+                        color: $white-color;
+                    }
+
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__components {
+        ul {
+            li {
+                &:nth-child(3) {
+                    justify-content: initial;
+
+                    i {
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    >div {
+        &:first-child {
+            @include position(fixed, 0, initial, initial, 0);
+            background-color: $chinese-blue-color;
+            text-align: center;
+            height: 70px;
+            width: 249px;
+            z-index: 5;
+
+            img {
+                height: 17px;
+                width: 100px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &__scroll {
+        @include position(fixed, initial, initial, 0, 0);
+        background-color: $chinese-blue-color;
+        overflow-y: scroll;
+        height: calc(100vh - 70px);
+        width: 249px;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $chinese-blue-color;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 20px;
+            visibility: hidden;
+        }
+
+        &:hover {
+            &::-webkit-scrollbar-thumb {
+                visibility: visible;
+            }
+        }
+    }
 }
 
-ul {
-    list-style: none;
+.setting {
+    @include position(fixed, initial, 20px, 40px);
+}
+
+.main-content {
+    @include position(absolute, 0, initial, initial, 0);
+    margin-left: 249px;
+    width: calc(100% - 249px);
+
+    &__background {
+        margin-top: 70px;
+        background: url('../img/profile-bg.jpg') no-repeat center center/cover;
+        height: 260px;
+
+        &::before {
+            content: '';
+            background-color: $chinese-blue-color;
+            position: absolute;
+            height: 260px;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        a {
+            @include position(absolute, 0, 0);
+            z-index: 2;
+        }
+
+    }
+
+    &__nav {
+        @include position(fixed, 0, 0);
+        background-color: $white-color;
+        justify-content: space-between;
+        height: 70px;
+        width: calc(100% - 249px);
+        padding: 0 24px 0 12px;
+        z-index: 10;
+    }
+
+    &__left {
+        align-items: center;
+        height: 100%;
+
+        >:first-child {
+            color: $dark-gunmetal-color;
+            padding: 4px 16px;
+        }
+
+        input {
+            background-color: $cultured-color;
+            border: none;
+            height: 38px;
+            width: 321px;
+            padding: 8px 30px 8px 40px;
+        }
+
+        >div {
+            @include position(relative);
+
+            i {
+                @include position(absolute, 10px, initial, initial, 13px);
+                color: $roman-silver-color;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__right {
+        height: 100%;
+        align-items: center;
+
+        >div {
+            align-items: center;
+            margin-left: 4px;
+
+            i {
+                color: $davys-grey-color;
+                font-size: 20px;
+                border-radius: 50%;
+                padding: 13px;
+
+                &:hover {
+                    color: $ultramarine-blue-color;
+                    background-color: rgba($color: $ultramarine-blue-color, $alpha: 0.1);
+                    cursor: pointer;
+                }
+            }
+
+            &:first-child {
+                padding: 8px 13px;
+                border-radius: 50%;
+
+                &:hover {
+                    color: $ultramarine-blue-color;
+                    background-color: rgba($color: $ultramarine-blue-color, $alpha: 0.1);
+                    cursor: pointer;
+                }
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                    margin-top: 5px;
+                }
+            }
+
+            &:nth-child(3) {
+                @include position(relative);
+
+                i {
+                    &::after {
+                        @include position(absolute, initial, 2px, 30px);
+                        background-color: $button-blue-color;
+                        color: $white-color;
+                        content: '5';
+                        padding: 2px 6px;
+                        font-size: 10px;
+                        font-weight: 900;
+                        line-height: 15px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            &:nth-child(6) {
+                @include position(relative);
+
+                &::after {
+                    @include position(absolute, initial, 5px, 30px, );
+                    background-color: $fire-opal-color;
+                    color: $white-color;
+                    content: '3';
+                    padding: 2px 6px;
+                    font-size: 10px;
+                    font-weight: 900;
+                    line-height: 15px;
+                    border-radius: 50%;
+                }
+            }
+
+            &:last-child {
+                background-color: $cultured-color;
+                align-items: center;
+                height: 100%;
+                margin-left: 16px;
+                padding: 8px 14.4px;
+
+                img {
+                    height: 32px;
+                    width: 32px;
+                    margin-right: 10px;
+                    border-radius: 50%;
+                }
+
+                h5 {
+                    color: $davys-grey-color;
+                    font-size: 13px;
+                }
+
+                h6 {
+                    color: $roman-silver-color;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    &__setting {
+        @include position(absolute, 282px);
+        height: 728px;
+        width: 1631px;
+        margin: auto;
+
+        >div {
+            >div {
+                margin-left: 24px;
+            }
+        }
+    }
+
+    &__intro {
+        background-color: $white-color;
+        text-align: center;
+        height: 234.5px;
+        width: 384px;
+        margin-bottom: 24px;
+        padding: 24px;
+        border-radius: 5px;
+
+        >div {
+            @include position(relative);
+
+            i {
+                @include position(absolute, initial, 110px, 35px, initial);
+                background-color: $bright-gray-color;
+                padding: 10px;
+                font-size: 13px;
+                border-radius: 50%;
+            }
+
+            img {
+
+                border: 5px solid $bright-gray-color;
+                height: 120px;
+                width: 120px;
+                margin-bottom: 20px;
+                border-radius: 50%;
+            }
+        }
+
+        h5 {
+            color: $davys-grey-color;
+            font-size: 16px;
+        }
+
+        h6 {
+            color: $roman-silver-color;
+            font-size: 13px;
+        }
+    }
+
+    &__profile {
+        background-color: $white-color;
+        text-align: center;
+        height: 115.5px;
+        width: 384px;
+        margin-bottom: 24px;
+        padding: 16px;
+        border-radius: 5px;
+
+        >div {
+            @include position(relative);
+
+            &:first-child {
+                justify-content: space-between;
+
+                >div {
+                    color: $chinese-blue-color;
+                    background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
+                    align-items: center;
+                    padding: 4.2px 7.8px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    border-radius: 5px;
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            &:last-child {
+                @include position(ab)
+            }
+        }
+
+        h5 {
+            color: $davys-grey-color;
+            font-size: 16px;
+            // font-weight: 500;
+        }
+
+        i {
+            font-size: 12px;
+        }
+    }
+
+    &__portfolio {
+        background-color: $white-color;
+        text-align: center;
+        height: 274.5px;
+        width: 384px;
+        margin-bottom: 24px;
+        padding: 24px;
+        border-radius: 5px;
+    }
+
 }
