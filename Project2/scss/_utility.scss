@@ -1,0 +1,139 @@
+@import 'mixin';
+
+// .col-md-11,
+// .col-md-9,
+// .col-md-4,
+// .col-md-3,
+// .col-md-1 {
+//     padding: 0;
+// }
+
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: $montserrat;
+    background-color: $cultured-color;
+}
+
+
+.notification {
+    @include size-weight(12px, 400);
+    color: $white-color;
+
+
+    &--number {
+        background-color: $secondary-color;
+        margin-right: 10px;
+        padding: 1px 6px;
+        border-radius: 50%;
+
+        &--2 {
+            background-color: $light-salmon-color;
+            padding: 1px 5px;
+            border-radius: 10px;
+        }
+    }
+
+    &--new {
+        background-color: $ultra-red-color;
+        margin-right: 10px;
+        padding: 2px 5px;
+        border-radius: 10px;
+    }
+
+    &--hot {
+        background-color: $caribbean-green-color;
+        margin-right: 10px;
+        padding: 2px 7px;
+        border-radius: 10px;
+    }
+
+    &--completed {
+        background-color: $caribbean-green-color;
+        padding: 5px;
+        border-radius: 50px;
+    }
+
+}
+
+.status {
+    color: $white-color;
+    font-size: 12px;
+
+    &--active {
+        background-color: $caribbean-green-color;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    &--reported {
+        background-color: $light-salmon-color;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    &--block {
+        background-color: $ultra-red-color;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    &--completed {
+        background-color: $caribbean-green-color;
+        padding: 5px;
+        border-radius: 50px;
+    }
+}
+
+.share {
+    &--number {
+        background-color: $secondary-color;
+        margin-right: 10px;
+        padding: 1px 6px;
+        border-radius: 50%;
+
+        &--2 {
+            background-color: $light-salmon-color;
+            padding: 1px 5px;
+            border-radius: 10px;
+        }
+    }
+
+    &--new {
+        background-color: $ultra-red-color;
+        margin-right: 10px;
+        padding: 2px 5px;
+        border-radius: 10px;
+    }
+}
+
+.task-before {
+    @include position(absolute, 0, initial, initial, 0);
+    @include box(15px, 15px);
+    content: '';
+    border-radius: 50%;
+    box-shadow: 1px 2px 6px 0 rgba(25, 42, 70, 0.3);
+}
+
+.task-after {
+    @include position(absolute, 15px, initial, initial, 7px);
+    @include box(100%, 1px);
+    background-color: $platinum-color;
+    content: '';
+}
+
+.nav-notification {
+    color: $white-color;
+    background-color: $ultra-red-color;
+    padding: 5px 7px;
+    font-size: 10px;
+    border-radius: 50%;
+}

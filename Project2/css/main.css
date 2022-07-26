@@ -858,13 +858,882 @@
   .offset-xs-11 {
     margin-left: 91.666667%; } }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
 ul {
   list-style: none; }
 
 a {
   text-decoration: none; }
+
+body {
+  font-family: "Montserrat", Georgia, "Times New Roman", Times, serif;
+  background-color: #f5f7fa; }
+
+.notification {
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff; }
+  .notification--number {
+    background-color: #00b5b8;
+    margin-right: 10px;
+    padding: 1px 6px;
+    border-radius: 50%; }
+    .notification--number--2 {
+      background-color: #ffa87d;
+      padding: 1px 5px;
+      border-radius: 10px; }
+  .notification--new {
+    background-color: #ff7588;
+    margin-right: 10px;
+    padding: 2px 5px;
+    border-radius: 10px; }
+  .notification--hot {
+    background-color: #16d39a;
+    margin-right: 10px;
+    padding: 2px 7px;
+    border-radius: 10px; }
+  .notification--completed {
+    background-color: #16d39a;
+    padding: 5px;
+    border-radius: 50px; }
+
+.status {
+  color: #fff;
+  font-size: 12px; }
+  .status--active {
+    background-color: #16d39a;
+    padding: 5px;
+    border-radius: 5px; }
+  .status--reported {
+    background-color: #ffa87d;
+    padding: 5px;
+    border-radius: 5px; }
+  .status--block {
+    background-color: #ff7588;
+    padding: 5px;
+    border-radius: 5px; }
+  .status--completed {
+    background-color: #16d39a;
+    padding: 5px;
+    border-radius: 50px; }
+
+.share--number {
+  background-color: #00b5b8;
+  margin-right: 10px;
+  padding: 1px 6px;
+  border-radius: 50%; }
+  .share--number--2 {
+    background-color: #ffa87d;
+    padding: 1px 5px;
+    border-radius: 10px; }
+
+.share--new {
+  background-color: #ff7588;
+  margin-right: 10px;
+  padding: 2px 5px;
+  border-radius: 10px; }
+
+.task-before, .maincontent__tasks li:first-child::before, .maincontent__tasks li:nth-child(2)::before, .maincontent__tasks li:nth-child(3)::before, .maincontent__tasks li:last-child::before {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  content: '';
+  border-radius: 50%;
+  box-shadow: 1px 2px 6px 0 rgba(25, 42, 70, 0.3); }
+
+.task-after, .maincontent__tasks li:first-child::after, .maincontent__tasks li:nth-child(2)::after, .maincontent__tasks li:nth-child(3)::after {
+  position: absolute;
+  top: 15px;
+  right: initial;
+  bottom: initial;
+  left: 7px;
+  height: 100%;
+  width: 1px;
+  background-color: #dfe3e7;
+  content: ''; }
+
+.nav-notification, .nav__mainside > div:last-child ul li:nth-child(2) i::after, .nav__mainside > div:last-child ul li:nth-child(3) i::after {
+  color: #fff;
+  background-color: #ff7588;
+  padding: 5px 7px;
+  font-size: 10px;
+  border-radius: 50%; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.nav {
+  width: 100%; }
+  .nav__sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: initial;
+    left: initial;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1);
+    z-index: 10; }
+    .nav__sticky > div > div:last-child {
+      justify-content: space-between;
+      width: calc(100% - 240px); }
+  .nav__sidebar {
+    height: 55px;
+    width: 240px;
+    color: #fff;
+    background-color: #404E67;
+    align-items: center;
+    padding: 0;
+    font-size: 24px; }
+    .nav__sidebar > div:last-child {
+      padding: 0; }
+    .nav__sidebar h2 {
+      font-size: 24px;
+      font-weight: 500; }
+  .nav__mainside {
+    align-items: center;
+    height: 55px; }
+    .nav__mainside > div:first-child {
+      color: #404E67;
+      align-items: center;
+      height: 100%; }
+      .nav__mainside > div:first-child a {
+        color: #404E67;
+        margin: 0 40px 0 25px;
+        font-size: 14px; }
+        .nav__mainside > div:first-child a i {
+          padding-left: 5px;
+          font-size: 10px; }
+      .nav__mainside > div:first-child > i {
+        cursor: pointer;
+        margin-right: 40px; }
+    .nav__mainside > div:last-child i {
+      color: #404E67;
+      font-size: 16px; }
+    .nav__mainside > div:last-child li {
+      padding: 0; }
+    .nav__mainside > div:last-child ul {
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%; }
+      .nav__mainside > div:last-child ul li {
+        padding-right: 23px; }
+        .nav__mainside > div:last-child ul li:first-child a {
+          align-items: center; }
+        .nav__mainside > div:last-child ul li:first-child img {
+          height: 18px;
+          width: 18px;
+          margin-right: 10px; }
+        .nav__mainside > div:last-child ul li:first-child i {
+          font-size: 10px; }
+        .nav__mainside > div:last-child ul li:nth-child(2) {
+          position: relative;
+          top: initial;
+          right: initial;
+          bottom: initial;
+          left: initial;
+          margin: 0 10px; }
+          .nav__mainside > div:last-child ul li:nth-child(2) i::after {
+            position: absolute;
+            top: initial;
+            right: initial;
+            bottom: 13px;
+            left: 9px;
+            content: '5'; }
+        .nav__mainside > div:last-child ul li:nth-child(3) {
+          position: relative;
+          top: initial;
+          right: initial;
+          bottom: initial;
+          left: initial;
+          margin: 0 10px; }
+          .nav__mainside > div:last-child ul li:nth-child(3) i::after {
+            position: absolute;
+            top: initial;
+            right: initial;
+            bottom: 13px;
+            left: 10px;
+            background-color: #ffa87d;
+            content: '3'; }
+        .nav__mainside > div:last-child ul li:last-child a {
+          display: inline-block; }
+      .nav__mainside > div:last-child ul span {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 8px; }
+        .nav__mainside > div:last-child ul span + i {
+          font-size: 10px; }
+      .nav__mainside > div:last-child ul a {
+        color: #404E67; }
+        .nav__mainside > div:last-child ul a div {
+          align-items: center;
+          padding: 0; }
+  .nav__user {
+    position: relative;
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: initial; }
+    .nav__user img {
+      height: 32px;
+      width: 32px;
+      padding: 0;
+      border-radius: 50%; }
+    .nav__user::after {
+      position: absolute;
+      top: initial;
+      right: 0px;
+      bottom: 3px;
+      left: initial;
+      height: 10px;
+      width: 10px;
+      background-color: #16d39a;
+      content: '';
+      border-radius: 50%; }
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  right: initial;
+  bottom: initial 0px;
+  left: initial;
+  height: 100vh;
+  width: 240px;
+  color: #dcdcdc;
+  background-color: #404E67;
+  overflow-y: scroll;
+  padding-top: 54px; }
+  .sidebar::-webkit-scrollbar {
+    width: 7px; }
+  .sidebar::-webkit-scrollbar-track {
+    background: #404E67; }
+  .sidebar::-webkit-scrollbar-thumb {
+    background: #999;
+    visibility: hidden;
+    border-radius: 20px; }
+  .sidebar:hover::-webkit-scrollbar-thumb {
+    visibility: visible; }
+  .sidebar h5, .sidebar .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .sidebar span, .sidebar .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .sidebar span, .sidebar .maincontent__users table tr > td:nth-child(4), .maincontent__users table .sidebar tr > td:nth-child(4) {
+    font-size: 14px;
+    font-weight: 500;
+    color: #dcdcdc;
+    text-transform: uppercase;
+    padding: 20px 20px 10px; }
+  .sidebar li {
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 10px 10px 20px; }
+    .sidebar li:hover {
+      background-color: #38445a; }
+    .sidebar li h6 {
+      font-size: 14px;
+      font-weight: 300;
+      color: #dcdcdc; }
+    .sidebar li i {
+      padding-right: 10px;
+      font-size: 16.8; }
+    .sidebar li span {
+      font-size: 12px;
+      font-weight: 400; }
+  .sidebar__apps li {
+    justify-content: flex-start; }
+    .sidebar__apps li:nth-child(7), .sidebar__apps li:last-child {
+      justify-content: space-between; }
+  .sidebar__pages li:nth-child(2), .sidebar__pages li:last-child {
+    justify-content: flex-start; }
+  .sidebar__others li {
+    justify-content: flex-start; }
+    .sidebar__others li:first-child {
+      justify-content: space-between; }
+  .sidebar__components li:first-child h6 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 150px; }
+
+.maincontent {
+  padding: 55px 0 0 240px; }
+  .maincontent > div:nth-child(3) > div {
+    box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.1); }
+  .maincontent__button {
+    position: fixed;
+    top: initial;
+    right: 30px;
+    bottom: 40px;
+    left: initial;
+    background-color: #9C27B0;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    z-index: 5; }
+    .maincontent__button a {
+      color: #fff; }
+  .maincontent__setting {
+    position: fixed;
+    top: initial;
+    right: 0px;
+    bottom: 60%;
+    left: initial;
+    background-color: #ff7588;
+    display: inline-block;
+    padding: 15px 15px;
+    font-size: 14px;
+    z-index: 5; }
+    .maincontent__setting a {
+      color: #fff; }
+    .maincontent__setting i {
+      -webkit-animation: fa-spin 5s infinite; }
+  .maincontent__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    padding: 25px; }
+    .maincontent__grid > div {
+      background-color: #fff; }
+  .maincontent__statistics {
+    align-items: center;
+    grid-column: 1 / 13;
+    height: 115px; }
+    .maincontent__statistics > div > div {
+      border-right: 1px solid #ECEFF1; }
+      .maincontent__statistics > div > div h3 {
+        color: #404E67;
+        margin-bottom: 5px;
+        font-size: 26.6px;
+        font-weight: 600;
+        letter-spacing: 2px; }
+      .maincontent__statistics > div > div h5, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__statistics > div > div span, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__statistics > div > div span, .maincontent__statistics > div > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__statistics > div > div tr > td:nth-child(4) {
+        font-size: 14px;
+        font-weight: 100;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #babfc7;
+        line-height: 1.45; }
+      .maincontent__statistics > div > div i {
+        font-size: 32px; }
+      .maincontent__statistics > div > div > div {
+        font-size: 14px; }
+        .maincontent__statistics > div > div > div i {
+          font-size: 14px; }
+      .maincontent__statistics > div > div > :first-child {
+        color: #00b5b8;
+        background-color: #f5f7fa;
+        margin-right: 48px;
+        padding: 20px; }
+      .maincontent__statistics > div > div > :nth-child(2) {
+        margin-right: 48px; }
+      .maincontent__statistics > div > div > :last-child {
+        margin-right: 48px; }
+    .maincontent__statistics > div:nth-child(odd) > div > div:last-child {
+      color: #00b5b8; }
+    .maincontent__statistics > div:nth-child(even) > div > div:last-child {
+      color: #ff7588; }
+    .maincontent__statistics > div:nth-child(2) > div > i {
+      color: #ff7588; }
+    .maincontent__statistics > div:nth-child(3) > div > i {
+      color: #16d39a; }
+    .maincontent__statistics > div:last-child > div {
+      border: none; }
+      .maincontent__statistics > div:last-child > div > i {
+        color: #ffa87d; }
+  .maincontent__power {
+    grid-column: 1 / 7;
+    height: 440px;
+    padding: 21px; }
+    .maincontent__power img {
+      height: 370px;
+      padding: 0; }
+    .maincontent__power > div {
+      justify-content: space-between; }
+      .maincontent__power > div > div:first-child {
+        color: #404E67; }
+        .maincontent__power > div > div:first-child h5, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:first-child span, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:first-child span, .maincontent__power > div > div:first-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div:first-child tr > td:nth-child(4) {
+          font-size: 18.48px;
+          font-weight: 500;
+          padding-right: 5px;
+          line-height: 1.2; }
+        .maincontent__power > div > div:first-child span {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .maincontent__power > div > div:last-child > div {
+        justify-content: flex-end; }
+        .maincontent__power > div > div:last-child > div h5, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:last-child > div span, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:last-child > div span, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__power > div > div:last-child > div tr > td:nth-child(4) {
+          font-size: 16px;
+          font-weight: 500;
+          color: #404E67;
+          padding-right: 15px; }
+          .maincontent__power > div > div:last-child > div h5:last-child, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(2) span:last-child, .maincontent__users table tr > td:nth-child(2) .maincontent__power > div > div:last-child > div span:last-child, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:nth-child(3) span:last-child, .maincontent__users table tr > td:nth-child(3) .maincontent__power > div > div:last-child > div span:last-child, .maincontent__power > div > div:last-child > div .maincontent__users table tr > td:last-child:nth-child(4), .maincontent__users table .maincontent__power > div > div:last-child > div tr > td:last-child:nth-child(4) {
+            font-weight: 100;
+            color: #646464; }
+  .maincontent__sales {
+    grid-column: 7 / 10;
+    height: 443px; }
+    .maincontent__sales h4 {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #babfc7;
+      padding-left: 15px; }
+    .maincontent__sales > div:first-child {
+      border-bottom: 1px #ECEFF1 solid;
+      padding-left: 15px; }
+      .maincontent__sales > div:first-child h5, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__sales > div:first-child span, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__sales > div:first-child span, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__sales > div:first-child tr > td:nth-child(4) {
+        font-size: 14px;
+        font-weight: 100;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #00b5b8;
+        margin-right: 10px;
+        padding: 15px 0; }
+        .maincontent__sales > div:first-child h5:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(2) span:first-child, .maincontent__users table tr > td:nth-child(2) .maincontent__sales > div:first-child span:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:nth-child(3) span:first-child, .maincontent__users table tr > td:nth-child(3) .maincontent__sales > div:first-child span:first-child, .maincontent__sales > div:first-child .maincontent__users table tr > td:first-child:nth-child(4), .maincontent__users table .maincontent__sales > div:first-child tr > td:first-child:nth-child(4) {
+          border-bottom: 2px #404E67 solid; }
+    .maincontent__sales > div:nth-child(2) {
+      padding: 20px 0 0 15px; }
+      .maincontent__sales > div:nth-child(2) h3 {
+        font-size: 21.14px;
+        font-weight: 600;
+        color: #404E67;
+        padding-right: 20px;
+        letter-spacing: 2px;
+        line-height: 1.2; }
+      .maincontent__sales > div:nth-child(2) h6 {
+        color: #00b5b8;
+        font-size: 11px; }
+        .maincontent__sales > div:nth-child(2) h6 i {
+          padding-right: 5px; }
+  .maincontent__bar {
+    justify-content: space-around;
+    padding-top: 20px; }
+    .maincontent__bar h6 {
+      color: #404E67;
+      padding-top: 10px;
+      font-size: 12px; }
+    .maincontent__bar > div:first-child > div > div {
+      height: 40%; }
+    .maincontent__bar > div:nth-child(2) > div > div {
+      height: 60%; }
+    .maincontent__bar > div:nth-child(3) > div > div {
+      background-color: #ff7588;
+      height: 65%; }
+    .maincontent__bar > div:nth-child(4) > div > div {
+      height: 55%; }
+    .maincontent__bar > div:nth-child(5) > div > div {
+      background-color: #ffa87d;
+      height: 90%; }
+    .maincontent__bar > div:last-child > div > div {
+      height: 57%; }
+    .maincontent__bar > div > div {
+      height: 240px;
+      width: 12px;
+      margin: 0 7px;
+      background-color: #e6e6e6;
+      transform: rotate(180deg); }
+      .maincontent__bar > div > div > div {
+        background-color: #00b5b8;
+        height: 50%; }
+  .maincontent__region {
+    grid-column: 10 / 13; }
+    .maincontent__region > h6 {
+      font-size: 14px;
+      font-weight: 400;
+      color: #00b5b8;
+      border-bottom: 1px #ECEFF1 solid;
+      margin-right: 10px;
+      padding: 25px 0 15px 25px; }
+    .maincontent__region > :nth-child(2) {
+      height: 240px;
+      width: 240px;
+      margin: auto; }
+    .maincontent__region > :nth-child(3) {
+      justify-content: center; }
+      .maincontent__region > :nth-child(3) h5, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__region > :nth-child(3) span, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__region > :nth-child(3) span, .maincontent__region > :nth-child(3) .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__region > :nth-child(3) tr > td:nth-child(4) {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #404E67;
+        font-size: 14px; }
+      .maincontent__region > :nth-child(3) > div {
+        align-items: center;
+        padding-right: 10px; }
+        .maincontent__region > :nth-child(3) > div > div {
+          height: 10px;
+          width: 10px;
+          margin-right: 3px;
+          padding: 0; }
+    .maincontent__region > :last-child {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #404E67;
+      border-top: 1px #ECEFF1 solid;
+      justify-content: space-evenly;
+      text-align: center;
+      margin-top: 40px; }
+      .maincontent__region > :last-child h4 {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.45; }
+      .maincontent__region > :last-child h6 {
+        font-size: 14px;
+        font-weight: 400; }
+      .maincontent__region > :last-child > div {
+        border-right: 1px #ECEFF1 solid;
+        padding: 10px 0; }
+      .maincontent__region > :last-child > div:last-child {
+        border-right: 0px; }
+  .maincontent__update {
+    grid-column: 1 / 5;
+    height: 260px; }
+    .maincontent__update > div:first-child {
+      justify-content: space-between;
+      padding: 15px; }
+      .maincontent__update > div:first-child h4 {
+        font-size: 18.48px;
+        font-weight: 500;
+        color: #404E67;
+        padding: 0; }
+      .maincontent__update > div:first-child h6 {
+        text-align: end;
+        padding: 0;
+        font-size: 14px; }
+      .maincontent__update > div:first-child a {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #009c9f;
+        font-weight: 100; }
+    .maincontent__update > div:last-child {
+      overflow: scroll;
+      height: calc(100% - 53px); }
+      .maincontent__update > div:last-child::-webkit-scrollbar {
+        width: 7px; }
+      .maincontent__update > div:last-child::-webkit-scrollbar-track {
+        background: #fff; }
+      .maincontent__update > div:last-child::-webkit-scrollbar-thumb {
+        background: #999;
+        visibility: hidden;
+        border-radius: 20px; }
+      .maincontent__update > div:last-child:hover::-webkit-scrollbar-thumb {
+        visibility: visible; }
+    .maincontent__update i {
+      margin-right: 10px; }
+    .maincontent__update li {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .maincontent__update li h5, .maincontent__update li .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__update li span, .maincontent__update li .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__update li span, .maincontent__update li .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__update li tr > td:nth-child(4) {
+        font-size: 14px;
+        font-weight: 600;
+        color: #626E82;
+        margin-bottom: 3.5px; }
+      .maincontent__update li > h5, .maincontent__update .maincontent__users table tr > td:nth-child(2) li > span, .maincontent__users table tr > td:nth-child(2) .maincontent__update li > span, .maincontent__update .maincontent__users table tr > td:nth-child(3) li > span, .maincontent__users table tr > td:nth-child(3) .maincontent__update li > span {
+        text-align: end; }
+      .maincontent__update li h6 {
+        font-size: 12.6px;
+        font-weight: 400;
+        color: #404E67; }
+      .maincontent__update li:first-child {
+        padding-bottom: 18px; }
+        .maincontent__update li:first-child i {
+          height: 32px;
+          width: 32px;
+          color: #00b5b8;
+          text-align: center;
+          line-height: 30px;
+          background-color: rgba(0, 181, 184, 0.1);
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(2) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(2) i {
+          height: 32px;
+          width: 32px;
+          color: #2dcee3;
+          text-align: center;
+          line-height: 30px;
+          background-color: rgba(0, 181, 184, 0.1);
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(3) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(3) i {
+          height: 32px;
+          width: 32px;
+          color: #ff7588;
+          text-align: center;
+          line-height: 30px;
+          background-color: rgba(0, 181, 184, 0.1);
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(4) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(4) i {
+          height: 32px;
+          width: 32px;
+          color: #00b5b8;
+          text-align: center;
+          line-height: 30px;
+          background-color: rgba(0, 181, 184, 0.1);
+          border-radius: 50%; }
+      .maincontent__update li:nth-child(5) {
+        padding: 18px 0; }
+        .maincontent__update li:nth-child(5) i {
+          height: 32px;
+          width: 32px;
+          color: #2dcee3;
+          text-align: center;
+          line-height: 30px;
+          background-color: rgba(0, 181, 184, 0.1);
+          border-radius: 50%; }
+      .maincontent__update li:last-child {
+        padding-top: 18px; }
+        .maincontent__update li:last-child i {
+          height: 32px;
+          width: 32px;
+          color: #ff7588;
+          text-align: center;
+          line-height: 30px;
+          background-color: rgba(0, 181, 184, 0.1);
+          border-radius: 50%; }
+  .maincontent__information {
+    grid-column: 5 / 13; }
+    .maincontent__information > div:first-child {
+      font-size: 18.48px;
+      font-weight: 500;
+      color: #404E67;
+      padding: 20px 15px; }
+      .maincontent__information > div:first-child > div {
+        text-align: end; }
+      .maincontent__information > div:first-child h4 {
+        font-weight: 500; }
+    .maincontent__information > div:last-child {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      border-top: 1px solid #ECEFF1; }
+      .maincontent__information > div:last-child > div > div {
+        border-right: 1px solid #ECEFF1;
+        align-items: center;
+        padding: 30px; }
+      .maincontent__information > div:last-child img {
+        height: 110px;
+        width: 110px;
+        width: 100%; }
+      .maincontent__information > div:last-child h5, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__information > div:last-child span, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__information > div:last-child span, .maincontent__information > div:last-child .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__information > div:last-child tr > td:nth-child(4) {
+        font-size: 15.96px;
+        font-weight: 700;
+        font-family: "Montserrat", Georgia, "Times New Roman", Times, serif;
+        color: #404E67;
+        margin-bottom: 5px; }
+      .maincontent__information > div:last-child p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #90a4ae;
+        margin-bottom: 10px;
+        line-height: 1.45; }
+      .maincontent__information > div:last-child > div:last-child > div {
+        border-right: 0px; }
+  .maincontent__users {
+    grid-column: 1 / 9;
+    height: 463px; }
+    .maincontent__users > div {
+      color: #404E67;
+      padding: 20px; }
+      .maincontent__users > div h4 {
+        font-size: 16px;
+        font-weight: 500; }
+      .maincontent__users > div a {
+        color: #404E67;
+        text-align: end; }
+      .maincontent__users > div:nth-child(2) {
+        overflow-x: auto; }
+    .maincontent__users th,
+    .maincontent__users td {
+      border-bottom: 1px solid #ECEFF1;
+      border-collapse: collapse; }
+    .maincontent__users table {
+      border-top: 1px solid #ECEFF1;
+      width: 100%;
+      height: calc(100% - 59px);
+      padding: 0;
+      border-bottom: 0px; }
+      .maincontent__users table img {
+        height: 25px;
+        width: 25px;
+        vertical-align: middle;
+        margin-right: 10px;
+        border-radius: 50%; }
+      .maincontent__users table tr {
+        border: 1px solid #404E67; }
+      .maincontent__users table th {
+        font-size: 14px;
+        font-weight: bolder;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #404E67;
+        text-align: start;
+        padding: 10.5px 28px; }
+      .maincontent__users table tr span {
+        font-size: 14px;
+        font-weight: 100;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #404E67; }
+      .maincontent__users table tr > td:first-child {
+        align-items: center;
+        white-space: nowrap;
+        padding: 8px 28px; }
+      .maincontent__users table tr > td:nth-child(4) {
+        padding: 8px 28px; }
+        .maincontent__users table tr > td:nth-child(4) > div {
+          height: 14px;
+          width: 78.5px;
+          background-color: #ECEFF1;
+          border-radius: 3px; }
+          .maincontent__users table tr > td:nth-child(4) > div > div {
+            height: 100%;
+            width: 55%;
+            color: #fff;
+            background-color: #16d39a;
+            text-align: center;
+            font-size: 10px;
+            border-radius: 3px;
+            line-height: 16px; }
+      .maincontent__users table tr > td:nth-child(5) {
+        padding: 8px 28px; }
+        .maincontent__users table tr > td:nth-child(5) span {
+          font-size: 12px;
+          font-weight: 400;
+          color: #fff; }
+      .maincontent__users table tr > td:last-child {
+        padding: 8px 28px; }
+        .maincontent__users table tr > td:last-child a {
+          color: #404E67; }
+          .maincontent__users table tr > td:last-child a i:first-child {
+            padding-right: 10px;
+            font-size: 14px; }
+      .maincontent__users table tr:nth-child(2) > td:nth-child(4) > div > div {
+        background-color: #ffa87d; }
+      .maincontent__users table tr:nth-child(3) > td:nth-child(4) > div > div {
+        background-color: #ff7588;
+        width: 65%; }
+      .maincontent__users table tr:nth-child(4) > td:nth-child(4) > div > div {
+        width: 78%; }
+      .maincontent__users table tr:nth-child(5) > td:nth-child(4) > div > div {
+        background-color: #ffa87d;
+        width: 51%; }
+      .maincontent__users table tr:last-child > td:nth-child(4) > div > div {
+        background-color: #ff7588;
+        width: 47%; }
+      .maincontent__users table tr td {
+        padding: 8px 28px; }
+  .maincontent__tasks {
+    grid-column: 9 / 13; }
+    .maincontent__tasks > div {
+      color: #404E67;
+      padding: 21px; }
+      .maincontent__tasks > div h4 {
+        font-size: 16px;
+        font-weight: 500; }
+      .maincontent__tasks > div a {
+        color: #404E67;
+        text-align: end; }
+    .maincontent__tasks ul {
+      padding: 20px; }
+    .maincontent__tasks li {
+      padding: 0 0 30px 30px; }
+      .maincontent__tasks li > div {
+        justify-content: space-between; }
+        .maincontent__tasks li > div h5, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(2) span, .maincontent__users table tr > td:nth-child(2) .maincontent__tasks li > div span, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(3) span, .maincontent__users table tr > td:nth-child(3) .maincontent__tasks li > div span, .maincontent__tasks li > div .maincontent__users table tr > td:nth-child(4), .maincontent__users table .maincontent__tasks li > div tr > td:nth-child(4) {
+          font-size: 14px;
+          font-weight: 500;
+          color: #404E67;
+          margin-bottom: 5px;
+          padding: 0; }
+        .maincontent__tasks li > div h6 {
+          font-size: 12.5px;
+          font-weight: 400;
+          font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          color: #babfc7; }
+      .maincontent__tasks li > h6 {
+        font-size: 13px;
+        font-weight: 400;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #babfc7; }
+      .maincontent__tasks li:first-child {
+        position: relative;
+        top: initial;
+        right: initial;
+        bottom: initial;
+        left: initial; }
+        .maincontent__tasks li:first-child::before {
+          background-color: #00b5b8; }
+        .maincontent__tasks li:first-child img {
+          height: 25px;
+          width: 25px;
+          margin-top: 10px;
+          border-radius: 50%; }
+      .maincontent__tasks li:nth-child(2) {
+        position: relative;
+        top: initial;
+        right: initial;
+        bottom: initial;
+        left: initial; }
+        .maincontent__tasks li:nth-child(2)::before {
+          background-color: #ff7588; }
+      .maincontent__tasks li:nth-child(3) {
+        position: relative;
+        top: initial;
+        right: initial;
+        bottom: initial;
+        left: initial; }
+        .maincontent__tasks li:nth-child(3)::before {
+          background-color: #ffa87d; }
+      .maincontent__tasks li:last-child {
+        position: relative;
+        top: initial;
+        right: initial;
+        bottom: initial;
+        left: initial; }
+        .maincontent__tasks li:last-child::before {
+          background-color: #2dcee3; }
+        .maincontent__tasks li:last-child a {
+          position: relative;
+          top: initial;
+          right: initial;
+          bottom: initial;
+          left: initial;
+          display: inline-block; }
+        .maincontent__tasks li:last-child img {
+          height: 25px;
+          width: 25px;
+          border: 2px solid #fff;
+          margin-top: 10px;
+          border-radius: 50%; }
+          .maincontent__tasks li:last-child img:hover {
+            z-index: 10; }
+          .maincontent__tasks li:last-child img:first-child {
+            position: absolute;
+            top: initial;
+            right: initial;
+            bottom: initial;
+            left: 0; }
+          .maincontent__tasks li:last-child img:nth-child(2) {
+            position: absolute;
+            top: initial;
+            right: initial;
+            bottom: initial;
+            left: 12px; }
+          .maincontent__tasks li:last-child img:last-child {
+            position: absolute;
+            top: initial;
+            right: initial;
+            bottom: initial;
+            left: 25px; }
+
+.footer {
+  background-color: #fff;
+  height: 32px;
+  margin-left: 240px;
+  padding: 5px; }
+  .footer span {
+    font-size: 14px;
+    font-weight: 100;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #90a4ae; }
+    .footer span:last-child {
+      text-align: end; }
+  .footer a {
+    color: #009c9f; }
+  .footer i {
+    color: #E91E63; }
