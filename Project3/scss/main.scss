@@ -13,6 +13,7 @@
         text-transform: uppercase;
         padding: 12px 20px;
         font-size: 11px;
+        font-weight: 600;
         letter-spacing: 0.05em;
     }
 
@@ -274,6 +275,7 @@
             height: 38px;
             width: 321px;
             padding: 8px 30px 8px 40px;
+            border-radius: 4px;
         }
 
         >div {
@@ -564,6 +566,12 @@
         input {
             @include size-weight(12.96px, 400);
             font-family: $poppins-font;
+            border-color: $light-gray-color;
+
+            &:focus {
+                border-color: $wild-blue-yonder-color;
+                box-shadow: 0 0 0 0 rgba(64, 81, 137, 0.25);
+            }
         }
 
         h5 {
@@ -617,7 +625,6 @@
 
         ul {
             margin: auto;
-            width: 1183px;
 
             li {
                 cursor: pointer;
@@ -664,6 +671,15 @@
                     border-radius: 4px;
                 }
 
+                .submit {
+                    margin-right: 10px;
+
+                    &:hover {
+                        background-color: $americal-blue-color;
+                        color: $white-color
+                    }
+                }
+
                 .cancel {
                     color: $persian-green-color;
                     transition: color, background-color 0.2s ease-in-out;
@@ -697,11 +713,12 @@
             outline: none;
             width: 100%;
             padding: 8px 14.4px;
+            font-size: 13px;
             border-radius: 4px;
             line-height: 1.5;
 
             &:focus {
-                border-color: #a0a8c4;
+                border-color: $wild-blue-yonder-color;
                 box-shadow: 0 0 0 0 rgba(64, 81, 137, 0.25);
             }
         }
