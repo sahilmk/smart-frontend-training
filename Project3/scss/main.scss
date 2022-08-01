@@ -213,6 +213,7 @@
         background: url('../img/profile-bg.jpg') no-repeat center center/cover;
         margin-top: 70px;
         height: 260px;
+        width: 100%;
 
         &::before {
             background-color: $chinese-blue-color;
@@ -652,6 +653,7 @@
 
                 button {
                     @include size-weight(12.96px, 400);
+                    font-family: $poppins-font;
                     color: $white-color;
                     background-color: $chinese-blue-color;
                     cursor: pointer;
@@ -697,9 +699,15 @@
             padding: 8px 14.4px;
             border-radius: 4px;
             line-height: 1.5;
+
+            &:focus {
+                border-color: #a0a8c4;
+                box-shadow: 0 0 0 0 rgba(64, 81, 137, 0.25);
+            }
         }
 
         textarea {
+            resize: vertical;
             height: 76.5px;
         }
     }
