@@ -6,69 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5a8e6d9177.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="./css/main.css">
     <title>Profile Settings | Velzon - Admin & Dashboard Template</title>
 </head>
 
 <body>
     <div class="upperarrow">
-        <i class="fa-solid fa-arrow-up"></i>
+        <a href="#">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
     </div>
     <div class="setting">
-        <i class="fa-solid fa-gear"></i>
+        <a href="#">
+            <i class="fa-solid fa-gear"></i>
+        </a>
     </div>
 
-    <nav class="nav row">
-        <div class="row nav__left">
-            <i class="fa-solid fa-bars"></i>
-            <input type="text" name="search" id="search">
-        </div>
-        <div class="row nav__right">
-            <div>
-                <img src="./img/united-states.png" alt="">
-            </div>
-            <div>
-                <i class="fa-solid fa-border-all"></i>
-            </div>
-            <div>
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-            <div>
-                <i class="fa-solid fa-maximize"></i>
-            </div>
-            <div>
-                <i class="fa-regular fa-moon"></i>
-            </div>
-            <div>
-                <i class="fa-regular fa-bell"></i>
-
-            </div>
-            <div class="row">
-                <div>
-                    <img src="./img/avatar-1.jpg" alt="user">
-                </div>
-                <div>
-                    <h5>Anna Adame</h5>
-                    <h6>Founder</h6>
-                </div>
-            </div>
-        </div>
-    </nav>
-
     <section class="sidebar">
-        <div>
+        <div class="sidebar__logo">
             <img src="./img/logo-light.png" alt="velzon">
         </div>
         <div class="sidebar__scroll">
-            <div class="sidebar__menu">
+            <div>
                 <h5>Menu</h5>
                 <ul>
                     <li class="row">
                         <div class="row">
                             <i class="fa-solid fa-gauge"></i>
-                            <h6>Dashboard</h6>
+                            <h6>Dashboards</h6>
                         </div>
-                        <div class="row">
+                        <div>
                             <i class="fa-solid fa-angle-right"></i>
                         </div>
                     </li>
@@ -101,71 +73,68 @@
                             <i class="fa-regular fa-user"></i>
                             <h6>Authentication</h6>
                         </div>
-                        <div class="row">
+                        <div>
                             <i class="fa-solid fa-angle-right"></i>
                         </div>
                     </li>
-                    <li>
+                    <li class="row">
                         <div class="row">
-                            <div class="row">
-                                <i class="fa-regular fa-file-lines"></i>
-                                <h6>Pages</h6>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </div>
+                            <i class="fa-regular fa-file-lines"></i>
+                            <h6>Pages</h6>
                         </div>
+                        <div>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </li>
+                    <ul>
+                        <li>
+                            <h6>Starter</h6>
+                        </li>
+                        <li class="row">
+                            <h6>Profile</h6>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </li>
 
-                        <ul class="sidebar__inner-list">
-                            <li>
-                                <h6>Starter</h6>
+                        <ul>
+                            <li class="row">
+                                <i class="fa-regular fa-circle"></i>
+                                <h6>Simple Page</h6>
                             </li>
-                            <li>
-                                <div class="row">
-                                    <h6>Profile</h6>
-                                    <i class="fa-solid fa-angle-down"></i>
-                                </div>
-                                <ul class="sidebar__inner-list2">
-                                    <li class="row">
-                                        <i class="fa-regular fa-circle"></i>
-                                        <h6>Simple Page</h6>
-                                    </li>
-                                    <li class="row">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h6>Settings</h6>
-                                    </li>
-                                </ul>
-
-                            </li>
-                            <li>
-                                <h6>Team</h6>
-                            </li>
-                            <li>
-                                <h6>Timeline</h6>
-                            </li>
-                            <li>
-                                <h6>FAQs</h6>
-                            </li>
-                            <li>
-                                <h6>Pricing</h6>
-                            </li>
-                            <li>
-                                <h6>Gallery</h6>
-                            </li>
-                            <li>
-                                <h6>Maintenance</h6>
-                            </li>
-                            <li>
-                                <h6>Coming Soon</h6>
-                            </li>
-                            <li>
-                                <h6>Sitemap</h6>
-                            </li>
-                            <li>
-                                <h6>Search Results</h6>
+                            <li class="row">
+                                <i class="fa-solid fa-circle"></i>
+                                <h6>Settings</h6>
                             </li>
                         </ul>
-                    </li>
+
+
+                        <li>
+                            <h6>Team</h6>
+                        </li>
+                        <li>
+                            <h6>Timeline</h6>
+                        </li>
+                        <li>
+                            <h6>FAQs</h6>
+                        </li>
+                        <li>
+                            <h6>Pricing</h6>
+                        </li>
+                        <li>
+                            <h6>Gallery</h6>
+                        </li>
+                        <li>
+                            <h6>Maintenance</h6>
+                        </li>
+                        <li>
+                            <h6>Coming Soon</h6>
+                        </li>
+                        <li>
+                            <h6>Sitemap</h6>
+                        </li>
+                        <li>
+                            <h6>Search Results</h6>
+                        </li>
+                    </ul>
                     <li class="row">
                         <div class="row">
                             <i class="fa-solid fa-rocket"></i>
@@ -178,7 +147,7 @@
                 </ul>
             </div>
 
-            <div class="sidebar__components">
+            <div>
                 <h5>Components</h5>
                 <ul>
                     <li class="row">
@@ -200,8 +169,10 @@
                         </div>
                     </li>
                     <li class="row">
-                        <i class="fa-solid fa-shield"></i>
-                        <h6>Widgets</h6>
+                        <div class="row">
+                            <i class="fa-solid fa-shield"></i>
+                            <h6>Widgets</h6>
+                        </div>
                     </li>
                     <li class="row">
                         <div class="row">
@@ -262,165 +233,232 @@
         </div>
     </section>
 
-    <section class="background">
-        <div class="row background__changebutton">
-            <i class="fa-regular fa-image"></i>
-            <h6>Change Cover</h6>
-        </div>
-    </section>
-
-    <section class="content">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="content__intro">
-                    <div>
-                        <img src="./img/avatar-1 (1).jpg" alt="user">
-                    </div>
-                    <h5>Anna Adame</h5>
-                    <p>Lead Designer/Developer</p>
+    <section class="main-content">
+        <nav class="main-content__nav row">
+            <div class="row main-content__left">
+                <i class="fa-solid fa-bars"></i>
+                <div>
+                    <input type="text" name="search" id="search" placeholder="Search.."></input>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div class="content__profile">
-                    <div class="row">
-                        <h5>Complete Your Profile</h5>
-                        <div>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <h6>Edit</h6>
-                        </div>
+            </div>
+            <div class="row main-content__right">
+                <div>
+                    <img src="./img/united-states.png" alt="">
+                </div>
+                <div>
+                    <i class="fa-solid fa-border-all"></i>
+                </div>
+                <div class="main-content__shopping">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-maximize"></i>
+                </div>
+                <div>
+                    <i class="fa-regular fa-moon"></i>
+                </div>
+                <div class="main-content__notification">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="./img/avatar-1.jpg" alt="user">
                     </div>
                     <div>
-                        <div></div>
-                    </div>
-                </div>
-                <div class="content__portfolio">
-                    <div class="row">
-                        <h5>Portfolio</h5>
-                        <div>
-                            <i class="fa-regular fa-plus"></i>
-                            <h6>Add</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <i class="fa-brands fa-github"></i>
-                        <input type="text" value="@daveadame">
-                    </div>
-                    <div class="row">
-                        <i class="fa-solid fa-globe"></i>
-                        <input type="text" value="www.velzon.com">
-                    </div>
-                    <div class="row">
-                        <i class="fa-brands fa-dribbble"></i>
-                        <input type="text" value="@dave_adame">
-                    </div>
-                    <div class="row">
-                        <i class="fa-brands fa-pinterest"></i>
-                        <input type="text" value="Advance Dave">
+                        <h5>Anna Adame</h5>
+                        <h6>Founder</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="content__form">
-                    <ul class="row">
-                        <li>
-                            <h5>
-                                <a href="#">Personal Details</a>
-                            </h5>
-                        </li>
-                        <li>
-                            <h5>
-                                <a href="#">Change Password</a>
-                            </h5>
-                        </li>
-                        <li>
-                            <h5>
-                                <a href="#">Experience</a>
-                            </h5>
-                        </li>
-                        <li>
-                            <h5>
-                                <a href="#">Privacy Policy</a>
-                            </h5>
-                        </li>
-                    </ul>
+        </nav>
 
-                    <form action="">
-                        <div class="row">
-                            <div>
-                                <label for="fname">First Name</label>
-                                <input type="text" value="sahil">
-                            </div>
-                            <div>
-                                <label for="fname">Last Name</label>
-                                <input type="text" value="Kanjariya">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div>
-                                <label for="fname">Phone Number</label>
-                                <input type="text" value="+(91) 56784 38713">
-                            </div>
-                            <div>
-                                <label for="fname">Email Address</label>
-                                <input type="email" value="sahil00@kanjariya.com">
-                            </div>
-                        </div>
+        <section class="main-content__background">
+            <button><i class="fa-regular fa-image"></i> Change Cover</button>
+        </section>
 
+        <section class="main-content__setting">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="main-content__intro">
                         <div>
-                            <label for="fname">Joining Date</label>
-                            <input type="date" value="2021-05-25">
+                            <img src="./img/avatar-1 (1).jpg" alt="user">
+                            <a href="#">
+                                <i class="fa-solid fa-camera"></i>
+                            </a>
                         </div>
-                        <div>
-                            <label for="fname">Skills</label>
-                            <input typ value="Javascript">
+                        <h5>Anna Adame</h5>
+                        <h6>Lead Designer / Developer</h6>
+                    </div>
+                    <div class="main-content__profile">
+                        <div class="row main-content__profile-title">
+                            <h5>Complete Your Profile</h5>
+                            <div class="row">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <span>Edit</span>
+                            </div>
                         </div>
-
+                        <div class="main-content__progress-bar">
+                            <div></div>
+                            <span>30%</span>
+                        </div>
+                    </div>
+                    <div class="main-content__portfolio">
                         <div class="row">
-                            <div>
-                                <label for="fname">Designation</label>
-                                <input type="text" value="Lead Designer / Developer">
-                            </div>
-                            <div>
-                                <label for="fname">Website</label>
-                                <input type="email" value="www.velzon.com">
+                            <h5>Portfolio</h5>
+                            <div class="row">
+                                <i class="fa-regular fa-plus"></i>
+                                <h6>Add</h6>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div>
-                                <label for="fname">City</label>
-                                <input type="text" value="Rajkot">
-                            </div>
-                            <div>
-                                <label for="fname">Country</label>
-                                <input type="email" value="India">
-                            </div>
-                            <div>
-                                <label for="fname">Zip Code</label>
-                                <input type="email" value="234921">
-                            </div>
+                        <div class="row main main-content__github">
+                            <i class="fa-brands fa-github"></i>
+                            <input type="text" value="@daveadame">
                         </div>
-
-                        <div>
-                            <label for="fname">Description</label>
-                            <textarea name="des"
-                                id="des">Hi I'm Sahil Kanjariya,It will be as simple as Occidental; in fact, it will be Occidental. To an Indian person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is European languages are members of the same family.</textarea>
+                        <div class="row  main-content__website">
+                            <i class="fa-solid fa-globe"></i>
+                            <input type="text" value="www.velzon.com">
                         </div>
-
-                        <div class="row">
-                            <button>Update</button>
-                            <button>Cancel</button>
+                        <div class="row main-content__dribble">
+                            <i class="fa-brands fa-dribbble"></i>
+                            <input type="text" value="@dave_adame">
                         </div>
-                    </form>
+                        <div class="row main-content__pinterest">
+                            <i class="fa-brands fa-pinterest"></i>
+                            <input type="text" value="Advance Dave">
+                        </div>
+                    </div>
                 </div>
+
+                <div class="col-md-9">
+                    <div class="main-content__update">
+                        <div>
+                            <ul class="row">
+                                <li>
+                                    <h5>
+                                        <a href="#">Personal Details</a>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <h5>
+                                        <a href="#">Change Password</a>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <h5>
+                                        <a href="#">Experience</a>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <h5>
+                                        <a href="#">Privacy Policy</a>
+                                    </h5>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <form action="" class="main-content__form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" value="Sahil" placeholder="Enter your firstname">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Last Name</label>
+                                        <input type="text" value="Kanjariya" placeholder="Enter your lastname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">Phone Number</label>
+                                        <input type="text" value="+(91) 56784 38713"
+                                            placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Email Address</label>
+                                        <input type="email" value="sahil00@kanjariya.com"
+                                            placeholder="Enter your email ">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="main-content__form-control">
+                                <label for="fname">Joining Date</label>
+                                <input type="date" value="2021-05-25">
+                            </div>
+                            <div class="main-content__form-control">
+                                <label for="fname">Skills</label>
+                                <input typ value="Javascript">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">Designation</label>
+                                        <input type="text" value="Lead Designer / Developer" placeholder="Designation">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Website</label>
+                                        <input type="email" value="www.velzon.com" placeholder="www.example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">City</label>
+                                        <input type="text" value="Rajkot" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="main-content__form-control p24">
+                                        <label for="fname">Country</label>
+                                        <input type="email" value="India" placeholder="Country">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="main-content__form-control">
+                                        <label for="fname">Zip Code</label>
+                                        <input type="email" value="234921" placeholder="Enter zipcode">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="main-content__form-control">
+                                <label for="fname">Description</label>
+                                <textarea name="des" rows="3" id="des"
+                                    placeholder="Enter your description">Hi I'm Sahil Kanjariya,It will be as simple as Occidental; in fact, it will be Occidental. To an Indian person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is European languages are members of the same family.</textarea>
+                            </div>
+
+                            <div class="row">
+                                <button type="submit" class="submit">Updates</button>
+                                <button type="button" class="cancel">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
-        </div>
+            <footer class="main-content__footer">
+                <div class="row">
+                    <span class="col-md-6">2022 &copy; Sahil</span>
+                    <span class="col-md-6">Design & Develop by Sahil Kanjariya</span>
+                </div>
+            </footer>
+        </section>
+
     </section>
 
-    <footer class="footer">
-        <div class="row">
-            <h6>2022 &copy; Sahil</h6>
-            <h6>Design & Develop by Sahil Kanjariya</h6>
-        </div>
-    </footer>
 </body>
 
 </html>

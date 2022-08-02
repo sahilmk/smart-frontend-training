@@ -1,0 +1,54 @@
+@import 'variable';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $cultured-color;
+    font-family: $poppins-font;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: hkgrotesk;
+    src: url(../hkgrotesk-regular.ttf);
+}
+
+.social {
+    margin-bottom: 16px;
+
+    i {
+        color: $white-color;
+        margin-right: 16px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 50%;
+    }
+
+    input {
+        color: $dark-gunmetal-color;
+        border: 1px solid $wild-blue-yonder-color;
+        outline: none;
+        width: calc(100% - 52px);
+        padding: 8px 14.4px;
+        border-radius: 4px;
+
+        &:focus {
+            box-shadow: 0 0 0 0 rgba(64, 81, 137, 0.25);
+        }
+    }
+}
+
+.p24 {
+    padding-right: 24px;
+}
