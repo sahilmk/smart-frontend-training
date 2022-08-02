@@ -3,11 +3,13 @@ document.querySelector('#submit2').addEventListener('click', squareOrQube);
 
 
 function doOperation(e) {
-    number1 = Number(document.getElementById('input1').value);
-    number2 = Number(document.getElementById('input2').value);
+    number1 = document.getElementById('input1').value;
+    number2 = document.getElementById('input2').value;
     operator1 = document.getElementById('select1').value;
 
-    if (!isNaN(number1) && !isNaN(number2)) {
+    if (!isNaN(Number(number1)) && !isNaN(Number(number2)) && number1 != '' && number2 != '') {
+        number1 = Number(number1);
+        number2 = Number(number2);
         switch (operator1) {
             case 'addition':
                 document.getElementById('show').innerText = `Addition of ${number1} and ${number2} is: ${number1 + number2}`;
@@ -49,10 +51,11 @@ function doOperation(e) {
 }
 
 function squareOrQube(e) {
-    number3 = Number(document.getElementById('input3').value);
+    number3 = document.getElementById('input3').value;
     operator2 = document.getElementById('select2').value;
 
-    if (!isNaN(number3)) {
+    if (!isNaN(Number(number3)) && number3 != '') {
+        number3 = Number(number3);
         switch (operator2) {
             case 'square':
                 document.getElementById('show').innerText =
