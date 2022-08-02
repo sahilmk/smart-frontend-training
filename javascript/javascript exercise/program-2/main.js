@@ -5,10 +5,13 @@ function getQuotientReminder() {
     var divisor = parseFloat(document.getElementById('divisor').value);
 
     if (divisor != 0 && !isNaN(dividend) && !isNaN(divisor)) {
-        let quotiten = (dividend / divisor).toFixed(2);
-        let reminder = (dividend % divisor).toFixed(2);
+        let quotient = (dividend / divisor).toFixed(2);
 
-        getMessage(`Quotiten: ${quotiten} and Reminder: ${reminder}`);
+
+        var reminder = (dividend - (divisor * Math.floor(quotient)));
+
+
+        getMessage(`quotient: ${quotient} and Reminder: ${reminder}`);
     }
     else {
         getMessage('Please Enter valid input');
