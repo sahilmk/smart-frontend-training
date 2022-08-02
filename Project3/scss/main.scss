@@ -190,7 +190,7 @@
 
 .setting {
     @include position(fixed, initial, 20px, 40px);
-    background-color: $moonstone;
+    background-color: $moonstone-color;
     text-align: center;
     z-index: 10;
     height: 48.77px;
@@ -225,21 +225,20 @@
             opacity: 0.9;
         }
 
-        a {
-            @include size-weight(12.96px, 400);
-            color: $balck-color;
-        }
-
         i {
             color: $balck-color;
             margin-right: 4px;
             font-size: 12.96px
         }
 
-        >div {
+        button {
             @include position(absolute, 86px, 0);
+            @include size-weight(12.96px, 400);
             background-color: $white-color;
+            font-family: $poppins-font;
             align-items: center;
+            cursor: pointer;
+            border: none;
             margin-right: 16px;
             padding: 8px 14.4px;
             border-radius: 4px;
@@ -393,6 +392,7 @@
         width: 100%;
 
         >div {
+            min-height: calc(100vh - 320px);
             padding: 0 12px;
 
             >div {
@@ -734,18 +734,22 @@
     }
 
     &__footer {
+        width: 100%;
+
+
         >div {
             background-color: $white-color;
             padding: 20px 12px;
         }
 
-        h6 {
+        span {
             @include size-weight(12.96px, 400);
-            color: $cadet-grey;
+            color: $cadet-grey-color;
 
             &:last-child {
                 text-align: end;
             }
         }
     }
+
 }

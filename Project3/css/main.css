@@ -898,12 +898,6 @@ a {
 .p24 {
   padding-right: 24px; }
 
-.submit {
-  margin-right: 10px; }
-  .submit:hover {
-    color: #fff;
-    background-color: red; }
-
 .sidebar {
   position: absolute;
   top: 0;
@@ -1069,22 +1063,23 @@ a {
       height: 260px;
       width: 100%;
       opacity: 0.9; }
-    .main-content__background a {
-      font-size: 12.96px;
-      font-weight: 400;
-      color: #000; }
     .main-content__background i {
       color: #000;
       margin-right: 4px;
       font-size: 12.96px; }
-    .main-content__background > div {
+    .main-content__background button {
       position: absolute;
       top: 86px;
       right: 0;
       bottom: initial;
       left: initial;
+      font-size: 12.96px;
+      font-weight: 400;
       background-color: #fff;
+      font-family: "Poppins", sans-serif;
       align-items: center;
+      cursor: pointer;
+      border: none;
       margin-right: 16px;
       padding: 8px 14.4px;
       border-radius: 4px;
@@ -1225,6 +1220,7 @@ a {
     height: 728px;
     width: 100%; }
     .main-content__setting > div {
+      min-height: calc(100vh - 320px);
       padding: 0 12px; }
       .main-content__setting > div > div {
         padding: 0 12px; }
@@ -1484,12 +1480,14 @@ a {
       height: 76.5px; }
   .main-content__form-control {
     margin-bottom: 16px; }
-  .main-content__footer > div {
-    background-color: #fff;
-    padding: 20px 12px; }
-  .main-content__footer h6 {
-    font-size: 12.96px;
-    font-weight: 400;
-    color: #98a6ad; }
-    .main-content__footer h6:last-child {
-      text-align: end; }
+  .main-content__footer {
+    width: 100%; }
+    .main-content__footer > div {
+      background-color: #fff;
+      padding: 20px 12px; }
+    .main-content__footer span {
+      font-size: 12.96px;
+      font-weight: 400;
+      color: #98a6ad; }
+      .main-content__footer span:last-child {
+        text-align: end; }
