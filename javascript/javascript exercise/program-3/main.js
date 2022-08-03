@@ -1,10 +1,10 @@
 document.getElementById('swap').addEventListener('click', swapNubmer);
-
+validation = (number) => !isNaN(number) && number != '';
 function swapNubmer() {
-    number1 = Number(document.getElementById('number1').value);
-    number2 = Number(document.getElementById('number2').value);
+    number1 = document.getElementById('number1').value;
+    number2 = document.getElementById('number2').value;
 
-    if (!isNaN(number1) && !isNaN(number2)) {
+    if (validation(number1) && validation(number2)) {
         getMessage('previous-number', `Before the swapping Number1: ${number1}, Number2: ${number2}`);
 
         [number1, number2] = [number2, number1]
@@ -19,7 +19,5 @@ function swapNubmer() {
 }
 
 function getMessage(id, message) {
-    console.log(message);
-    console.log(`'${id}'`);
-    document.getElementById(`'${id}'`).innerText = message;
+    document.getElementById(id).innerText = message;
 }
