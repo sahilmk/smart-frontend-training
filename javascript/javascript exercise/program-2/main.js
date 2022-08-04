@@ -9,13 +9,14 @@ function getQuotientReminder() {
 
 
         var reminder = (dividend - (divisor * quotient));
-        var reminder2;
-        if (divisor < 0) {
-            reminder2 = reminder - divisor;
-            getMessage(`quotient: ${quotient} and Reminder: ${reminder} and also ${reminder2}`);
-        } else {
-            getMessage(`quotient: ${quotient} and Reminder: ${reminder}`);
-        }
+        // var reminder2;
+        // if (divisor < 0) {
+        //     // reminder2 = reminder - divisor;
+        //     getMessage(`quotient: ${quotient} and Reminder: ${reminder2}`);
+        //     getMessage(`quotient: ${quotient} and Reminder: ${reminder} and also ${reminder2}`);
+        // } else {
+        getMessage(`quotient: ${quotient} and Reminder: ${reminder}`);
+        // }
     }
     else {
         getMessage('Please Enter valid input');
