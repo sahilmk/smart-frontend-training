@@ -1,3 +1,54 @@
+const LocalStorage = (function () {
+
+    return {
+        addToLocalStorage: function (nItem) {
+            var localdata = localStorage.getItem('items');
+            var items;
+            if (localdata === null) {
+                items = [];
+                items.push(nItem);
+                localStorage.setItem('items', JSON.stringify(items));
+            } else {
+                items = JSON.parse(localStorage.getItem('items'));
+                items.push(nItem);
+                localStorage.setItem('items', JSON.stringify(items));
+            }
+        },
+        getLocalstorageData: function () {
+            var storagedata = localStorage.getItem('items');
+            var item;
+            if (storagedata === null) {
+                item = [];
+            } else {
+                item = JSON.parse(storagedata);
+            }
+            return item;
+        },
+        updateLocalStorage: function (updatedItem) {
+            var items = this.getLocalstorageData();
+            items.forEach(function (i, index) {
+                if (i.id === updatedItem.id) {
+                    items[index] = updatedItem;
+                    // items.splice(index, 1, updatedItem);
+                }
+            });
+            localStorage.setItem('items', JSON.stringify(items));
+        },
+        deleteFromLocalStorage: function (id) {
+            var items = this.getLocalstorageData();
+            items.forEach(function (i, index) {
+                if (i.id === id) {
+                    items.splice(index, 1);
+                }
+            });
+            localStorage.setItem('items', JSON.stringify(items));
+        },
+        removeAllData: function () {
+            localStorage.removeItem('items');
+        }
+    }
+})();
+
 const itemCtrl = (function () {
 
     const item = function (id, iname, calories) {
@@ -8,7 +59,7 @@ const itemCtrl = (function () {
 
 
     const data = {
-        items: [],
+        items: LocalStorage.getLocalstorageData(),
         currentItem: null,
         totalCalories: 0
     }
@@ -37,6 +88,8 @@ const itemCtrl = (function () {
                     cal += Number(i.calories);
                 });
                 return cal;
+            } else {
+                return 0;
             }
         },
         setCurrentItem: function (id) {
@@ -53,9 +106,21 @@ const itemCtrl = (function () {
             });
             return upitem;
         },
-        updatCalories: function () {
+        updateCalories: function () {
             var totalCalories = itemCtrl.calCalories();
             uiCtrl.showCalories(totalCalories);
+        },
+        deleteFromDatabase: function () {
+            var ind
+            data.items.forEach(function (i) {
+                if (i.id === data.currentItem.id) {
+                    ind = data.items.indexOf(i);
+                }
+            });
+            data.items.splice(ind, 1);
+        },
+        deleteAllItems: function () {
+            data.items = [];
         },
         data: data
     }
@@ -64,7 +129,6 @@ const itemCtrl = (function () {
 const uiCtrl = (function () {
     return {
         showItem: function (items) {
-            // document.getElementById('item-list').style.display = 'block';
             let buffer = '';
             items.forEach(i => {
                 buffer += `
@@ -126,27 +190,46 @@ const uiCtrl = (function () {
                 `
                 }
             })
-            itemCtrl.updatCalories();
+            itemCtrl.updateCalories();
             this.hideButton();
             this.clearInput();
+        },
+
+        deleteFromUi: function (id) {
+            var itemId = `item-${id}`;
+            document.getElementById(itemId).remove();
+            itemCtrl.updateCalories();
+            this.hideButton();
+            this.clearInput();
+        },
+
+        deleteAllItemsFromUi: function () {
+            var items = document.getElementById('item-list').childNodes;
+            var itemsArr = Array.from(items);
+            itemsArr.forEach(i => {
+                i.remove();
+            });
+            itemCtrl.updateCalories();
+            document.getElementById('item-list').style.display = 'none';
         },
 
         hideButton: function () {
             document.querySelector('.update-btn').style.display = 'none';
             document.querySelector('.delete-btn').style.display = 'none';
-            document.querySelector('.back-btn').style.display = 'none';
             document.querySelector('.add-btn').style.display = 'inline';
         },
         showButton: function () {
             document.querySelector('.update-btn').style.display = 'inline';
             document.querySelector('.delete-btn').style.display = 'inline';
-            document.querySelector('.back-btn').style.display = 'inline';
             document.querySelector('.add-btn').style.display = 'none';
         }
     }
 })();
 
-const App = (function (itemCtrl, uiCtrl) {
+
+
+
+const App = (function (itemCtrl, uiCtrl, LocalStorage) {
     const items = itemCtrl.getItem();
 
     const addData = function (e) {
@@ -156,9 +239,11 @@ const App = (function (itemCtrl, uiCtrl) {
         if (meal !== '' && cal !== '') {
             var newItem = itemCtrl.addItem(meal, cal);
             uiCtrl.displyOnScreen(newItem);
-            itemCtrl.updatCalories();
+            itemCtrl.updateCalories();
+            LocalStorage.addToLocalStorage(newItem);
             uiCtrl.clearInput();
         }
+
         e.preventDefault();
     }
 
@@ -190,12 +275,31 @@ const App = (function (itemCtrl, uiCtrl) {
 
         var updatedItem = itemCtrl.updateItem(upmeal, upcal);
         uiCtrl.showUpdatedList(updatedItem);
+        LocalStorage.updateLocalStorage(updatedItem);
+
+        e.preventDefault();
+    }
+
+    const deleteItem = function (e) {
+        itemCtrl.deleteFromDatabase();
+        uiCtrl.deleteFromUi(itemCtrl.data.currentItem.id);
+        LocalStorage.deleteFromLocalStorage(itemCtrl.data.currentItem.id);
+
+        e.preventDefault();
+    }
+
+    const removeItems = function (e) {
+        itemCtrl.deleteAllItems();
+        uiCtrl.deleteAllItemsFromUi();
+        LocalStorage.removeAllData();
 
         e.preventDefault();
     }
 
     document.getElementById('item-list').addEventListener('click', getValue);
     document.querySelector('.update-btn').addEventListener('click', updateItem);
+    document.querySelector('.delete-btn').addEventListener('click', deleteItem);
+    document.querySelector('.clear-btn').addEventListener('click', removeItems);
 
     return {
         display: function () {
@@ -216,7 +320,6 @@ const App = (function (itemCtrl, uiCtrl) {
 
         }
     }
-})(itemCtrl, uiCtrl);
+})(itemCtrl, uiCtrl, LocalStorage);
 
 App.display()
-
