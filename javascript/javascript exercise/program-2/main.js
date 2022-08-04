@@ -4,7 +4,7 @@ function getQuotientReminder() {
     var dividend = parseFloat(document.getElementById('dividend').value);
     var divisor = parseFloat(document.getElementById('divisor').value);
 
-    if (divisor != 0 && !isNaN(dividend) && !isNaN(divisor)) {
+    if (divisor !== 0 && divisor > 0) {
         let quotient = Math.floor(dividend / divisor);
 
 
