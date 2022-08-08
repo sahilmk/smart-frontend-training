@@ -9505,9 +9505,87 @@ module.exports = function (regExp, replace) {
 
 var _easyhttp = __webpack_require__(334);
 
-console.log('hello');
-var data = _easyhttp.http.get('http://localhost:3000/posts');
-console.log(data);
+var _ui = __webpack_require__(335);
+
+document.addEventListener('DOMContentLoaded', getData);
+_ui.ui.post.addEventListener('click', addPost);
+_ui.ui.show.addEventListener('click', deletePost);
+_ui.ui.show.addEventListener('click', editPost);
+_ui.ui.cancel.addEventListener('click', cancelPost);
+
+function getData() {
+    _easyhttp.http.get('http://localhost:3000/posts').then(function (posts) {
+        _ui.ui.showPost(posts);
+    }).catch(function (err) {
+        return console.log(err);
+    });
+}
+
+function addPost(e) {
+    var title = _ui.ui.title.value;
+    var body = _ui.ui.body.value;
+
+    if (title === '' || body === '') {
+        _ui.ui.showAlert('Please enter the all necessary details.', 'alert alert-danger');
+    } else {
+        alert('hell');
+        var data = {
+            title: title,
+            body: body
+        };
+        var id = document.getElementById('id').value;
+        if (id !== '') {
+            _easyhttp.http.put("http://localhost:3000/posts/" + id, data).then(function (replay) {
+                _ui.ui.stateChange('add');
+                _ui.ui.showAlert('Post is updated', 'alert alert-success');
+                getData();
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        } else {
+            _easyhttp.http.post("http://localhost:3000/posts", data).then(function (replay) {
+                _ui.ui.showAlert('Post is added', 'alert alert-success');
+                _ui.ui.clearInputs();
+                getData();
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }
+
+    e.preventDefault();
+}
+
+function deletePost(e) {
+    if (e.target.classList.contains('fa-remove')) {
+        var postId = e.target.parentElement.dataset.id;
+        _easyhttp.http.delete("http://localhost:3000/posts/" + postId).then(function () {
+            _ui.ui.showAlert('Post is removed', 'alert alert-danger');
+            getData();
+        }).catch(function (err) {
+            return console.log(err);
+        });
+    }
+    e.preventDefault();
+}
+
+function editPost(e) {
+    if (e.target.classList.contains('fa-pencil')) {
+        var id = e.target.parentElement.dataset.id;
+        var title = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+        var body = e.target.parentElement.previousElementSibling.textContent;
+
+        _ui.ui.fillInput(id, title, body);
+    }
+    e.preventDefault();
+}
+
+function cancelPost(e) {
+    if (e.target.classList.contains('post-cancel')) {
+        _ui.ui.stateChange('add');
+    }
+    e.preventDefault();
+}
 
 /***/ }),
 /* 334 */
@@ -9519,66 +9597,301 @@ console.log(data);
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-function easyHTTP() {
-    this.xhr = new XMLHttpRequest();
-}
 
-easyHTTP.prototype.get = function (url, callback) {
-    console.log(url);
-    this.xhr.open('GET', url, true);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    var self = this;
-    this.xhr.onload = function () {
-        if (self.xhr.status === 200) {
-            callback(null, self.xhr.responseText);
-        } else {
-            callback('Error: ' + self.xhr.status);
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var easyHTTP = function () {
+    function easyHTTP() {
+        _classCallCheck(this, easyHTTP);
+    }
+
+    _createClass(easyHTTP, [{
+        key: 'get',
+        value: function () {
+            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
+                var data, rdata;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _context.next = 2;
+                                return fetch(url);
+
+                            case 2:
+                                data = _context.sent;
+                                _context.next = 5;
+                                return data.json();
+
+                            case 5:
+                                rdata = _context.sent;
+                                return _context.abrupt('return', rdata);
+
+                            case 7:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+
+            function get(_x) {
+                return _ref.apply(this, arguments);
+            }
+
+            return get;
+        }()
+    }, {
+        key: 'post',
+        value: function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url, data) {
+                var pdata, rdata;
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                    while (1) {
+                        switch (_context2.prev = _context2.next) {
+                            case 0:
+                                _context2.next = 2;
+                                return fetch(url, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-type': 'application/json'
+                                    },
+                                    body: JSON.stringify(data)
+                                });
+
+                            case 2:
+                                pdata = _context2.sent;
+                                _context2.next = 5;
+                                return pdata.json();
+
+                            case 5:
+                                rdata = _context2.sent;
+                                return _context2.abrupt('return', rdata);
+
+                            case 7:
+                            case 'end':
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, this);
+            }));
+
+            function post(_x2, _x3) {
+                return _ref2.apply(this, arguments);
+            }
+
+            return post;
+        }()
+    }, {
+        key: 'put',
+        value: function () {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(url, data) {
+                var pdata, rdata;
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                    while (1) {
+                        switch (_context3.prev = _context3.next) {
+                            case 0:
+                                _context3.next = 2;
+                                return fetch(url, {
+                                    method: 'PUT',
+                                    headers: {
+                                        'Content-type': 'application/json'
+                                    },
+                                    body: JSON.stringify(data)
+                                });
+
+                            case 2:
+                                pdata = _context3.sent;
+                                _context3.next = 5;
+                                return pdata.json();
+
+                            case 5:
+                                rdata = _context3.sent;
+                                return _context3.abrupt('return', rdata);
+
+                            case 7:
+                            case 'end':
+                                return _context3.stop();
+                        }
+                    }
+                }, _callee3, this);
+            }));
+
+            function put(_x4, _x5) {
+                return _ref3.apply(this, arguments);
+            }
+
+            return put;
+        }()
+    }, {
+        key: 'delete',
+        value: function () {
+            var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(url) {
+                var pdata, rdata;
+                return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                    while (1) {
+                        switch (_context4.prev = _context4.next) {
+                            case 0:
+                                _context4.next = 2;
+                                return fetch(url, {
+                                    method: 'delete',
+                                    headers: {
+                                        'Content-type': 'application/json'
+                                    }
+                                });
+
+                            case 2:
+                                pdata = _context4.sent;
+                                _context4.next = 5;
+                                return 'posts is deleted';
+
+                            case 5:
+                                rdata = _context4.sent;
+                                return _context4.abrupt('return', rdata);
+
+                            case 7:
+                            case 'end':
+                                return _context4.stop();
+                        }
+                    }
+                }, _callee4, this);
+            }));
+
+            function _delete(_x6) {
+                return _ref4.apply(this, arguments);
+            }
+
+            return _delete;
+        }()
+    }]);
+
+    return easyHTTP;
+}();
+
+var http = exports.http = new easyHTTP();
+
+/***/ }),
+/* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var UI = function () {
+    function UI() {
+        _classCallCheck(this, UI);
+
+        this.show = document.getElementById('posts');
+        this.title = document.getElementById('title');
+        this.body = document.getElementById('body');
+        this.post = document.querySelector('.post-submit');
+        this.cancel = document.querySelector('.card-form');
+        this.idInput = document.getElementById('id');
+        this.state = 'add';
+    }
+
+    _createClass(UI, [{
+        key: 'showPost',
+        value: function showPost(posts) {
+            var allPost = '';
+
+            posts.forEach(function (i) {
+                allPost += '\n                <div class="card mb-3">\n                    <div class="card-body">\n                        <h4 class="card-title">' + i.title + '</h4>\n                        <p class="card-text">' + i.body + '</p>\n                        <a href="#" class="edit card-link" data-id="' + i.id + '">\n                            <i class="fa fa-pencil"></i>\n                        </a>\n            \n                        <a href="#" class="delete card-link" data-id="' + i.id + '">\n                            <i class="fa fa-remove"></i>\n                        </a>\n                    </div>\n                </div>\n            ';
+            });
+
+            this.show.innerHTML = allPost;
         }
-    };
+    }, {
+        key: 'fillInput',
+        value: function fillInput(updateId, updatedTitle, updatedBody) {
+            this.idInput.value = updateId;
+            this.title.value = updatedTitle;
+            this.body.value = updatedBody;
 
-    this.xhr.send();
-};
-
-easyHTTP.prototype.post = function (url, data, callback) {
-    this.xhr.open('POST', url, true);
-    this.xhr.setRequestHeader('Content-type', 'application/json');
-
-    var self = this;
-    this.xhr.onload = function () {
-        callback(self.xhr.responseText);
-    };
-
-    this.xhr.send(JSON.stringify(data));
-};
-
-easyHTTP.prototype.put = function (url, data, callback) {
-    this.xhr.open('PUT', url, true);
-    this.xhr.setRequestHeader('Content-type', 'application/json');
-
-    var self = this;
-    this.xhr.onload = function () {
-        callback(self.xhr.responseText);
-    };
-
-    this.xhr.send(JSON.stringify(data));
-};
-
-easyHTTP.prototype.delete = function (url, callback) {
-    this.xhr.open('DELETE', url, true);
-
-    var self = this;
-    this.xhr.onload = function () {
-        if (self.xhr.status === 200) {
-            callback('Data is deleted');
-        } else {
-            callback('Error: ' + self.xhr.status);
+            this.stateChange('edit');
         }
-    };
+    }, {
+        key: 'stateChange',
+        value: function stateChange(state) {
+            if (state === 'edit') {
+                this.post.innerText = 'Update Post';
+                this.post.className = 'post-submit btn btn-warning btn-block';
 
-    this.xhr.send();
-};
+                if (!document.querySelector('.post-cancel')) {
+                    var cancelButton = document.createElement('button');
+                    cancelButton.className = 'post-cancel btn btn-light btn-block';
+                    cancelButton.innerText = 'Cancel Update';
 
-var http = exports.http = easyHTTP();
+                    var card = document.querySelector('.card');
+                    var formEnd = document.querySelector('.form-end');
+
+                    card.insertBefore(cancelButton, formEnd);
+                }
+            } else {
+                this.post.innerText = 'Post It';
+                this.post.className = 'post-submit btn btn-primary btn-block';
+
+                if (document.querySelector('.post-cancel')) {
+                    document.querySelector('.post-cancel').remove();
+                }
+                this.IdInput.value = '';
+                this.clearInputs();
+            }
+        }
+    }, {
+        key: 'clearInputs',
+        value: function clearInputs() {
+            this.title.value = '';
+            this.body.value = '';
+        }
+    }, {
+        key: 'showAlert',
+        value: function showAlert(message, alertClass) {
+            var _this = this;
+
+            this.hideAlert();
+
+            var div = document.createElement('div');
+            div.className = alertClass;
+            div.textContent = message;
+
+            var upperContainer = document.querySelector('.postsContainer');
+            var lowerDiv = document.getElementById('posts');
+
+            console.log(div);
+
+            upperContainer.insertBefore(div, lowerDiv);
+
+            setTimeout(function () {
+                _this.hideAlert();
+            }, 3000);
+        }
+    }, {
+        key: 'hideAlert',
+        value: function hideAlert() {
+            var presentAlert = document.querySelector('.alert');
+
+            if (presentAlert) {
+                presentAlert.remove();
+            }
+        }
+    }]);
+
+    return UI;
+}();
+
+var ui = exports.ui = new UI();
 
 /***/ })
 /******/ ]);
