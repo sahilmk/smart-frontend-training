@@ -1,29 +1,28 @@
 document.getElementById('calculate').addEventListener('click', getQuotientReminder);
 
 function getQuotientReminder() {
-    var dividend = parseFloat(document.getElementById('dividend').value);
-    var divisor = parseFloat(document.getElementById('divisor').value);
+    let dividend = parseFloat(document.getElementById('dividend').value);
+    let divisor = parseFloat(document.getElementById('divisor').value);
 
-    if (divisor !== 0 && divisor > 0) {
-        let quotient = Math.floor(dividend / divisor);
+    if (!isNaN(dividend) && !isNaN(divisor) && divisor !== 0 && divisor > 0) {
+        const quotient = Math.floor(dividend / divisor);
+        const reminder = (dividend - (divisor * quotient));
 
-
-        var reminder = (dividend - (divisor * quotient));
-        // var reminder2;
-        // if (divisor < 0) {
-        //     // reminder2 = reminder - divisor;
-        //     getMessage(`quotient: ${quotient} and Reminder: ${reminder2}`);
-        //     getMessage(`quotient: ${quotient} and Reminder: ${reminder} and also ${reminder2}`);
-        // } else {
         getMessage(`quotient: ${quotient} and Reminder: ${reminder}`);
-        // }
+    } else {
+        getMessage('Divisor must be number and greater than 0 and positive.');
     }
-    else {
-        getMessage('Please Enter valid input');
-    }
+
+    clearInput();
 }
 
+//Show the output and error messages
 function getMessage(message) {
-    console.log(message);
     document.getElementById('show').innerText = message;
 }
+
+//Clear the input after clicking the calculate button
+function clearInput() {
+    document.getElementById('dividend').value = '';
+    document.getElementById('divisor').value = '';
+}   
