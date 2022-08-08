@@ -25,42 +25,48 @@ function doOperation(e) {
         let number1 = document.getElementById('input1').value;
         let number2 = document.getElementById('input2').value;
 
-        if (number1 != '' && number2 != '') {
-            //Conver the string to the number
+        //Calculate the addition, subtraction, division, multiplicatoin and remainder.
+        if (number1 !== '' && number2 !== '') {
+            //Converting the string to number
             number1 = Number(number1);
             number2 = Number(number2);
 
-            //Calculate the addition, subtraction, division, multiplicatoin and remainder.
-            switch (operator1) {
-                case 'addition':
-                    showMessage(`Addition of ${number1} and ${number2} is: ${number1 + number2}`);
-                    break;
-                case 'subtraction':
-                    showMessage(`Subtraction of ${number1} and ${number2} is: ${number1 - number2}`);
-                    break;
+            if (!isNaN(number1) && !isNaN(number2)) {
+                switch (operator1) {
+                    case 'addition':
+                        showMessage(`Addition of ${number1} and ${number2} is: ${(number1 + number2).toFixed(2)}`);
+                        break;
+                    case 'subtraction':
+                        showMessage(`Subtraction of ${number1} and ${number2} is: ${(number1 - number2).toFixed(2)}`);
+                        break;
 
-                case 'multiplication':
-                    showMessage(`Multiplication of ${number1} and ${number2} is: ${number1 * number2}`);
-                    break;
+                    case 'multiplication':
+                        showMessage(`Multiplication of ${number1} and ${number2} is: ${(number1 * number2).toFixed(2)}`);
+                        break;
 
-                case 'division':
-                    if (number2 === 0) {
-                        showMessage('0 as divisor not allowed please enter  non-zeor value');
-                    } else {
-                        showMessage(`Division of ${number1} and ${number2} is: ${(number1 / number2).toFixed(2)}`);
-                    }
-                    break;
+                    case 'division':
+                        if (number2 === 0) {
+                            showMessage('0 as divisor not allowed please enter  non-zeor value');
+                        } else {
+                            showMessage(`Division of ${number1} and ${number2} is: ${(number1 / number2).toFixed(2)}`);
+                        }
+                        break;
 
-                case 'remainder':
-                    if (number2 === 0) {
-                        showMessage('Plese enter valid input');
-                    } else {
-                        showMessage(`Remainder of ${number1} and ${number2} is: ${number1 % number2}`);
-                    }
-                    break;
+                    case 'remainder':
+                        if (number2 === 0) {
+                            showMessage('Plese enter valid input');
+                        } else {
+                            showMessage(`Remainder of ${number1} and ${number2} is: ${(number1 % number2).toFixed(2)}`);
+                        }
+                        break;
+                }
+            } else {
+                showMessage('Only number is allowed, please enter numbers');
             }
+
+
         } else {
-            showMessage('Please enter the both number');
+            showMessage('Please fill the both inputs');
         }
 
     } else {
@@ -72,10 +78,10 @@ function doOperation(e) {
 
             switch (operator1) {
                 case 'square':
-                    showMessage(`Square of ${number1} is: ${Math.pow(number1, 2)}`);
+                    showMessage(`Square of ${number1} is: ${(Math.pow(number1, 2)).toFixed(2)}`);
                     break;
                 case 'cube':
-                    document.getElementById('show').innerText = `Cube of ${number1} is: ${Math.pow(number1, 3)}`;
+                    document.getElementById('show').innerText = `Cube of ${number1} is: ${(Math.pow(number1, 3)).toFixed(2)}`;
                     break;
             }
         } else {
