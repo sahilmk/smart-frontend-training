@@ -9,8 +9,8 @@ function fibonacci(e) {
         lowerBoundry = Number(lowerBoundry);
 
         let series = [];
-        let a = 0;
-        let b = 1;
+        const a = 0;
+        const b = 1;
 
         if (lowerBoundry === 1) {
             series.push(a);
