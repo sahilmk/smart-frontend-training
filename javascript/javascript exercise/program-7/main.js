@@ -1,12 +1,13 @@
 document.getElementById('findSum').addEventListener('click', findSum);
 
 function findSum(e) {
-    const number = document.getElementById('number').value;
+    let number = document.getElementById('number').value;
 
     getMessage('#error', '');
 
     if (validate(number)) {
-        const sum = number * (number - 1) / 2;
+        number = Number(number);
+        const sum = number * (number + 1) / 2;
 
         getMessage('#show', `Sum of 1 to ${number} is: ${sum}`);
 
