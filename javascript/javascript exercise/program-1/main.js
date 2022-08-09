@@ -75,15 +75,19 @@ function doOperation(e) {
         //Calculate the square and cube
         if (number1 != '') {
             number1 = Number(number1);
-
-            switch (operator1) {
-                case 'square':
-                    showMessage(`Square of ${number1} is: ${(Math.pow(number1, 2)).toFixed(2)}`);
-                    break;
-                case 'cube':
-                    document.getElementById('show').innerText = `Cube of ${number1} is: ${(Math.pow(number1, 3)).toFixed(2)}`;
-                    break;
+            if (!isNaN(number1)) {
+                switch (operator1) {
+                    case 'square':
+                        showMessage(`Square of ${number1} is: ${(Math.pow(number1, 2)).toFixed(2)}`);
+                        break;
+                    case 'cube':
+                        document.getElementById('show').innerText = `Cube of ${number1} is: ${(Math.pow(number1, 3)).toFixed(2)}`;
+                        break;
+                }
+            } else {
+                showMessage('Input must be numbers');
             }
+
         } else {
             showMessage('Plese enter the value');
         }
