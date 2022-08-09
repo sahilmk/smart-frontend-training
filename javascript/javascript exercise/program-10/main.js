@@ -7,13 +7,13 @@ function findGcd(e) {
     hideerror();
 
     if (validate(number1) && validate(number2)) {
-        number1 = Number(number1);
-        number2 = Number(number2);
+        absNumber1 = Math.abs(Number(number1));
+        absNumber2 = Math.abs(Number(number2));
 
-        let gcd = Math.max(number1, number2);
+        let gcd = Math.max(absNumber1, absNumber2);
 
         while (gcd > 0) {
-            if (number1 % gcd === 0 && number2 % gcd === 0) {
+            if (absNumber1 % gcd === 0 && absNumber2 % gcd === 0) {
                 break;
             }
             gcd--;
@@ -45,7 +45,7 @@ function getMessage(messageId, message) {
 //Validate the inputs
 function validate(number) {
     const regex = /\./
-    return number !== '' && !isNaN(Number(number)) && number > 0 && !regex.test(number);
+    return number !== '' && !isNaN(Number(number)) && number !== 0 && !regex.test(number);
 }
 
 //hide the error
