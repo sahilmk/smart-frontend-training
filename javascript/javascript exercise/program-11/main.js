@@ -7,10 +7,10 @@ function findLcm(e) {
     hideerror();
 
     if (validate(number1) && validate(number2)) {
-        number1 = Number(number1);
-        number2 = Number(number2);
+        absNumber1 = Math.abs(Number(number1));
+        absNumber2 = Math.abs(Number(number2));
 
-        const lcm = (number1 / gcd(number1, number2)) * number2;
+        const lcm = (absNumber1 / gcd(absNumber1, absNumber2)) * absNumber2;
 
         getMessage('#show', `Gcd of ${number1}, ${number2} is: ${lcm}`);
         clearInputs();
@@ -46,7 +46,7 @@ function getMessage(messageId, message) {
 //Validate the inputs
 function validate(number) {
     const regex = /\./
-    return number !== '' && !isNaN(Number(number)) && number > 0 && !regex.test(number);
+    return number !== '' && !isNaN(Number(number)) && Number(number) !== 0 && !regex.test(number);
 }
 
 //hide the error
