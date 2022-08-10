@@ -12,10 +12,9 @@ function findSum(e) {
         getMessage('#show', `Sum of 1 to ${number} is: ${sum}`);
 
     } else {
-        getMessage('#error', "Value must be number and it greater than 0 and it can't be empty");
+        getMessage('#error', "Value must be integer number and it greater than 0 and it can't be empty");
         getMessage('#show', '');
         document.getElementById('number').value = '';
-
     }
 
     e.preventDefault();
@@ -28,5 +27,5 @@ function getMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) > 0;
+    return number !== '' && !isNaN(Number(number)) && Number(number) > 0 && Number.isInteger(Number(number));;
 }
