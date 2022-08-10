@@ -13,14 +13,14 @@
         text-transform: uppercase;
         padding: 12px 20px;
         font-size: 11px;
+        font-weight: 600;
         letter-spacing: 0.05em;
     }
 
     h6 {
+        @include size-weight(15px, 100);
         color: $maximum-blue-purple-color;
         font-family: $hkgrotesk-font;
-        font-size: 15px;
-        font-weight: 100;
     }
 
     i {
@@ -30,7 +30,7 @@
 
     li {
         justify-content: space-between;
-        padding: 10px 24px;
+        padding: 10px 10px 10px 24px;
 
         >div {
             align-items: center;
@@ -58,94 +58,19 @@
         }
     }
 
-    &__inner-list {
-        padding-left: 24px;
+    &__logo {
+        @include position(fixed, 0, initial, initial, 0);
+        background-color: $chinese-blue-color;
+        text-align: center;
+        height: 70px;
+        width: 249px;
+        z-index: 5;
 
-        >li {
-            padding: 8.8px 24px;
-
-            &:nth-child(2) {
-                padding: 8.8px 35px 8.8px 24px;
-            }
-
-            h6 {
-                font-size: 13px;
-
-                &::before {
-                    color: $coll-gray-color;
-                    content: '-';
-                    margin-right: 15px;
-
-                    &:hover {
-                        color: $white-color;
-                    }
-                }
-            }
-
-            i {
-                font-size: 16px;
-            }
-        }
-    }
-
-    &__inner-list2 {
-        padding-left: 15px;
-
-        li {
-            justify-content: initial;
-            align-items: center;
-
-            i {
-                padding-right: 15px;
-                font-size: 5px;
-            }
-        }
-    }
-
-    &__pages {
-        >ul {
-            li {
-                &:nth-child(2) {
-                    h6 {
-                        color: $white-color;
-                    }
-
-                    i {
-                        color: $white-color;
-                    }
-                }
-            }
-        }
-    }
-
-    &__components {
-        ul {
-            li {
-                &:nth-child(3) {
-                    justify-content: initial;
-
-                    i {
-                        margin-right: 8px;
-                    }
-                }
-            }
-        }
-    }
-
-    >div {
-        &:first-child {
-            @include position(fixed, 0, initial, initial, 0);
-            background-color: $chinese-blue-color;
-            text-align: center;
-            height: 70px;
-            width: 249px;
-            z-index: 5;
-
-            img {
-                height: 17px;
-                width: 100px;
-                margin-top: 30px;
-            }
+        img {
+            cursor: pointer;
+            height: 17px;
+            width: 100px;
+            margin-top: 30px;
         }
     }
 
@@ -165,9 +90,9 @@
         }
 
         &::-webkit-scrollbar-thumb {
+            visibility: hidden;
             background: #999;
             border-radius: 20px;
-            visibility: hidden;
         }
 
         &:hover {
@@ -175,11 +100,109 @@
                 visibility: visible;
             }
         }
+
+        >div {
+            >ul {
+                >ul {
+                    padding-left: 24px;
+
+                    li {
+                        &:nth-child(2) {
+                            h6 {
+                                color: $white-color;
+                            }
+
+                            i {
+                                color: $white-color;
+                            }
+                        }
+                    }
+
+                    >li {
+                        padding: 8.8px 0px;
+
+                        &:nth-child(2) {
+                            padding: 8.8px 20px 8.8px 0px;
+                        }
+
+                        h6 {
+                            font-family: $poppins-font;
+                            font-size: 13px;
+                            font-weight: 400;
+
+
+                            &::before {
+                                color: $coll-gray-color;
+                                content: '-';
+                                margin-right: 15px;
+
+                                &:hover {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+
+                        i {
+                            font-size: 16px;
+                        }
+                    }
+
+                    ul {
+                        padding-left: 20px;
+
+                        h6 {
+                            font-family: $poppins-font;
+                            font-size: 13px;
+                            font-weight: 300;
+                        }
+
+                        li {
+                            justify-content: initial;
+                            align-items: center;
+                            padding: 10px 0px;
+
+                            i {
+                                padding-right: 15px;
+                                font-size: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.upperarrow {
+    @include position(fixed, initial, 28px, 100px);
+    background-color: $fire-opal-color;
+    text-align: center;
+    z-index: 10;
+    height: 37.5px;
+    width: 37.5px;
+
+    i {
+        color: $white-color;
+        font-size: 10px;
+        line-height: 37.5px;
     }
 }
 
 .setting {
     @include position(fixed, initial, 20px, 40px);
+    background-color: $moonstone-color;
+    text-align: center;
+    z-index: 10;
+    height: 48.77px;
+    width: 48.77px;
+    border-radius: 50%;
+
+    i {
+        color: $white-color;
+        -webkit-animation: fa-spin 5s infinite;
+        font-size: 20px;
+        line-height: 50px;
+    }
 }
 
 .main-content {
@@ -188,22 +211,38 @@
     width: calc(100% - 249px);
 
     &__background {
-        margin-top: 70px;
         background: url('../img/profile-bg.jpg') no-repeat center center/cover;
+        margin-top: 70px;
         height: 260px;
+        width: 100%;
 
         &::before {
-            content: '';
             background-color: $chinese-blue-color;
+            content: '';
             position: absolute;
             height: 260px;
             width: 100%;
             opacity: 0.9;
         }
 
-        a {
-            @include position(absolute, 0, 0);
-            z-index: 2;
+        i {
+            color: $balck-color;
+            margin-right: 4px;
+            font-size: 12.96px
+        }
+
+        button {
+            @include position(absolute, 86px, 0);
+            @include size-weight(12.96px, 400);
+            background-color: $white-color;
+            font-family: $poppins-font;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            margin-right: 16px;
+            padding: 8px 14.4px;
+            border-radius: 4px;
+            z-index: 11px;
         }
 
     }
@@ -222,17 +261,20 @@
         align-items: center;
         height: 100%;
 
-        >:first-child {
+        >i {
             color: $dark-gunmetal-color;
+            cursor: pointer;
             padding: 4px 16px;
         }
 
         input {
             background-color: $cultured-color;
             border: none;
+            outline: none;
             height: 38px;
             width: 321px;
             padding: 8px 30px 8px 40px;
+            border-radius: 4px;
         }
 
         >div {
@@ -247,8 +289,8 @@
     }
 
     &__right {
-        height: 100%;
         align-items: center;
+        height: 100%;
 
         >div {
             align-items: center;
@@ -256,7 +298,6 @@
 
             i {
                 color: $davys-grey-color;
-                font-size: 20px;
                 border-radius: 50%;
                 padding: 13px;
 
@@ -284,43 +325,10 @@
                 }
             }
 
-            &:nth-child(3) {
-                @include position(relative);
-
-                i {
-                    &::after {
-                        @include position(absolute, initial, 2px, 30px);
-                        background-color: $button-blue-color;
-                        color: $white-color;
-                        content: '5';
-                        padding: 2px 6px;
-                        font-size: 10px;
-                        font-weight: 900;
-                        line-height: 15px;
-                        border-radius: 50%;
-                    }
-                }
-            }
-
-            &:nth-child(6) {
-                @include position(relative);
-
-                &::after {
-                    @include position(absolute, initial, 5px, 30px, );
-                    background-color: $fire-opal-color;
-                    color: $white-color;
-                    content: '3';
-                    padding: 2px 6px;
-                    font-size: 10px;
-                    font-weight: 900;
-                    line-height: 15px;
-                    border-radius: 50%;
-                }
-            }
-
             &:last-child {
                 background-color: $cultured-color;
                 align-items: center;
+                cursor: pointer;
                 height: 100%;
                 margin-left: 16px;
                 padding: 8px 14.4px;
@@ -333,27 +341,62 @@
                 }
 
                 h5 {
+                    @include size-weight(13px, 500);
                     color: $davys-grey-color;
-                    font-size: 13px;
                 }
 
                 h6 {
+                    @include size-weight(12px, 400);
                     color: $roman-silver-color;
-                    font-size: 12px;
                 }
             }
         }
     }
 
+    &__shopping {
+        @include position(relative);
+
+        i {
+            &::after {
+                @include size-weight(10px, 600);
+                @include position(absolute, initial, 2px, 30px);
+                background-color: $button-blue-color;
+                color: $white-color;
+                content: '5';
+                padding: 2px 6px;
+                line-height: 15px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__notification {
+        @include position(relative);
+
+        &::after {
+            @include size-weight(10px, 600);
+            @include position(absolute, initial, 5px, 30px, );
+            background-color: $fire-opal-color;
+            color: $white-color;
+            content: '3';
+            padding: 2px 6px;
+            line-height: 15px;
+            border-radius: 50%;
+        }
+    }
+
     &__setting {
         @include position(absolute, 282px);
-        height: 728px;
-        width: 1631px;
         margin: auto;
+        height: 728px;
+        width: 100%;
 
         >div {
+            min-height: calc(100vh - 320px);
+            padding: 0 12px;
+
             >div {
-                margin-left: 24px;
+                padding: 0 12px;
             }
         }
     }
@@ -362,17 +405,21 @@
         background-color: $white-color;
         text-align: center;
         height: 234.5px;
-        width: 384px;
         margin-bottom: 24px;
         padding: 24px;
         border-radius: 5px;
 
         >div {
             @include position(relative);
+            margin: auto;
+            height: 120px;
+            width: 120px;
 
             i {
-                @include position(absolute, initial, 110px, 35px, initial);
+                @include position(absolute, initial, 0, 0, initial);
                 background-color: $bright-gray-color;
+                color: $dark-gunmetal-color;
+                cursor: pointer;
                 padding: 10px;
                 font-size: 13px;
                 border-radius: 50%;
@@ -383,61 +430,34 @@
                 border: 5px solid $bright-gray-color;
                 height: 120px;
                 width: 120px;
-                margin-bottom: 20px;
                 border-radius: 50%;
             }
         }
 
         h5 {
+            @include size-weight(16px, 600);
             color: $davys-grey-color;
-            font-size: 16px;
+            margin-top: 20px
         }
 
         h6 {
+            @include size-weight(13px, 400);
             color: $roman-silver-color;
-            font-size: 13px;
         }
     }
 
     &__profile {
+        @include position(relative);
         background-color: $white-color;
         text-align: center;
         height: 115.5px;
-        width: 384px;
         margin-bottom: 24px;
         padding: 16px;
         border-radius: 5px;
 
-        >div {
-            @include position(relative);
-
-            &:first-child {
-                justify-content: space-between;
-
-                >div {
-                    color: $chinese-blue-color;
-                    background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
-                    align-items: center;
-                    padding: 4.2px 7.8px;
-                    font-size: 12px;
-                    font-weight: 600;
-                    border-radius: 5px;
-
-                    i {
-                        margin-right: 10px;
-                    }
-                }
-            }
-
-            &:last-child {
-                @include position(ab)
-            }
-        }
-
         h5 {
+            @include size-weight(16px, 500);
             color: $davys-grey-color;
-            font-size: 16px;
-            // font-weight: 500;
         }
 
         i {
@@ -445,14 +465,291 @@
         }
     }
 
+    &__profile-title {
+        justify-content: space-between;
+
+        >div {
+            @include size-weight(12px, 600);
+            color: $chinese-blue-color;
+            background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
+            align-items: center;
+            cursor: pointer;
+            padding: 4.2px 7.8px;
+            border-radius: 5px;
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__progress-bar {
+        @include position(absolute, initial, initial, 16px);
+        background-color: $anti-flash-white-color;
+        height: 15px;
+        width: calc(100% - 32px);
+        border-radius: 30px;
+
+        >div {
+            @include position(absolute, 4px, initial, initial, 4px);
+            background-color: $fire-opal-color;
+            height: 7px;
+            width: 30%;
+            border-radius: 30px;
+
+            &::after {
+                @include position(absolute, 2px, 2px);
+                background-color: $white-color;
+                content: '';
+                height: 3.5px;
+                width: 3.5px;
+                border-radius: 50%
+            }
+        }
+
+        span {
+            @include position(absolute, initial, initial, 25px, 27%);
+            background-color: $chinese-blue-color;
+            color: $white-color;
+            display: inline-block;
+            animation: label 2s;
+            padding: 4px 4px;
+            font-size: 9.75px;
+            border-radius: 4px;
+
+
+            &::before {
+                @include position(absolute, 18px, 40%);
+                background-color: $chinese-blue-color;
+                content: '';
+                height: 7px;
+                width: 7px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
     &__portfolio {
         background-color: $white-color;
         text-align: center;
         height: 274.5px;
-        width: 384px;
-        margin-bottom: 24px;
-        padding: 24px;
+        padding: 16px;
         border-radius: 5px;
+
+        >div {
+            &:first-child {
+                justify-content: space-between;
+                padding-bottom: 24px;
+
+                >div {
+                    @include size-weight(12px, 600);
+                    color: $chinese-blue-color;
+                    background-color: rgba($color: $chinese-blue-color, $alpha: 0.1);
+                    align-items: center;
+                    cursor: pointer;
+                    padding: 4.2px 7.8px;
+                    border-radius: 5px;
+
+                    h6 {
+                        @include size-weight(12px, 600);
+                        color: $davys-grey-color;
+                    }
+
+                    i {
+                        @include size-weight(12px, 600);
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        input {
+            @include size-weight(12.96px, 400);
+            font-family: $poppins-font;
+            border-color: $light-gray-color;
+
+            &:focus {
+                border-color: $wild-blue-yonder-color;
+                box-shadow: 0 0 0 0 rgba(64, 81, 137, 0.25);
+            }
+        }
+
+        h5 {
+            @include size-weight(16px, 500);
+            color: $davys-grey-color;
+        }
+    }
+
+    &__github {
+        @extend .social;
+
+        i {
+            background-color: $balck-color;
+        }
+    }
+
+    &__website {
+        @extend .social;
+
+        i {
+            background-color: $chinese-blue-color;
+        }
+    }
+
+    &__dribble {
+        @extend .social;
+
+        i {
+            background-color: $persian-green-color;
+        }
+    }
+
+    &__pinterest {
+        @extend .social;
+        margin-bottom: 0;
+
+        i {
+            background-color: $fire-opal-color;
+        }
+    }
+
+    &__update {
+        background-color: $white-color;
+        height: 752px;
+        margin-bottom: 24px;
+        border-radius: 5px;
+
+        >div {
+            border-bottom: 1px solid $bright-gray-color;
+        }
+
+        ul {
+            margin: auto;
+
+            li {
+                cursor: pointer;
+                padding: 16px;
+
+                &:first-child {
+                    border-bottom: 1px solid $chinese-blue-color;
+                }
+            }
+
+            a {
+                @include size-weight(13px, 500);
+                color: $chinese-blue-color;
+            }
+        }
+    }
+
+    &__form {
+        padding: 24px;
+
+        >div {
+            >div {
+                width: 100%;
+
+
+                input {
+                    width: 100%
+                }
+            }
+
+            &:last-child {
+                justify-content: flex-end;
+
+                button {
+                    @include size-weight(12.96px, 400);
+                    font-family: $poppins-font;
+                    color: $white-color;
+                    background-color: $chinese-blue-color;
+                    cursor: pointer;
+                    display: inline-block;
+                    border: none;
+                    padding: 8px 14.4px;
+                    line-height: 1.5;
+                    border-radius: 4px;
+                }
+
+                .submit {
+                    margin-right: 10px;
+
+                    &:hover {
+                        background-color: $americal-blue-color;
+                        color: $white-color
+                    }
+                }
+
+                .cancel {
+                    color: $persian-green-color;
+                    transition: color, background-color 0.2s ease-in-out;
+                    background-color: rgba(10, 179, 156, 0.1);
+
+                    &:hover {
+                        background-color: $persian-green-color;
+                        color: $white-color
+                    }
+                }
+            }
+        }
+
+        .col-md-6,
+        .col-md-4 {
+            padding: 0;
+        }
+
+        label {
+            @include size-weight(13px, 500);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            @include size-weight(12.8px, 400);
+            font-family: $poppins-font;
+            color: $dark-gunmetal-color;
+            border: 1px solid $light-gray-color;
+            outline: none;
+            width: 100%;
+            padding: 8px 14.4px;
+            font-size: 13px;
+            border-radius: 4px;
+            line-height: 1.5;
+
+            &:focus {
+                border-color: $wild-blue-yonder-color;
+                box-shadow: 0 0 0 0 rgba(64, 81, 137, 0.25);
+            }
+        }
+
+        textarea {
+            resize: vertical;
+            height: 76.5px;
+        }
+    }
+
+    &__form-control {
+        margin-bottom: 16px;
+    }
+
+    &__footer {
+        width: 100%;
+
+
+        >div {
+            background-color: $white-color;
+            padding: 20px 12px;
+        }
+
+        span {
+            @include size-weight(12.96px, 400);
+            color: $cadet-grey-color;
+
+            &:last-child {
+                text-align: end;
+            }
+        }
     }
 
 }
