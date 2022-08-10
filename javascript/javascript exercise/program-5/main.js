@@ -4,10 +4,11 @@ document.getElementById('character').addEventListener('keyup', validateInput);
 let valid;
 
 function vowelOrConsonant(e) {
-    const character = document.getElementById('character').value;
+    let character = document.getElementById('character').value;
 
     if (valid) {
-        if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u' || character === 'A' || character === 'E' || character === 'I' || character === 'O' || character === 'U') {
+        character = character.toUpperCase();
+        if (character === 'A' || character === 'E' || character === 'I' || character === 'O' || character === 'U') {
             getMessage('show', `${character} is Vowel`);
         } else {
             getMessage('show', `${character} is Consonant`);
@@ -36,10 +37,10 @@ function validateInput(e) {
         getMessage();
         valid = true;
     } else {
-        if (currentValue !== '') {
-            getMessage('error', 'Input must be one character alphabet.');
-        } else {
+        if (currentValue === '') {
             getMessage();
+        } else {
+            getMessage('error', 'Input must be one character alphabet.');
         }
         valid = false;
     }
