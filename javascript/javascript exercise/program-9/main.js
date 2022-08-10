@@ -9,18 +9,18 @@ function fibonacci(e) {
         lowerBoundry = Number(lowerBoundry);
 
         let series = [];
-        const a = 0;
-        const b = 1;
+        let a = 0;
+        let b = 1;
+        let c;
 
         if (lowerBoundry === 1) {
             series.push(a);
         } else if (lowerBoundry === 2) {
             series.push(a);
             series.push(b);
-        } else {
+        } else if (lowerBoundry > 2) {
             series.push(a);
             series.push(b);
-
             for (let i = 2; i < lowerBoundry; i++) {
                 c = a + b;
                 series.push(c);
@@ -35,8 +35,6 @@ function fibonacci(e) {
         }
 
         getMessage('#show', message);
-
-
     } else {
         getMessage('#error', "Value must be between 1 to 1450 and it can't be empty");
         document.getElementById('number').value = '';
@@ -53,5 +51,5 @@ function getMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) >= 1 && Number(number) <= 1450;
+    return number !== '' && !isNaN(Number(number)) && Number(number) >= 1 && Number(number) <= 1450 && Number.isInteger(number);
 }
