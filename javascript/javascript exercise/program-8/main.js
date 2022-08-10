@@ -19,7 +19,7 @@ function findFactorial(e) {
 
         getMessage('#show', `Factorial of ${factorialNumber}! is: ${factorial}`);
     } else {
-        getMessage('#error', "Value must be positive number and it can't be empty");
+        getMessage('#error', "Value must be positive integer and it can't be empty");
         document.getElementById('number').value = '';
         getMessage('#show', '');
     }
@@ -34,5 +34,5 @@ function getMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0;
+    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0 && Number.isInteger(Number(number));
 }
