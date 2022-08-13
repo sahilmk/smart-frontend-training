@@ -6,8 +6,12 @@ function findDigit(e) {
         let totalDigit = 0;
         let number = Number(input.value);
 
-        while (number >= 1) {
-            number = number / 10;
+        while (number != 0) {
+            if (number > 0) {
+                number = Math.floor(number / 10);
+            } else {
+                number = Math.ceil(number / 10);
+            }
             totalDigit += 1;
         }
 
@@ -16,7 +20,7 @@ function findDigit(e) {
         getMessage('#error', '');
         input.value = '';
     } else {
-        getMessage('#error', "Value must be positive integer.");
+        getMessage('#error', "Value must be integer.");
         getMessage('#show', '');
     }
 
@@ -31,5 +35,5 @@ function getMessage(messageId, message) {
 //Validate the inputs
 function validate(number) {
     let newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && newNumber >= 0 && Number.isInteger(newNumber);
+    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber);
 }
