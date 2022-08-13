@@ -28,8 +28,12 @@ function findPrime(e) {
             }
 
             let message = `Prime numbers between ${number1} and ${number2} are: `
-            for (let i = 0; i < primeNumbers.length; i++) {
-                message += primeNumbers[i] + " ";
+            if (primeNumbers.length !== 0) {
+                for (let i = 0; i < primeNumbers.length; i++) {
+                    message += primeNumbers[i] + " ";
+                }
+            } else {
+                message += 'No numbers are there.'
             }
             getMessage('#show', message);
             clearInputs();
