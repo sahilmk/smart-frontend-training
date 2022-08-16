@@ -19,24 +19,24 @@ function findArmstrong(e) {
         }
 
         if (sum === Number(input.value)) {
-            getMessage('#show', `${input.value} is a armstrong`);
+            showMessage('#show', `${input.value} is a armstrong`);
         } else {
-            getMessage('#show', `${input.value} is not a armstrong`)
+            showMessage('#show', `${input.value} is not a armstrong`)
         }
 
         //Remove the error 
-        getMessage('#error', '');
+        showMessage('#error', '');
         input.value = '';
     } else {
-        getMessage('#error', "Value must be positive integer.");
-        getMessage('#show', '');
+        showMessage('#error', "Value must be positive integer.");
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
