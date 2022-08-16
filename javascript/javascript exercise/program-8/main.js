@@ -3,7 +3,7 @@ document.getElementById('findFactorial').addEventListener('click', findFactorial
 function findFactorial(e) {
     let factorialNumber = document.getElementById('number').value;
 
-    getMessage('#error', '');
+    showMessage('#error', '');
 
     if (validate(factorialNumber)) {
         let factorial = 1;
@@ -17,18 +17,18 @@ function findFactorial(e) {
             }
         }
 
-        getMessage('#show', `Factorial of ${factorialNumber}! is: ${factorial}`);
+        showMessage('#show', `Factorial of ${factorialNumber}! is: ${factorial}`);
     } else {
-        getMessage('#error', "Value must be positive integer and it can't be empty");
+        showMessage('#error', "Value must be positive integer and it can't be empty");
         document.getElementById('number').value = '';
-        getMessage('#show', '');
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
