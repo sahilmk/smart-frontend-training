@@ -3,7 +3,7 @@ document.getElementById('calculateFibonacci').addEventListener('click', fibonacc
 function fibonacci(e) {
     let lowerBoundry = document.getElementById('number').value;
 
-    getMessage('#error', '');
+    showMessage('#error', '');
 
     if (validate(lowerBoundry)) {
         lowerBoundry = Number(lowerBoundry);
@@ -34,18 +34,18 @@ function fibonacci(e) {
             message += `${series[i]}<br>`
         }
 
-        getMessage('#show', message);
+        showMessage('#show', message);
     } else {
-        getMessage('#error', "Value must be between 1 to 1450 and it can't be empty");
+        showMessage('#error', "Value must be between 1 to 1450 and it can't be empty");
         document.getElementById('number').value = '';
-        getMessage('#show', '')
+        showMessage('#show', '')
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerHTML = message;
 }
 
