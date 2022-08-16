@@ -8,17 +8,17 @@ function swapNubmer() {
     let number2 = document.getElementById('number2').value;
 
     if (validation(number1) && validation(number2)) {
-        getMessage('previous-number', `Before the swapping Number1: ${number1}, Number2: ${number2}`);
+        showMessage('previous-number', `Before the swapping Number1: ${number1}, Number2: ${number2}`);
 
         [number1, number2] = [number2, number1];
 
-        getMessage('swapped-number', `After the swapping Number1: ${number1}, Number2: ${number2}`);
+        showMessage('swapped-number', `After the swapping Number1: ${number1}, Number2: ${number2}`);
     } else {
-        getMessage('previous-number', "Input must be in digit, and it can't be empty");
+        showMessage('previous-number', "Input must be in digit, and it can't be empty");
     }
 }
 
 //Show the output and error message.
-function getMessage(id, message) {
+function showMessage(id, message) {
     document.getElementById(id).innerText = message;
 }
