@@ -1,19 +1,20 @@
 document.getElementById('findSum').addEventListener('click', findSum);
+const input = document.getElementById('number');
 
-function findSum(e) {
-    let number = document.getElementById('number').value;
+findSum = (e) => {
+    let number = input.value;
 
-    getMessage('#error', '');
+    showMessage('#error', '');
 
     if (validate(number)) {
         number = Number(number);
         const sum = number * (number + 1) / 2;
 
-        getMessage('#show', `Sum of 1 to ${number} is: ${sum}`);
+        showMessage('#show', `Sum of 1 to ${number} is: ${sum}`);
 
     } else {
-        getMessage('#error', "Value must be integer number and it greater than 0 and it can't be empty");
-        getMessage('#show', '');
+        showMessage('#error', "Value must be positive integer and it can't be empty");
+        showMessage('#show', '');
         document.getElementById('number').value = '';
     }
 
@@ -21,11 +22,11 @@ function findSum(e) {
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) > 0 && Number.isInteger(Number(number));;
+    return number !== '' && !isNaN(Number(number)) && Number(number) > 0 && Number.isInteger(Number(number));
 }
