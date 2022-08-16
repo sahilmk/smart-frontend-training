@@ -13,23 +13,23 @@ function findPower(e) {
 
         let power = Math.pow(number1, number2);
 
-        getMessage('#show', `${number1} ^ ${number2} : ${power}`);
+        showMessage('#show', `${number1} ^ ${number2} : ${power}`);
         clearInputs();
     } else {
         if (!validate(number1)) {
-            getMessage('#error-1', "Value must be number.");
+            showMessage('#error-1', "Value must be number.");
         }
         if (!validate(number2)) {
-            getMessage('#error-2', "Value must be number.");
+            showMessage('#error-2', "Value must be number.");
         }
-        getMessage('#show', '');
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
@@ -40,8 +40,8 @@ function validate(number) {
 
 //hide the error
 function hideerror() {
-    getMessage('#error-1', '');
-    getMessage('#error-2', '');
+    showMessage('#error-1', '');
+    showMessage('#error-2', '');
 }
 
 //Clear the inputs
