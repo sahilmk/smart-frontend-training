@@ -8,24 +8,24 @@ function findPrimeArmstrong(e) {
         number = Number(number);
 
         if (checkPrime(number)) {
-            getMessage('#show-prime', `${number} is a prime number`)
+            showMessage('#show-prime', `${number} is a prime number`)
         } else {
-            getMessage('#show-prime', `${number} is not a prime number`)
+            showMessage('#show-prime', `${number} is not a prime number`)
         }
 
         if (checkArmstrong(number)) {
-            getMessage('#show-armstrong', `${number} is a armstrong number`)
+            showMessage('#show-armstrong', `${number} is a armstrong number`)
         } else {
-            getMessage('#show-armstrong', `${number} is not a armstrong number`)
+            showMessage('#show-armstrong', `${number} is not a armstrong number`)
         }
 
         //Remove the error 
-        getMessage('#error', '');
+        showMessage('#error', '');
         input.value = '';
     } else {
-        getMessage('#error', "Value must be positive integer.");
-        getMessage('#show-prime', '');
-        getMessage('#show-armstrong', '');
+        showMessage('#error', "Value must be positive integer.");
+        showMessage('#show-prime', '');
+        showMessage('#show-armstrong', '');
     }
 
     e.preventDefault();
@@ -71,7 +71,7 @@ function checkArmstrong(number) {
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
