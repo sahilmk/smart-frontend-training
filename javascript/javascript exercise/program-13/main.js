@@ -16,19 +16,19 @@ function findDigit(e) {
         }
 
         //Display the output and remove the error 
-        getMessage('#show', `Total number of digit in  ${input.value} is: ${totalDigit}`);
-        getMessage('#error', '');
+        showMessage('#show', `Total number of digit in  ${input.value} is: ${totalDigit}`);
+        showMessage('#error', '');
         input.value = '';
     } else {
-        getMessage('#error', "Value must be integer.");
-        getMessage('#show', '');
+        showMessage('#error', "Value must be integer.");
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
