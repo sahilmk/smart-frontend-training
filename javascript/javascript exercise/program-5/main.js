@@ -9,12 +9,12 @@ function vowelOrConsonant(e) {
     if (valid) {
         character = character.toUpperCase();
         if (character === 'A' || character === 'E' || character === 'I' || character === 'O' || character === 'U') {
-            getMessage('show', `${character} is Vowel`);
+            showMessage('show', `${character} is Vowel`);
         } else {
-            getMessage('show', `${character} is Consonant`);
+            showMessage('show', `${character} is Consonant`);
         }
     } else {
-        getMessage('error', 'Input must be one character alphabet.');
+        showMessage('error', 'Input must be one character alphabet.');
         document.getElementById('show').value = '';
     }
 
@@ -24,7 +24,7 @@ function vowelOrConsonant(e) {
 }
 
 //Show the output and error messages
-function getMessage(messageId = 'error', message = '') {
+function showMessage(messageId = 'error', message = '') {
     document.getElementById(messageId).innerText = message;
 }
 
@@ -34,13 +34,13 @@ function validateInput(e) {
     const regex = /[a-zA-Z]/;
 
     if (currentValue !== '' && regex.test(currentValue) && currentValue.length === 1) {
-        getMessage();
+        showMessage();
         valid = true;
     } else {
         if (currentValue === '') {
-            getMessage();
+            showMessage();
         } else {
-            getMessage('error', 'Input must be one character alphabet.');
+            showMessage('error', 'Input must be one character alphabet.');
         }
         valid = false;
     }
