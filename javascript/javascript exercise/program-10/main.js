@@ -24,14 +24,11 @@ function findGcd(e) {
     } else {
         if (!validate(number1)) {
             getMessage('#error-1', "Value must be non-zero integer positive number");
-            document.getElementById('number-1').value = '';
         }
         if (!validate(number2)) {
             getMessage('#error-2', "Value must be non-zero integer positive number");
-            document.getElementById('number-2').value = '';
         }
         getMessage('#show', '')
-        clearInputs();
     }
 
     e.preventDefault();
@@ -44,8 +41,8 @@ function getMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    const regex = /\./
-    return number !== '' && !isNaN(Number(number)) && number !== 0 && !regex.test(number);
+    let newNumber = Number(number);
+    return number !== '' && !isNaN(newNumber) && newNumber !== 0 && Number.isInteger(newNumber);
 }
 
 //hide the error
