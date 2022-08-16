@@ -20,24 +20,24 @@ function findPalindrome(e) {
 
         //Compare the both reverse number and original number.
         if (Number(input.value) === reverse) {
-            getMessage('#show', `${input.value} is palindrome.`);
+            showMessage('#show', `${input.value} is palindrome.`);
         } else {
-            getMessage('#show', `${input.value} is not palindrome.`);
+            showMessage('#show', `${input.value} is not palindrome.`);
         }
 
         //Remove the error 
-        getMessage('#error', '');
+        showMessage('#error', '');
         input.value = '';
     } else {
-        getMessage('#error', "Value must be integer.");
-        getMessage('#show', '');
+        showMessage('#error', "Value must be integer.");
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
