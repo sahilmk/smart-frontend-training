@@ -4,13 +4,17 @@ function getQuotientReminder() {
     let dividend = parseFloat(document.getElementById('dividend').value);
     let divisor = parseFloat(document.getElementById('divisor').value);
 
-    if (!isNaN(dividend) && !isNaN(divisor) && divisor !== 0 && divisor > 0) {
-        const quotient = Math.floor(dividend / divisor);
-        const reminder = (dividend - (divisor * quotient));
+    if (!isNaN(dividend) && !isNaN(divisor)) {
+        if (divisor > 0) {
+            const quotient = Math.floor(dividend / divisor);
+            const reminder = (dividend - (divisor * quotient));
 
-        getMessage(`quotient: ${quotient} and Reminder: ${reminder}`);
+            getMessage(`quotient: ${quotient} and Reminder: ${reminder}`);
+        } else {
+            getMessage("Divisor must be greater than 0.")
+        }
     } else {
-        getMessage('Divisor must be number and greater than 0 and positive.');
+        getMessage('Divisor must be number');
     }
 
     clearInput();
