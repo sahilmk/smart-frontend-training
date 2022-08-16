@@ -29,19 +29,19 @@ function findLargest(e) {
         //     }
         // }
 
-        getMessage('#show', `Largest number among the ${number1}, ${number2} and ${number3} is: ${largestNumber}`);
+        showMessage('#show', `Largest number among the ${number1}, ${number2} and ${number3} is: ${largestNumber}`);
 
     } else {
         if (!validate(number1)) {
-            getMessage('#error-1', "Value must be number and it can't be empty");
+            showMessage('#error-1', "Value must be number and it can't be empty");
             document.getElementById('number-1').value = '';
         }
         if (!validate(number2)) {
-            getMessage('#error-2', "Value must be number and it can't be empty");
+            showMessage('#error-2', "Value must be number and it can't be empty");
             document.getElementById('number-2').value = '';
         }
         if (!validate(number3)) {
-            getMessage('#error-3', "Value must be number and it can't be empty");
+            showMessage('#error-3', "Value must be number and it can't be empty");
             document.getElementById('number-3').value = '';
         }
     }
@@ -50,7 +50,7 @@ function findLargest(e) {
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
@@ -61,7 +61,7 @@ function validate(number) {
 
 //hide the error
 function hideerror() {
-    getMessage('#error-1', '');
-    getMessage('#error-2', '');
-    getMessage('#error-3', '');
+    showMessage('#error-1', '');
+    showMessage('#error-2', '');
+    showMessage('#error-3', '');
 }
