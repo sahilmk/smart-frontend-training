@@ -15,24 +15,24 @@ function findPalindrome(e) {
         }
 
         if (count === 2) {
-            getMessage('#show', `${number} is a prime number`);
+            showMessage('#show', `${number} is a prime number`);
         } else {
-            getMessage('#show', `${number} is not a prime number`)
+            showMessage('#show', `${number} is not a prime number`)
         }
 
         //Remove the error 
-        getMessage('#error', '');
+        showMessage('#error', '');
         input.value = '';
     } else {
-        getMessage('#error', "Value must be positive integer.");
-        getMessage('#show', '');
+        showMessage('#error', "Value must be positive integer.");
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
