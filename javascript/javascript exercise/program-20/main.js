@@ -39,27 +39,27 @@ function findArmstrong(e) {
                 message += 'No numbers are there.'
             }
 
-            getMessage('#show', message);
+            showMessage('#show', message);
             clearInputs();
         } else {
-            getMessage('#error-2', "Value of number-2 must be greater than number-1")
+            showMessage('#error-2', "Value of number-2 must be greater than number-1")
         }
 
     } else {
         if (!validate(number1)) {
-            getMessage('#error-1', "Value must be positive integer");
+            showMessage('#error-1', "Value must be positive integer");
         }
         if (!validate(number2)) {
-            getMessage('#error-2', "Value must be positive integer");
+            showMessage('#error-2', "Value must be positive integer");
         }
-        getMessage('#show', '');
+        showMessage('#show', '');
     }
 
     e.preventDefault();
 }
 
 // Show the output and error messages
-function getMessage(messageId, message) {
+function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
@@ -71,8 +71,8 @@ function validate(number) {
 
 //hide the error
 function hideerror() {
-    getMessage('#error-1', '');
-    getMessage('#error-2', '');
+    showMessage('#error-1', '');
+    showMessage('#error-2', '');
 }
 
 //Clear the inputs
