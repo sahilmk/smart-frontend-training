@@ -30,7 +30,7 @@ function findFrequency(e) {
         showMessagee('#show', message);
         document.getElementById('string').value = '';
     } else {
-        showMessagee('#error', "Please ");
+        showMessagee('#error', "Please enter string with character");
         showMessagee('#show', '');
     }
 
