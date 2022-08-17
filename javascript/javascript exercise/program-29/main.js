@@ -1,16 +1,51 @@
-const showMessage = document.getElementById('show');
+document.getElementById('submit').addEventListener('click', calculateAverage);
+const input = document.getElementById('number');
 
-const arr = [12.5, 18.9, 20, 13.923, 15.6];
-let sum = 0;
-let message = `Array: ${arr}`
+//Create the inputs for the array+
+function calculateAverage(e) {
+    let number = input.value;
+    const arr = number.split(',');
+    const arrLength = arr.length;
 
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+    showMessage('#error', '');
+
+    if (arrLength > 1) {
+        let count = 0;
+
+        for (let i = 0; i < arrLength; i++) {
+            if (validate(arr[i])) {
+                count++;
+            }
+        }
+
+        if (count === arrLength) {
+            let sum = 0;
+
+            for (let i = 0; i < arrLength; i++) {
+                sum += Number(arr[i]);
+            }
+
+            const average = (sum / arrLength).toFixed(2);
+            showMessage('#show', `Array elements: ${arr} <br> Average of array element: ${average}`);
+            input.value = '';
+        } else {
+            showMessage('#error', 'Array elemnt must be numbers.');
+            showMessage('#show', '');
+        }
+    } else {
+        showMessage('#error', 'Please enter aleast two element of the array');
+        showMessage('#show', '');
+    }
+
+    e.preventDefault();
 }
 
-const avg = (sum / arr.length).toFixed(2);
+// Show the output and error messages
+function showMessage(messageId, message) {
+    document.querySelector(messageId).innerHTML = message;
+}
 
-message += `<br> Average of array element: ${avg}`
-
-showMessage.innerHTML = message;
-
+//Validate the inputs
+function validate(number) {
+    return number !== '' && !isNaN(Number(number));
+}
