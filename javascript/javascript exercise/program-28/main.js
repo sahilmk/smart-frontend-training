@@ -20,7 +20,6 @@ function findPower(e) {
             clearInputs();
         }
     } else {
-        console.log(validate(number1), validate(number2));
         if (!validate(number1)) {
             showMessage('#error-1', "Value must be number.");
         }
