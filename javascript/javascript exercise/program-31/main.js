@@ -1,60 +1,107 @@
-let dimension1 = document.getElementById('number-1');
-let dimension2 = document.getElementById('number-2');
-let dimension3 = document.getElementById('number-3');
-let dimension4 = document.getElementById('number-4');
-let matrix1 = document.getElementById('matrix-1');
-let matrix2 = document.getElementById('matrix-2');
-
 document.getElementById('submit').addEventListener('click', addMatrix);
+const showMatrix1 = document.getElementById('showMatrix1');
+const showMatrix2 = document.getElementById('showMatrix2');
+const showOutput = document.getElementById('answer');
+const row = document.getElementById('row');
+const column = document.getElementById('column');
 
-//Create the inputs for the array+
+let matrix1;
+let matrix2;
+
+
+//Add the two matrix
 function addMatrix(e) {
-    dimension1 = dimension1.value;
-    dimension2 = dimension2.value;
-    dimension3 = dimension3.value;
-    dimension4 = dimension4.value;
+    let rowNumber = row.value;
+    let columnNumber = column.value;
 
-    hideError();
+    clearError();
+    if (validate(rowNumber) && validate(columnNumber)) {
+        if (validate(rowNumber)) {
+            showMessage('#error-1', 'Please enter positive number greater than one');
+        }
+        if (validate(columnNumber)) {
+            showMessage('#error-2', 'Please enter positive number greater than one');
+        }
+        showMatrix1.innerHTML = '';
+        showMatrix2.innerHTML = '';
+        showOutput.innerHTML = '';
 
-    if (validate(dimension1, 1) && validate(dimension2, 2) && validate(dimension3, 3) && validate(dimension4, 4)) {
-        dimension1 = Number(dimension1);
-        dimension2 = Number(dimension2);
-        dimension3 = Number(dimension3);
-        dimension4 = Number(dimension4);
+    } else {
 
-        if (dimension1 === dimension3 && dimension2 === dimension4) {
-            matrix1 = matrix1.value;
-            matrix2 = matrix2.value;
 
-            const arr1 = matrix1.split(',');
-            const arr2 = matrix2.split(',');
+        createMatrix();
 
-            if (arr1.length === dimension1 * dimension2 && arr2.length === dimension3 * dimension4) {
-                let count1 = 0;
-                let count2 = 0;
-                for (let i = 0; i < arr1.length; i++) {
-                    if (validate(arr1[i])) {
-                        count1++;
-                    }
-                    if (validate(arr2[i])) {
-                        count2;
-                    }
-                }
-
-                if (count1 === arr1.length && count2 === arr2.length) {
-
-                }
-
-            } else {
-                showMessage('#error-6', `Please enter ${dimension1 * dimension2} element because you dimention of matrix is ${dimension1}X${dimension2}`)
+        let outputMatrix = new Array(rowNumber);
+        for (let i = 0; i < rowNumber; i++) {
+            outputMatrix[i] = new Array(columnNumber);
+        }
+        for (let i = 0; i < rowNumber; i++) {
+            for (let j = 0; j < columnNumber; j++) {
+                outputMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
             }
-        } else {
-            showMessage('#error-5', 'Dimension of both matrix must be same.')
         }
 
+        let output = '';
+
+        for (let i = 0; i < rowNumber; i++) {
+            output += `[`;
+            for (let j = 0; j < columnNumber; j++) {
+                output += `${outputMatrix[i][j]} `;
+            }
+            output += `]`;
+            output += `<br>`;
+        }
+
+        showOutput.innerHTML = output;
+        row.value = '';
+        column.value = '';
+    }
+    e.preventDefault();
+}
+
+function createMatrix() {
+
+    let rows = Number(row.value);
+    let columns = Number(column.value);
+
+    matrix1 = new Array(rows);
+    matrix2 = new Array(rows);
+
+    //Create matrix
+    for (let i = 0; i < rows; i++) {
+        matrix1[i] = new Array(columns);
+        matrix2[i] = new Array(columns);
+
+        for (let j = 0; j < columns; j++) {
+            matrix1[i][j] = i + 1;
+            matrix2[i][j] = i + 1;
+        }
     }
 
-    e.preventDefault();
+    //Display the matrix
+    let showmat1 = '';
+    let showmat2 = '';
+
+    for (let i = 0; i < rows; i++) {
+        showmat1 += `[`;
+        for (let j = 0; j < columns; j++) {
+            showmat1 += `${matrix1[i][j]} `;
+        }
+        showmat1 += `]`;
+        showmat1 += `<br>`;
+    }
+
+    for (let i = 0; i < rows; i++) {
+        showmat2 += `[`;
+        for (let j = 0; j < columns; j++) {
+            showmat2 += `${matrix2[i][j]} `;
+        }
+        showmat2 += `]`;
+        showmat2 += `<br>`;
+    }
+
+    showMatrix1.innerHTML = showmat1;
+    showMatrix2.innerHTML = showmat2;
 }
 
 // Show the output and error messages
@@ -62,25 +109,11 @@ function showMessage(messageId, message) {
     document.querySelector(messageId).innerHTML = message;
 }
 
-//Validate the inputs
-function validate(number, id) {
-    const newNumber = Number(number);
-
-    if (number === '' && isNaN(newNumber)) {
-        showMessage(`#error-${id}`, 'Please enter a number');
-    } else if (newNumber < 0 && !Number.isInteger(newNumber)) {
-        showMessage(`#error-${id}`, 'Number must be positive integer.');
-    }
-
-    return number !== '' && !isNaN(newNumber) && newNumber > 0 && Number.isInteger(newNumber);
+function validate(number) {
+    return number === '' || Number(number) <= 1 || isNaN(number);
 }
 
-function validateMatrix(string, id) {
-    return number !== '' && !isNaN(Number(number));
-}
-
-function hideError() {
-    for (let i = 1; i <= 7; i++) {
-        showMessage(`#error-${i}`, '');
-    }
+function clearError() {
+    document.getElementById('error-1').innerHTML = '';
+    document.getElementById('error-2').innerHTML = '';
 }
