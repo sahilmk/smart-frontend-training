@@ -1,27 +1,34 @@
 const input = document.getElementById('number');
 document.getElementById('submit').addEventListener('click', findFactors);
 
+//Find the factors
 function findFactors(e) {
     let number = input.value
 
     if (validate(number)) {
         let factors = [];
-        number = Number(number);
+        let message = `Factors of ${number}: `;
+        positiveNumber = Math.abs(Number(number));
 
-        for (let i = 1; i <= number; i++) {
-            if (number % i === 0) {
+        for (let i = 1; i <= positiveNumber; i++) {
+            if (positiveNumber % i === 0) {
                 factors.push(i);
             }
         }
 
-        let message = `Factors of ${number}: `;
+        const arrayLength = factors.length;
+
+        //add the negative factors
+        if (Number(number) < 0) {
+            for (let i = 0; i < arrayLength; i++) {
+                factors.push(factors[i] * -1);
+            }
+        }
 
         if (factors.length !== 0) {
-            for (let i = 0; i < factors.length; i++) {
-                message += factors[i] + ' ';
-            }
+            message += factors;
         } else {
-            message += 'No factors are there';
+            message += 'No factors are there.';
         }
 
         showMessage('#show', message);
@@ -30,7 +37,7 @@ function findFactors(e) {
         showMessage('#error', '');
         input.value = '';
     } else {
-        showMessage('#error', "Value must be positive integer.");
+        showMessage('#error', "Value must be integer.");
         showMessage('#show', '');
     }
 
@@ -43,7 +50,4 @@ function showMessage(messageId, message) {
 }
 
 //Validate the inputs
-function validate(number) {
-    let newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber);
-}
+validate = (number) => number !== '' && Number.isInteger(Number(number));
