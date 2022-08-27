@@ -9,8 +9,8 @@ function findArmstrong(e) {
         let sum = 0;
 
         //Converting the string to number and finding the lenght of number
+        const numberLength = number.length;
         number = Number(number);
-        const numberLength = number.toString().length;
 
         while (number != 0) {
             reminder = number % 10;
@@ -19,7 +19,7 @@ function findArmstrong(e) {
         }
 
         if (sum === Number(input.value)) {
-            showMessage('#show', `${input.value} is a armstrong`);
+            showMessage('#show', `${(input.value)} is a armstrong`);
         } else {
             showMessage('#show', `${input.value} is not a armstrong`)
         }
@@ -41,7 +41,4 @@ function showMessage(messageId, message) {
 }
 
 //Validate the inputs
-function validate(number) {
-    let newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber) && newNumber >= 1;
-}
+validate = (number) => number !== '' && Number.isInteger(Number(number)) && Number(number) >= 1;
