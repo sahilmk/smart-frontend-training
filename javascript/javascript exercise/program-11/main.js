@@ -12,19 +12,16 @@ function findLcm(e) {
 
         const lcm = (absNumber1 / gcd(absNumber1, absNumber2)) * absNumber2;
 
-        showMessage('#show', `Gcd of ${number1}, ${number2} is: ${lcm}`);
+        showMessage('#show', `LCM of ${number1}, ${number2} is: ${lcm}`);
         clearInputs();
     } else {
         if (!validate(number1)) {
-            showMessage('#error-1', "Value must be non-zero integer positive number");
-            document.getElementById('number-1').value = '';
+            showMessage('#error-1', "Value must be non-zero integer number");
         }
         if (!validate(number2)) {
-            showMessage('#error-2', "Value must be non-zero integer positive number");
-            document.getElementById('number-2').value = '';
+            showMessage('#error-2', "Value must be non-zero integer number");
         }
-        showMessage('#show', '')
-        clearInputs();
+        showMessage('#show', '');
     }
 
     e.preventDefault();
