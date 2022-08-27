@@ -4,24 +4,22 @@ function findGcd(e) {
     let number1 = document.getElementById('number-1').value;
     let number2 = document.getElementById('number-2').value;
 
-    hideerror();
-
+    hideError();
+    1
     if (validate(number1) && validate(number2)) {
         number1 = Number(number1);
         number2 = Number(number2);
 
-        let gcd = calculateGCD(number1, number2);
+        const gcd = GCD(Math.abs(number1), Math.abs(number2));
 
         showMessage('#show', `Gcd of ${number1}, ${number2} is: ${gcd}`);
         clearInputs();
     } else {
         if (!validate(number1)) {
-            showMessage('#error-1', "Value must be non-zero integer positive number");
-            document.getElementById('number-1').value = '';
+            showMessage('#error-1', "Value must be integer");
         }
         if (!validate(number2)) {
-            showMessage('#error-2', "Value must be non-zero integer positive number");
-            document.getElementById('number-2').value = '';
+            showMessage('#error-2', "Value must be integer");
         }
         showMessage('#show', '')
     }
@@ -29,9 +27,9 @@ function findGcd(e) {
     e.preventDefault();
 }
 
-function calculateGCD(number1, number2) {
+function GCD(number1, number2) {
     if (number2 !== 0) {
-        return calculateGCD(number2, number1 % number2);
+        return GCD(number2, (number1 % number2));
     } else {
         return number1;
     }
@@ -43,13 +41,10 @@ function showMessage(messageId, message) {
 }
 
 //Validate the inputs
-function validate(number) {
-    const regex = /\./
-    return number !== '' && !isNaN(Number(number)) && number > 0 && !regex.test(number);
-}
+validate = (number) => number !== '' && Number.isInteger(Number(number)) && !number.includes('e');
 
 //hide the error
-function hideerror() {
+function hideError() {
     showMessage('#error-1', '');
     showMessage('#error-2', '');
 }
