@@ -51,5 +51,5 @@ function showMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) >= 1 && Number(number) <= 1450 && Number.isInteger(number);
+    return number !== '' && !isNaN(Number(number)) && Number(number) >= 1 && Number(number) <= 1450 && Number.isInteger(Number(number));
 }
