@@ -5,7 +5,7 @@ function findReverse(e) {
 
     showMessagee('#error', '');
 
-    if (string !== "") {
+    if (validate(string)) {
 
         const outputString = reverseString(string);
 
@@ -31,4 +31,9 @@ function reverseString(string) {
 // Show the output and error messages
 function showMessagee(messageId, message) {
     document.querySelector(messageId).innerHTML = message;
+}
+
+function validate(string) {
+    const regex = /^\s+$/;
+    return !regex.test(string) && string !== '';
 }
