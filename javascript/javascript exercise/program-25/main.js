@@ -8,7 +8,7 @@ function findFactorial(e) {
     if (validate(factorialNumber)) {
         factorialNumber = Number(factorialNumber);
 
-        let factorial = calculateFactorial(factorialNumber);
+        const factorial = calculateFactorial(factorialNumber);
 
         showMessagee('#show', `Factorial of ${factorialNumber}! is: ${factorial}`);
         document.getElementById('number').value = '';
@@ -22,7 +22,7 @@ function findFactorial(e) {
 
 //Recursive function for calculating the factorial of the number.
 function calculateFactorial(number) {
-    if (number === 0) {
+    if (number === 0 || number === 1) {
         return 1;
     }
 
@@ -36,5 +36,5 @@ function showMessagee(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0;
+    return number !== '' && Number(number) >= 0 && Number.isInteger(Number(number));
 }
