@@ -1,20 +1,22 @@
 const input = document.getElementById('number');
-document.getElementById('submit').addEventListener('click', findPalindrome);
+document.getElementById('submit').addEventListener('click', findPrime);
 
-function findPalindrome(e) {
+function findPrime(e) {
     let number = input.value
 
     if (validate(number)) {
         let count = 0;
         number = Number(number);
 
-        for (let i = 1; i <= number; i++) {
+        let isPrime = true;
+        for (let i = 2; i <= number / 2; i++) {
             if (number % i === 0) {
-                count++;
+                isPrime = false;
+                break;
             }
         }
 
-        if (count === 2) {
+        if (isPrime) {
             showMessage('#show', `${number} is a prime number`);
         } else {
             showMessage('#show', `${number} is not a prime number`)
@@ -38,6 +40,6 @@ function showMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    let newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber) && newNumber >= 1;
+    const newNumber = Number(number)
+    return number !== '' && !isNaN(number) && Number.isInteger(newNumber) && newNumber >= 1;
 }
