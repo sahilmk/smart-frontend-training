@@ -7,46 +7,43 @@ function findPrime(e) {
     let number2 = upperNumber.value;
     hideerror();
 
-    if (validate(number1) && validate(number2)) {
-        let primeNumbers = [];
+    if (validate(number1) && validate(number2) && number1 < number2) {
+        const primeNumbers = [];
         number1 = Number(number1);
         number2 = Number(number2);
 
-        if (number1 < number2) {
-            for (let i = number1; i <= number2; i++) {
-                let count = 0;
+        for (let i = number1; i <= number2; i++) {
+            let isPrime = true;
 
-                for (let j = 1; j <= i; j++) {
-                    if (i % j === 0) {
-                        count++;
-                    }
-                }
-
-                if (count === 2) {
-                    primeNumbers.push(i);
+            for (let j = 2; j <= i / 2; j++) {
+                if (i % j === 0) {
+                    isPrime = false;
+                    break;
                 }
             }
 
-            let message = `Prime numbers between ${number1} and ${number2} are: `
-            if (primeNumbers.length !== 0) {
-                for (let i = 0; i < primeNumbers.length; i++) {
-                    message += primeNumbers[i] + " ";
-                }
-            } else {
-                message += 'No numbers are there.'
+            if (isPrime) {
+                primeNumbers.push(i);
             }
-            showMessage('#show', message);
-            clearInputs();
-        } else {
-            showMessage('#error-2', "Value of number-2 must be greater than number-1")
         }
 
+        let message = `Prime numbers between ${number1} and ${number2} are: `
+        if (primeNumbers.length !== 0) {
+            message += primeNumbers;
+        } else {
+            message += 'No numbers are there.'
+        }
+        showMessage('#show', message);
+        clearInputs();
     } else {
         if (!validate(number1)) {
             showMessage('#error-1', "Value must be positive integer");
         }
         if (!validate(number2)) {
             showMessage('#error-2', "Value must be positive integer");
+        }
+        if (number1 > number2) {
+            showMessage('#error-2', "Value of number-2 must be greater than number-1")
         }
         showMessage('#show', '');
     }
@@ -62,7 +59,7 @@ function showMessage(messageId, message) {
 //Validate the inputs
 function validate(number) {
     const newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && newNumber >= 1 && Number.isInteger(newNumber);
+    return number !== '' && !isNaN(number) && newNumber >= 1 && Number.isInteger(newNumber);
 }
 
 //hide the error
