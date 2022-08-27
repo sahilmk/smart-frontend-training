@@ -1,7 +1,6 @@
-document.getElementById('findSum').addEventListener('click', findSum);
 const input = document.getElementById('number');
 
-findSum = (e) => {
+let findSum = (e) => {
     let number = input.value;
 
     showMessage('#error', '');
@@ -20,6 +19,7 @@ findSum = (e) => {
 
     e.preventDefault();
 }
+document.getElementById('findSum').addEventListener('click', findSum);
 
 // Show the output and error messages
 function showMessage(messageId, message) {
