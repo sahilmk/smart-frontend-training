@@ -6,13 +6,13 @@ function findFrequencyOfElement(e) {
     showMessagee('#error', '');
 
     if (validate(string)) {
-
         let lowerCaseString = string.toLowerCase();
         const stringLength = lowerCaseString.length;
         const frequency = [];
 
         for (let i = 0; i < stringLength; i++) {
             frequency[i] = 1;
+
             for (let j = i + 1; j < stringLength; j++) {
                 if (lowerCaseString[i] === lowerCaseString[j]) {
                     frequency[i]++;
@@ -22,6 +22,7 @@ function findFrequencyOfElement(e) {
         }
 
         let message = `String is: ${string}<br>Characters and their corresponding frequencies ${string}<br>`;
+
         for (let i = 0; i < stringLength; i++) {
             if (lowerCaseString[i] != ' ')
                 message += `${lowerCaseString[i]}-${frequency[i]} <br>`;
