@@ -1,36 +1,36 @@
-document.getElementById('findFrequency').addEventListener('click', findFrequency);
+document.getElementById('findFrequency').addEventListener('click', findFrequencyOfElement);
 
-function findFrequency(e) {
+function findFrequencyOfElement(e) {
     const string = document.getElementById('string').value;
 
     showMessagee('#error', '');
 
     if (validate(string)) {
 
-        let reserveString = string.toLowerCase();
-        const stringLength = reserveString.length;
-        let freq = [];
+        let lowerCaseString = string.toLowerCase();
+        const stringLength = lowerCaseString.length;
+        const frequency = [];
 
         for (let i = 0; i < stringLength; i++) {
-            freq[i] = 1;
+            frequency[i] = 1;
             for (let j = i + 1; j < stringLength; j++) {
-                if (reserveString[i] === reserveString[j]) {
-                    freq[i]++;
-                    reserveString = setCharAt(reserveString, j, '0');
+                if (lowerCaseString[i] === lowerCaseString[j]) {
+                    frequency[i]++;
+                    lowerCaseString = setCharAt(lowerCaseString, j, ' ');
                 }
             }
         }
 
         let message = `String is: ${string}<br>Characters and their corresponding frequencies ${string}<br>`;
         for (let i = 0; i < stringLength; i++) {
-            if (reserveString[i] != ' ' && reserveString[i] !== '0')
-                message += `${reserveString[i]}-${freq[i]} <br>`;
+            if (lowerCaseString[i] != ' ')
+                message += `${lowerCaseString[i]}-${frequency[i]} <br>`;
         }
 
         showMessagee('#show', message);
         document.getElementById('string').value = '';
     } else {
-        showMessagee('#error', "Please enter string with character");
+        showMessagee('#error', "Please enter string");
         showMessagee('#show', '');
     }
 
@@ -50,7 +50,8 @@ function showMessagee(messageId, message) {
     document.querySelector(messageId).innerHTML = message;
 }
 
+//Validate string
 function validate(string) {
-    const regex = /^([a-zA-Z])+(([ ]([a-zA-Z]+))+)?$/;
-    return string !== '' && regex.test(string);
+    const regex = /^\s+$/;
+    return string !== '' && !regex.test(string);
 }
