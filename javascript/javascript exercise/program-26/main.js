@@ -15,12 +15,8 @@ function findGcd(e) {
         showMessage('#show', `Gcd of ${number1}, ${number2} is: ${gcd}`);
         clearInputs();
     } else {
-        if (!validate(number1)) {
-            showMessage('#error-1', "Value must be integer");
-        }
-        if (!validate(number2)) {
-            showMessage('#error-2', "Value must be integer");
-        }
+        validateAndShowError(number1, '#error-1');
+        validateAndShowError(number2, '#error-2');
         showMessage('#show', '')
     }
 
@@ -40,6 +36,13 @@ function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
 }
 
+//Validate the individual inputs
+function validateAndShowError(number, id) {
+    if (!validate(number)) {
+        showMessage(id, "Value must be integer");
+    }
+}
+
 //Validate the inputs
 validate = (number) => number !== '' && Number.isInteger(Number(number)) && !number.includes('e');
 
@@ -54,3 +57,4 @@ function clearInputs() {
     document.getElementById('number-1').value = '';
     document.getElementById('number-2').value = '';
 }
+
