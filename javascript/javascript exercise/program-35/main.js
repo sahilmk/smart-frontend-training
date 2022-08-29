@@ -1,18 +1,20 @@
-document.getElementById('submit').addEventListener('click', vowelandConsonant);
+document.getElementById('submit').addEventListener('click', countVowelsAndConsonants);
 
-function vowelandConsonant(e) {
+function countVowelsAndConsonants(e) {
     let string = document.getElementById('string').value;
     showMessage('#error', '');
 
     if (validateInput(string)) {
-        string = string.toUpperCase();
+        const vowelRegex = /[AEIOU]/;
+        const consonantRegex = /[BCDFGHJKLMNPQRSTVWXYZ]/;
         let consonant = 0;
         let vowel = 0;
+        string = string.toUpperCase();
 
         for (let i = 0; i < string.length; i++) {
-            if (string[i] === 'A' || string[i] === 'E' || string[i] === 'I' || string[i] === 'O' || string[i] === 'U') {
+            if (vowelRegex.test(string[i])) {
                 vowel++;
-            } else if (string[i] !== ' ') {
+            } else if (consonantRegex.test(string[i])) {
                 consonant++;
             }
         }
@@ -33,8 +35,8 @@ function showMessage(messageId, message) {
 
 //Validate input
 function validateInput(inputString) {
-    const regex = /^([a-zA-Z])+(([ ]([a-zA-Z]+))+)?$/;
-    return inputString !== '' && regex.test(inputString);
+    const regex = /^\s+$/
+    return inputString !== '' && !regex.test(inputString);
 }
 
 //Clear the input after clicking the calculate button
