@@ -10,6 +10,7 @@ function findReverse(e) {
         while (number != 0) {
             reminder = number % 10;
             reverse = reverse * 10 + reminder;
+
             if (number > 0) {
                 number = Math.floor(number / 10);
             } else {
