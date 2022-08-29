@@ -1,0 +1,59 @@
+document.getElementById('submit').addEventListener('click', findLcm);
+
+function findLcm(e) {
+    let number1 = document.getElementById('number-1').value;
+    let number2 = document.getElementById('number-2').value;
+
+    hideerror();
+
+    if (validate(number1) && validate(number2)) {
+        absNumber1 = Math.abs(Number(number1));
+        absNumber2 = Math.abs(Number(number2));
+
+        const lcm = (absNumber1 / gcd(absNumber1, absNumber2)) * absNumber2;
+
+        showMessage('#show', `LCM of ${number1}, ${number2} is: ${lcm}`);
+        clearInputs();
+    } else {
+        if (!validate(number1)) {
+            showMessage('#error-1', "Value must be non-zero integer number");
+        }
+        if (!validate(number2)) {
+            showMessage('#error-2', "Value must be non-zero integer number");
+        }
+        showMessage('#show', '');
+    }
+
+    e.preventDefault();
+}
+
+//Find the gcd
+function gcd(number1, number2) {
+    if (number2 === 0) {
+        return number1;
+    }
+    return gcd(number2, number1 % number2)
+}
+
+// Show the output and error messages
+function showMessage(messageId, message) {
+    document.querySelector(messageId).innerText = message;
+}
+
+//Validate the inputs
+function validate(number) {
+    const regex = /\./
+    return number !== '' && !isNaN(Number(number)) && Number(number) !== 0 && !regex.test(number);
+}
+
+//hide the error
+function hideerror() {
+    showMessage('#error-1', '');
+    showMessage('#error-2', '');
+}
+
+//Clear the inputs
+function clearInputs(number1, number2) {
+    document.getElementById('number-1').value = '';
+    document.getElementById('number-2').value = '';
+}
