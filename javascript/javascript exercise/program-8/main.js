@@ -1,6 +1,6 @@
-document.getElementById('findFactorial').addEventListener('click', findFactorial);
+document.getElementById('findFactorial').addEventListener('click', onFindFactorial);
 
-function findFactorial(e) {
+function onFindFactorial(e) {
     let factorialNumber = document.getElementById('number').value;
 
     showMessage('#error', '');
@@ -17,11 +17,15 @@ function findFactorial(e) {
             }
         }
 
-        showMessage('#show', `Factorial of ${factorialNumber}! is: ${factorial}`);
+        showMessage('#showOutput', `Factorial of ${factorialNumber}! is: ${factorial}`);
     } else {
-        showMessage('#error', "Value must be positive integer and it can't be empty");
-        document.getElementById('number').value = '';
-        showMessage('#show', '');
+        if (Number(factorialNumber) > 170) {
+            showMessage('#showOutput', `Factorial of ${factorialNumber}! is: infinity`);
+        } else {
+            showMessage('#error', "Value must be positive integer and it can't be empty");
+            document.getElementById('number').value = '';
+            showMessage('#showOutput', '');
+        }
     }
 
     e.preventDefault();
@@ -34,5 +38,5 @@ function showMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0 && Number.isInteger(Number(number));
+    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0 && Number(number) <= 170 && Number.isInteger(Number(number));
 }
