@@ -10,7 +10,7 @@ function findGcd(e) {
         number1 = Number(number1);
         number2 = Number(number2);
 
-        const gcd = GCD(Math.abs(number1), Math.abs(number2));
+        const gcd = getGcd(Math.abs(number1), Math.abs(number2));
 
         showMessage('#show', `Gcd of ${number1}, ${number2} is: ${gcd}`);
         clearInputs();
@@ -23,9 +23,9 @@ function findGcd(e) {
     e.preventDefault();
 }
 
-function GCD(number1, number2) {
+function getGcd(number1, number2) {
     if (number2 !== 0) {
-        return GCD(number2, (number1 % number2));
+        return getGcd(number2, (number1 % number2));
     } else {
         return number1;
     }
