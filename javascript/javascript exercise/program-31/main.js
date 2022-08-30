@@ -16,38 +16,22 @@ function addMatrix(e) {
 
     clearError();
     if (validate(rowNumber) && validate(columnNumber)) {
-        if (validate(rowNumber)) {
-            showMessage('#error-1', 'Please enter positive number greater than one');
-        }
-        if (validate(columnNumber)) {
-            showMessage('#error-2', 'Please enter positive number greater than one');
-        }
-        showMatrix1.innerHTML = '';
-        showMatrix2.innerHTML = '';
-        showOutput.innerHTML = '';
-
-    } else {
-
-
         createMatrix();
 
         let outputMatrix = new Array(rowNumber);
+        let output = '';
+
         for (let i = 0; i < rowNumber; i++) {
             outputMatrix[i] = new Array(columnNumber);
         }
         for (let i = 0; i < rowNumber; i++) {
+            output += `[`;
+
             for (let j = 0; j < columnNumber; j++) {
                 outputMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
-            }
-        }
-
-        let output = '';
-
-        for (let i = 0; i < rowNumber; i++) {
-            output += `[`;
-            for (let j = 0; j < columnNumber; j++) {
                 output += `${outputMatrix[i][j]} `;
             }
+
             output += `]`;
             output += `<br>`;
         }
@@ -55,15 +39,26 @@ function addMatrix(e) {
         showOutput.innerHTML = output;
         row.value = '';
         column.value = '';
+    } else {
+        if (validate(rowNumber)) {
+            showMessage('#error-1', 'Please enter positive number greater than one');
+        }
+        if (validate(columnNumber)) {
+            showMessage('#error-2', 'Please enter positive number greater than one');
+        }
+
+        showMatrix1.innerHTML = '';
+        showMatrix2.innerHTML = '';
+        showOutput.innerHTML = '';
     }
     e.preventDefault();
 }
 
 function createMatrix() {
-
     let rows = Number(row.value);
     let columns = Number(column.value);
-
+    let showmat1 = '';
+    let showmat2 = '';
     matrix1 = new Array(rows);
     matrix2 = new Array(rows);
 
@@ -71,31 +66,18 @@ function createMatrix() {
     for (let i = 0; i < rows; i++) {
         matrix1[i] = new Array(columns);
         matrix2[i] = new Array(columns);
+        showmat1 += `[`;
+        showmat2 += `[`;
 
         for (let j = 0; j < columns; j++) {
             matrix1[i][j] = i + 1;
             matrix2[i][j] = i + 1;
-        }
-    }
-
-    //Display the matrix
-    let showmat1 = '';
-    let showmat2 = '';
-
-    for (let i = 0; i < rows; i++) {
-        showmat1 += `[`;
-        for (let j = 0; j < columns; j++) {
             showmat1 += `${matrix1[i][j]} `;
-        }
-        showmat1 += `]`;
-        showmat1 += `<br>`;
-    }
-
-    for (let i = 0; i < rows; i++) {
-        showmat2 += `[`;
-        for (let j = 0; j < columns; j++) {
             showmat2 += `${matrix2[i][j]} `;
         }
+
+        showmat1 += `]`;
+        showmat1 += `<br>`;
         showmat2 += `]`;
         showmat2 += `<br>`;
     }
@@ -110,7 +92,7 @@ function showMessage(messageId, message) {
 }
 
 function validate(number) {
-    return number === '' || Number(number) <= 1 || isNaN(number);
+    return number !== '' && Number(number) >= 1 && !isNaN(number);
 }
 
 function clearError() {
