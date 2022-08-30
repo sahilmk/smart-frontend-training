@@ -35,13 +35,13 @@ function primeInIntervals(number1, number2) {
     for (let i = number1; i <= number2; i++) {
         let count = 0;
 
-        for (let j = 1; j <= i; j++) {
+        for (let j = 1; j <= i / 2; j++) {
             if (i % j === 0) {
                 count++;
             }
         }
 
-        if (count === 2) {
+        if (count === 1) {
             primeNumbers.push(i);
         }
     }
