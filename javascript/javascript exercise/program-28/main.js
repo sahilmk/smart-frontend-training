@@ -7,25 +7,26 @@ function findPower(e) {
     let number2 = exponent.value;
     hideerror();
 
-    if (validate(number1) && validate(number2)) {
+    if (validate(number1) && validate(number2) && Number.isInteger(Number(number2))) {
         number1 = Number(number1);
         number2 = Number(number2);
 
         if (number1 === 0 && number2 === 0) {
             showMessage('#error-2', "Base and exponent both can't be zero.")
         } else {
-            const power = calculatePower(number1, number2);
+            let power;
+            if (number2 >= 0) {
+                power = calculatePower(number1, number2);
+            } else {
+                power = 1 / calculatePower(number1, Math.abs(number2))
+            }
 
             showMessage('#show', `${number1} ^ ${number2} : ${power}`);
             clearInputs();
         }
     } else {
-        if (!validate(number1)) {
-            showMessage('#error-1', "Value must be number.");
-        }
-        if (!validate(number2)) {
-            showMessage('#error-2', "Value must be number.");
-        }
+        showError(number1, '#error-1');
+        showError(number2, '#error-2');
         showMessage('#show', '');
     }
 
@@ -42,6 +43,16 @@ function calculatePower(number1, number2) {
 // Show the output and error messages
 function showMessage(messageId, message) {
     document.querySelector(messageId).innerText = message;
+}
+
+//Show the errors in particular output
+function showError(number, id) {
+    if (!validate(number)) {
+        showMessage(id, "Value must be number.");
+    }
+    if (!Number.isInteger(Number(number))) {
+        showMessage(id, "Value must be Interger")
+    }
 }
 
 //Validate the inputs
