@@ -46,12 +46,12 @@ function transposeMatrix(e) {
         row.value = '';
         column.value = '';
     } else {
-        if (validate(rowNumber)) {
-            showMessage('#error-1', 'Please enter positive number greater than one');
+        if (!validate(rowNumber)) {
+            showMessage('#error-1', 'Please enter positive number between 1 to 100');
         }
 
-        if (validate(columnNumber)) {
-            showMessage('#error-2', 'Please enter positive number greater than one');
+        if (!validate(columnNumber)) {
+            showMessage('#error-2', 'Please enter positive number between 1 to 100');
         }
 
         showMatrix1.innerHTML = '';
@@ -89,7 +89,7 @@ function showMessage(messageId, message) {
 }
 
 function validate(number) {
-    return number !== '' && Number(number) >= 1 && !isNaN(number);
+    return number !== '' && Number(number) >= 1 && Number(number) <= 100 && !isNaN(number);
 }
 
 function clearError() {
