@@ -31,7 +31,7 @@ function findPrime(e) {
 }
 
 function primeInIntervals(number1, number2) {
-    let primeNumbers = [];
+    const primeNumbers = [];
     for (let i = number1; i <= number2; i++) {
         let count = 0;
 
@@ -66,7 +66,7 @@ function showMessage(messageId, message) {
 //Validate the inputs
 function validate(number) {
     const newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && newNumber >= 1 && Number.isInteger(newNumber);
+    return number !== '' && !isNaN(number) && newNumber >= 1 && Number.isInteger(newNumber);
 }
 
 //hide the error
