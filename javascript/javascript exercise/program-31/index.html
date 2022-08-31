@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap.min.css">
+    <title>Matrix Addition</title>
+    <style>
+        #showMatrix1,
+        #showMatrix2,
+        #plus,
+        #equal {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Enter row number and coulumn number for addtion of matrix</h3>
+        <form action="">
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="row">Row:</label>
+                    <input type="number" id="row" class="form-control" step="any">
+                    <div id="error-1" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="column">Column:</label>
+                    <input type="number" id="column" class="form-control" step="any">
+                    <div id="error-2" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" id="submit" class="btn btn-primary">Add two Matrix</button>
+            </div>
+        </form>
+
+        <div class="d-flex flex-row">
+            <h4 id="showMatrix1" class="alert alert-primary mt-5"></h4>
+            <span id="plus" class="alert alert-primary mt-5">+</span>
+            <h4 id="showMatrix2" class="alert alert-primary mt-5"></h4>
+            <h4 id="equal" class="alert alert-primary mt-5">=</h4>
+            <h4 id="answer" class="alert alert-primary mt-5"></h4>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
