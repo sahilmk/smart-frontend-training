@@ -1,24 +1,22 @@
-document.getElementById('submit').addEventListener('click', addMatrix);
 const showMatrix1 = document.getElementById('showMatrix1');
 const showMatrix2 = document.getElementById('showMatrix2');
 const showOutput = document.getElementById('answer');
 const row = document.getElementById('row');
 const column = document.getElementById('column');
 
-let matrix1;
-let matrix2;
+let matrix1, matrix2;
 
 
 //Add the two matrix
-function addMatrix(e) {
-    let rowNumber = row.value;
-    let columnNumber = column.value;
+const addMatrix = (e) => {
+    const rowNumber = row.value;
+    const columnNumber = column.value;
 
     clearError();
     if (validate(rowNumber) && validate(columnNumber)) {
         createMatrix();
 
-        let outputMatrix = new Array(rowNumber);
+        const outputMatrix = new Array(rowNumber);
         let output = '';
 
         for (let i = 0; i < rowNumber; i++) {
@@ -32,8 +30,7 @@ function addMatrix(e) {
                 output += `${outputMatrix[i][j]} `;
             }
 
-            output += `]`;
-            output += `<br>`;
+            output += `]<br>`;
         }
 
         showOutput.innerHTML = output;
@@ -54,9 +51,11 @@ function addMatrix(e) {
     e.preventDefault();
 }
 
+document.getElementById('submit').addEventListener('click', addMatrix);
+
 function createMatrix() {
-    let rows = Number(row.value);
-    let columns = Number(column.value);
+    const rows = Number(row.value);
+    const columns = Number(column.value);
     let showmat1 = '';
     let showmat2 = '';
     matrix1 = new Array(rows);
@@ -76,10 +75,8 @@ function createMatrix() {
             showmat2 += `${matrix2[i][j]} `;
         }
 
-        showmat1 += `]`;
-        showmat1 += `<br>`;
-        showmat2 += `]`;
-        showmat2 += `<br>`;
+        showmat1 += `]<br>`;
+        showmat2 += `]<br>`;
     }
 
     showMatrix1.innerHTML = showmat1;
