@@ -8,7 +8,10 @@ function findFactorial(e) {
     if (validate(factorialNumber)) {
         factorialNumber = Number(factorialNumber);
 
-        const factorial = calculateFactorial(factorialNumber);
+        let factorial = calculateFactorial(factorialNumber);
+        if (factorial.toString() !== "Infinity") {
+            factorial = BigInt(factorial);
+        }
 
         showMessagee('#show', `Factorial of ${factorialNumber}! is: ${factorial}`);
         document.getElementById('number').value = '';
@@ -21,12 +24,12 @@ function findFactorial(e) {
 }
 
 //Recursive function for calculating the factorial of the number.
-function calculateFactorial(number) {
-    if (number === 0 || number === 1) {
+function calculateFactorial(number, temp = 1) {
+    if (number == 0 || number == 1) {
         return 1;
     }
 
-    return number * calculateFactorial(number - 1);
+    return temp !== Infinity ? number * calculateFactorial(number - 1, temp * number - 1) : Infinity;
 }
 
 // Show the output and error messages
