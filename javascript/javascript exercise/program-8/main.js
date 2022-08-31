@@ -14,18 +14,18 @@ function onFindFactorial(e) {
         } else {
             for (let i = factorialNumber; i > 0; i--) {
                 factorial *= i;
+
+                if (String(factorial) === 'Infinity') {
+                    break;
+                }
             }
         }
 
         showMessage('#showOutput', `Factorial of ${factorialNumber}! is: ${factorial}`);
     } else {
-        if (Number(factorialNumber) > 170) {
-            showMessage('#showOutput', `Factorial of ${factorialNumber}! is: infinity`);
-        } else {
-            showMessage('#error', "Value must be positive integer and it can't be empty");
-            document.getElementById('number').value = '';
-            showMessage('#showOutput', '');
-        }
+        showMessage('#error', "Value must be positive integer and it can't be empty");
+        document.getElementById('number').value = '';
+        showMessage('#showOutput', '');
     }
 
     e.preventDefault();
@@ -38,5 +38,5 @@ function showMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0 && Number(number) <= 170 && Number.isInteger(Number(number));
+    return number !== '' && !isNaN(Number(number)) && Number(number) >= 0 && Number.isInteger(Number(number));
 }
