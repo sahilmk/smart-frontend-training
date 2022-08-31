@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap.min.css">
+    <title>Largest among the three number</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Enter three numbers to find out the largest among the three</h1>
+        <form action="">
+            <div class="mb-3">
+                <label for="numberOne">Number1: </label>
+                <input type="number" id="numberOne" class="form-control" step="any">
+                <div id="errorOne" class="text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <label for="numberTwo">Number2: </label>
+                <input type="number" id="numberTwo" class="form-control" step="any">
+                <div id="errorTwo" class="text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <label for="numberThree">Number3: </label>
+                <input type="number" id="numberThree" class="form-control" step="any">
+                <div id="errorThree" class="text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" id="findLarge" class="btn btn-primary">Find the largest</button>
+            </div>
+        </form>
+        <div id="show" class="text-success"></div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
