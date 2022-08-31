@@ -11,7 +11,6 @@ function showAlphabat(e) {
 
         for (let i = 0; i < string.length; i++) {
             if (!regex.test(string[i])) {
-
                 secondString = secondString.replace(string[i], '');
             }
         }
@@ -23,7 +22,6 @@ function showAlphabat(e) {
         showMessagee('#error', "Please entar a string");
         showMessagee('#show', '');
     }
-
     e.preventDefault();
 }
 
