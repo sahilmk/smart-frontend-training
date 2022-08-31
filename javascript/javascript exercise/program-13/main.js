@@ -34,6 +34,6 @@ function showMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    let newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber);
+    const newNumber = Number(number)
+    return number !== '' && !isNaN(number) && Number.isInteger(newNumber);
 }
