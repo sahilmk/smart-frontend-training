@@ -22,16 +22,18 @@ const addMatrix = (e) => {
         for (let i = 0; i < rowNumber; i++) {
             outputMatrix[i] = new Array(columnNumber);
         }
-        for (let i = 0; i < rowNumber; i++) {
+
+        matrix1.map(function (valI, indexI) {
             output += `[`;
-
-            for (let j = 0; j < columnNumber; j++) {
-                outputMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
-                output += `${outputMatrix[i][j]} `;
-            }
-
+            valI.map(function (valJ, indexJ) {
+                valI[indexJ] = valJ + matrix2[indexI][indexJ];
+                output += `${valI[indexJ]} `;
+            });
             output += `]<br>`;
-        }
+            console.log(valI);
+            console.log(valI[indexI]);
+        });
+
 
         showOutput.innerHTML = output;
         row.value = '';
@@ -78,8 +80,6 @@ function createMatrix() {
         showmat1 += `]<br>`;
         showmat2 += `]<br>`;
     }
-
-    Array.from(rows)
 
     showMatrix1.innerHTML = showmat1;
     showMatrix2.innerHTML = showmat2;
