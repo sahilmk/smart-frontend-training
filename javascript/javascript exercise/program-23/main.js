@@ -7,17 +7,9 @@ function findPrimeArmstrong(e) {
     if (validate(number)) {
         number = Number(number);
 
-        if (checkPrime(number)) {
-            showMessage('#show-prime', `${number} is a prime number`)
-        } else {
-            showMessage('#show-prime', `${number} is not a prime number`)
-        }
+        checkPrime(number) ? showMessage('#show-prime', `${number} is a prime number`) : showMessage('#show-prime', `${number} is not a prime number`);
 
-        if (checkArmstrong(number)) {
-            showMessage('#show-armstrong', `${number} is a armstrong number`)
-        } else {
-            showMessage('#show-armstrong', `${number} is not a armstrong number`)
-        }
+        checkArmstrong(number) ? showMessage('#show-armstrong', `${number} is a armstrong number`) : showMessage('#show-armstrong', `${number} is not a armstrong number`);
 
         //Remove the error 
         showMessage('#error', '');
@@ -33,26 +25,21 @@ function findPrimeArmstrong(e) {
 
 //Function for checking number is prime or not
 function checkPrime(number) {
-    let count = 0;
+    let count = true;
 
-    for (let i = 1; i <= number; i++) {
+    for (let i = 2; i <= number / 2; i++) {
         if (number % i === 0) {
-            count++;
+            count = false;
         }
     }
 
-    if (count === 2) {
-        return true;
-    } else {
-        return false;
-    }
+    return count;
 }
 
 //Function for checking number is armstrong or not
 function checkArmstrong(number) {
-    let reminder = 0;
-    let sum = 0;
-    let store = number;
+    let reminder = 0, sum = 0;
+    const store = number;
 
     //Converting the string to number and finding the lenght of number
     const numberLength = number.toString().length;
@@ -63,11 +50,7 @@ function checkArmstrong(number) {
         number = Math.floor(number / 10);
     }
 
-    if (sum === store) {
-        return true;
-    } else {
-        return false;
-    }
+    return (sum === store) ? true : false;
 }
 
 // Show the output and error messages
