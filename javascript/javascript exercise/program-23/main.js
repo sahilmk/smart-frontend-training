@@ -6,8 +6,11 @@ function findPrimeArmstrong(e) {
 
     if (validate(number)) {
         number = Number(number);
+        let outputMessage = '';
 
-        checkPrime(number) ? showMessage('#show-prime', `${number} is a prime number`) : showMessage('#show-prime', `${number} is not a prime number`);
+        number === 0 ? outputMessage += `${number} is neither a prime number nor a conmposite number` : outputMessage += `${number} is a prime number`;
+
+        checkPrime(number) ? showMessage('#show-prime', outputMessage) : showMessage('#show-prime', `${number} is not a prime number`);
 
         checkArmstrong(number) ? showMessage('#show-armstrong', `${number} is a armstrong number`) : showMessage('#show-armstrong', `${number} is not a armstrong number`);
 
@@ -27,13 +30,16 @@ function findPrimeArmstrong(e) {
 function checkPrime(number) {
     let count = true;
 
-    for (let i = 2; i <= number / 2; i++) {
-        if (number % i === 0) {
-            count = false;
+    if (number === 0 && number === 1) {
+        return true;
+    } else {
+        for (let i = 2; i <= number / 2; i++) {
+            if (number % i === 0) {
+                count = false;
+            }
         }
+        return count;
     }
-
-    return count;
 }
 
 //Function for checking number is armstrong or not
@@ -61,5 +67,5 @@ function showMessage(messageId, message) {
 //Validate the inputs
 function validate(number) {
     let newNumber = Number(number)
-    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber) && newNumber >= 1;
+    return number !== '' && !isNaN(newNumber) && Number.isInteger(newNumber) && newNumber >= 0;
 }
