@@ -1,74 +1,60 @@
-document.getElementById('submit').addEventListener('click', addMatrix);
+document.getElementById('submit').addEventListener('click', multiplytMatrix);
 const showMatrix1 = document.getElementById('showMatrix1');
 const showMatrix2 = document.getElementById('showMatrix2');
 const showOutput = document.getElementById('answer');
 const row = document.getElementById('row');
 const column = document.getElementById('column');
 
-let matrix1;
-let matrix2;
-
+let matrix1, matrix2;
 
 //Add the two matrix
-function addMatrix(e) {
+function multiplytMatrix(e) {
     let rowNumber = row.value;
     let columnNumber = column.value;
 
     clearError();
-    if (validate(rowNumber) || validate(columnNumber)) {
+    if (validate(rowNumber) && validate(columnNumber) && rowNumber === columnNumber) {
+        let outputMatrix = new Array(rowNumber);
+        let output = '';
+
+        createMatrix();
+
+        for (let i = 0; i < rowNumber; i++) {
+            outputMatrix[i] = new Array(columnNumber);
+        }
+
+        for (let i = 0; i < rowNumber; i++) {
+            output += `[`;
+            for (let j = 0; j < columnNumber; j++) {
+                let ans = 0;
+
+                for (let k = 0; k < columnNumber; k++) {
+                    ans += matrix1[i][k] * matrix2[k][j];
+                }
+
+                outputMatrix[i][j] = ans;
+                output += `${outputMatrix[i][j]} `;
+            }
+            output += `]<br>`;
+        }
+
+
+        showOutput.innerHTML = output;
+        row.value = '';
+        column.value = '';
+
+    } else {
         if (validate(rowNumber)) {
             showMessage('#error-1', 'Please enter positive number greater than one');
         }
         if (validate(columnNumber)) {
             showMessage('#error-2', 'Please enter positive number greater than one');
         }
-        clearOutput();
-
-    } else {
-
-        if (rowNumber === columnNumber) {
-            createMatrix();
-
-            let outputMatrix = new Array(rowNumber);
-            for (let i = 0; i < rowNumber; i++) {
-                outputMatrix[i] = new Array(columnNumber);
-            }
-
-            let temp;
-            if (rowNumber < columnNumber) {
-                temp = rowNumber;
-            } else {
-                temp = columnNumber;
-            }
-
-            for (let i = 0; i < rowNumber; i++) {
-                for (let j = 0; j < columnNumber; j++) {
-                    let ans = 0;
-                    for (let k = 0; k < temp; k++) {
-                        ans += matrix1[i][k] * matrix2[k][j];
-                    }
-                    outputMatrix[i][j] = ans;
-                }
-            }
-
-            let output = '';
-
-            for (let i = 0; i < rowNumber; i++) {
-                output += `[`;
-                for (let j = 0; j < columnNumber; j++) {
-                    output += `${outputMatrix[i][j]} `;
-                }
-                output += `]`;
-                output += `<br>`;
-            }
-
-            showOutput.innerHTML = output;
-            row.value = '';
-            column.value = '';
-        } else {
+        if (rowNumber !== columnNumber) {
             showMessage('#error-2', 'Both value must be same.');
-            clearOutput();
         }
+
+        clearOutput();
     }
     e.preventDefault();
 }
@@ -124,7 +110,7 @@ function showMessage(messageId, message) {
 }
 
 function validate(number) {
-    return number === '' || Number(number) <= 1 || isNaN(number);
+    return number !== '' && Number(number) >= 1 && !isNaN(number);
 }
 
 function clearError() {
