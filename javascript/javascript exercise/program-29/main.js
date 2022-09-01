@@ -47,5 +47,6 @@ function showMessage(messageId, message) {
 
 //Validate the inputs
 function validate(number) {
-    return number !== '' && !isNaN(Number(number));
+    const regex = /^\s+$/;
+    return number !== '' && !isNaN(Number(number)) && !regex.test(number);
 }
