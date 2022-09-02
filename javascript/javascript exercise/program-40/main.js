@@ -1,148 +1,159 @@
-const showOutput1 = document.getElementById('show-1');
-const showOutput2 = document.getElementById('show-2');
-const showOutput3 = document.getElementById('show-3');
-const showOutput4 = document.getElementById('show-4');
-const showOutput5 = document.getElementById('show-5');
-const showOutput6 = document.getElementById('show-6');
-const showOutput7 = document.getElementById('show-7');
-const showOutput8 = document.getElementById('show-8');
-const showOutput9 = document.getElementById('show-9');
-const showOutput10 = document.getElementById('show-10');
+document.getElementById('submit').addEventListener('click', showPatterns);
+const numberOfRow = document.getElementById('row');
+const showOutput = document.getElementById('show-1');
+const selectedPattern = document.getElementById('select1');
 
-let message1 = '';
-let message2 = '';
-let message3 = '';
-let message4 = '';
-let message5 = '';
-let message6 = '';
-let message7 = '';
-let message8 = '';
-let message9 = '';
-let message10 = '';
+let outputMessage = '';
 
-//First pyramid
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < i + 1; j++) {
-        message1 += `*`;
+function showPatterns(e) {
+    const rowNumber = numberOfRow.value;
+    outputMessage = '';
+    const pyramidType = selectedPattern.value;
+
+    switch (pyramidType) {
+        case 'halfstartriangle':
+            outputMessage = '<h3>Half * Triangle</h3>';
+            halfPyramid(rowNumber, true, true);
+            break;
+        case 'halfdigittriangle':
+            outputMessage += '<h3> Half Digit Triangle</h3>';
+            halfPyramid(rowNumber, false, true);
+            break;
+        case 'halfalphabettriangle':
+            outputMessage += '<h3> Half Alphabet Triangle</h3>';
+            halfAlphabatPyramid(rowNumber);
+            break;
+        case 'reversehalfstar':
+            outputMessage += '<h3> Half Reverse * Triangle</h3>';
+            halfPyramid(rowNumber, true, false);
+            break;
+        case 'reversehalfdigit':
+            outputMessage += '<h3> Half Reverse Digit Triangle</h3>';
+            halfPyramid(rowNumber, false, false);
+            break;
+        case 'startriangle':
+            outputMessage += '<h3> Full * Triangle</h3>';
+            fullPyramid(rowNumber, true);
+            break;
+        case 'digittriangle':
+            outputMessage += '<h3> Full Digit Triangle</h3>';
+            digitPyramid(rowNumber);
+            break;
+        case 'reversestartriangle':
+            outputMessage += '<h3> Full Reverse * Triangle</h3>';
+            fullPyramid(rowNumber, false);
+            break;
+        case 'pascaltriangle':
+            outputMessage += '<h3> Pascal Triangle</h3>';
+            pascalTriangle(rowNumber);
+            break;
+        case 'incrementnumbertriangle':
+            outputMessage += '<h3> Increasing Number Triangle</h3>';
+            increasingNumberTriangle(rowNumber);
+            break;
     }
-    message1 += `<br>`;
+
+    showOutput.innerHTML = outputMessage;
+    e.preventDefault();
 }
 
-//Second pyramid
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < i + 1; j++) {
-        message2 += `${j + 1}`;
-    }
-    message2 += `<br>`;
-}
-
-//Third pyramid
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < i + 1; j++) {
-        message3 += `${String.fromCharCode(65 + i)}`;
-    }
-    message3 += `<br>`;
-}
-
-//Fourth pyramid
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5 - i; j++) {
-        message4 += `*`;
-    }
-    message4 += `<br>`;
-}
-
-//Fifth pyramid
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5 - i; j++) {
-        message5 += `${j + 1}`;
-    }
-    message5 += `<br>`;
-}
-
-//Sixth pyramid
-let k1 = 0;
-for (let i = 0; i < 5; i++, k1 = 0) {
-    for (let space = 0; space < 5 - (i + 1); space++) {
-        message6 += '&nbsp';
-    }
-    while (k1 != (2 * (i + 1)) - 1) {
-        message6 += "*";
-        k1++;
-    }
-    message6 += `<br>`;
-}
-
-//Seventh pyramid
-let k2 = 0, count = 0, count1 = 0;
-for (let i = 0; i < 5; i++, k2 = 0) {
-    for (let space = 0; space < 5 - (i + 1); space++) {
-        message7 += '&nbsp';
-        count++;
-    }
-    while (k2 != (2 * (i + 1)) - 1) {
-        if (count <= 5 - 1) {
-            message7 += (i + 1) + k2;
-            ++count;
-        } else {
-            ++count1;
-            message7 += (i + 1) + (k2 - (2 * count1));
+//Halft pyramid for digit and *
+function halfPyramid(rowNumber, message, direction) {
+    for (let row = 1; row <= rowNumber; row++) {
+        for (let column = 1; column <= (direction ? row : ((rowNumber - row) + 1)); column++) {
+            outputMessage += (message ? '*' : column);
         }
 
-        k2++;
+        outputMessage += '<br>';
     }
-    count = count1 = 0;
-    message7 += `<br>`;
 }
 
-//Eighth pyramid
-let k3 = 0;
-for (let i = 4; i >= 0; i--, k3 = 0) {
-    for (let space = 0; space < 5 - (i + 1); space++) {
-        message8 += '&nbsp';
-    }
-    while (k3 != (2 * (i + 1)) - 1) {
-        message8 += "*";
-        k3++;
-    }
-    message8 += `<br>`;
-}
-
-//Ninth pyramid
-let coef = 1;
-for (let i = 0; i < 6; i++) {
-    for (let space = 1; space < 6 - i; space++) {
-        message9 += '&nbsp';
-    }
-    for (let j = 0; j <= i; j++) {
-        if (j == 0 || i == 0) {
-            coef = 1;
+//Halft pyramid for alphabat
+function halfAlphabatPyramid(rowNumber) {
+    for (let row = 1; row <= rowNumber; row++) {
+        for (let column = 1; column <= row; column++) {
+            outputMessage += String.fromCharCode(64 + ((row % 26) === 0 ? 26 : (row % 26)));
         }
-        else {
-            coef = coef * (i - j + 1) / j;
+
+        outputMessage += '<br>';
+    }
+}
+
+//Fullpyramid of star
+function fullPyramid(rowNumber, direction) {
+    for (let row = 1; row <= rowNumber; row++) {
+        for (let space = 1; space <= Number(direction ? rowNumber - row : (row - 1)); space++) {
+            outputMessage += '&nbsp&nbsp ';
         }
-        message9 += "  " + coef + " ";
+
+        for (let column = 0; column < Number(direction ? ((2 * row) - 1) : ((2 * (rowNumber - row)) + 1)); column++) {
+            outputMessage += " *";
+        }
+
+        outputMessage += '<br>';
     }
-    message9 += `<br>`;
 }
 
-//Last pyramid
-let count2;
-for (let i = 1; i <= 4; i++) {
-    for (let j = 1; j <= i; j++) {
-        message10 += ++count + '&nbsp';
+//Full pyramid of digit
+function digitPyramid(rowNumber) {
+    let count = 0, count1 = 0;
+
+    for (let row = 1; row <= rowNumber; row++) {
+        for (let space = 1; space <= rowNumber - row; space++) {
+            outputMessage += '&nbsp&nbsp';
+            count++;
+        }
+
+        for (let column = 0; column < (2 * row) - 1; column++) {
+            if (count <= rowNumber - 1) {
+                outputMessage += row + column;
+                ++count;
+            } else {
+                ++count1;
+                outputMessage += row + (column - (2 * count1));
+            }
+        }
+
+        count = count1 = 0;
+        outputMessage += '<br>';
     }
-    message10 += `<br>`;
 }
 
+//Pascal Triangle
+function pascalTriangle(rowNumber) {
+    let coef = 1;
 
-showOutput1.innerHTML = message1;
-showOutput2.innerHTML = message2;
-showOutput3.innerHTML = message3;
-showOutput4.innerHTML = message4;
-showOutput5.innerHTML = message5;
-showOutput6.innerHTML = message6;
-showOutput7.innerHTML = message7;
-showOutput8.innerHTML = message8;
-showOutput9.innerHTML = message9;
-showOutput10.innerHTML = message10;
+    for (let row = 0; row < rowNumber; row++) {
+        for (let space = 1; space < rowNumber - row; space++) {
+            outputMessage += '&nbsp';
+        }
+
+        for (let column = 0; column <= row; column++) {
+            if (column == 0 || row == 0) {
+                coef = 1;
+            }
+            else {
+                coef = coef * (row - column + 1) / column;
+            }
+
+            outputMessage += "  " + coef + " ";
+        }
+
+        outputMessage += '<br>';
+    }
+
+
+}
+
+//Increasing Number Triangle
+function increasingNumberTriangle(rowNumber) {
+    let count = 0;
+
+    for (let row = 1; row <= rowNumber; row++) {
+        for (let column = 1; column <= row; column++) {
+            outputMessage += ++count + '&nbsp';
+        }
+
+        outputMessage += '<br>';
+    }
+}
