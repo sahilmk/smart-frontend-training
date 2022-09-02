@@ -1,13 +1,13 @@
 document.getElementById('submit').addEventListener('click', multiplytMatrix);
-const showMatrix1 = document.getElementById('showMatrix1');
-const showMatrix2 = document.getElementById('showMatrix2');
+const showMatrixOne = document.getElementById('showMatrixOne');
+const showMatrixTwo = document.getElementById('showMatrixTwo');
 const showOutput = document.getElementById('answer');
 const rowOne = document.getElementById('rowOne');
 const columnOne = document.getElementById('columnOne');
 const rowTwo = document.getElementById('rowTwo');
 const columnTwo = document.getElementById('columnTwo');
 
-let matrix1, matrix2;
+let matrixOne, matrixTwo;
 
 //Add the two matrix
 function multiplytMatrix(e) {
@@ -24,19 +24,19 @@ function multiplytMatrix(e) {
         createMatrix(1, matrixOneRow, matrixOneColumn);
         createMatrix(2, matrixTwoRow, matrixTwoColumn);
 
-        for (let i = 0; i < matrixOneRow; i++) {
-            outputMatrix[i] = new Array(matrixTwoColumn);
+        for (let row = 0; row < matrixOneRow; row++) {
+            outputMatrix[row] = new Array(matrixTwoColumn);
             output += '[';
 
-            for (let j = 0; j < matrixTwoColumn; j++) {
+            for (let column = 0; column < matrixTwoColumn; column++) {
                 let ans = 0;
 
-                for (let k = 0; k < matrixOneColumn; k++) {
-                    ans += matrix1[i][k] * matrix2[k][j];
+                for (let iterator = 0; iterator < matrixOneColumn; iterator++) {
+                    ans += matrixOne[row][iterator] * matrixTwo[iterator][column];
                 }
 
-                outputMatrix[i][j] = ans;
-                output += outputMatrix[i][j];
+                outputMatrix[row][column] = ans;
+                output += outputMatrix[row][column];
             }
 
             output += ']<br>';
@@ -62,39 +62,39 @@ function multiplytMatrix(e) {
 function createMatrix(number, matrixRow, matrixColumns) {
     let showmat = '';
     if (number === 1) {
-        matrix1 = new Array(matrixRow);
+        matrixOne = new Array(matrixRow);
 
         //Create matrix
-        for (let i = 0; i < matrixRow; i++) {
+        for (let row = 0; row < matrixRow; row++) {
             showmat += '[';
-            matrix1[i] = new Array(matrixColumns);
+            matrixOne[row] = new Array(matrixColumns);
 
-            for (let j = 0; j < matrixColumns; j++) {
-                matrix1[i][j] = i + 1;
-                showmat += matrix1[i][j];
+            for (let column = 0; column < matrixColumns; column++) {
+                matrixOne[row][column] = row + 1;
+                showmat += matrixOne[row][column];
             }
             showmat += ']<br>';
 
         }
 
-        showMatrix1.innerHTML = showmat;
+        showMatrixOne.innerHTML = showmat;
     } else {
-        matrix2 = new Array(matrixRow);
+        matrixTwo = new Array(matrixRow);
 
         //Create matrix
-        for (let i = 0; i < matrixRow; i++) {
+        for (let row = 0; row < matrixRow; row++) {
             showmat += '[';
-            matrix2[i] = new Array(matrixColumns);
+            matrixTwo[row] = new Array(matrixColumns);
 
-            for (let j = 0; j < matrixColumns; j++) {
-                matrix2[i][j] = i + 1;
-                showmat += matrix2[i][j];
+            for (let column = 0; column < matrixColumns; column++) {
+                matrixTwo[row][column] = row + 1;
+                showmat += matrixTwo[row][column];
             }
             showmat += ']<br>';
 
         }
 
-        showMatrix2.innerHTML = showmat;
+        showMatrixTwo.innerHTML = showmat;
     }
 }
 
@@ -125,8 +125,8 @@ function clearError() {
 
 //Clear the output
 function clearOutput() {
-    showMatrix1.innerHTML = '';
-    showMatrix2.innerHTML = '';
+    showMatrixOne.innerHTML = '';
+    showMatrixTwo.innerHTML = '';
     showOutput.innerHTML = '';
 }
 
