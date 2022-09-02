@@ -66,7 +66,7 @@ function showPatterns(e) {
 }
 
 //Halft pyramid for digit and *
-function halfPyramid(rowNumber, message, direction) {
+function halfPyramid(rowNumber, message = 'star', direction = 'straight') {
     for (let row = 1; row <= rowNumber; row++) {
         for (let column = 1; column <= (direction === 'straight' ? row : ((rowNumber - row) + 1)); column++) {
             outputMessage += (message === 'star' ? '*' : column);
@@ -88,7 +88,7 @@ function halfAlphabatPyramid(rowNumber) {
 }
 
 //Fullpyramid of star
-function fullPyramid(rowNumber, direction) {
+function fullPyramid(rowNumber, direction = 'straight') {
     for (let row = 1; row <= rowNumber; row++) {
         outputMessage += '&nbsp'.repeat(Number(direction === 'straight' ? rowNumber - row : (row - 1)) * 3);
 
