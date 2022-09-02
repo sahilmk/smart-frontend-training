@@ -159,6 +159,7 @@ function increasingNumberTriangle(rowNumber) {
     }
 }
 
+//Validate the input
 function validate(number) {
     return number !== '' && Number.isInteger(Number(number)) && Number(number) > 0;
 }
