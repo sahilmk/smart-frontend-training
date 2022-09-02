@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Matrix Multiplication</title>
+    <style>
+        #showMatrixOne,
+        #showMatrixTwo,
+        #plus,
+        #equal {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="">
+            <div class="mb-3">
+                <h3>Matrix 1</h3>
+                <div class="mb-3">
+                    <label for="rowOne">Row:</label>
+                    <input type="number" id="rowOne" class="form-control" step="any">
+                    <div id="error-1" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="columnOne">Column:</label>
+                    <input type="number" id="columnOne" class="form-control" step="any">
+                    <div id="error-2" class="text-danger"></div>
+                </div>
+                <h3>Matrix 2</h3>
+                <div class="mb-3">
+                    <label for="rowTwo">Row:</label>
+                    <input type="number" id="rowTwo" class="form-control" step="any">
+                    <div id="error-3" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="columnTwo">Column:</label>
+                    <input type="number" id="columnTwo" class="form-control" step="any">
+                    <div id="error-4" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" id="submit" class="btn btn-primary">Multiply two Matrix</button>
+            </div>
+        </form>
+
+        <div class="d-flex flex-row">
+            <h4 id="showMatrixOne" class="alert alert-primary mt-5"></h4>
+            <span id="plus" class="alert alert-primary mt-5">*</span>
+            <h4 id="showMatrixTwo" class="alert alert-primary mt-5"></h4>
+            <h4 id="equal" class="alert alert-primary mt-5">=</h4>
+            <h4 id="answer" class="alert alert-primary mt-5"></h4>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
